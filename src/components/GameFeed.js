@@ -9,8 +9,8 @@ import {
   Dimensions,
 } from "react-native";
 import FlipCard from "react-native-flip-card";
-import { stageArray, stageNumber } from "../stage/stageOne";
-import { shuffle } from "../shuffleArray";
+import { stageArray, stageNumber } from "../utils/stageOne";
+import { shuffle } from "../utils/shuffleArray";
 
 let clickNum = 0;
 let firstPick = null;
@@ -24,15 +24,15 @@ export default () => {
   const [secondClickIndex, setSecondClickIndex] = useState(-1);
 
   const twoMulTwo = [
-    require("../assets/images/dog1.png"),
-    require("../assets/images/dog2.png"),
-    require("../assets/images/dog3.png"),
-    require("../assets/images/dog4.png"),
-    require("../assets/images/dog1.png"),
-    require("../assets/images/dog2.png"),
-    require("../assets/images/dog3.png"),
-    require("../assets/images/dog4.png"),
-    require("../assets/images/bomb.png"),
+    require("../../assets/images/dog1.png"),
+    require("../../assets/images/dog2.png"),
+    require("../../assets/images/dog3.png"),
+    require("../../assets/images/dog4.png"),
+    require("../../assets/images/dog1.png"),
+    require("../../assets/images/dog2.png"),
+    require("../../assets/images/dog3.png"),
+    require("../../assets/images/dog4.png"),
+    require("../../assets/images/bomb.png"),
   ];
 
   const horizontalNum = 3;
@@ -124,7 +124,7 @@ export default () => {
                     secondClickIndex === index ||
                     correctItemArray.includes(item)
                       ? item
-                      : require("../assets/images/question.png")
+                      : require("../../assets/images/question.png")
                   }
                   resizeMode={"cover"}
                 />

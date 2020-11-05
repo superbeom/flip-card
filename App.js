@@ -1,4 +1,4 @@
 import React from "react";
-import NavController from "./components/NavController";
+import AppStack from "./src/stacks/AppStack";
 
-export default () => <NavController />;
+export default () => <AppStack />;
