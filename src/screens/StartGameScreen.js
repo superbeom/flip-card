@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { GameContext } from "../context/GameContext";
 import {
-  CONGRATULATIONS,
   CURRENT_STAGE,
   YOUR_SCORE,
+  CONGRATULATIONS,
   GAME_START,
   RESET_GAME,
 } from "../constants/strings";
@@ -16,7 +17,7 @@ import Button from "../components/Button";
 import StartButton from "../components/StartButton";
 
 export default ({ onStartGame }) => {
-  const [{ stage, totalScore, gameEnd }, setGameInfo] = useContext(GameContext);
+  const [{ stage, totalScore, coin, gameEnd }, _] = useContext(GameContext);
 
   return (
     <View style={styles.screen}>
@@ -48,6 +49,10 @@ export default ({ onStartGame }) => {
             <Text style={styles.cardText}>{YOUR_SCORE}</Text>
             <Text style={styles.cardText}>{totalScore}</Text>
           </View>
+          <View style={styles.cardBox}>
+            <MaterialCommunityIcons name="coin" size={vw(6)} color="gold" />
+            <Text style={styles.cardText}>{coin}</Text>
+          </View>
         </Card>
       </View>
       <View style={styles.gameStartContainer}>
@@ -74,7 +79,7 @@ const styles = StyleSheet.create({
   card: {
     width: vw(80),
     maxWidth: "80%",
-    height: vh(13),
+    height: vh(22),
     justifyContent: "space-around",
   },
   cardBox: {

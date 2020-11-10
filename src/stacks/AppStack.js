@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { AdMobBanner } from "expo-ads-admob";
 
 import { GameContext } from "../context/GameContext";
-import { APP_NAME, CONGRATULATIONS } from "../constants/strings";
+import { CONGRATULATIONS } from "../constants/strings";
 
 import Header from "../components/Header";
 import colors from "../constants/colors";
@@ -16,7 +16,8 @@ export default AppStack = () => {
   const [{ stage }, setGameInfo] = useContext(GameContext);
   const [loading, setLoading] = useState(true);
   // const [startGame, setStartGame] = useState(false);
-  const [startGame, setStartGame] = useState(true);
+  // const [gameOver, setGameOver] = useState(false);
+  const [startGame, setStartGame] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
   const [round, setRound] = useState(1);
@@ -49,19 +50,24 @@ export default AppStack = () => {
   const preLoad = async () => {
     try {
       const storageStage = parseInt(await AsyncStorage.getItem("STAGE"));
+      const storageHorizontalNum = parseInt(
+        await AsyncStorage.getItem("HORIZONTAL_NUM")
+      );
       const storageScore = parseInt(await AsyncStorage.getItem("TOTAL_SCORE"));
       const storageGameEnd = await AsyncStorage.getItem("GAME_END");
 
-      if (storageStage && storageScore) {
+      if (storageStage && storageHorizontalNum && storageScore) {
         if (storageGameEnd === "true") {
           setGameInfo({
             stage: storageStage,
+            horizontalNum: storageHorizontalNum,
             totalScore: storageScore,
             gameEnd: true,
           });
         } else {
           setGameInfo({
             stage: storageStage,
+            horizontalNum: storageHorizontalNum,
             totalScore: storageScore,
           });
         }
@@ -117,9 +123,12 @@ export default AppStack = () => {
       <View style={styles.body}>
         {startGame ? (
           gameOver ? (
-            <GameOverScreen />
+            <GameOverScreen
+              onGoHome={goHomeHandler}
+              onPlayAgain={playAgainHandler}
+            />
           ) : (
-            <GameScreen onGoHome={goHomeHandler} />
+            <GameScreen onGoHome={goHomeHandler} onGameOver={gameOverHandler} />
           )
         ) : (
           <StartGameScreen onStartGame={startGameHandler} />

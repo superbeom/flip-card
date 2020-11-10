@@ -25,7 +25,14 @@ import {
 const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
   const [{ stage, totalScore }, setGameInfo] = useContext(GameContext);
 
+  /*
+    column 수 올릴 필요가 있을 때마다, checkHorizontalNum() 실행하기
+  */
+
   const nextStage = async () => {
+    /* horizontalNum 증가시킬 조건 설정하기 */
+    /* 여기 바로 설정 or 'checkHorizontalNum.js'에서 설정 */
+
     if (stage < 110) {
       await AsyncStorage.setItem("STAGE", (stage + 1).toString());
       await AsyncStorage.setItem(
@@ -63,6 +70,7 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
   };
 
   const failStage = () => {
+    /* GameFeed - initialization 실행으로 초기화 해야 됨. */
     onGoHome();
   };
 
@@ -123,9 +131,8 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
       </View>
       {stage === 110 ? null : (
         <View style={styles.goHomeContainer}>
-          <Button onPress={score > 0 ? successStage : failStage}>
-            {GO_HOME}
-          </Button>
+          {/* <Button onPress={score > 0 ? successStage : failStage}> */}
+          <Button onPress={onGoHome}>{GO_HOME}</Button>
         </View>
       )}
     </View>

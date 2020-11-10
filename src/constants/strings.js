@@ -1,6 +1,4 @@
 /* AppStack Strings */
-export const APP_NAME = "Guess where I am";
-
 export const CONGRATULATIONS = "CONGRATULATIONS!!";
 
 /* StartGameScreen Strings */
@@ -16,6 +14,8 @@ export const RESET_GAME = "RESET GAME";
 export const YOUR_PICKS = "YOUR PICKS";
 
 export const GO_HOME = "GO HOME";
+
+export const CHECK_GO_HOME = "Seriously go home?";
 
 /* GameOverScreen Strings */
 export const STAGE_SCORE = "STAGE SCORE: ";

@@ -5,4 +5,17 @@ export default {
   blackColor: "black",
   grayColor: "gray",
   lightGrayColor: "#ccc",
+  /* Stage Colors */
+  maroonColor: "maroon",
+  lightPinkColor: "lightpink",
+  darkSalmonColor: "darksalmon",
+  goldColor: "gold",
+  limeColor: "lime",
+  oliveColor: "olive",
+  darkSlateGrayColor: "darkslategray",
+  skyBlueColor: "skyblue",
+  meduimBlueColor: "mediumblue",
+  purpleColor: "purple",
+  lavenderColor: "lavender",
+  darkGrayColor: "darkgray",
 };

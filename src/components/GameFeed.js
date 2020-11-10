@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   StyleSheet,
   View,
   Image,
   FlatList,
   TouchableOpacity,
-  Button,
   Dimensions,
 } from "react-native";
-import FlipCard from "react-native-flip-card";
-import { stageArray, stageNumber } from "../utils/stageOne";
+
+import { GameContext } from "../context/GameContext";
+import colors from "../constants/colors";
+import checkStage from "../utils/checkStage";
 import { shuffle } from "../utils/shuffleArray";
 
 let clickNum = 0;
@@ -17,38 +18,23 @@ let firstPick = null;
 let secondPick = null;
 let correctItemArray = [];
 
-export default () => {
-  const [show, setShow] = useState(true);
+export default ({ onGameOver }) => {
+  const [{ stage, horizontalNum }, _] = useContext(GameContext);
   const [shuffleData, setShuffleData] = useState([]);
   const [firstClickIndex, setFirstClickIndex] = useState(-1);
   const [secondClickIndex, setSecondClickIndex] = useState(-1);
+  const [clickedBomb, setClickedBomb] = useState(false);
 
-  const twoMulTwo = [
-    require("../../assets/images/dog1.png"),
-    require("../../assets/images/dog2.png"),
-    require("../../assets/images/dog3.png"),
-    require("../../assets/images/dog4.png"),
-    require("../../assets/images/dog1.png"),
-    require("../../assets/images/dog2.png"),
-    require("../../assets/images/dog3.png"),
-    require("../../assets/images/dog4.png"),
-    require("../../assets/images/bomb.png"),
-  ];
-
-  const horizontalNum = 3;
-  // const horizontalNum = stageNumber.three;
   const windowWidth = Dimensions.get("window").width;
   const fitWidth = windowWidth / (horizontalNum * 1.1);
   const fitMargin = (windowWidth - fitWidth * horizontalNum) / horizontalNum;
 
-  const bombCard = () => {
+  const initialization = () => {
     clickNum = 0;
     firstPick = null;
     secondPick = null;
     setFirstClickIndex(-1);
     setSecondClickIndex(-1);
-    correctItemArray = [];
-    setTimeout(preLoad, 500);
   };
 
   const compareCards = () => {
@@ -56,14 +42,16 @@ export default () => {
       correctItemArray.push(firstPick);
     }
 
-    clickNum = 0;
-    firstPick = null;
-    secondPick = null;
-    setFirstClickIndex(-1);
-    setSecondClickIndex(-1);
+    initialization();
   };
 
   const checkClick = (item, index) => {
+    if (item === "bomb") {
+      // initialization();
+      setClickedBomb(true);
+      setTimeout(onGameOver, 500);
+    }
+
     if (clickNum === 0) {
       clickNum++;
       setFirstClickIndex(index);
@@ -74,18 +62,18 @@ export default () => {
       secondPick = item;
     }
 
-    if (item === 7) {
-      console.log("This is Bomb!!!");
-      bombCard();
-    }
-
-    if (clickNum === 2) {
+    if (clickNum === 2 && item !== "bomb") {
       setTimeout(compareCards, 500);
     }
   };
 
   const preLoad = () => {
-    setShuffleData(shuffle(twoMulTwo));
+    try {
+      const stageName = checkStage(stage);
+      setShuffleData(shuffle(stageName));
+    } catch (error) {
+      console.log("error @preLoad_GameFeed: ", error.message);
+    }
   };
 
   useEffect(() => {
@@ -94,11 +82,12 @@ export default () => {
 
   return (
     <View>
-      {!show && <Button title={"Click"} onPress={() => setShow(true)} />}
-      {show && (
-        <FlatList
-          data={shuffleData}
-          renderItem={({ item, index }) => (
+      <FlatList
+        data={shuffleData}
+        renderItem={({ item, index }) => {
+          const itemName = item.key;
+
+          return (
             <View
               style={{
                 flex: 1,
@@ -107,35 +96,50 @@ export default () => {
               }}
             >
               <TouchableOpacity
-                onPress={checkClick.bind(this, item, index)}
+                onPress={checkClick.bind(this, itemName, index)}
                 disabled={
                   index === firstClickIndex ||
                   index === secondClickIndex ||
-                  correctItemArray.includes(item)
+                  correctItemArray.includes(itemName) ||
+                  clickedBomb
                 }
               >
-                <Image
+                <View
                   style={[
-                    styles.imageThumbnail,
+                    styles.itemThumbnail,
                     { width: fitWidth, height: fitWidth },
                   ]}
-                  source={
-                    firstClickIndex === index ||
-                    secondClickIndex === index ||
-                    correctItemArray.includes(item)
-                      ? item
-                      : require("../../assets/images/question.png")
-                  }
-                  resizeMode={"cover"}
-                />
+                >
+                  {item}
+                </View>
+                {/* {firstClickIndex === index ||
+                secondClickIndex === index ||
+                correctItemArray.includes(itemName) ? (
+                  <View
+                    style={[
+                      styles.itemThumbnail,
+                      { width: fitWidth, height: fitWidth },
+                    ]}
+                  >
+                    {item}
+                  </View>
+                ) : (
+                  <Image
+                    style={[
+                      styles.imageThumbnail,
+                      { width: fitWidth, height: fitWidth },
+                    ]}
+                    source={require("../../assets/images/question.png")}
+                    resizeMode={"cover"}
+                  />
+                )} */}
               </TouchableOpacity>
             </View>
-          )}
-          //Setting the number of column
-          numColumns={horizontalNum}
-          keyExtractor={(item, index) => index.toString()}
-        />
-      )}
+          );
+        }}
+        numColumns={horizontalNum} //Setting the number of column
+        keyExtractor={(item, index) => index.toString()}
+      />
     </View>
   );
 };
@@ -145,5 +149,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
+  },
+  itemThumbnail: {
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    backgroundColor: colors.backgroundColor,
   },
 });

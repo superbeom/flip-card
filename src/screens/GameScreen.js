@@ -1,16 +1,16 @@
 import React from "react";
 import { StyleSheet, View, Alert } from "react-native";
-import { vw, vh } from "react-native-expo-viewport-units";
+import { vh } from "react-native-expo-viewport-units";
 
-import { GO_HOME } from "../constants/strings";
+import { GO_HOME, CHECK_GO_HOME } from "../constants/strings";
 
 import GameFeed from "../components/GameFeed";
 import Button from "../components/Button";
 
-export default ({ onGoHome }) => {
+export default ({ onGoHome, onGameOver }) => {
   const checkGoHome = () => {
     Alert.alert(
-      "Seriously go home?",
+      CHECK_GO_HOME,
       "",
       [
         { text: "Cancel", style: "cancel" },
@@ -26,7 +26,7 @@ export default ({ onGoHome }) => {
     <View style={styles.container}>
       {/* BODY */}
       <View style={styles.body}>
-        <GameFeed />
+        <GameFeed onGameOver={onGameOver} />
       </View>
 
       {/* FOOTER */}
