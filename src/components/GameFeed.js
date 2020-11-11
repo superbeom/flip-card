@@ -24,6 +24,7 @@ export default ({ onGameOver }) => {
   const [firstClickIndex, setFirstClickIndex] = useState(-1);
   const [secondClickIndex, setSecondClickIndex] = useState(-1);
   const [clickedBomb, setClickedBomb] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(true);
 
   const windowWidth = Dimensions.get("window").width;
   const fitWidth = windowWidth / (horizontalNum * 1.1);
@@ -71,6 +72,7 @@ export default ({ onGameOver }) => {
     try {
       const stageName = checkStage(stage);
       setShuffleData(shuffle(stageName));
+      setTimeout(() => setShowAnswer(false), 2000);
     } catch (error) {
       console.log("error @preLoad_GameFeed: ", error.message);
     }
@@ -79,6 +81,20 @@ export default ({ onGameOver }) => {
   useEffect(() => {
     preLoad();
   }, []);
+
+  const answer = (item) => (
+    <View style={[styles.itemThumbnail, { width: fitWidth, height: fitWidth }]}>
+      {item}
+    </View>
+  );
+
+  const question = (
+    <Image
+      style={[styles.imageThumbnail, { width: fitWidth, height: fitWidth }]}
+      source={require("../../assets/images/question.png")}
+      resizeMode={"cover"}
+    />
+  );
 
   return (
     <View>
@@ -101,44 +117,24 @@ export default ({ onGameOver }) => {
                   index === firstClickIndex ||
                   index === secondClickIndex ||
                   correctItemArray.includes(itemName) ||
-                  clickedBomb
+                  clickedBomb ||
+                  showAnswer
                 }
               >
-                <View
-                  style={[
-                    styles.itemThumbnail,
-                    { width: fitWidth, height: fitWidth },
-                  ]}
-                >
-                  {item}
-                </View>
-                {/* {firstClickIndex === index ||
-                secondClickIndex === index ||
-                correctItemArray.includes(itemName) ? (
-                  <View
-                    style={[
-                      styles.itemThumbnail,
-                      { width: fitWidth, height: fitWidth },
-                    ]}
-                  >
-                    {item}
-                  </View>
-                ) : (
-                  <Image
-                    style={[
-                      styles.imageThumbnail,
-                      { width: fitWidth, height: fitWidth },
-                    ]}
-                    source={require("../../assets/images/question.png")}
-                    resizeMode={"cover"}
-                  />
-                )} */}
+                {showAnswer
+                  ? answer(item)
+                  : firstClickIndex === index ||
+                    secondClickIndex === index ||
+                    correctItemArray.includes(itemName)
+                  ? answer(item)
+                  : question}
               </TouchableOpacity>
             </View>
           );
         }}
-        numColumns={horizontalNum} //Setting the number of column
+        numColumns={horizontalNum} // Setting the number of column
         keyExtractor={(item, index) => index.toString()}
+        scrollEnabled={false} // Scroll X
       />
     </View>
   );
