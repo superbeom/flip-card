@@ -12,6 +12,7 @@ import { GameContext } from "../context/GameContext";
 import colors from "../constants/colors";
 import checkStage from "../utils/checkStage";
 import { shuffle } from "../utils/shuffleArray";
+import { checkAnswer, checkTime } from "../utils/checkSomething";
 
 let clickNum = 0;
 let firstPick = null;
@@ -30,6 +31,15 @@ export default ({ onGameOver }) => {
   const fitWidth = windowWidth / (horizontalNum * 1.1);
   const fitMargin = (windowWidth - fitWidth * horizontalNum) / horizontalNum;
 
+  /* 이미 설정된 변수 초기화 */
+  const initializationFeed = () => {
+    clickNum = 0;
+    firstPick = null;
+    secondPick = null;
+    correctItemArray = [];
+  };
+
+  /* 설정 초기화 */
   const initialization = () => {
     clickNum = 0;
     firstPick = null;
@@ -38,19 +48,30 @@ export default ({ onGameOver }) => {
     setSecondClickIndex(-1);
   };
 
+  /* 카드 두 장 비교 */
   const compareCards = () => {
-    if (firstPick === secondPick) {
+    if (
+      firstPick !== null &&
+      (secondPick !== null) & (firstPick === secondPick)
+    ) {
       correctItemArray.push(firstPick);
+
+      /* 정답을 모두 찾았는지 체크 */
+      const nowNumOfCorrect = correctItemArray.length;
+      if (nowNumOfCorrect === checkAnswer(stage)) {
+        /* 정답을 모두 찾았다면, Game Over */
+        return onGameOver();
+      }
     }
 
     initialization();
   };
 
   const checkClick = (item, index) => {
+    /* 폭탄 클릭시 Game Over */
     if (item === "bomb") {
-      // initialization();
       setClickedBomb(true);
-      setTimeout(onGameOver, 500);
+      setTimeout(onGameOver.bind(this, "bomb"), 500);
     }
 
     if (clickNum === 0) {
@@ -64,7 +85,7 @@ export default ({ onGameOver }) => {
     }
 
     if (clickNum === 2 && item !== "bomb") {
-      setTimeout(compareCards, 500);
+      setTimeout(compareCards, 300);
     }
   };
 
@@ -72,7 +93,9 @@ export default ({ onGameOver }) => {
     try {
       const stageName = checkStage(stage);
       setShuffleData(shuffle(stageName));
-      setTimeout(() => setShowAnswer(false), 2000);
+      setTimeout(() => setShowAnswer(false), checkTime(stage));
+
+      initializationFeed();
     } catch (error) {
       console.log("error @preLoad_GameFeed: ", error.message);
     }

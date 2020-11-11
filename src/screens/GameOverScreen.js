@@ -33,39 +33,27 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
     /* horizontalNum 증가시킬 조건 설정하기 */
     /* 여기 바로 설정 or 'checkHorizontalNum.js'에서 설정 */
 
-    if (stage < 110) {
-      await AsyncStorage.setItem("STAGE", (stage + 1).toString());
-      await AsyncStorage.setItem(
-        "TOTAL_SCORE",
-        (totalScore + score).toString()
-      );
+    if (stage === 5) {
       setGameInfo((curState) => ({
-        stage: curState.stage + 1,
-        totalScore: curState.totalScore + score,
+        ...curState,
+        horizontalNum: curState.horizontalNum + 1,
       }));
-      onStartGame();
+    } else if (stage === 36) {
+      setGameInfo((curState) => ({
+        ...curState,
+        horizontalNum: curState.horizontalNum + 1,
+      }));
     }
+
+    setGameInfo((curState) => ({
+      ...curState,
+      stage: curState.stage + 1,
+    }));
+
+    onStartGame();
   };
 
   const successStage = async () => {
-    if (stage < 110) {
-      await AsyncStorage.setItem("STAGE", (stage + 1).toString());
-      await AsyncStorage.setItem(
-        "TOTAL_SCORE",
-        (totalScore + score).toString()
-      );
-      setGameInfo((curState) => ({
-        stage: curState.stage + 1,
-        totalScore: curState.totalScore + score,
-      }));
-    } else if (stage === 110) {
-      await AsyncStorage.setItem("GAME_END", "true");
-      setGameInfo((curState) => ({
-        ...curState,
-        gameEnd: true,
-      }));
-    }
-
     onGoHome();
   };
 
@@ -78,25 +66,25 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
     onPlayAgain();
   };
 
-  const backAction = () => {
-    Alert.alert("Hold on!", "Are you sure you want to go home?", [
-      {
-        text: "Cancel",
-        onPress: () => null,
-        style: "cancel",
-      },
-      { text: "YES", onPress: score > 0 ? successStage : null },
-    ]);
+  // const backAction = () => {
+  //   Alert.alert("Hold on!", "Are you sure you want to go home?", [
+  //     {
+  //       text: "Cancel",
+  //       onPress: () => null,
+  //       style: "cancel",
+  //     },
+  //     { text: "YES", onPress: score > 0 ? successStage : null },
+  //   ]);
 
-    return true;
-  };
+  //   return true;
+  // };
 
-  useEffect(() => {
-    BackHandler.addEventListener("hardwareBackPress", backAction);
+  // useEffect(() => {
+  //   BackHandler.addEventListener("hardwareBackPress", backAction);
 
-    return () =>
-      BackHandler.removeEventListener("hardwareBackPress", backAction);
-  }, []);
+  //   return () =>
+  //     BackHandler.removeEventListener("hardwareBackPress", backAction);
+  // }, []);
 
   return (
     <View style={styles.screen}>
@@ -122,19 +110,9 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
       <View style={styles.buttonContainer}>
         <StageButton onPress={replayStage}>{PLAY_AGAIN}</StageButton>
         {score > 0 ? (
-          stage === 110 ? (
-            <StageButton onPress={successStage}>{GO_HOME}</StageButton>
-          ) : (
-            <StageButton onPress={nextStage}>{NEXT_STAGE}</StageButton>
-          )
+          <StageButton onPress={nextStage}>{NEXT_STAGE}</StageButton>
         ) : null}
       </View>
-      {stage === 110 ? null : (
-        <View style={styles.goHomeContainer}>
-          {/* <Button onPress={score > 0 ? successStage : failStage}> */}
-          <Button onPress={onGoHome}>{GO_HOME}</Button>
-        </View>
-      )}
     </View>
   );
 };

@@ -33,7 +33,12 @@ export default AppStack = () => {
     playAgainHandler();
   };
 
-  const gameOverHandler = () => {
+  const gameOverHandler = (checkBomb) => {
+    if (checkBomb === "bomb") {
+      setScore(0);
+    } else {
+      setScore(100);
+    }
     // const resultScore = getScore(stage, round);
 
     // setScore(resultScore);
@@ -49,29 +54,29 @@ export default AppStack = () => {
 
   const preLoad = async () => {
     try {
-      const storageStage = parseInt(await AsyncStorage.getItem("STAGE"));
-      const storageHorizontalNum = parseInt(
-        await AsyncStorage.getItem("HORIZONTAL_NUM")
-      );
-      const storageScore = parseInt(await AsyncStorage.getItem("TOTAL_SCORE"));
-      const storageGameEnd = await AsyncStorage.getItem("GAME_END");
+      // const storageStage = parseInt(await AsyncStorage.getItem("STAGE"));
+      // const storageHorizontalNum = parseInt(
+      //   await AsyncStorage.getItem("HORIZONTAL_NUM")
+      // );
+      // const storageScore = parseInt(await AsyncStorage.getItem("TOTAL_SCORE"));
+      // const storageGameEnd = await AsyncStorage.getItem("GAME_END");
 
-      if (storageStage && storageHorizontalNum && storageScore) {
-        if (storageGameEnd === "true") {
-          setGameInfo({
-            stage: storageStage,
-            horizontalNum: storageHorizontalNum,
-            totalScore: storageScore,
-            gameEnd: true,
-          });
-        } else {
-          setGameInfo({
-            stage: storageStage,
-            horizontalNum: storageHorizontalNum,
-            totalScore: storageScore,
-          });
-        }
-      }
+      // if (storageStage && storageHorizontalNum && storageScore) {
+      //   if (storageGameEnd === "true") {
+      //     setGameInfo({
+      //       stage: storageStage,
+      //       horizontalNum: storageHorizontalNum,
+      //       totalScore: storageScore,
+      //       gameEnd: true,
+      //     });
+      //   } else {
+      //     setGameInfo({
+      //       stage: storageStage,
+      //       horizontalNum: storageHorizontalNum,
+      //       totalScore: storageScore,
+      //     });
+      //   }
+      // }
 
       setLoading(false);
     } catch (error) {
@@ -126,6 +131,8 @@ export default AppStack = () => {
             <GameOverScreen
               onGoHome={goHomeHandler}
               onPlayAgain={playAgainHandler}
+              onStartGame={startGameHandler}
+              score={score}
             />
           ) : (
             <GameScreen onGoHome={goHomeHandler} onGameOver={gameOverHandler} />

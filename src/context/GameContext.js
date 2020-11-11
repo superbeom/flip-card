@@ -6,8 +6,8 @@ const GameProvider = (props) => {
   const [state, setState] = useState({
     // stage: 1,
     // horizontalNum: 2,
-    stage: 4,
-    horizontalNum: 5,
+    stage: 53,
+    horizontalNum: 4,
     totalScore: 0,
     coin: 3,
     gameEnd: false,
