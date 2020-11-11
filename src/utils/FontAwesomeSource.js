@@ -81,7 +81,7 @@ export const CAMPGROUND = (
   <FontAwesomeItem
     key={"campground"}
     name="campground"
-    color={colors.forestGreenColor}
+    color={colors.indigoColor}
   />
 );
 
@@ -107,6 +107,14 @@ export const FIRST_AID_DEEP = (
     name="first-aid"
     color={colors.deepSkyBlueColor}
   />
+);
+
+export const TREE = (
+  <FontAwesomeItem key={"tree"} name="tree" color={colors.forestGreenColor} />
+);
+
+export const TREE_DEEP = (
+  <FontAwesomeItem key={"tree"} name="tree" color={colors.deepSkyBlueColor} />
 );
 
 /*

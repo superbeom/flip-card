@@ -45,6 +45,6 @@ export const checkTime = (stage) => {
     return 2000;
   else if (stage > 29 && stage <= 36) return 2500;
   else if (stage > 43 && stage <= 60) return 3000;
-  else if (stage > 60 && stage <= 1000) return 3500;
-  else if (stage > 1000 && stage <= 2000) return 4000;
+  else if (stage > 60 && stage <= 1000) return 4000;
+  else if (stage > 1000 && stage <= 2000) return 5000;
 };

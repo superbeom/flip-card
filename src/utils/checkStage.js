@@ -22,6 +22,8 @@ import {
   CAMPGROUND_DEEP,
   FIRST_AID,
   FIRST_AID_DEEP,
+  TREE,
+  TREE_DEEP,
   /* STEP 2 */
   SMILE,
   SMILE_BEAM,
@@ -938,29 +940,233 @@ const stage60 = [
 ];
 
 /* The number of Answer: 5 */
-const stage61 = [];
+const stage61 = [
+  PLANE,
+  PLANE,
+  BINOCULARS,
+  BINOCULARS,
+  CAMPGROUND,
+  CAMPGROUND,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage62 = [];
+const stage62 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND,
+  CAMPGROUND,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage63 = [];
+const stage63 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage64 = [];
+const stage64 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE,
+  TREE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage65 = [];
+const stage65 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage66 = [];
+const stage66 = [
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  CAMPGROUND,
+  CAMPGROUND,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage67 = [];
+const stage67 = [
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage68 = [];
+const stage68 = [
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE,
+  TREE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage69 = [];
+const stage69 = [
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage70 = [];
+const stage70 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage71 = [];
+const stage71 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage72 = [];
+const stage72 = [
+  SMILE,
+  SMILE,
+  ANGRY,
+  ANGRY,
+  DIZZY,
+  DIZZY,
+  KISS,
+  KISS,
+  GRIMACE,
+  GRIMACE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
 const stage73 = [];
 
