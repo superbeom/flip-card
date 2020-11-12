@@ -11,19 +11,28 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
-
-import Card from "../components/Card";
-import Button from "../components/Button";
-import StageButton from "../components/StageButton";
+import colors from "../constants/colors";
 import {
-  STAGE_SCORE,
+  GREAT,
+  FAIL,
   PLAY_AGAIN,
   NEXT_STAGE,
   GO_HOME,
 } from "../constants/strings";
 
-const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
-  const [{ stage, totalScore }, setGameInfo] = useContext(GameContext);
+import Card from "../components/Card";
+import Button from "../components/Button";
+import StageButton from "../components/StageButton";
+import Heart from "../components/Heart";
+
+const GameOverScreen = ({
+  onPlayAgain,
+  onGoHome,
+  onStartGame,
+  pass,
+  getHeart,
+}) => {
+  const [{ stage, heart }, setGameInfo] = useContext(GameContext);
 
   /*
     column 수 올릴 필요가 있을 때마다, checkHorizontalNum() 실행하기
@@ -58,7 +67,6 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
   };
 
   const failStage = () => {
-    /* GameFeed - initialization 실행으로 초기화 해야 됨. */
     onGoHome();
   };
 
@@ -88,30 +96,30 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
 
   return (
     <View style={styles.screen}>
-      <View style={styles.score}>
-        <Card style={styles.card}>
-          <Text style={styles.text}>{STAGE_SCORE}</Text>
-          <Text style={styles.text}>{score}</Text>
-        </Card>
+      <View style={styles.heartContainer}>
+        <View style={styles.heartBox}>
+          <Heart onPress={getHeart} numOfHeart={heart} />
+        </View>
       </View>
       <View style={styles.imageContainer}>
-        {/* <Image
+        <Image
           source={
-            score > 0
-              ? stage === 110
-                ? require("../../assets/congratulation.png")
-                : require("../../assets/success.png")
-              : require("../../assets/fail.png")
+            pass
+              ? require("../../assets/images/success.png")
+              : require("../../assets/images/fail.png")
           }
           style={styles.image}
           resizeMode={"cover"}
-        /> */}
+        />
       </View>
       <View style={styles.buttonContainer}>
         <StageButton onPress={replayStage}>{PLAY_AGAIN}</StageButton>
-        {score > 0 ? (
+        {pass ? (
           <StageButton onPress={nextStage}>{NEXT_STAGE}</StageButton>
         ) : null}
+      </View>
+      <View style={styles.goHomeContainer}>
+        <Button onPress={pass ? successStage : failStage}>{GO_HOME}</Button>
       </View>
     </View>
   );
@@ -124,24 +132,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  score: {
-    width: "80%",
-    marginVertical: vh(5),
-  },
-  card: {
+  heartContainer: {
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    marginVertical: vh(2),
   },
-  text: {
-    fontSize: vw(4.5),
+  heartBox: {
+    alignItems: "flex-end",
+    marginRight: vw(3),
   },
   imageContainer: {
     width: vh(30),
     height: vh(30),
     borderRadius: vh(30) / 2,
     borderWidth: 3,
-    borderColor: "black",
+    borderColor: colors.whiteColor,
     overflow: "hidden",
     marginVertical: vh(5),
   },

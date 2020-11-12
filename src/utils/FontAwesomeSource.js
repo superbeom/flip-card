@@ -1,9 +1,25 @@
 import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { vw } from "react-native-expo-viewport-units";
+import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
+import { vw, vmax } from "react-native-expo-viewport-units";
 
 import FontAwesomeItem from "../components/FontAwesomeItem";
 import colors from "../constants/colors";
+
+/*
+  Basics
+*/
+
+export const HEART = (
+  <MaterialCommunityIcons name="cards-heart" size={vmax(7)} color="red" />
+);
+
+export const FLAG = (
+  <FontAwesome5
+    name="flag-checkered"
+    size={vmax(6)}
+    color={colors.primaryColor}
+  />
+);
 
 /*
   BOMB

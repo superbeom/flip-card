@@ -2,9 +2,7 @@
 export const CONGRATULATIONS = "CONGRATULATIONS!!";
 
 /* StartGameScreen Strings */
-export const YOUR_SCORE = "YOUR SCORE: ";
-
-export const CURRENT_STAGE = "CURRENT STAGE: ";
+export const CURRENT_STAGE = "STAGE";
 
 export const GAME_START = "GAME\nSTART";
 
@@ -18,8 +16,6 @@ export const GO_HOME = "GO HOME";
 export const CHECK_GO_HOME = "Seriously go home?";
 
 /* GameOverScreen Strings */
-export const STAGE_SCORE = "STAGE SCORE: ";
-
 export const PLAY_AGAIN = "PLAY\nAGAIN";
 
 export const NEXT_STAGE = "NEXT\nSTAGE";

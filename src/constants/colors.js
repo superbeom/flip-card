@@ -1,10 +1,11 @@
 export default {
-  primaryColor: "#666CE4",
+  primaryColor: "#6a5acd",
   backgroundColor: "#F5F9FF",
   whiteColor: "white",
   blackColor: "black",
   grayColor: "gray",
   lightGrayColor: "#ccc",
+  redColor: "red",
   /* Stage Colors */
   maroonColor: "maroon",
   lightPinkColor: "lightpink",

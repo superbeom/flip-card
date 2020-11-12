@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontSize: vmax(3),
+    fontSize: vmax(4),
     fontWeight: "800",
   },
 });

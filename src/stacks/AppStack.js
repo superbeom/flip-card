@@ -19,12 +19,9 @@ export default AppStack = () => {
   // const [gameOver, setGameOver] = useState(false);
   const [startGame, setStartGame] = useState(false);
   const [gameOver, setGameOver] = useState(false);
-  const [score, setScore] = useState(0);
-  const [round, setRound] = useState(1);
+  const [pass, setPass] = useState(false);
 
   const playAgainHandler = () => {
-    setScore(0);
-    setRound(1);
     setGameOver(false);
   };
 
@@ -35,21 +32,24 @@ export default AppStack = () => {
 
   const gameOverHandler = (checkBomb) => {
     if (checkBomb === "bomb") {
-      setScore(0);
+      setPass(false);
     } else {
-      setScore(100);
+      setPass(true);
     }
-    // const resultScore = getScore(stage, round);
 
-    // setScore(resultScore);
     setGameOver(true);
   };
 
   const goHomeHandler = () => {
-    setScore(0);
-    setRound(1);
     setStartGame(false);
     setGameOver(false);
+  };
+
+  /* 하트 버튼 누름 → 동영상 광고 시청 → 하트 얻음 */
+  const getHeart = () => {
+    console.log("Get Heart");
+    /* GameContext 및 AsyncStorage heart 갯수 +3 업데이트 */
+    return null;
   };
 
   const preLoad = async () => {
@@ -58,22 +58,22 @@ export default AppStack = () => {
       // const storageHorizontalNum = parseInt(
       //   await AsyncStorage.getItem("HORIZONTAL_NUM")
       // );
-      // const storageScore = parseInt(await AsyncStorage.getItem("TOTAL_SCORE"));
+      // const storageHeart = parseInt(await AsyncStorage.getItem("HEART"));
       // const storageGameEnd = await AsyncStorage.getItem("GAME_END");
 
-      // if (storageStage && storageHorizontalNum && storageScore) {
+      // if (storageStage && storageHorizontalNum && storageHeart) {
       //   if (storageGameEnd === "true") {
       //     setGameInfo({
       //       stage: storageStage,
       //       horizontalNum: storageHorizontalNum,
-      //       totalScore: storageScore,
+      // heart: heart,
       //       gameEnd: true,
       //     });
       //   } else {
       //     setGameInfo({
       //       stage: storageStage,
       //       horizontalNum: storageHorizontalNum,
-      //       totalScore: storageScore,
+      // heart: heart,
       //     });
       //   }
       // }
@@ -103,16 +103,7 @@ export default AppStack = () => {
       />
     </View>
   ) : (
-    <View
-      style={[
-        styles.screen,
-        {
-          backgroundColor: startGame
-            ? colors.primaryColor
-            : colors.backgroundColor,
-        },
-      ]}
-    >
+    <View style={styles.screen}>
       <Header
         title={
           startGame
@@ -132,13 +123,14 @@ export default AppStack = () => {
               onGoHome={goHomeHandler}
               onPlayAgain={playAgainHandler}
               onStartGame={startGameHandler}
-              score={score}
+              pass={pass}
+              getHeart={getHeart}
             />
           ) : (
             <GameScreen onGoHome={goHomeHandler} onGameOver={gameOverHandler} />
           )
         ) : (
-          <StartGameScreen onStartGame={startGameHandler} />
+          <StartGameScreen onStartGame={startGameHandler} getHeart={getHeart} />
         )}
       </View>
       <View style={styles.ads}>
@@ -165,6 +157,7 @@ export default AppStack = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: colors.primaryColor,
   },
   body: {
     flex: 11,

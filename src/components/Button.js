@@ -4,7 +4,7 @@ import { vw, vh } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
 
-const MainButton = (props) => {
+const Button = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress} activeOpacity={0.5}>
       <View
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: vw(4),
+    fontWeight: "500",
   },
 });
 
-export default MainButton;
+export default Button;

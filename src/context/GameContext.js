@@ -6,10 +6,11 @@ const GameProvider = (props) => {
   const [state, setState] = useState({
     // stage: 1,
     // horizontalNum: 2,
-    stage: 95,
-    horizontalNum: 4,
-    totalScore: 0,
-    coin: 3,
+    stage: 8,
+    horizontalNum: 3,
+    // stage: 95,
+    // horizontalNum: 4,
+    heart: 12,
     gameEnd: false,
   });
 
