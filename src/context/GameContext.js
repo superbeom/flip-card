@@ -10,7 +10,7 @@ const GameProvider = (props) => {
     horizontalNum: 3,
     // stage: 95,
     // horizontalNum: 4,
-    heart: 12,
+    heart: 1,
     gameEnd: false,
   });
 

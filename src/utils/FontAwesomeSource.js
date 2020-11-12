@@ -1,6 +1,10 @@
 import React from "react";
-import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
-import { vw, vmax } from "react-native-expo-viewport-units";
+import {
+  FontAwesome5,
+  MaterialCommunityIcons,
+  Entypo,
+} from "@expo/vector-icons";
+import { vw, vh, vmax } from "react-native-expo-viewport-units";
 
 import FontAwesomeItem from "../components/FontAwesomeItem";
 import colors from "../constants/colors";
@@ -10,7 +14,19 @@ import colors from "../constants/colors";
 */
 
 export const HEART = (
-  <MaterialCommunityIcons name="cards-heart" size={vmax(7)} color="red" />
+  <MaterialCommunityIcons
+    name="cards-heart"
+    size={vmax(7)}
+    color={colors.redColor}
+  />
+);
+
+export const ARROW_UP = (
+  <Entypo name="arrow-up" size={vh(6)} color={colors.whiteColor} />
+);
+
+export const ARROW_RIGHT = (
+  <Entypo name="arrow-right" size={vh(6)} color={colors.whiteColor} />
 );
 
 export const FLAG = (
@@ -26,23 +42,48 @@ export const FLAG = (
 */
 
 export const BOMB_2X2 = (
-  <MaterialCommunityIcons key={"bomb"} name="bomb" size={vw(20)} color="red" />
+  <MaterialCommunityIcons
+    key={"bomb"}
+    name="bomb"
+    size={vw(20)}
+    color={colors.redColor}
+  />
 );
 
 export const BOMB_3X3 = (
-  <MaterialCommunityIcons key={"bomb"} name="bomb" size={vw(18)} color="red" />
+  <MaterialCommunityIcons
+    key={"bomb"}
+    name="bomb"
+    size={vw(18)}
+    color={colors.redColor}
+  />
 );
 
 export const BOMB_4X4 = (
-  <MaterialCommunityIcons key={"bomb"} name="bomb" size={vw(12)} color="red" />
+  <MaterialCommunityIcons
+    key={"bomb"}
+    name="bomb"
+    size={vw(12)}
+    color={colors.redColor}
+  />
 );
 
 export const BOMB_5X5 = (
-  <MaterialCommunityIcons key={"bomb"} name="bomb" size={vw(10)} color="red" />
+  <MaterialCommunityIcons
+    key={"bomb"}
+    name="bomb"
+    size={vw(10)}
+    color={colors.redColor}
+  />
 );
 
 export const BOMB_6X6 = (
-  <MaterialCommunityIcons key={"bomb"} name="bomb" size={vw(9)} color="red" />
+  <MaterialCommunityIcons
+    key={"bomb"}
+    name="bomb"
+    size={vw(9)}
+    color={colors.redColor}
+  />
 );
 
 /*

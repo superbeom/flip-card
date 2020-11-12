@@ -1,10 +1,3 @@
-import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { vw } from "react-native-expo-viewport-units";
-
-import FontAwesomeItem from "../components/FontAwesomeItem";
-import colors from "../constants/colors";
-
 import {
   BOMB_2X2,
   BOMB_3X3,

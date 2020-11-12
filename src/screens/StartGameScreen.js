@@ -10,6 +10,8 @@ import Card from "../components/Card";
 import Button from "../components/Button";
 import StartButton from "../components/StartButton";
 import Heart from "../components/Heart";
+import ArrowUp from "../components/ArrowUp";
+import GetHeartText from "../components/GetHeartText";
 
 export default ({ onStartGame, getHeart }) => {
   const [{ stage, heart, gameEnd }, _] = useContext(GameContext);
@@ -31,10 +33,24 @@ export default ({ onStartGame, getHeart }) => {
         </Card>
         <View style={styles.heartBox}>
           <Heart onPress={getHeart} numOfHeart={heart} />
+          {heart <= 1 ? (
+            <>
+              <View style={styles.arrowBox}>
+                <ArrowUp enoughHeart={false} />
+              </View>
+              <View>
+                <GetHeartText enoughHeart={false} />
+              </View>
+            </>
+          ) : null}
         </View>
       </View>
       <View style={styles.gameStartContainer}>
-        <StartButton onPress={onStartGame} update={gameEnd}>
+        <StartButton
+          onPress={onStartGame}
+          update={gameEnd}
+          enoughHeart={heart > 0 ?? false}
+        >
           {GAME_START}
         </StartButton>
       </View>
@@ -73,6 +89,10 @@ const styles = StyleSheet.create({
     width: "50%",
     height: vh(13),
     alignItems: "flex-end",
+  },
+  arrowBox: {
+    alignItems: "flex-start",
+    width: "45%",
   },
   gameStartContainer: {
     flex: 1,

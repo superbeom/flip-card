@@ -17,8 +17,8 @@ export default AppStack = () => {
   const [loading, setLoading] = useState(true);
   // const [startGame, setStartGame] = useState(false);
   // const [gameOver, setGameOver] = useState(false);
-  const [startGame, setStartGame] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
+  const [startGame, setStartGame] = useState(true);
+  const [gameOver, setGameOver] = useState(true);
   const [pass, setPass] = useState(false);
 
   const playAgainHandler = () => {

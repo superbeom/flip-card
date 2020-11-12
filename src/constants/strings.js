@@ -1,6 +1,8 @@
 /* AppStack Strings */
 export const CONGRATULATIONS = "CONGRATULATIONS!!";
 
+export const CLICK_TO_GET_HEARTS = "Click to get hearts";
+
 /* StartGameScreen Strings */
 export const CURRENT_STAGE = "STAGE";
 

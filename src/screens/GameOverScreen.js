@@ -12,18 +12,13 @@ import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
 import colors from "../constants/colors";
-import {
-  GREAT,
-  FAIL,
-  PLAY_AGAIN,
-  NEXT_STAGE,
-  GO_HOME,
-} from "../constants/strings";
+import { PLAY_AGAIN, NEXT_STAGE, GO_HOME } from "../constants/strings";
 
-import Card from "../components/Card";
 import Button from "../components/Button";
 import StageButton from "../components/StageButton";
 import Heart from "../components/Heart";
+import ArrowRight from "../components/ArrowRight";
+import GetHeartText from "../components/GetHeartText";
 
 const GameOverScreen = ({
   onPlayAgain,
@@ -98,6 +93,23 @@ const GameOverScreen = ({
     <View style={styles.screen}>
       <View style={styles.heartContainer}>
         <View style={styles.heartBox}>
+          {heart <= 1 ? (
+            <View
+              style={{
+                marginRight: vw(3),
+                justifyContent: "flex-end",
+              }}
+            >
+              <View style={{ flexDirection: "row" }}>
+                <View style={{ justifyContent: "center" }}>
+                  <GetHeartText enoughHeart={false} screen={"gameOverScreen"} />
+                </View>
+                <View style={{ justifyContent: "center" }}>
+                  <ArrowRight enoughHeart={false} />
+                </View>
+              </View>
+            </View>
+          ) : null}
           <Heart onPress={getHeart} numOfHeart={heart} />
         </View>
       </View>
@@ -113,9 +125,13 @@ const GameOverScreen = ({
         />
       </View>
       <View style={styles.buttonContainer}>
-        <StageButton onPress={replayStage}>{PLAY_AGAIN}</StageButton>
+        <StageButton onPress={replayStage} enoughHeart={heart > 0 ?? false}>
+          {PLAY_AGAIN}
+        </StageButton>
         {pass ? (
-          <StageButton onPress={nextStage}>{NEXT_STAGE}</StageButton>
+          <StageButton onPress={nextStage} enoughHeart={heart > 0 ?? false}>
+            {NEXT_STAGE}
+          </StageButton>
         ) : null}
       </View>
       <View style={styles.goHomeContainer}>
@@ -137,7 +153,8 @@ const styles = StyleSheet.create({
     marginVertical: vh(2),
   },
   heartBox: {
-    alignItems: "flex-end",
+    flexDirection: "row",
+    justifyContent: "flex-end",
     marginRight: vw(3),
   },
   imageContainer: {
