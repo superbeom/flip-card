@@ -21,10 +21,34 @@ export const checkAnswer = (stage) => {
     (stage > 43 && stage <= 60)
   ) {
     return 4;
-  } else if (stage > 60 && stage <= 300) {
+  } else if (stage > 60 && stage <= 81) {
     return 5;
-  } else if (stage > 300 && stage <= 400) {
+  } else if (stage > 81 && stage <= 99) {
     return 6;
+  } else if (stage > 99 && stage <= 400000) {
+    return 7;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 8;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 9;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 10;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 11;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 12;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 13;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 14;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 15;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 16;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 17;
+  } else if (stage > 300000 && stage <= 400000) {
+    return 18;
   }
 };
 
@@ -45,6 +69,31 @@ export const checkTime = (stage) => {
     return 2000;
   else if (stage > 29 && stage <= 36) return 2500;
   else if (stage > 43 && stage <= 60) return 3000;
-  else if (stage > 60 && stage <= 1000) return 4000;
-  else if (stage > 1000 && stage <= 2000) return 5000;
+  else if (stage > 60 && stage <= 65) return 4000;
+  else if (stage > 65 && stage <= 81) return 4500;
+  else if (stage > 81 && stage <= 87) return 5000;
+  else if (stage > 87 && stage <= 99) return 5500;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if (stage > 100000 && stage <= 200000) return 5000;
 };

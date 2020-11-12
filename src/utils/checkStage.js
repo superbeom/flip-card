@@ -24,6 +24,8 @@ import {
   FIRST_AID_DEEP,
   TREE,
   TREE_DEEP,
+  DOG,
+  DOG_DEEP,
   /* STEP 2 */
   SMILE,
   SMILE_BEAM,
@@ -1168,23 +1170,602 @@ const stage72 = [
   BOMB_4X4,
 ];
 
-const stage73 = [];
+const stage73 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY,
+  DIZZY,
+  KISS,
+  KISS,
+  GRIMACE,
+  GRIMACE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage74 = [];
+const stage74 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  KISS,
+  KISS,
+  GRIMACE,
+  GRIMACE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage75 = [];
+const stage75 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  KISS_DARK,
+  KISS_DARK,
+  GRIMACE,
+  GRIMACE,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage76 = [];
+const stage76 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  KISS_DARK,
+  KISS_DARK,
+  GRIMACE_DARK,
+  GRIMACE_DARK,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage77 = [];
+const stage77 = [
+  SMILE_BEAM,
+  SMILE_BEAM,
+  SMILE_WINK,
+  SMILE_WINK,
+  GRIN_BEAM,
+  GRIN_BEAM,
+  GRIN_BEAM_SWEAT,
+  GRIN_BEAM_SWEAT,
+  FROWN,
+  FROWN,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage78 = [];
+const stage78 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM,
+  GRIN_BEAM,
+  GRIN_BEAM_SWEAT,
+  GRIN_BEAM_SWEAT,
+  FROWN,
+  FROWN,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage79 = [];
+const stage79 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_SWEAT,
+  GRIN_BEAM_SWEAT,
+  FROWN,
+  FROWN,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
-const stage80 = [];
+const stage80 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  FROWN,
+  FROWN,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
 
+const stage81 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+/* The number of Answer: 6 */
+const stage82 = [
+  PLANE,
+  PLANE,
+  BINOCULARS,
+  BINOCULARS,
+  CAMPGROUND,
+  CAMPGROUND,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  DOG,
+  DOG,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage83 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND,
+  CAMPGROUND,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  DOG,
+  DOG,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage84 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  DOG,
+  DOG,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage85 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE,
+  TREE,
+  DOG,
+  DOG,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage86 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG,
+  DOG,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage87 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage88 = [
+  SMILE,
+  SMILE,
+  ANGRY,
+  ANGRY,
+  DIZZY,
+  DIZZY,
+  KISS,
+  KISS,
+  GRIMACE,
+  GRIMACE,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage89 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY,
+  DIZZY,
+  KISS,
+  KISS,
+  GRIMACE,
+  GRIMACE,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage90 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  KISS,
+  KISS,
+  GRIMACE,
+  GRIMACE,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage91 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  KISS_DARK,
+  KISS_DARK,
+  GRIMACE,
+  GRIMACE,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage92 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  KISS_DARK,
+  KISS_DARK,
+  GRIMACE_DARK,
+  GRIMACE_DARK,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage93 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  KISS_DARK,
+  KISS_DARK,
+  GRIMACE_DARK,
+  GRIMACE_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage94 = [
+  SMILE_BEAM,
+  SMILE_BEAM,
+  SMILE_WINK,
+  SMILE_WINK,
+  GRIN_BEAM,
+  GRIN_BEAM,
+  GRIN_BEAM_SWEAT,
+  GRIN_BEAM_SWEAT,
+  FROWN,
+  FROWN,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage95 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM,
+  GRIN_BEAM,
+  GRIN_BEAM_SWEAT,
+  GRIN_BEAM_SWEAT,
+  FROWN,
+  FROWN,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage96 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_SWEAT,
+  GRIN_BEAM_SWEAT,
+  FROWN,
+  FROWN,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage97 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  FROWN,
+  FROWN,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage98 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+const stage99 = [
+  SMILE_BEAM_DARK,
+  SMILE_BEAM_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  GRIN_BEAM_SWEAT_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+  BOMB_4X4,
+];
+
+/* The number of Answer: 7 */
 const stage100 = [];
+
+const stage101 = [];
+
+const stage102 = [];
+
+const stage103 = [];
+
+const stage104 = [];
+
+const stage105 = [];
+
+const stage106 = [];
+
+const stage107 = [];
+
+const stage108 = [];
+
+const stage109 = [];
+
+const stage110 = [];
+
+const stage111 = [];
+
+const stage112 = [];
+
+const stage113 = [];
+
+const stage114 = [];
+
+const stage115 = [];
+
+const stage116 = [];
+
+const stage117 = [];
+
+const stage118 = [];
+
+const stage119 = [];
+
+const stage120 = [];
+
+const stage121 = [];
+
+const stage122 = [];
+
+const stage123 = [];
+
+const stage124 = [];
+
+const stage125 = [];
+
+const stage126 = [];
+
+const stage127 = [];
+
+const stage128 = [];
+
+const stage129 = [];
+
+const stage130 = [];
+
+const stage131 = [];
+
+const stage132 = [];
+
+const stage133 = [];
+
+const stage134 = [];
+
+const stage135 = [];
+
+const stage136 = [];
+
+const stage137 = [];
+
+const stage138 = [];
+
+const stage139 = [];
+
+const stage140 = [];
 
 /* 5x5 */
 const stage3000 = [];
@@ -1273,4 +1854,64 @@ export default (stage) => {
   else if (stage === 78) return stage78;
   else if (stage === 79) return stage79;
   else if (stage === 80) return stage80;
+  else if (stage === 81) return stage81;
+  else if (stage === 82) return stage82;
+  else if (stage === 83) return stage83;
+  else if (stage === 84) return stage84;
+  else if (stage === 85) return stage85;
+  else if (stage === 86) return stage86;
+  else if (stage === 87) return stage87;
+  else if (stage === 88) return stage88;
+  else if (stage === 89) return stage89;
+  else if (stage === 90) return stage90;
+  else if (stage === 91) return stage91;
+  else if (stage === 92) return stage92;
+  else if (stage === 93) return stage93;
+  else if (stage === 94) return stage94;
+  else if (stage === 95) return stage95;
+  else if (stage === 96) return stage96;
+  else if (stage === 97) return stage97;
+  else if (stage === 98) return stage98;
+  else if (stage === 99) return stage99;
+  else if (stage === 100) return stage100;
+  else if (stage === 101) return stage101;
+  else if (stage === 102) return stage102;
+  else if (stage === 103) return stage103;
+  else if (stage === 104) return stage104;
+  else if (stage === 105) return stage105;
+  else if (stage === 106) return stage106;
+  else if (stage === 107) return stage107;
+  else if (stage === 108) return stage108;
+  else if (stage === 109) return stage109;
+  else if (stage === 110) return stage110;
+  else if (stage === 111) return stage111;
+  else if (stage === 112) return stage112;
+  else if (stage === 113) return stage113;
+  else if (stage === 114) return stage114;
+  else if (stage === 115) return stage115;
+  else if (stage === 116) return stage116;
+  else if (stage === 117) return stage117;
+  else if (stage === 118) return stage118;
+  else if (stage === 119) return stage119;
+  else if (stage === 120) return stage120;
+  else if (stage === 121) return stage121;
+  else if (stage === 122) return stage122;
+  else if (stage === 123) return stage123;
+  else if (stage === 124) return stage124;
+  else if (stage === 125) return stage125;
+  else if (stage === 126) return stage126;
+  else if (stage === 127) return stage127;
+  else if (stage === 128) return stage128;
+  else if (stage === 129) return stage129;
+  else if (stage === 130) return stage130;
+  else if (stage === 131) return stage131;
+  else if (stage === 132) return stage132;
+  else if (stage === 133) return stage133;
+  else if (stage === 134) return stage134;
+  else if (stage === 135) return stage135;
+  else if (stage === 136) return stage136;
+  else if (stage === 137) return stage137;
+  else if (stage === 138) return stage138;
+  else if (stage === 139) return stage139;
+  else if (stage === 140) return stage140;
 };

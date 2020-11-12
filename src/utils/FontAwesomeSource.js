@@ -55,7 +55,7 @@ export const BINOCULARS = (
 
 export const BINOCULARS_DEEP = (
   <FontAwesomeItem
-    key={"binoculars"}
+    key={"binoculars-deep"}
     name="binoculars"
     color={colors.deepSkyBlueColor}
   />
@@ -87,7 +87,7 @@ export const CAMPGROUND = (
 
 export const CAMPGROUND_DEEP = (
   <FontAwesomeItem
-    key={"campground"}
+    key={"campground-deep"}
     name="campground"
     color={colors.deepSkyBlueColor}
   />
@@ -103,7 +103,7 @@ export const FIRST_AID = (
 
 export const FIRST_AID_DEEP = (
   <FontAwesomeItem
-    key={"first-aid"}
+    key={"first-aid-deep"}
     name="first-aid"
     color={colors.deepSkyBlueColor}
   />
@@ -114,7 +114,23 @@ export const TREE = (
 );
 
 export const TREE_DEEP = (
-  <FontAwesomeItem key={"tree"} name="tree" color={colors.deepSkyBlueColor} />
+  <FontAwesomeItem
+    key={"tree-deep"}
+    name="tree"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const DOG = (
+  <FontAwesomeItem key={"dog"} name="dog" color={colors.orangeColor} />
+);
+
+export const DOG_DEEP = (
+  <FontAwesomeItem
+    key={"dog-deep"}
+    name="dog"
+    color={colors.deepSkyBlueColor}
+  />
 );
 
 /*
