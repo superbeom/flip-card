@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { StyleSheet, View, Alert } from "react-native";
+import React, { useContext, useEffect } from "react";
+import { StyleSheet, View, Alert, BackHandler } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
@@ -25,6 +25,13 @@ export default ({ onGoHome, onGameOver }) => {
 
     return true;
   };
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", checkGoHome);
+
+    return () =>
+      BackHandler.removeEventListener("hardwareBackPress", checkGoHome);
+  }, []);
 
   return (
     <View style={styles.container}>

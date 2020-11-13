@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { StyleSheet, View, Image, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  StatusBar,
+  Alert,
+  BackHandler,
+} from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { AdMobBanner } from "expo-ads-admob";
 
@@ -90,8 +97,26 @@ export default AppStack = () => {
     }
   };
 
+  const backAction = () => {
+    Alert.alert("Hold on!", "Are you sure you want to exit?", [
+      {
+        text: "Cancel",
+        onPress: () => null,
+        style: "cancel",
+      },
+      { text: "YES", onPress: () => BackHandler.exitApp() },
+    ]);
+
+    return true;
+  };
+
   useEffect(() => {
     preLoad();
+
+    BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () =>
+      BackHandler.removeEventListener("hardwareBackPress", backAction);
   }, []);
 
   return loading ? (

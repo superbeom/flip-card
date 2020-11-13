@@ -74,25 +74,28 @@ const GameOverScreen = ({
 
   const failStage = () => {};
 
-  // const backAction = () => {
-  //   Alert.alert("Hold on!", "Are you sure you want to go home?", [
-  //     {
-  //       text: "Cancel",
-  //       onPress: () => null,
-  //       style: "cancel",
-  //     },
-  //     { text: "YES", onPress: score > 0 ? successStage : null },
-  //   ]);
+  const backAction = () => {
+    Alert.alert("Hold on!", "Are you sure you want to go home?", [
+      {
+        text: "Cancel",
+        onPress: () => null,
+        style: "cancel",
+      },
+      {
+        text: "YES",
+        onPress: pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail,
+      },
+    ]);
 
-  //   return true;
-  // };
+    return true;
+  };
 
-  // useEffect(() => {
-  //   BackHandler.addEventListener("hardwareBackPress", backAction);
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", backAction);
 
-  //   return () =>
-  //     BackHandler.removeEventListener("hardwareBackPress", backAction);
-  // }, []);
+    return () =>
+      BackHandler.removeEventListener("hardwareBackPress", backAction);
+  }, []);
 
   return (
     <View style={styles.screen}>
