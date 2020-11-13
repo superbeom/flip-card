@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { Animated } from "react-native";
 
-import { ARROW_UP } from "../utils/FontAwesomeSource";
+import { ARROW_UP, ARROW_RIGHT } from "../utils/FontAwesomeSource";
 
-export default ({ enoughHeart }) => {
+export default ({ enoughHeart, direction }) => {
   const animation = useRef(new Animated.Value(0)).current;
 
   const zeroToOne = () => {
@@ -36,7 +36,7 @@ export default ({ enoughHeart }) => {
 
   return (
     <Animated.View style={{ opacity: animation }}>
-      {!enoughHeart ? ARROW_UP : null}
+      {!enoughHeart ? (direction === "up" ? ARROW_UP : ARROW_RIGHT) : null}
     </Animated.View>
   );
 };

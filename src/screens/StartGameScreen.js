@@ -10,7 +10,7 @@ import Card from "../components/Card";
 import Button from "../components/Button";
 import StartButton from "../components/StartButton";
 import Heart from "../components/Heart";
-import ArrowUp from "../components/ArrowUp";
+import Arrow from "../components/Arrow";
 import GetHeartText from "../components/GetHeartText";
 
 export default ({ onStartGame, getHeart }) => {
@@ -36,7 +36,7 @@ export default ({ onStartGame, getHeart }) => {
           {heart <= 1 ? (
             <>
               <View style={styles.arrowBox}>
-                <ArrowUp enoughHeart={false} />
+                <Arrow enoughHeart={false} direction={"up"} />
               </View>
               <View>
                 <GetHeartText enoughHeart={false} />

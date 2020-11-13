@@ -17,7 +17,7 @@ import { PLAY_AGAIN, NEXT_STAGE, GO_HOME } from "../constants/strings";
 import Button from "../components/Button";
 import StageButton from "../components/StageButton";
 import Heart from "../components/Heart";
-import ArrowRight from "../components/ArrowRight";
+import Arrow from "../components/Arrow";
 import GetHeartText from "../components/GetHeartText";
 
 const GameOverScreen = ({
@@ -105,7 +105,7 @@ const GameOverScreen = ({
                   <GetHeartText enoughHeart={false} screen={"gameOverScreen"} />
                 </View>
                 <View style={{ justifyContent: "center" }}>
-                  <ArrowRight enoughHeart={false} />
+                  <Arrow enoughHeart={false} direction={"right"} />
                 </View>
               </View>
             </View>
