@@ -13,12 +13,12 @@ import GameScreen from "../screens/GameScreen";
 import GameOverScreen from "../screens/GameOverScreen";
 
 export default AppStack = () => {
-  const [{ stage }, setGameInfo] = useContext(GameContext);
+  const [{ stage, heart }, setGameInfo] = useContext(GameContext);
   const [loading, setLoading] = useState(true);
   // const [startGame, setStartGame] = useState(false);
   // const [gameOver, setGameOver] = useState(false);
-  const [startGame, setStartGame] = useState(true);
-  const [gameOver, setGameOver] = useState(true);
+  const [startGame, setStartGame] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
   const [pass, setPass] = useState(false);
 
   const playAgainHandler = () => {
@@ -30,9 +30,15 @@ export default AppStack = () => {
     playAgainHandler();
   };
 
-  const gameOverHandler = (checkBomb) => {
-    if (checkBomb === "bomb") {
+  const gameOverHandler = (checkPass) => {
+    if (checkPass === "fail") {
       setPass(false);
+      if (heart > 0) {
+        setGameInfo((curState) => ({
+          ...curState,
+          heart: curState.heart - 1,
+        }));
+      }
     } else {
       setPass(true);
     }

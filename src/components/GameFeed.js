@@ -71,7 +71,7 @@ export default ({ onGameOver }) => {
     /* 폭탄 클릭시 Game Over */
     if (item === "bomb") {
       setClickedBomb(true);
-      setTimeout(onGameOver.bind(this, "bomb"), 500);
+      setTimeout(onGameOver.bind(this, "fail"), 500);
     }
 
     if (clickNum === 0) {
