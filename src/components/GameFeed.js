@@ -68,7 +68,7 @@ export default ({ onGameOver }) => {
   };
 
   const checkClick = (item, index) => {
-    /* 폭탄 클릭시 Game Over */
+    /* 폭탄 클릭 시, Game Over */
     if (item === "bomb") {
       setClickedBomb(true);
       setTimeout(onGameOver.bind(this, "fail"), 500);

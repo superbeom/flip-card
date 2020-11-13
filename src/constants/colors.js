@@ -6,6 +6,7 @@ export default {
   grayColor: "gray",
   lightGrayColor: "#ccc",
   redColor: "red",
+  timerBarColor: "rgba(0, 0, 0, 0.5)",
   /* Stage Colors */
   maroonColor: "maroon",
   lightPinkColor: "lightpink",

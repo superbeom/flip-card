@@ -38,6 +38,8 @@ const GameOverScreen = ({
       ...curState,
       horizontalNum: curState.horizontalNum + 1,
     }));
+
+    /* AsyncStorage horizontalNum +1 업데이트 */
   };
 
   const clickedGoHomeAfterSuccess = () => {
@@ -70,6 +72,8 @@ const GameOverScreen = ({
       ...curState,
       stage: curState.stage + 1,
     }));
+
+    /* AsyncStorage stage +1 업데이트 */
   };
 
   const failStage = () => {};
@@ -97,6 +101,8 @@ const GameOverScreen = ({
         ...curState,
         heart: curState.heart + 1,
       }));
+
+      /* AsyncStorage heart 갯수 +1 업데이트 */
     }
 
     BackHandler.addEventListener("hardwareBackPress", backAction);

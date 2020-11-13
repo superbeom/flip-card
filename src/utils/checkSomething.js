@@ -97,3 +97,10 @@ export const checkTime = (stage) => {
   else if (stage > 100000 && stage <= 200000) return 5000;
   else if (stage > 100000 && stage <= 200000) return 5000;
 };
+
+/* stage에 따른, 제한 시간 */
+export const checkLimitTime = (stage) => {
+  if (stage <= 10) return 10;
+  else if (stage > 10 && stage <= 20) return 20;
+  else if (stage > 20) return 50;
+};

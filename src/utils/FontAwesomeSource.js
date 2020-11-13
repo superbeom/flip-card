@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  FontAwesome,
   FontAwesome5,
   MaterialCommunityIcons,
   Entypo,
@@ -35,6 +36,14 @@ export const FLAG = (
     size={vmax(6)}
     color={colors.primaryColor}
   />
+);
+
+export const STOP_WATCH = (
+  <Entypo name="stopwatch" size={vh(3.5)} color={colors.whiteColor} />
+);
+
+export const BAN = (
+  <FontAwesome name="ban" size={vh(3.5)} color={colors.whiteColor} />
 );
 
 /*

@@ -40,11 +40,14 @@ export default AppStack = () => {
   const gameOverHandler = (checkPass) => {
     if (checkPass === "fail") {
       setPass(false);
+
       if (heart > 0) {
         setGameInfo((curState) => ({
           ...curState,
           heart: curState.heart - 1,
         }));
+
+        /* AsyncStorage heart 갯수 -1 업데이트 */
       }
     } else {
       setPass(true);
