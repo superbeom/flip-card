@@ -30,44 +30,49 @@ const GameOverScreen = ({
   const [{ stage, heart }, setGameInfo] = useContext(GameContext);
 
   /*
-    column 수 올릴 필요가 있을 때마다, checkHorizontalNum() 실행하기
+    GameFeed의 FlatList numColumns 수 올릴 필요가 있을 때마다,
+    plusHorizontalNum() 실행하기
   */
+  const plusHorizontalNum = () => {
+    setGameInfo((curState) => ({
+      ...curState,
+      horizontalNum: curState.horizontalNum + 1,
+    }));
+  };
+
+  const clickedGoHomeAfterSuccess = () => {
+    successStage();
+    onGoHome();
+  };
+
+  const clickedGoHomeAfterFail = () => {
+    failStage();
+    onGoHome();
+  };
 
   const nextStage = async () => {
-    /* horizontalNum 증가시킬 조건 설정하기 */
-    /* 여기 바로 설정 or 'checkHorizontalNum.js'에서 설정 */
+    successStage();
+    onStartGame();
+  };
 
+  const replayStage = () => {
+    onPlayAgain();
+  };
+
+  const successStage = async () => {
     if (stage === 5) {
-      setGameInfo((curState) => ({
-        ...curState,
-        horizontalNum: curState.horizontalNum + 1,
-      }));
+      plusHorizontalNum();
     } else if (stage === 36) {
-      setGameInfo((curState) => ({
-        ...curState,
-        horizontalNum: curState.horizontalNum + 1,
-      }));
+      plusHorizontalNum();
     }
 
     setGameInfo((curState) => ({
       ...curState,
       stage: curState.stage + 1,
     }));
-
-    onStartGame();
   };
 
-  const successStage = async () => {
-    onGoHome();
-  };
-
-  const failStage = () => {
-    onGoHome();
-  };
-
-  const replayStage = () => {
-    onPlayAgain();
-  };
+  const failStage = () => {};
 
   // const backAction = () => {
   //   Alert.alert("Hold on!", "Are you sure you want to go home?", [
@@ -135,7 +140,11 @@ const GameOverScreen = ({
         ) : null}
       </View>
       <View style={styles.goHomeContainer}>
-        <Button onPress={pass ? successStage : failStage}>{GO_HOME}</Button>
+        <Button
+          onPress={pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail}
+        >
+          {GO_HOME}
+        </Button>
       </View>
     </View>
   );
