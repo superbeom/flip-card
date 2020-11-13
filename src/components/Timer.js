@@ -1,11 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  StyleSheet,
-  View,
-  Animated,
-  TouchableOpacity,
-  Text,
-} from "react-native";
+import { StyleSheet, View, Animated, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
