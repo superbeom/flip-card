@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     padding: vw(5),
   },
   stopWatch: {
+    width: vh(3.5),
     marginBottom: height,
   },
   progress: {
