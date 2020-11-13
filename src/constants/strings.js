@@ -8,8 +8,6 @@ export const CURRENT_STAGE = "STAGE";
 
 export const GAME_START = "GAME\nSTART";
 
-export const RESET_GAME = "RESET GAME";
-
 /* GameScreen Strings */
 export const YOUR_PICKS = "YOUR PICKS";
 

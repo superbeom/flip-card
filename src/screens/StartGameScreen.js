@@ -3,11 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
-import { CURRENT_STAGE, GAME_START, RESET_GAME } from "../constants/strings";
+import { CURRENT_STAGE, GAME_START } from "../constants/strings";
 import { FLAG } from "../utils/FontAwesomeSource";
 
 import Card from "../components/Card";
-import Button from "../components/Button";
 import StartButton from "../components/StartButton";
 import Heart from "../components/Heart";
 import Arrow from "../components/Arrow";
@@ -54,9 +53,7 @@ export default ({ onStartGame, getHeart }) => {
           {GAME_START}
         </StartButton>
       </View>
-      <View style={styles.resetGameContainer}>
-        <Button onPress={() => null}>{RESET_GAME}</Button>
-      </View>
+      <View style={styles.resetGameContainer} />
     </View>
   );
 };
