@@ -66,19 +66,10 @@ const GameOverScreen = ({
       plusHorizontalNum();
     }
 
-    /* stage 10단계씩 깰 때마다 heart +1 추가 */
-    if (stage % 10 === 0) {
-      setGameInfo((curState) => ({
-        ...curState,
-        stage: curState.stage + 1,
-        heart: curState.heart + 1,
-      }));
-    } else {
-      setGameInfo((curState) => ({
-        ...curState,
-        stage: curState.stage + 1,
-      }));
-    }
+    setGameInfo((curState) => ({
+      ...curState,
+      stage: curState.stage + 1,
+    }));
   };
 
   const failStage = () => {};
@@ -100,6 +91,14 @@ const GameOverScreen = ({
   };
 
   useEffect(() => {
+    /* stage 10단계씩 깰 때마다 heart +1 추가 */
+    if (stage % 10 === 0) {
+      setGameInfo((curState) => ({
+        ...curState,
+        heart: curState.heart + 1,
+      }));
+    }
+
     BackHandler.addEventListener("hardwareBackPress", backAction);
 
     return () =>
