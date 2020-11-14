@@ -32,8 +32,6 @@ export default ({ onGoHome, onGameOver }) => {
 
   /* 2초 간 정답 보여 주기 & heart 갯수 -1 */
   const showAnswerForHint = () => {
-    console.log("You want hint?");
-
     setShowAnswer(true);
 
     setTimeout(() => setShowAnswer(false), 2000);
