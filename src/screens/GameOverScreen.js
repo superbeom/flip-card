@@ -11,72 +11,72 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
+import colors from "../constants/colors";
+import { PLAY_AGAIN, NEXT_STAGE, GO_HOME } from "../constants/strings";
 
-import Card from "../components/Card";
 import Button from "../components/Button";
 import StageButton from "../components/StageButton";
-import {
-  STAGE_SCORE,
-  PLAY_AGAIN,
-  NEXT_STAGE,
-  GO_HOME,
-} from "../constants/strings";
+import Heart from "../components/Heart";
+import Arrow from "../components/Arrow";
+import GetHeartText from "../components/GetHeartText";
 
-const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
-  const [{ stage, totalScore }, setGameInfo] = useContext(GameContext);
+const GameOverScreen = ({
+  onPlayAgain,
+  onGoHome,
+  onStartGame,
+  pass,
+  getHeart,
+}) => {
+  const [{ stage, heart }, setGameInfo] = useContext(GameContext);
 
   /*
-    column 수 올릴 필요가 있을 때마다, checkHorizontalNum() 실행하기
+    GameFeed의 FlatList numColumns 수 올릴 필요가 있을 때마다,
+    plusHorizontalNum() 실행하기
   */
+  const plusHorizontalNum = () => {
+    setGameInfo((curState) => ({
+      ...curState,
+      horizontalNum: curState.horizontalNum + 1,
+    }));
+
+    /* AsyncStorage horizontalNum +1 업데이트 */
+  };
+
+  const clickedGoHomeAfterSuccess = () => {
+    successStage();
+    onGoHome();
+  };
+
+  const clickedGoHomeAfterFail = () => {
+    failStage();
+    onGoHome();
+  };
 
   const nextStage = async () => {
-    /* horizontalNum 증가시킬 조건 설정하기 */
-    /* 여기 바로 설정 or 'checkHorizontalNum.js'에서 설정 */
-
-    if (stage < 110) {
-      await AsyncStorage.setItem("STAGE", (stage + 1).toString());
-      await AsyncStorage.setItem(
-        "TOTAL_SCORE",
-        (totalScore + score).toString()
-      );
-      setGameInfo((curState) => ({
-        stage: curState.stage + 1,
-        totalScore: curState.totalScore + score,
-      }));
-      onStartGame();
-    }
-  };
-
-  const successStage = async () => {
-    if (stage < 110) {
-      await AsyncStorage.setItem("STAGE", (stage + 1).toString());
-      await AsyncStorage.setItem(
-        "TOTAL_SCORE",
-        (totalScore + score).toString()
-      );
-      setGameInfo((curState) => ({
-        stage: curState.stage + 1,
-        totalScore: curState.totalScore + score,
-      }));
-    } else if (stage === 110) {
-      await AsyncStorage.setItem("GAME_END", "true");
-      setGameInfo((curState) => ({
-        ...curState,
-        gameEnd: true,
-      }));
-    }
-
-    onGoHome();
-  };
-
-  const failStage = () => {
-    /* GameFeed - initialization 실행으로 초기화 해야 됨. */
-    onGoHome();
+    successStage();
+    onStartGame();
   };
 
   const replayStage = () => {
     onPlayAgain();
   };
+
+  const successStage = async () => {
+    if (stage === 5) {
+      plusHorizontalNum();
+    } else if (stage === 36) {
+      plusHorizontalNum();
+    }
+
+    setGameInfo((curState) => ({
+      ...curState,
+      stage: curState.stage + 1,
+    }));
+
+    /* AsyncStorage stage +1 업데이트 */
+  };
+
+  const failStage = () => {};
 
   const backAction = () => {
     Alert.alert("Hold on!", "Are you sure you want to go home?", [
@@ -85,13 +85,26 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
         onPress: () => null,
         style: "cancel",
       },
-      { text: "YES", onPress: score > 0 ? successStage : null },
+      {
+        text: "YES",
+        onPress: pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail,
+      },
     ]);
 
     return true;
   };
 
   useEffect(() => {
+    /* stage 10단계씩 깰 때마다 heart +1 추가 */
+    if (pass && stage % 10 === 0) {
+      setGameInfo((curState) => ({
+        ...curState,
+        heart: curState.heart + 1,
+      }));
+
+      /* AsyncStorage heart 갯수 +1 업데이트 */
+    }
+
     BackHandler.addEventListener("hardwareBackPress", backAction);
 
     return () =>
@@ -100,41 +113,56 @@ const GameOverScreen = ({ onPlayAgain, onGoHome, onStartGame, score }) => {
 
   return (
     <View style={styles.screen}>
-      <View style={styles.score}>
-        <Card style={styles.card}>
-          <Text style={styles.text}>{STAGE_SCORE}</Text>
-          <Text style={styles.text}>{score}</Text>
-        </Card>
+      <View style={styles.heartContainer}>
+        <View style={styles.heartBox}>
+          {heart <= 1 ? (
+            <View
+              style={{
+                marginRight: vw(3),
+                justifyContent: "flex-end",
+              }}
+            >
+              <View style={{ flexDirection: "row" }}>
+                <View style={{ justifyContent: "center" }}>
+                  <GetHeartText enoughHeart={false} screen={"gameOverScreen"} />
+                </View>
+                <View style={{ justifyContent: "center" }}>
+                  <Arrow enoughHeart={false} direction={"right"} />
+                </View>
+              </View>
+            </View>
+          ) : null}
+          <Heart onPress={getHeart} numOfHeart={heart} />
+        </View>
       </View>
       <View style={styles.imageContainer}>
-        {/* <Image
+        <Image
           source={
-            score > 0
-              ? stage === 110
-                ? require("../../assets/congratulation.png")
-                : require("../../assets/success.png")
-              : require("../../assets/fail.png")
+            pass
+              ? require("../../assets/images/success.png")
+              : require("../../assets/images/fail.png")
           }
           style={styles.image}
           resizeMode={"cover"}
-        /> */}
+        />
       </View>
       <View style={styles.buttonContainer}>
-        <StageButton onPress={replayStage}>{PLAY_AGAIN}</StageButton>
-        {score > 0 ? (
-          stage === 110 ? (
-            <StageButton onPress={successStage}>{GO_HOME}</StageButton>
-          ) : (
-            <StageButton onPress={nextStage}>{NEXT_STAGE}</StageButton>
-          )
+        <StageButton onPress={replayStage} enoughHeart={heart > 0 ?? false}>
+          {PLAY_AGAIN}
+        </StageButton>
+        {pass ? (
+          <StageButton onPress={nextStage} enoughHeart={heart > 0 ?? false}>
+            {NEXT_STAGE}
+          </StageButton>
         ) : null}
       </View>
-      {stage === 110 ? null : (
-        <View style={styles.goHomeContainer}>
-          {/* <Button onPress={score > 0 ? successStage : failStage}> */}
-          <Button onPress={onGoHome}>{GO_HOME}</Button>
-        </View>
-      )}
+      <View style={styles.goHomeContainer}>
+        <Button
+          onPress={pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail}
+        >
+          {GO_HOME}
+        </Button>
+      </View>
     </View>
   );
 };
@@ -146,24 +174,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  score: {
-    width: "80%",
-    marginVertical: vh(5),
-  },
-  card: {
+  heartContainer: {
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    marginVertical: vh(2),
   },
-  text: {
-    fontSize: vw(4.5),
+  heartBox: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    marginRight: vw(3),
   },
   imageContainer: {
     width: vh(30),
     height: vh(30),
     borderRadius: vh(30) / 2,
     borderWidth: 3,
-    borderColor: "black",
+    borderColor: colors.whiteColor,
     overflow: "hidden",
     marginVertical: vh(5),
   },

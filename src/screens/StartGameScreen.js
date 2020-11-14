@@ -1,66 +1,59 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { GameContext } from "../context/GameContext";
-import {
-  CURRENT_STAGE,
-  YOUR_SCORE,
-  CONGRATULATIONS,
-  GAME_START,
-  RESET_GAME,
-} from "../constants/strings";
+import { CURRENT_STAGE, GAME_START } from "../constants/strings";
+import { FLAG } from "../utils/FontAwesomeSource";
 
 import Card from "../components/Card";
-import Button from "../components/Button";
 import StartButton from "../components/StartButton";
+import Heart from "../components/Heart";
+import Arrow from "../components/Arrow";
+import GetHeartText from "../components/GetHeartText";
 
-export default ({ onStartGame }) => {
-  const [{ stage, totalScore, coin, gameEnd }, _] = useContext(GameContext);
+export default ({ onStartGame, getHeart }) => {
+  const [{ stage, heart, gameEnd }, _] = useContext(GameContext);
 
   return (
     <View style={styles.screen}>
       <View style={styles.gameInfo}>
         <Card style={styles.card}>
-          <View
-            style={[
-              styles.cardBox,
-              gameEnd ? { justifyContent: "center" } : null,
-            ]}
-          >
-            {gameEnd ? (
-              <Text
-                style={[
-                  styles.cardText,
-                  { color: colors.primaryColor, fontWeight: "800" },
-                ]}
-              >
-                {CONGRATULATIONS}
+          {gameEnd ? (
+            <View style={styles.cardBox}>{FLAG}</View>
+          ) : (
+            <View style={styles.cardBox}>
+              <Text style={styles.cardText}>{CURRENT_STAGE}</Text>
+              <Text style={[styles.cardText, { marginTop: vh(1) }]}>
+                {stage}
               </Text>
-            ) : (
-              <>
-                <Text style={styles.cardText}>{CURRENT_STAGE}</Text>
-                <Text style={styles.cardText}>{stage}</Text>
-              </>
-            )}
-          </View>
-          <View style={styles.cardBox}>
-            <Text style={styles.cardText}>{YOUR_SCORE}</Text>
-            <Text style={styles.cardText}>{totalScore}</Text>
-          </View>
-          <View style={styles.cardBox}>
-            <MaterialCommunityIcons name="coin" size={vw(6)} color="gold" />
-            <Text style={styles.cardText}>{coin}</Text>
-          </View>
+            </View>
+          )}
         </Card>
+        <View style={styles.heartBox}>
+          <Heart onPress={getHeart} numOfHeart={heart} />
+          {heart <= 1 ? (
+            <>
+              <View style={styles.arrowBox}>
+                <Arrow enoughHeart={false} direction={"up"} />
+              </View>
+              <View>
+                <GetHeartText enoughHeart={false} />
+              </View>
+            </>
+          ) : null}
+        </View>
       </View>
       <View style={styles.gameStartContainer}>
-        <StartButton onPress={onStartGame}>{GAME_START}</StartButton>
+        <StartButton
+          onPress={onStartGame}
+          update={gameEnd}
+          enoughHeart={heart > 0 ?? false}
+        >
+          {GAME_START}
+        </StartButton>
       </View>
-      <View style={styles.resetGameContainer}>
-        <Button onPress={() => null}>{RESET_GAME}</Button>
-      </View>
+      <View style={styles.resetGameContainer} />
     </View>
   );
 };
@@ -74,21 +67,29 @@ const styles = StyleSheet.create({
   gameInfo: {
     flex: 1,
     width: "100%",
-    alignItems: "center",
-  },
-  card: {
-    width: vw(80),
-    maxWidth: "80%",
-    height: vh(22),
-    justifyContent: "space-around",
-  },
-  cardBox: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
+  card: {
+    width: "50%",
+    height: vh(13),
+    justifyContent: "space-around",
+  },
+  cardBox: {
+    alignItems: "center",
+  },
   cardText: {
-    fontSize: vw(4.5),
+    fontSize: vw(5.5),
     fontWeight: "700",
+  },
+  heartBox: {
+    width: "50%",
+    height: vh(13),
+    alignItems: "flex-end",
+  },
+  arrowBox: {
+    alignItems: "flex-start",
+    width: "45%",
   },
   gameStartContainer: {
     flex: 1,

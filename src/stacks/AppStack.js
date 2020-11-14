@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { StyleSheet, View, Image, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  StatusBar,
+  Alert,
+  BackHandler,
+} from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { AdMobBanner } from "expo-ads-admob";
 
@@ -13,18 +20,15 @@ import GameScreen from "../screens/GameScreen";
 import GameOverScreen from "../screens/GameOverScreen";
 
 export default AppStack = () => {
-  const [{ stage }, setGameInfo] = useContext(GameContext);
+  const [{ stage, heart }, setGameInfo] = useContext(GameContext);
   const [loading, setLoading] = useState(true);
   // const [startGame, setStartGame] = useState(false);
   // const [gameOver, setGameOver] = useState(false);
   const [startGame, setStartGame] = useState(false);
   const [gameOver, setGameOver] = useState(false);
-  const [score, setScore] = useState(0);
-  const [round, setRound] = useState(1);
+  const [pass, setPass] = useState(false);
 
   const playAgainHandler = () => {
-    setScore(0);
-    setRound(1);
     setGameOver(false);
   };
 
@@ -33,45 +37,62 @@ export default AppStack = () => {
     playAgainHandler();
   };
 
-  const gameOverHandler = () => {
-    // const resultScore = getScore(stage, round);
+  const gameOverHandler = (checkPass) => {
+    if (checkPass === "fail") {
+      setPass(false);
 
-    // setScore(resultScore);
+      if (heart > 0) {
+        setGameInfo((curState) => ({
+          ...curState,
+          heart: curState.heart - 1,
+        }));
+
+        /* AsyncStorage heart 갯수 -1 업데이트 */
+      }
+    } else {
+      setPass(true);
+    }
+
     setGameOver(true);
   };
 
   const goHomeHandler = () => {
-    setScore(0);
-    setRound(1);
     setStartGame(false);
     setGameOver(false);
   };
 
+  /* 하트 버튼 누름 → 동영상 광고 시청 → 하트 얻음 */
+  const getHeart = () => {
+    console.log("Get Heart");
+    /* GameContext 및 AsyncStorage heart 갯수 +3 업데이트 */
+    return null;
+  };
+
   const preLoad = async () => {
     try {
-      const storageStage = parseInt(await AsyncStorage.getItem("STAGE"));
-      const storageHorizontalNum = parseInt(
-        await AsyncStorage.getItem("HORIZONTAL_NUM")
-      );
-      const storageScore = parseInt(await AsyncStorage.getItem("TOTAL_SCORE"));
-      const storageGameEnd = await AsyncStorage.getItem("GAME_END");
+      // const storageStage = parseInt(await AsyncStorage.getItem("STAGE"));
+      // const storageHorizontalNum = parseInt(
+      //   await AsyncStorage.getItem("HORIZONTAL_NUM")
+      // );
+      // const storageHeart = parseInt(await AsyncStorage.getItem("HEART"));
+      // const storageGameEnd = await AsyncStorage.getItem("GAME_END");
 
-      if (storageStage && storageHorizontalNum && storageScore) {
-        if (storageGameEnd === "true") {
-          setGameInfo({
-            stage: storageStage,
-            horizontalNum: storageHorizontalNum,
-            totalScore: storageScore,
-            gameEnd: true,
-          });
-        } else {
-          setGameInfo({
-            stage: storageStage,
-            horizontalNum: storageHorizontalNum,
-            totalScore: storageScore,
-          });
-        }
-      }
+      // if (storageStage && storageHorizontalNum && storageHeart) {
+      //   if (storageGameEnd === "true") {
+      //     setGameInfo({
+      //       stage: storageStage,
+      //       horizontalNum: storageHorizontalNum,
+      // heart: heart,
+      //       gameEnd: true,
+      //     });
+      //   } else {
+      //     setGameInfo({
+      //       stage: storageStage,
+      //       horizontalNum: storageHorizontalNum,
+      // heart: heart,
+      //     });
+      //   }
+      // }
 
       setLoading(false);
     } catch (error) {
@@ -79,8 +100,26 @@ export default AppStack = () => {
     }
   };
 
+  const backAction = () => {
+    Alert.alert("Hold on!", "Are you sure you want to exit?", [
+      {
+        text: "Cancel",
+        onPress: () => null,
+        style: "cancel",
+      },
+      { text: "YES", onPress: () => BackHandler.exitApp() },
+    ]);
+
+    return true;
+  };
+
   useEffect(() => {
     preLoad();
+
+    BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () =>
+      BackHandler.removeEventListener("hardwareBackPress", backAction);
   }, []);
 
   return loading ? (
@@ -98,16 +137,7 @@ export default AppStack = () => {
       />
     </View>
   ) : (
-    <View
-      style={[
-        styles.screen,
-        {
-          backgroundColor: startGame
-            ? colors.primaryColor
-            : colors.backgroundColor,
-        },
-      ]}
-    >
+    <View style={styles.screen}>
       <Header
         title={
           startGame
@@ -126,12 +156,15 @@ export default AppStack = () => {
             <GameOverScreen
               onGoHome={goHomeHandler}
               onPlayAgain={playAgainHandler}
+              onStartGame={startGameHandler}
+              pass={pass}
+              getHeart={getHeart}
             />
           ) : (
             <GameScreen onGoHome={goHomeHandler} onGameOver={gameOverHandler} />
           )
         ) : (
-          <StartGameScreen onStartGame={startGameHandler} />
+          <StartGameScreen onStartGame={startGameHandler} getHeart={getHeart} />
         )}
       </View>
       <View style={styles.ads}>
@@ -158,6 +191,7 @@ export default AppStack = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: colors.primaryColor,
   },
   body: {
     flex: 11,

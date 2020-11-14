@@ -12,13 +12,14 @@ import { GameContext } from "../context/GameContext";
 import colors from "../constants/colors";
 import checkStage from "../utils/checkStage";
 import { shuffle } from "../utils/shuffleArray";
+import { checkAnswer, checkTime } from "../utils/checkSomething";
 
 let clickNum = 0;
 let firstPick = null;
 let secondPick = null;
 let correctItemArray = [];
 
-export default ({ onGameOver }) => {
+export default ({ onGameOver, showAnswer, setShowAnswer }) => {
   const [{ stage, horizontalNum }, _] = useContext(GameContext);
   const [shuffleData, setShuffleData] = useState([]);
   const [firstClickIndex, setFirstClickIndex] = useState(-1);
@@ -29,6 +30,15 @@ export default ({ onGameOver }) => {
   const fitWidth = windowWidth / (horizontalNum * 1.1);
   const fitMargin = (windowWidth - fitWidth * horizontalNum) / horizontalNum;
 
+  /* 이미 설정된 변수 초기화 */
+  const initializationFeed = () => {
+    clickNum = 0;
+    firstPick = null;
+    secondPick = null;
+    correctItemArray = [];
+  };
+
+  /* 설정 초기화 */
   const initialization = () => {
     clickNum = 0;
     firstPick = null;
@@ -37,19 +47,30 @@ export default ({ onGameOver }) => {
     setSecondClickIndex(-1);
   };
 
+  /* 카드 두 장 비교 */
   const compareCards = () => {
-    if (firstPick === secondPick) {
+    if (
+      firstPick !== null &&
+      (secondPick !== null) & (firstPick === secondPick)
+    ) {
       correctItemArray.push(firstPick);
+
+      /* 정답을 모두 찾았는지 체크 */
+      const nowNumOfCorrect = correctItemArray.length;
+      if (nowNumOfCorrect === checkAnswer(stage)) {
+        /* 정답을 모두 찾았다면, Game Over */
+        return onGameOver();
+      }
     }
 
     initialization();
   };
 
   const checkClick = (item, index) => {
+    /* 폭탄 클릭 시, Game Over */
     if (item === "bomb") {
-      // initialization();
       setClickedBomb(true);
-      setTimeout(onGameOver, 500);
+      setTimeout(onGameOver.bind(this, "fail"), 500);
     }
 
     if (clickNum === 0) {
@@ -63,7 +84,7 @@ export default ({ onGameOver }) => {
     }
 
     if (clickNum === 2 && item !== "bomb") {
-      setTimeout(compareCards, 500);
+      setTimeout(compareCards, 300);
     }
   };
 
@@ -71,6 +92,11 @@ export default ({ onGameOver }) => {
     try {
       const stageName = checkStage(stage);
       setShuffleData(shuffle(stageName));
+
+      /* Stage별 정해진 시간 동안, 처음에 정답 보여 주기 */
+      setTimeout(() => setShowAnswer(false), checkTime(stage));
+
+      initializationFeed();
     } catch (error) {
       console.log("error @preLoad_GameFeed: ", error.message);
     }
@@ -79,6 +105,20 @@ export default ({ onGameOver }) => {
   useEffect(() => {
     preLoad();
   }, []);
+
+  const answer = (item) => (
+    <View style={[styles.itemThumbnail, { width: fitWidth, height: fitWidth }]}>
+      {item}
+    </View>
+  );
+
+  const question = (
+    <Image
+      style={[styles.imageThumbnail, { width: fitWidth, height: fitWidth }]}
+      source={require("../../assets/images/question.png")}
+      resizeMode={"cover"}
+    />
+  );
 
   return (
     <View>
@@ -101,44 +141,24 @@ export default ({ onGameOver }) => {
                   index === firstClickIndex ||
                   index === secondClickIndex ||
                   correctItemArray.includes(itemName) ||
-                  clickedBomb
+                  clickedBomb ||
+                  showAnswer
                 }
               >
-                <View
-                  style={[
-                    styles.itemThumbnail,
-                    { width: fitWidth, height: fitWidth },
-                  ]}
-                >
-                  {item}
-                </View>
-                {/* {firstClickIndex === index ||
-                secondClickIndex === index ||
-                correctItemArray.includes(itemName) ? (
-                  <View
-                    style={[
-                      styles.itemThumbnail,
-                      { width: fitWidth, height: fitWidth },
-                    ]}
-                  >
-                    {item}
-                  </View>
-                ) : (
-                  <Image
-                    style={[
-                      styles.imageThumbnail,
-                      { width: fitWidth, height: fitWidth },
-                    ]}
-                    source={require("../../assets/images/question.png")}
-                    resizeMode={"cover"}
-                  />
-                )} */}
+                {showAnswer
+                  ? answer(item)
+                  : firstClickIndex === index ||
+                    secondClickIndex === index ||
+                    correctItemArray.includes(itemName)
+                  ? answer(item)
+                  : question}
               </TouchableOpacity>
             </View>
           );
         }}
-        numColumns={horizontalNum} //Setting the number of column
+        numColumns={horizontalNum} // Setting the number of column
         keyExtractor={(item, index) => index.toString()}
+        scrollEnabled={false} // Scroll X
       />
     </View>
   );
