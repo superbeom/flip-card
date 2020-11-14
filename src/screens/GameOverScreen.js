@@ -96,7 +96,7 @@ const GameOverScreen = ({
 
   useEffect(() => {
     /* stage 10단계씩 깰 때마다 heart +1 추가 */
-    if (stage % 10 === 0) {
+    if (pass && stage % 10 === 0) {
       setGameInfo((curState) => ({
         ...curState,
         heart: curState.heart + 1,
