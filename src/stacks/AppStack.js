@@ -6,18 +6,20 @@ import {
   StatusBar,
   Alert,
   BackHandler,
+  Modal,
 } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { AdMobBanner } from "expo-ads-admob";
 
 import { GameContext } from "../context/GameContext";
+import colors from "../constants/colors";
 import { CONGRATULATIONS } from "../constants/strings";
 
 import Header from "../components/Header";
-import colors from "../constants/colors";
 import StartGameScreen from "../screens/StartGameScreen";
 import GameScreen from "../screens/GameScreen";
 import GameOverScreen from "../screens/GameOverScreen";
+import GetHeartScreen from "../screens/GetHeartScreen";
 
 export default AppStack = () => {
   const [{ stage, heart }, setGameInfo] = useContext(GameContext);
@@ -27,6 +29,7 @@ export default AppStack = () => {
   const [startGame, setStartGame] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [pass, setPass] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   const playAgainHandler = () => {
     setGameOver(false);
@@ -65,7 +68,14 @@ export default AppStack = () => {
   const getHeart = () => {
     console.log("Get Heart");
     /* GameContext 및 AsyncStorage heart 갯수 +3 업데이트 */
+
+    setModalVisible((curState) => !curState);
+
     return null;
+  };
+
+  const closeModal = () => {
+    setModalVisible((curState) => !curState);
   };
 
   const preLoad = async () => {
@@ -184,6 +194,14 @@ export default AppStack = () => {
           />
         )}
       </View>
+
+      <Modal
+        animationType="slide"
+        visible={modalVisible}
+        onRequestClose={closeModal}
+      >
+        <GetHeartScreen />
+      </Modal>
     </View>
   );
 };

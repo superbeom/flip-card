@@ -60,7 +60,7 @@ export default ({ onGoHome, onGameOver }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.screen}>
       {/* BODY */}
       <View style={styles.body}>
         <View style={styles.infoContainer}>
@@ -94,7 +94,7 @@ export default ({ onGoHome, onGameOver }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
     alignItems: "center",
   },
