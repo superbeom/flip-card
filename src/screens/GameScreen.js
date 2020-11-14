@@ -14,6 +14,7 @@ import Timer from "../components/Timer";
 export default ({ onGoHome, onGameOver }) => {
   const [{ stage, heart }, setGameInfo] = useContext(GameContext);
   const [limitTime, setLimitTime] = useState(10);
+  const [showAnswer, setShowAnswer] = useState(true);
 
   const checkGoHome = () => {
     Alert.alert(
@@ -27,6 +28,24 @@ export default ({ onGoHome, onGameOver }) => {
     );
 
     return true;
+  };
+
+  /* 2초 간 정답 보여 주기 & heart 갯수 -1 */
+  const showAnswerForHint = () => {
+    console.log("You want hint?");
+
+    setShowAnswer(true);
+
+    setTimeout(() => setShowAnswer(false), 2000);
+
+    if (heart > 0) {
+      setGameInfo((curState) => ({
+        ...curState,
+        heart: curState.heart - 1,
+      }));
+
+      /* AsyncStorage heart 갯수 -1 업데이트 */
+    }
   };
 
   const preLoad = () => {
@@ -46,20 +65,26 @@ export default ({ onGoHome, onGameOver }) => {
     <View style={styles.container}>
       {/* BODY */}
       <View style={styles.body}>
-        <View style={styles.heartContainer}>
+        <View style={styles.infoContainer}>
           <View style={styles.timerContainer}>
             <Timer
               onGameOver={onGameOver}
               numOfHeart={heart}
               initialLimitTime={limitTime}
               setGameInfo={setGameInfo}
+              showAnswerForHint={showAnswerForHint}
+              showAnswer={showAnswer}
             />
           </View>
-          <View style={styles.heartBox}>
+          <View style={styles.heartContainer}>
             <Heart onPress={() => null} numOfHeart={heart} disabled={true} />
           </View>
         </View>
-        <GameFeed onGameOver={onGameOver} />
+        <GameFeed
+          onGameOver={onGameOver}
+          showAnswer={showAnswer}
+          setShowAnswer={setShowAnswer}
+        />
       </View>
 
       {/* FOOTER */}
@@ -80,13 +105,13 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: vh(10),
   },
-  heartContainer: {
+  infoContainer: {
     width: "100%",
     flexDirection: "row",
     position: "absolute",
     top: -80,
   },
-  heartBox: {
+  heartContainer: {
     alignItems: "flex-end",
     marginRight: vw(3),
   },

@@ -5,10 +5,20 @@ import { vw, vh } from "react-native-expo-viewport-units";
 import colors from "../constants/colors";
 import { STOP_WATCH, BAN } from "../utils/FontAwesomeSource";
 
+import Hint from "../components/Hint";
+
 const height = vh(1);
 let count = 0;
 
-const Progress = ({ start, end, setLimitTime, numOfHeart, setGameInfo }) => {
+const Progress = ({
+  start,
+  end,
+  setLimitTime,
+  numOfHeart,
+  setGameInfo,
+  showAnswerForHint,
+  showAnswer,
+}) => {
   const [width, setWidth] = useState(0);
   const animatedValue = useRef(new Animated.Value(-1000)).current;
   const reactive = useRef(new Animated.Value(-1000)).current;
@@ -41,13 +51,19 @@ const Progress = ({ start, end, setLimitTime, numOfHeart, setGameInfo }) => {
 
   return (
     <>
-      <TouchableOpacity
-        style={styles.stopWatch}
-        onPress={AddTime}
-        disabled={numOfHeart < 2}
-      >
-        {numOfHeart < 2 ? BAN : STOP_WATCH}
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.stopWatch}
+          onPress={AddTime}
+          disabled={numOfHeart < 2}
+        >
+          {numOfHeart < 2 ? BAN : STOP_WATCH}
+        </TouchableOpacity>
+        <Hint
+          onPress={showAnswerForHint}
+          disabled={numOfHeart < 2 || showAnswer}
+        />
+      </View>
       <View
         onLayout={(event) => {
           const newWidth = event.nativeEvent.layout.width;
@@ -73,7 +89,14 @@ const Progress = ({ start, end, setLimitTime, numOfHeart, setGameInfo }) => {
   );
 };
 
-const Timer = ({ onGameOver, numOfHeart, initialLimitTime, setGameInfo }) => {
+const Timer = ({
+  onGameOver,
+  numOfHeart,
+  initialLimitTime,
+  setGameInfo,
+  showAnswerForHint,
+  showAnswer,
+}) => {
   const [index, setIndex] = useState(0);
   const [limitTime, setLimitTime] = useState(10);
 
@@ -105,6 +128,8 @@ const Timer = ({ onGameOver, numOfHeart, initialLimitTime, setGameInfo }) => {
         setLimitTime={setLimitTime}
         numOfHeart={numOfHeart}
         setGameInfo={setGameInfo}
+        showAnswerForHint={showAnswerForHint}
+        showAnswer={showAnswer}
       />
     </View>
   );
@@ -116,9 +141,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: vw(5),
   },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: height,
+  },
   stopWatch: {
     width: vh(3.5),
-    marginBottom: height,
   },
   progress: {
     height: height,

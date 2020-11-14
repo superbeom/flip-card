@@ -46,6 +46,10 @@ export const BAN = (
   <FontAwesome name="ban" size={vh(3.5)} color={colors.whiteColor} />
 );
 
+export const EYE = (
+  <MaterialCommunityIcons name="eye" size={vh(4)} color={colors.whiteColor} />
+);
+
 /*
   BOMB
 */

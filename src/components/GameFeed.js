@@ -19,13 +19,12 @@ let firstPick = null;
 let secondPick = null;
 let correctItemArray = [];
 
-export default ({ onGameOver }) => {
+export default ({ onGameOver, showAnswer, setShowAnswer }) => {
   const [{ stage, horizontalNum }, _] = useContext(GameContext);
   const [shuffleData, setShuffleData] = useState([]);
   const [firstClickIndex, setFirstClickIndex] = useState(-1);
   const [secondClickIndex, setSecondClickIndex] = useState(-1);
   const [clickedBomb, setClickedBomb] = useState(false);
-  const [showAnswer, setShowAnswer] = useState(true);
 
   const windowWidth = Dimensions.get("window").width;
   const fitWidth = windowWidth / (horizontalNum * 1.1);
@@ -93,6 +92,8 @@ export default ({ onGameOver }) => {
     try {
       const stageName = checkStage(stage);
       setShuffleData(shuffle(stageName));
+
+      /* Stage별 정해진 시간 동안, 처음에 정답 보여 주기 */
       setTimeout(() => setShowAnswer(false), checkTime(stage));
 
       initializationFeed();
