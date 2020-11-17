@@ -178,21 +178,16 @@ export default AppStack = () => {
         )}
       </View>
       <View style={styles.ads}>
-        {Platform.OS === "ios" ? (
-          <AdMobBanner
-            bannerSize="banner"
-            adUnitID="ca-app-pub-3940256099942544/6300978111" // This is my ID
-            servePersonalizedAds={true}
-            onDidFailToReceiveAdWithError={this.bannerError}
-          />
-        ) : (
-          <AdMobBanner
-            bannerSize="banner"
-            adUnitID="ca-app-pub-3940256099942544/6300978111" // This is my ID
-            servePersonalizedAds={true}
-            onDidFailToReceiveAdWithError={this.bannerError}
-          />
-        )}
+        <AdMobBanner
+          bannerSize="banner"
+          adUnitID={
+            Platform.OS === "ios"
+              ? "ca-app-pub-3940256099942544/6300978111"
+              : "ca-app-pub-3940256099942544/6300978111"
+          } // This is my ID
+          servePersonalizedAds={true}
+          onDidFailToReceiveAdWithError={this.bannerError}
+        />
       </View>
 
       <Modal
@@ -200,7 +195,11 @@ export default AppStack = () => {
         visible={modalVisible}
         onRequestClose={closeModal}
       >
-        <GetHeartScreen closeModal={closeModal} numOfHeart={heart} />
+        <GetHeartScreen
+          setGameInfo={setGameInfo}
+          closeModal={closeModal}
+          numOfHeart={heart}
+        />
       </Modal>
     </View>
   );
