@@ -7,6 +7,10 @@ export const CONGRATULATIONS = "CONGRATULATIONS!!";
 
 export const CLICK_TO_GET_HEARTS = "Click to get hearts";
 
+export const COMING_SOON = "Coming soon!";
+
+export const GO_BACK = "Go Back";
+
 /* StartGameScreen Strings */
 export const CURRENT_STAGE = "STAGE";
 

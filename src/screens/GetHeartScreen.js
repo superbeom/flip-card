@@ -1,11 +1,18 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  TouchableOpacity,
+  Platform,
+} from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 import CurrencyFormat from "react-currency-format";
 import { AdMobRewarded } from "expo-ads-admob";
 
 import colors from "../constants/colors";
 import { HEART } from "../utils/FontAwesomeSource";
+import { COMING_SOON, GO_BACK } from "../constants/strings";
 
 import Card from "../components/Card";
 import Heart from "../components/Heart";
@@ -31,6 +38,38 @@ const Content = ({ onPress, num, price }) => (
         />
       </View>
     </Card>
+  </TouchableOpacity>
+);
+
+const IosContent = ({ onPress, num, price }) => (
+  <TouchableOpacity
+    style={styles.cardContainer}
+    onPress={onPress}
+    disabled={true}
+  >
+    <Card style={styles.iosCard}>
+      <View style={styles.heartBox}>
+        {HEART}
+        <Text style={styles.mulText}>X </Text>
+        <Text style={styles.numText}>{num}</Text>
+      </View>
+      <View style={styles.priceBox}>
+        <CurrencyFormat
+          renderText={(value) => <Text style={styles.price}>{value}</Text>}
+          decimalScale={2}
+          value={price}
+          displayType={"text"}
+          thousandSeparator={true}
+          prefix={"$"} // English
+          // suffix={"원"} // Korean
+        />
+      </View>
+    </Card>
+    {/* Overlay */}
+    <View style={styles.overlay} />
+    <View style={styles.overlayTextContainer}>
+      <Text style={styles.overlayText}>{COMING_SOON}</Text>
+    </View>
   </TouchableOpacity>
 );
 
@@ -72,12 +111,22 @@ export default ({ setGameInfo, closeModal, numOfHeart }) => {
       </View>
       <View style={styles.contentContainer}>
         <Content onPress={getHeartFree} num={3} price={0} />
-        <Content onPress={() => null} num={10} price={0.1} />
-        <Content onPress={() => null} num={50} price={0.45} />
-        <Content onPress={() => null} num={100} price={0.8} />
+        {Platform.OS === "ios" ? (
+          <>
+            <IosContent onPress={() => null} num={10} price={0.1} />
+            <IosContent onPress={() => null} num={50} price={0.45} />
+            <IosContent onPress={() => null} num={100} price={0.8} />
+          </>
+        ) : (
+          <>
+            <Content onPress={() => null} num={10} price={0.1} />
+            <Content onPress={() => null} num={50} price={0.45} />
+            <Content onPress={() => null} num={100} price={0.8} />
+          </>
+        )}
       </View>
       <View style={styles.footer}>
-        <Button onPress={closeModal}>Go Back</Button>
+        <Button onPress={closeModal}>{GO_BACK}</Button>
       </View>
     </View>
   );
@@ -117,11 +166,42 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+  iosCard: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   heartBox: {
     flexDirection: "row",
     alignItems: "center",
   },
   priceBox: {},
+  overlay: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    opacity: 0.7,
+    padding: 20,
+    borderRadius: 10,
+    backgroundColor: colors.slateGrayColor,
+  },
+  overlayTextContainer: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+  },
+  overlayText: {
+    fontSize: vw(10),
+    fontWeight: "700",
+    color: colors.whiteColor,
+  },
   mulText: {
     fontSize: vw(5),
     fontWeight: "500",
