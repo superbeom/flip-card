@@ -5,7 +5,7 @@ import { vw, vh } from "react-native-expo-viewport-units";
 import { GameContext } from "../context/GameContext";
 import colors from "../constants/colors";
 import { FLAG } from "../utils/FontAwesomeSource";
-import { CURRENT_STAGE, GAME_START } from "../constants/strings";
+import { CURRENT_STAGE } from "../constants/strings";
 
 import Card from "../components/Card";
 import StartButton from "../components/StartButton";
@@ -50,9 +50,7 @@ export default ({ onStartGame, getHeart }) => {
           onPress={onStartGame}
           update={gameEnd}
           enoughHeart={heart > 0 ?? false}
-        >
-          {GAME_START}
-        </StartButton>
+        />
       </View>
       <View style={styles.resetGameContainer} />
     </View>

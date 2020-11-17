@@ -3,18 +3,19 @@ import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { vw } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
+import { GAME_START, UPDATING } from "../constants/strings";
 
-const StartButton = (props) => {
+const StartButton = ({ onPress, update, enoughHeart }) => {
   return (
     <TouchableOpacity
-      onPress={props.onPress}
+      onPress={onPress}
       activeOpacity={0.5}
-      disabled={props.update || !props.enoughHeart}
+      disabled={update || !enoughHeart}
     >
       <View
         style={[
           styles.button,
-          !props.enoughHeart
+          !enoughHeart
             ? {
                 backgroundColor: colors.grayColor,
                 shadowColor: colors.grayColor,
@@ -28,7 +29,7 @@ const StartButton = (props) => {
         <Text
           style={[
             styles.buttonText,
-            !props.enoughHeart
+            !enoughHeart
               ? {
                   color: colors.lightGrayColor,
                 }
@@ -37,7 +38,7 @@ const StartButton = (props) => {
                 },
           ]}
         >
-          {props.update ? "Updating..." : props.children}
+          {update ? UPDATING : GAME_START}
         </Text>
       </View>
     </TouchableOpacity>

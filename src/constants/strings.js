@@ -16,6 +16,8 @@ export const CURRENT_STAGE = "STAGE";
 
 export const GAME_START = "GAME\nSTART";
 
+export const UPDATING = "Updating...";
+
 /* GameScreen Strings */
 export const YOUR_PICKS = "YOUR PICKS";
 
