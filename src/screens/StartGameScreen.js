@@ -3,8 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
-import { CURRENT_STAGE, GAME_START } from "../constants/strings";
+import colors from "../constants/colors";
 import { FLAG } from "../utils/FontAwesomeSource";
+import { CURRENT_STAGE, GAME_START } from "../constants/strings";
 
 import Card from "../components/Card";
 import StartButton from "../components/StartButton";
@@ -74,6 +75,11 @@ const styles = StyleSheet.create({
     width: "50%",
     height: vh(13),
     justifyContent: "space-around",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.7,
+    shadowRadius: 6,
+    elevation: 10,
+    shadowColor: colors.slateGrayColor,
   },
   cardBox: {
     alignItems: "center",
