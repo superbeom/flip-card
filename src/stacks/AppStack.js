@@ -66,9 +66,6 @@ export default AppStack = () => {
 
   /* 하트 버튼 누름 → 동영상 광고 시청 → 하트 얻음 */
   const getHeart = () => {
-    console.log("Get Heart");
-    /* GameContext 및 AsyncStorage heart 갯수 +3 업데이트 */
-
     setModalVisible((curState) => !curState);
 
     return null;

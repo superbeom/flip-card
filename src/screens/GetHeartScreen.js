@@ -53,7 +53,7 @@ export default ({ setGameInfo, closeModal, numOfHeart }) => {
       endTime = new Date();
       playTime = endTime - startTime;
 
-      /* 5초 이상 광고 시청 시, heart +3 추가 */
+      /* 5초 이상 광고 시청 시, GameContext heart +3 업데이트 */
       if (playTime >= 5000) {
         setGameInfo((curState) => ({
           ...curState,
