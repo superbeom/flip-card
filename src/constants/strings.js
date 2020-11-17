@@ -1,3 +1,7 @@
+/*
+    English Strings...
+*/
+
 /* AppStack Strings */
 export const CONGRATULATIONS = "CONGRATULATIONS!!";
 
@@ -19,3 +23,7 @@ export const CHECK_GO_HOME = "Seriously go home?";
 export const PLAY_AGAIN = "PLAY\nAGAIN";
 
 export const NEXT_STAGE = "NEXT\nSTAGE";
+
+/*
+    Korean Strings...
+*/

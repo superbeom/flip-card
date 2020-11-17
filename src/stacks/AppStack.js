@@ -200,7 +200,7 @@ export default AppStack = () => {
         visible={modalVisible}
         onRequestClose={closeModal}
       >
-        <GetHeartScreen />
+        <GetHeartScreen closeModal={closeModal} numOfHeart={heart} />
       </Modal>
     </View>
   );

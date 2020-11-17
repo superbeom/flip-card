@@ -1,11 +1,14 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
+import CurrencyFormat from "react-currency-format";
 
 import colors from "../constants/colors";
 import { HEART } from "../utils/FontAwesomeSource";
 
 import Card from "../components/Card";
+import Heart from "../components/Heart";
+import Button from "../components/Button";
 
 const Content = ({ onPress, num, price }) => (
   <TouchableOpacity style={styles.cardContainer} onPress={onPress}>
@@ -16,20 +19,35 @@ const Content = ({ onPress, num, price }) => (
         <Text style={styles.numText}>{num}</Text>
       </View>
       <View style={styles.priceBox}>
-        {/* react-currency-format */}
-        <Text style={styles.price}>{price}원</Text>
+        <CurrencyFormat
+          renderText={(value) => <Text style={styles.price}>{value}</Text>}
+          decimalScale={2}
+          value={price}
+          displayType={"text"}
+          thousandSeparator={true}
+          prefix={"$"} // English
+          // suffix={"원"} // Korean
+        />
       </View>
     </Card>
   </TouchableOpacity>
 );
 
-export default () => {
+export default ({ closeModal, numOfHeart }) => {
   return (
     <View style={styles.screen}>
-      <Content onPress={() => null} num={3} price={0} />
-      <Content onPress={() => null} num={10} price={100} />
-      <Content onPress={() => null} num={50} price={450} />
-      <Content onPress={() => null} num={100} price={800} />
+      <View style={styles.heartContainer}>
+        <Heart onPress={() => null} numOfHeart={numOfHeart} disabled={true} />
+      </View>
+      <View style={styles.contentContainer}>
+        <Content onPress={() => null} num={3} price={0} />
+        <Content onPress={() => null} num={10} price={0.1} />
+        <Content onPress={() => null} num={50} price={0.45} />
+        <Content onPress={() => null} num={100} price={0.8} />
+      </View>
+      <View style={styles.footer}>
+        <Button onPress={closeModal}>Go Back</Button>
+      </View>
     </View>
   );
 };
@@ -40,6 +58,24 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.primaryColor,
+  },
+  heartContainer: {
+    width: "100%",
+    height: vh(13),
+    justifyContent: "center",
+    alignItems: "flex-end",
+    marginRight: vw(3),
+    marginBottom: vh(2),
+  },
+  contentContainer: {
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  footer: {
+    height: vh(13),
+    justifyContent: "flex-end",
+    marginBottom: vh(2),
   },
   cardContainer: {
     width: "80%",
