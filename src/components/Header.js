@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Platform } from "react-native";
 import { vh, vmax } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
@@ -29,7 +29,17 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: vmax(4),
-    fontWeight: "800",
+    ...Platform.select({
+      ios: {
+        fontWeight: "800",
+      },
+      android: {
+        fontWeight: "bold",
+      },
+      default: {
+        fontWeight: "800",
+      },
+    }),
   },
 });
 

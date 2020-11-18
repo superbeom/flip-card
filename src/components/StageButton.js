@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     fontSize: vw(4),
     fontWeight: "500",
     textAlign: "center",
+    fontStyle: "italic",
   },
 });
 

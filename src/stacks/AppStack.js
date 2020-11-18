@@ -153,6 +153,7 @@ export default AppStack = () => {
     </View>
   ) : (
     <View style={styles.screen}>
+      <StatusBar hidden={true} />
       <Header
         title={
           startGame

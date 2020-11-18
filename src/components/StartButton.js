@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Animated,
   Easing,
+  Platform,
 } from "react-native";
 import { vw } from "react-native-expo-viewport-units";
 
@@ -102,7 +103,18 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: vw(6),
-    fontWeight: "800",
+    fontStyle: "italic",
+    ...Platform.select({
+      ios: {
+        fontWeight: "800",
+      },
+      android: {
+        fontWeight: "bold",
+      },
+      default: {
+        fontWeight: "800",
+      },
+    }),
   },
 });
 
