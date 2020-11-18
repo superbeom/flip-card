@@ -20,7 +20,7 @@ export default ({ onGoHome, onGameOver }) => {
       CHECK_GO_HOME,
       "",
       [
-        { text: "Cancel", style: "cancel" },
+        { text: "Cancel", onPress: () => null, style: "cancel" },
         { text: "Go home", onPress: onGoHome },
       ],
       { cancelable: true }

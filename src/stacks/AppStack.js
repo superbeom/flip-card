@@ -14,7 +14,7 @@ import { AdMobBanner } from "expo-ads-admob";
 
 import { GameContext } from "../context/GameContext";
 import colors from "../constants/colors";
-import { CONGRATULATIONS } from "../constants/strings";
+import { CONGRATULATIONS, HOLD_ON, CHECK_EXIT } from "../constants/strings";
 
 import Header from "../components/Header";
 import StartGameScreen from "../screens/StartGameScreen";
@@ -116,7 +116,7 @@ export default AppStack = () => {
   };
 
   const backAction = () => {
-    Alert.alert("Hold on!", "Are you sure you want to exit?", [
+    Alert.alert(HOLD_ON, CHECK_EXIT, [
       {
         text: "Cancel",
         onPress: () => null,

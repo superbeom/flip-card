@@ -11,6 +11,10 @@ export const COMING_SOON = "Coming soon!";
 
 export const GO_BACK = "Go Back";
 
+export const HOLD_ON = "Hold on!";
+
+export const CHECK_EXIT = "Are you sure you want to exit?";
+
 /* StartGameScreen Strings */
 export const CURRENT_STAGE = "STAGE";
 

@@ -5,7 +5,12 @@ import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
 import colors from "../constants/colors";
-import { PLAY_AGAIN, NEXT_STAGE, GO_HOME } from "../constants/strings";
+import {
+  PLAY_AGAIN,
+  NEXT_STAGE,
+  GO_HOME,
+  CHECK_GO_HOME,
+} from "../constants/strings";
 
 import Button from "../components/Button";
 import StageButton from "../components/StageButton";
@@ -72,7 +77,7 @@ const GameOverScreen = ({
   const failStage = () => {};
 
   const backAction = () => {
-    Alert.alert("Hold on!", "Are you sure you want to go home?", [
+    Alert.alert(CHECK_GO_HOME, "", [
       {
         text: "Cancel",
         onPress: () => null,
