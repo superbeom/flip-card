@@ -1,12 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  BackHandler,
-  Alert,
-} from "react-native";
+import { StyleSheet, View, Image, BackHandler, Alert } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { vw, vh } from "react-native-expo-viewport-units";
 
