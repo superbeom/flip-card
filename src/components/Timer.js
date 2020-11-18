@@ -19,6 +19,7 @@ const Progress = ({
   showAnswerForHint,
   showAnswer,
   clickedBomb,
+  disableHint,
 }) => {
   const [width, setWidth] = useState(0);
   const animatedValue = useRef(new Animated.Value(-1000)).current;
@@ -62,7 +63,7 @@ const Progress = ({
         </TouchableOpacity>
         <Hint
           onPress={showAnswerForHint}
-          disabled={numOfHeart < 2 || showAnswer || clickedBomb}
+          disabled={numOfHeart < 2 || showAnswer || clickedBomb || disableHint}
         />
       </View>
       <View
@@ -101,6 +102,7 @@ const Timer = ({
 }) => {
   const [index, setIndex] = useState(0);
   const [limitTime, setLimitTime] = useState(10);
+  const [disableHint, setDisableHint] = useState(false);
 
   useEffect(() => {
     setLimitTime(checkLimitTime(stage));
@@ -108,11 +110,17 @@ const Timer = ({
 
   useEffect(() => {
     const interval = setInterval(() => {
+      let disableHintLimitTime = limitTime - ((index + 1) % (limitTime + 1));
       setIndex((curIndex) => (curIndex + 1) % (limitTime + 1));
 
       /* 제한 시간 초과 시, Game Over */
       if ((index + 1) % (limitTime + 1) === 0) {
         onGameOver("fail");
+      }
+
+      /* 제한 시간이 3초 미만으로 남으면 힌트 사용 불가 */
+      if (disableHintLimitTime === 3) {
+        setDisableHint(true);
       }
     }, 1000);
 
@@ -132,6 +140,7 @@ const Timer = ({
         showAnswerForHint={showAnswerForHint}
         showAnswer={showAnswer}
         clickedBomb={clickedBomb}
+        disableHint={disableHint}
       />
     </View>
   );
