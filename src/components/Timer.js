@@ -3,6 +3,7 @@ import { StyleSheet, View, Animated, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
+import { checkLimitTime } from "../utils/checkSomething";
 import { STOP_WATCH, BAN } from "../utils/FontAwesomeSource";
 
 import Hint from "../components/Hint";
@@ -92,17 +93,17 @@ const Progress = ({
 const Timer = ({
   onGameOver,
   numOfHeart,
-  initialLimitTime,
   setGameInfo,
   showAnswerForHint,
   showAnswer,
+  stage,
 }) => {
   const [index, setIndex] = useState(0);
   const [limitTime, setLimitTime] = useState(10);
 
   useEffect(() => {
     if (count === 0) {
-      setLimitTime(initialLimitTime);
+      setLimitTime(checkLimitTime(stage));
       count++;
     }
 

@@ -3,7 +3,6 @@ import { StyleSheet, View, Alert, BackHandler } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
-import { checkLimitTime } from "../utils/checkSomething";
 import { GO_HOME, CHECK_GO_HOME } from "../constants/strings";
 
 import GameFeed from "../components/GameFeed";
@@ -13,7 +12,6 @@ import Timer from "../components/Timer";
 
 export default ({ onGoHome, onGameOver }) => {
   const [{ stage, heart }, setGameInfo] = useContext(GameContext);
-  const [limitTime, setLimitTime] = useState(10);
   const [showAnswer, setShowAnswer] = useState(true);
 
   const checkGoHome = () => {
@@ -46,13 +44,7 @@ export default ({ onGoHome, onGameOver }) => {
     }
   };
 
-  const preLoad = () => {
-    setLimitTime(checkLimitTime(stage));
-  };
-
   useEffect(() => {
-    preLoad();
-
     BackHandler.addEventListener("hardwareBackPress", checkGoHome);
 
     return () =>
@@ -68,10 +60,10 @@ export default ({ onGoHome, onGameOver }) => {
             <Timer
               onGameOver={onGameOver}
               numOfHeart={heart}
-              initialLimitTime={limitTime}
               setGameInfo={setGameInfo}
               showAnswerForHint={showAnswerForHint}
               showAnswer={showAnswer}
+              stage={stage}
             />
           </View>
           <View style={styles.heartContainer}>
