@@ -9,7 +9,6 @@ import { STOP_WATCH, BAN } from "../utils/FontAwesomeSource";
 import Hint from "../components/Hint";
 
 const height = vh(1);
-let count = 0;
 
 const Progress = ({
   start,
@@ -102,11 +101,10 @@ const Timer = ({
   const [limitTime, setLimitTime] = useState(10);
 
   useEffect(() => {
-    if (count === 0) {
-      setLimitTime(checkLimitTime(stage));
-      count++;
-    }
+    setLimitTime(checkLimitTime(stage));
+  }, []);
 
+  useEffect(() => {
     const interval = setInterval(() => {
       setIndex((curIndex) => (curIndex + 1) % (limitTime + 1));
 
