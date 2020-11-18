@@ -13,6 +13,7 @@ import Timer from "../components/Timer";
 export default ({ onGoHome, onGameOver }) => {
   const [{ stage, heart }, setGameInfo] = useContext(GameContext);
   const [showAnswer, setShowAnswer] = useState(true);
+  const [clickedBomb, setClickedBomb] = useState(false);
 
   const checkGoHome = () => {
     Alert.alert(
@@ -64,6 +65,7 @@ export default ({ onGoHome, onGameOver }) => {
               showAnswerForHint={showAnswerForHint}
               showAnswer={showAnswer}
               stage={stage}
+              clickedBomb={clickedBomb}
             />
           </View>
           <View style={styles.heartContainer}>
@@ -74,6 +76,8 @@ export default ({ onGoHome, onGameOver }) => {
           onGameOver={onGameOver}
           showAnswer={showAnswer}
           setShowAnswer={setShowAnswer}
+          clickedBomb={clickedBomb}
+          setClickedBomb={setClickedBomb}
         />
       </View>
 

@@ -19,12 +19,17 @@ let firstPick = null;
 let secondPick = null;
 let correctItemArray = [];
 
-export default ({ onGameOver, showAnswer, setShowAnswer }) => {
+export default ({
+  onGameOver,
+  showAnswer,
+  setShowAnswer,
+  clickedBomb,
+  setClickedBomb,
+}) => {
   const [{ stage, horizontalNum }, _] = useContext(GameContext);
   const [shuffleData, setShuffleData] = useState([]);
   const [firstClickIndex, setFirstClickIndex] = useState(-1);
   const [secondClickIndex, setSecondClickIndex] = useState(-1);
-  const [clickedBomb, setClickedBomb] = useState(false);
 
   const windowWidth = Dimensions.get("window").width;
   const fitWidth = windowWidth / (horizontalNum * 1.1);

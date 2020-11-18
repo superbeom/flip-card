@@ -18,6 +18,7 @@ const Progress = ({
   setGameInfo,
   showAnswerForHint,
   showAnswer,
+  clickedBomb,
 }) => {
   const [width, setWidth] = useState(0);
   const animatedValue = useRef(new Animated.Value(-1000)).current;
@@ -55,13 +56,13 @@ const Progress = ({
         <TouchableOpacity
           style={styles.stopWatch}
           onPress={AddTime}
-          disabled={numOfHeart < 2}
+          disabled={numOfHeart < 2 || clickedBomb}
         >
-          {numOfHeart < 2 ? BAN : STOP_WATCH}
+          {numOfHeart < 2 || clickedBomb ? BAN : STOP_WATCH}
         </TouchableOpacity>
         <Hint
           onPress={showAnswerForHint}
-          disabled={numOfHeart < 2 || showAnswer}
+          disabled={numOfHeart < 2 || showAnswer || clickedBomb}
         />
       </View>
       <View
@@ -96,6 +97,7 @@ const Timer = ({
   showAnswerForHint,
   showAnswer,
   stage,
+  clickedBomb,
 }) => {
   const [index, setIndex] = useState(0);
   const [limitTime, setLimitTime] = useState(10);
@@ -129,6 +131,7 @@ const Timer = ({
         setGameInfo={setGameInfo}
         showAnswerForHint={showAnswerForHint}
         showAnswer={showAnswer}
+        clickedBomb={clickedBomb}
       />
     </View>
   );
