@@ -15,17 +15,31 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "config": {
-        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~1458002511"
+      "bundleIdentifier": "com.heungdo.flipcard",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSAllowsArbitraryLoads": true,
+        "NSAllowsArbitraryLoadsForMedia": true,
+        "NSAllowsArbitraryLoadsInWebContent": true,
+        "config": {
+          "googleMobileAdsAppId": ""
+        }
       }
     },
     "android": {
+      "package": "com.heungdo.flipcard",
+      "versionCode": 1,
+      "permissions": [],
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
+        "googleMobileAdsAppId": ""
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "androidNavigationBar": {
+      "visible": "sticky-immersive"
     }
   }
 }
