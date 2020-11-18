@@ -113,8 +113,6 @@ const Timer = ({
       let disableHintLimitTime = limitTime - ((index + 1) % (limitTime + 1));
       setIndex((curIndex) => (curIndex + 1) % (limitTime + 1));
 
-      console.log("disableHintLimitTime: ", disableHintLimitTime);
-
       /* 제한 시간 초과 시, Game Over */
       if ((index + 1) % (limitTime + 1) === 0) {
         onGameOver("fail");
