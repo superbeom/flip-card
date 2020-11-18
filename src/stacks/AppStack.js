@@ -31,6 +31,7 @@ export default AppStack = () => {
   const [gameOver, setGameOver] = useState(false);
   const [pass, setPass] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+  const [toggleSwitch, setToggleSwitch] = useState(false);
 
   const playAgainHandler = () => {
     setGameOver(false);
@@ -74,6 +75,10 @@ export default AppStack = () => {
 
   const closeModal = () => {
     setModalVisible((curState) => !curState);
+
+    if (!startGame) {
+      setToggleSwitch((curState) => !curState);
+    }
   };
 
   const preLoad = async () => {
@@ -172,7 +177,11 @@ export default AppStack = () => {
             <GameScreen onGoHome={goHomeHandler} onGameOver={gameOverHandler} />
           )
         ) : (
-          <StartGameScreen onStartGame={startGameHandler} getHeart={getHeart} />
+          <StartGameScreen
+            onStartGame={startGameHandler}
+            getHeart={getHeart}
+            toggleSwitch={toggleSwitch}
+          />
         )}
       </View>
       <View style={styles.ads}>

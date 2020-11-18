@@ -13,7 +13,7 @@ import Heart from "../components/Heart";
 import Arrow from "../components/Arrow";
 import GetHeartText from "../components/GetHeartText";
 
-export default ({ onStartGame, getHeart }) => {
+export default ({ onStartGame, getHeart, toggleSwitch }) => {
   const [{ stage, heart, gameEnd }, _] = useContext(GameContext);
 
   return (
@@ -50,6 +50,7 @@ export default ({ onStartGame, getHeart }) => {
           onPress={onStartGame}
           update={gameEnd}
           enoughHeart={heart > 0 ?? false}
+          toggleSwitch={toggleSwitch}
         />
       </View>
       <View style={styles.resetGameContainer} />
