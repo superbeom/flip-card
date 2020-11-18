@@ -9,6 +9,7 @@ import { STOP_WATCH, BAN } from "../utils/FontAwesomeSource";
 import Hint from "../components/Hint";
 
 const height = vh(1);
+let count = 0;
 
 const Progress = ({
   start,
@@ -104,8 +105,14 @@ const Timer = ({
   const [limitTime, setLimitTime] = useState(10);
   const [disableHint, setDisableHint] = useState(false);
 
+  /* 이미 설정된 변수 초기화 */
+  const initializationCount = () => {
+    count = 0;
+  };
+
   useEffect(() => {
     setLimitTime(checkLimitTime(stage));
+    initializationCount();
   }, []);
 
   useEffect(() => {
@@ -119,8 +126,9 @@ const Timer = ({
       }
 
       /* 제한 시간이 3초 미만으로 남으면 힌트 사용 불가 */
-      if (disableHintLimitTime < 3) {
+      if (count === 0 && disableHintLimitTime < 3) {
         setDisableHint(true);
+        count++;
       }
     }, 1000);
 
