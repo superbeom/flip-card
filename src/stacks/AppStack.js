@@ -64,6 +64,8 @@ export default AppStack = () => {
   const goHomeHandler = () => {
     setStartGame(false);
     setGameOver(false);
+
+    setToggleSwitch((curState) => !curState);
   };
 
   /* 하트 버튼 누름 → 동영상 광고 시청 → 하트 얻음 */
