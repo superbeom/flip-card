@@ -19,8 +19,12 @@ import Heart from "../components/Heart";
 import Button from "../components/Button";
 import GetHeart from "../components/GetHeart";
 
-const Content = ({ onPress, num, price }) => (
-  <TouchableOpacity style={styles.cardContainer} onPress={onPress}>
+const Content = ({ onPress, num, price, update }) => (
+  <TouchableOpacity
+    style={styles.cardContainer}
+    onPress={onPress}
+    disabled={update}
+  >
     <Card style={styles.card}>
       <View style={styles.heartBox}>
         {HEART}
@@ -39,38 +43,15 @@ const Content = ({ onPress, num, price }) => (
         />
       </View>
     </Card>
-  </TouchableOpacity>
-);
-
-const IosContent = ({ onPress, num, price }) => (
-  <TouchableOpacity
-    style={styles.cardContainer}
-    onPress={onPress}
-    disabled={true}
-  >
-    <Card style={styles.iosCard}>
-      <View style={styles.heartBox}>
-        {HEART}
-        <Text style={styles.mulText}>X </Text>
-        <Text style={styles.numText}>{num}</Text>
-      </View>
-      <View style={styles.priceBox}>
-        <CurrencyFormat
-          renderText={(value) => <Text style={styles.price}>{value}</Text>}
-          decimalScale={2}
-          value={price}
-          displayType={"text"}
-          thousandSeparator={true}
-          prefix={"$"} // English
-          // suffix={"원"} // Korean
-        />
-      </View>
-    </Card>
     {/* Overlay */}
-    <View style={styles.overlay} />
-    <View style={styles.overlayTextContainer}>
-      <Text style={styles.overlayText}>{COMING_SOON}</Text>
-    </View>
+    {update ? (
+      <>
+        <View style={styles.overlay} />
+        <View style={styles.overlayTextContainer}>
+          <Text style={styles.overlayText}>{COMING_SOON}</Text>
+        </View>
+      </>
+    ) : null}
   </TouchableOpacity>
 );
 
@@ -123,20 +104,25 @@ export default ({ setGameInfo, closeModal, numOfHeart }) => {
           <Heart onPress={() => null} numOfHeart={numOfHeart} disabled={true} />
         </View>
         <View style={styles.contentContainer}>
-          <Content onPress={getHeartFree} num={3} price={0} />
-          {Platform.OS === "ios" ? (
-            <>
-              <IosContent onPress={() => null} num={10} price={0.1} />
-              <IosContent onPress={() => null} num={50} price={0.45} />
-              <IosContent onPress={() => null} num={100} price={0.8} />
-            </>
-          ) : (
-            <>
-              <Content onPress={() => null} num={10} price={0.1} />
-              <Content onPress={() => null} num={50} price={0.45} />
-              <Content onPress={() => null} num={100} price={0.8} />
-            </>
-          )}
+          <Content onPress={getHeartFree} num={3} price={0} update={false} />
+          <Content
+            onPress={() => null}
+            num={10}
+            price={0.1}
+            update={Platform.OS === "ios"}
+          />
+          <Content
+            onPress={() => null}
+            num={50}
+            price={0.45}
+            update={Platform.OS === "ios"}
+          />
+          <Content
+            onPress={() => null}
+            num={100}
+            price={0.8}
+            update={Platform.OS === "ios"}
+          />
         </View>
         <View style={styles.footer}>
           <Button onPress={closeModal}>{GO_BACK}</Button>
@@ -181,11 +167,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  iosCard: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
   heartBox: {
     flexDirection: "row",
     alignItems: "center",
@@ -197,7 +178,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    opacity: 0.7,
+    opacity: 0.8,
     padding: 20,
     borderRadius: 10,
     backgroundColor: colors.slateGrayColor,
