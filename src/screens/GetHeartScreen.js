@@ -74,32 +74,29 @@ const IosContent = ({ onPress, num, price }) => (
 );
 
 export default ({ setGameInfo, closeModal, numOfHeart }) => {
+  let count = 0;
+
   const getHeartFree = async () => {
     // Display a rewarded ad
     await AdMobRewarded.setAdUnitID("ca-app-pub-3940256099942544/5224354917"); // Test ID, Replace with your-admob-unit-id
-    await AdMobRewarded.requestAdAsync();
+    await AdMobRewarded.requestAdAsync({ servePersonalizedAds: true });
     await AdMobRewarded.showAdAsync();
 
-    let startTime;
-    let endTime;
-    let playTime;
-
-    AdMobRewarded.addEventListener("rewardedVideoDidStart", () => {
-      startTime = new Date();
-    });
-
-    AdMobRewarded.addEventListener("rewardedVideoDidClose", () => {
-      endTime = new Date();
-      playTime = endTime - startTime;
-
-      /* 5초 이상 광고 시청 시, GameContext heart +3 업데이트 */
-      if (playTime >= 5000) {
+    /* 5초 이상 광고 시청 시, GameContext heart +3 업데이트 */
+    AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
+      /* 
+        광고 중간에 끄고 다시 광고 보면, 그 전까지 누적되어 Reward 되는 문제 발생.
+        따라서, count 설정으로 한 번만 Reward 되도록 설정.
+      */
+      if (count === 0) {
         setGameInfo((curState) => ({
           ...curState,
           heart: curState.heart + 3,
         }));
 
         /* AsyncStorage heart 갯수 +3 업데이트 */
+
+        count++;
       }
     });
   };
