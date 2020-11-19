@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -17,6 +17,7 @@ import { COMING_SOON, GO_BACK } from "../constants/strings";
 import Card from "../components/Card";
 import Heart from "../components/Heart";
 import Button from "../components/Button";
+import GetHeart from "../components/GetHeart";
 
 const Content = ({ onPress, num, price }) => (
   <TouchableOpacity style={styles.cardContainer} onPress={onPress}>
@@ -74,7 +75,21 @@ const IosContent = ({ onPress, num, price }) => (
 );
 
 export default ({ setGameInfo, closeModal, numOfHeart }) => {
+  const [checkReward, setCheckReward] = useState(false);
   let count = 0;
+
+  /* 광고 시청 후 Reward */
+  const getReward = () => {
+    setCheckReward(false); // checkReward 초기화
+
+    /* GameContext heart +3 업데이트 */
+    setGameInfo((curState) => ({
+      ...curState,
+      heart: curState.heart + 3,
+    }));
+
+    /* AsyncStorage heart 갯수 +3 업데이트 */
+  };
 
   const getHeartFree = async () => {
     // Display a rewarded ad
@@ -82,50 +97,53 @@ export default ({ setGameInfo, closeModal, numOfHeart }) => {
     await AdMobRewarded.requestAdAsync({ servePersonalizedAds: true });
     await AdMobRewarded.showAdAsync();
 
-    /* 5초 이상 광고 시청 시, GameContext heart +3 업데이트 */
     AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
       /* 
         광고 중간에 끄고 다시 광고 보면, 그 전까지 누적되어 Reward 되는 문제 발생.
         따라서, count 설정으로 한 번만 Reward 되도록 설정.
       */
       if (count === 0) {
-        setGameInfo((curState) => ({
-          ...curState,
-          heart: curState.heart + 3,
-        }));
+        AdMobRewarded.addEventListener("rewardedVideoDidClose", () => {
+          if (count === 0) {
+            setCheckReward(true);
 
-        /* AsyncStorage heart 갯수 +3 업데이트 */
+            setTimeout(getReward, 2500);
 
-        count++;
+            count++;
+          }
+        });
       }
     });
   };
 
   return (
-    <View style={styles.screen}>
-      <View style={styles.heartContainer}>
-        <Heart onPress={() => null} numOfHeart={numOfHeart} disabled={true} />
+    <>
+      <View style={styles.screen}>
+        <View style={styles.heartContainer}>
+          <Heart onPress={() => null} numOfHeart={numOfHeart} disabled={true} />
+        </View>
+        <View style={styles.contentContainer}>
+          <Content onPress={getHeartFree} num={3} price={0} />
+          {Platform.OS === "ios" ? (
+            <>
+              <IosContent onPress={() => null} num={10} price={0.1} />
+              <IosContent onPress={() => null} num={50} price={0.45} />
+              <IosContent onPress={() => null} num={100} price={0.8} />
+            </>
+          ) : (
+            <>
+              <Content onPress={() => null} num={10} price={0.1} />
+              <Content onPress={() => null} num={50} price={0.45} />
+              <Content onPress={() => null} num={100} price={0.8} />
+            </>
+          )}
+        </View>
+        <View style={styles.footer}>
+          <Button onPress={closeModal}>{GO_BACK}</Button>
+        </View>
       </View>
-      <View style={styles.contentContainer}>
-        <Content onPress={getHeartFree} num={3} price={0} />
-        {Platform.OS === "ios" ? (
-          <>
-            <IosContent onPress={() => null} num={10} price={0.1} />
-            <IosContent onPress={() => null} num={50} price={0.45} />
-            <IosContent onPress={() => null} num={100} price={0.8} />
-          </>
-        ) : (
-          <>
-            <Content onPress={() => null} num={10} price={0.1} />
-            <Content onPress={() => null} num={50} price={0.45} />
-            <Content onPress={() => null} num={100} price={0.8} />
-          </>
-        )}
-      </View>
-      <View style={styles.footer}>
-        <Button onPress={closeModal}>{GO_BACK}</Button>
-      </View>
-    </View>
+      {checkReward ? <GetHeart numOfHeart={0} /> : null}
+    </>
   );
 };
 
