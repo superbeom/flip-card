@@ -142,7 +142,7 @@ export default ({ setGameInfo, closeModal, numOfHeart }) => {
           <Button onPress={closeModal}>{GO_BACK}</Button>
         </View>
       </View>
-      {checkReward ? <GetHeart numOfHeart={0} /> : null}
+      {checkReward ? <GetHeart /> : null}
     </>
   );
 };

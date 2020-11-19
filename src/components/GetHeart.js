@@ -5,7 +5,7 @@ import { vw } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
 
-const GetHeart = ({ numOfHeart }) => {
+const GetHeart = () => {
   let opacity = new Animated.Value(0);
 
   const animate = () => {
