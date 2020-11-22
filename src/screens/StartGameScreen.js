@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
   cardText: {
     fontSize: vw(5.5),
     fontWeight: "700",
+    color: colors.accentColor,
   },
   heartBox: {
     width: "50%",

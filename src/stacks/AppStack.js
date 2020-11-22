@@ -8,12 +8,12 @@ import {
   BackHandler,
   Modal,
   Platform,
+  ImageBackground,
 } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { AdMobBanner } from "expo-ads-admob";
 
 import { GameContext } from "../context/GameContext";
-import colors from "../constants/colors";
 import { CONGRATULATIONS, HOLD_ON, CHECK_EXIT } from "../constants/strings";
 
 import Header from "../components/Header";
@@ -152,7 +152,10 @@ export default AppStack = () => {
       />
     </View>
   ) : (
-    <View style={styles.screen}>
+    <ImageBackground
+      style={styles.screen}
+      source={require("../../assets/images/background.png")}
+    >
       <StatusBar hidden={true} />
       <Header
         title={
@@ -211,14 +214,13 @@ export default AppStack = () => {
           numOfHeart={heart}
         />
       </Modal>
-    </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: colors.primaryColor,
   },
   body: {
     flex: 11,

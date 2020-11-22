@@ -15,6 +15,8 @@ export const HOLD_ON = "Hold on!";
 
 export const CHECK_EXIT = "Are you sure you want to exit?";
 
+export const QUESTION_MARK = "?";
+
 /* StartGameScreen Strings */
 export const CURRENT_STAGE = "STAGE";
 

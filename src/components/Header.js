@@ -10,7 +10,9 @@ const Header = (props) => {
       <Text
         style={[
           styles.title,
-          { color: props.gaming ? colors.whiteColor : colors.primaryColor },
+          {
+            color: props.gaming ? colors.accentColor : colors.primaryColor,
+          },
         ]}
       >
         {props.title}

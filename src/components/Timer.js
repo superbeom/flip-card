@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height,
     borderRadius: height,
-    backgroundColor: colors.whiteColor,
+    backgroundColor: colors.accentColor,
   },
 });
 

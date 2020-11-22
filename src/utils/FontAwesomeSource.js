@@ -39,15 +39,15 @@ export const FLAG = (
 );
 
 export const STOP_WATCH = (
-  <Entypo name="stopwatch" size={vh(3.5)} color={colors.whiteColor} />
+  <Entypo name="stopwatch" size={vh(3.5)} color={colors.accentColor} />
 );
 
 export const BAN = (
-  <FontAwesome name="ban" size={vh(3.5)} color={colors.whiteColor} />
+  <FontAwesome name="ban" size={vh(3.5)} color={colors.accentColor} />
 );
 
 export const EYE = (
-  <MaterialCommunityIcons name="eye" size={vh(4)} color={colors.whiteColor} />
+  <MaterialCommunityIcons name="eye" size={vh(4)} color={colors.accentColor} />
 );
 
 /*
@@ -108,18 +108,14 @@ export const PLANE = (
 );
 
 export const PLANE_DARK = (
-  <FontAwesomeItem
-    key={"plane-dark"}
-    name="plane"
-    color={colors.darkSlateGrayColor}
-  />
+  <FontAwesomeItem key={"plane-dark"} name="plane" color={colors.accentColor} />
 );
 
 export const BINOCULARS = (
   <FontAwesomeItem
     key={"binoculars"}
     name="binoculars"
-    color={colors.darkSlateGrayColor}
+    color={colors.brownColor}
   />
 );
 
@@ -244,11 +240,7 @@ export const SAD_TEAR = (
 );
 
 export const ANGRY = (
-  <FontAwesomeItem
-    key={"angry"}
-    name="angry"
-    color={colors.darkSlateGrayColor}
-  />
+  <FontAwesomeItem key={"angry"} name="angry" color={colors.brownColor} />
 );
 
 export const DIZZY = (
@@ -364,11 +356,7 @@ export const KISS_WINK_HEART = (
 );
 
 export const SURPRISE = (
-  <FontAwesomeItem
-    key={"surprise"}
-    name="surprise"
-    color={colors.darkSlateGrayColor}
-  />
+  <FontAwesomeItem key={"surprise"} name="surprise" color={colors.brownColor} />
 );
 
 export const MEH_ROLLING_EYES = (
