@@ -115,7 +115,7 @@ export const BINOCULARS = (
   <FontAwesomeItem
     key={"binoculars"}
     name="binoculars"
-    color={colors.brownColor}
+    color={colors.accentColor}
   />
 );
 
@@ -240,7 +240,7 @@ export const SAD_TEAR = (
 );
 
 export const ANGRY = (
-  <FontAwesomeItem key={"angry"} name="angry" color={colors.brownColor} />
+  <FontAwesomeItem key={"angry"} name="angry" color={colors.accentColor} />
 );
 
 export const DIZZY = (
@@ -356,7 +356,11 @@ export const KISS_WINK_HEART = (
 );
 
 export const SURPRISE = (
-  <FontAwesomeItem key={"surprise"} name="surprise" color={colors.brownColor} />
+  <FontAwesomeItem
+    key={"surprise"}
+    name="surprise"
+    color={colors.accentColor}
+  />
 );
 
 export const MEH_ROLLING_EYES = (
