@@ -16,11 +16,13 @@ import { AdMobBanner } from "expo-ads-admob";
 import { GameContext } from "../context/GameContext";
 import { CONGRATULATIONS, HOLD_ON, CHECK_EXIT } from "../constants/strings";
 
-import Header from "../components/Header";
 import StartGameScreen from "../screens/StartGameScreen";
 import GameScreen from "../screens/GameScreen";
 import GameOverScreen from "../screens/GameOverScreen";
 import GetHeartScreen from "../screens/GetHeartScreen";
+
+import Header from "../components/Header";
+import Loader from "../components/Loader";
 
 export default AppStack = () => {
   const [{ stage, heart }, setGameInfo] = useContext(GameContext);
@@ -32,6 +34,7 @@ export default AppStack = () => {
   const [pass, setPass] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [toggleSwitch, setToggleSwitch] = useState(false);
+  const [checkReward, setCheckReward] = useState(false);
 
   const playAgainHandler = () => {
     setGameOver(false);
@@ -138,19 +141,7 @@ export default AppStack = () => {
   }, []);
 
   return loading ? (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <StatusBar hidden={true} />
-      <Image
-        style={{ width: 115, height: 115 }}
-        source={require("../../assets/icon.png")}
-      />
-    </View>
+    <Loader />
   ) : (
     <ImageBackground
       style={styles.screen}
@@ -206,12 +197,14 @@ export default AppStack = () => {
       <Modal
         animationType="slide"
         visible={modalVisible}
-        onRequestClose={closeModal}
+        onRequestClose={() => null}
       >
         <GetHeartScreen
           setGameInfo={setGameInfo}
           closeModal={closeModal}
           numOfHeart={heart}
+          checkReward={checkReward}
+          setCheckReward={setCheckReward}
         />
       </Modal>
     </ImageBackground>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 import CurrencyFormat from "react-currency-format";
@@ -60,10 +60,12 @@ export default ({
   checkReward,
   setCheckReward,
 }) => {
+  //   const [checkReward, setCheckReward] = useState(false);
   const [checkClick, setCheckClick] = useState(false);
 
   /* 광고 시청 후 Reward */
   const getReward = () => {
+    console.log("getReward");
     setCheckReward(false); // checkReward 초기화
     count = 0; // count 초기화
     reward = false; // reward 초기화
@@ -89,27 +91,49 @@ export default ({
       await AdMobRewarded.showAdAsync();
 
       AdMobRewarded.addEventListener("rewardedVideoDidStart", () => {
+        console.log("Did Start");
         setCheckClick(false);
       });
 
+      AdMobRewarded.addEventListener("rewardedVideoDidLoad", () => null);
+      AdMobRewarded.addEventListener("rewardedVideoDidOpen", () => null);
+      AdMobRewarded.addEventListener("rewardedVideoDidClose", () => null);
+      AdMobRewarded.addEventListener("rewardedVideoDidFailToLoad", () => {
+        console.log("Fail To Load");
+        setCheckClick(false);
+      });
+      AdMobRewarded.addEventListener(
+        "rewardedVideoWillLeaveApplication",
+        () => {
+          console.log("Leave");
+          setCheckClick(false);
+        }
+      );
+
       AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
+        console.log("Reward");
         reward = true;
         /* 
             광고 중간에 끄고 다시 광고 보면, 그 전까지 누적되어 Reward 되는 문제 발생.
-            따라서, count 설정 및 reward 설정으로 한 번만 Reward 되도록 설정.
+            따라서, count 설정으로 한 번만 Reward 되도록 설정.
         */
         if (count === 0) {
           AdMobRewarded.addEventListener("rewardedVideoDidClose", () => {
             if (count === 0 && reward === true) {
-              setCheckReward(true);
+              console.log("if - count: ", count);
+              setCheckReward(true); // The point where the problem occurred
 
               setTimeout(getReward, 2500);
 
               count++;
             }
+
+            console.log("Did Close");
           });
         }
       });
+
+      return () => AdMobRewarded.removeAllListeners();
     } catch (error) {
       console.log("Error @getHeartFree_GetHeartScreen: ", error.message);
     }
@@ -128,9 +152,10 @@ export default ({
           <Content onPress={() => null} num={100} price={0.8} update={true} />
         </View>
         <View style={styles.footer}>
-          <Button onPress={closeModal} disabled={checkClick}>
+          {/* <Button onPress={closeModal} disabled={checkClick}>
             {GO_BACK}
-          </Button>
+          </Button> */}
+          <Button onPress={closeModal}>{GO_BACK}</Button>
         </View>
       </View>
       {checkClick ? <Loader /> : null}
