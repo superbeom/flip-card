@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 import { Asset } from "expo-asset";
 import AsyncStorage from "@react-native-community/async-storage";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -54,10 +55,41 @@ export default () => {
     preLoad();
   }, []);
 
+  const logUserIn = async () => {
+    try {
+      await AsyncStorage.setItem("isLoggedIn", "true");
+      setIsLoggedIn(true);
+    } catch (error) {
+      console.log("Error @logUserIn_App: ", error.message);
+    }
+  };
+
+  const logUserOut = async () => {
+    try {
+      await AsyncStorage.setItem("isLoggedIn", "false");
+      setIsLoggedIn(false);
+    } catch (error) {
+      console.log("Error @logUserOut_App: ", error.message);
+    }
+  };
+
   return loaded && client && isLoggedIn !== null ? (
     <ApolloProvider client={client}>
       <GameProvider>
-        {isLoggedIn === true ? <AppStack /> : <Loader />}
+        {/* {isLoggedIn === true ? <AppStack /> : null} */}
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          {isLoggedIn === true ? (
+            <TouchableOpacity onPress={logUserOut}>
+              <Text>Log Out</Text>
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={logUserIn}>
+              <Text>Log In</Text>
+            </TouchableOpacity>
+          )}
+        </View>
       </GameProvider>
     </ApolloProvider>
   ) : (
