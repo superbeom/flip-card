@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
   },
   mulText: {
     fontSize: vw(5),
-    fontWeight: "500",
-    color: colors.whiteColor,
+    fontWeight: "bold",
+    color: colors.accentColor,
   },
   numText: {
     fontSize: vw(7),
-    fontWeight: "500",
-    color: colors.whiteColor,
+    fontWeight: "bold",
+    color: colors.accentColor,
   },
 });
 

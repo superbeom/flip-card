@@ -1,24 +1,23 @@
-import React, { useEffect, useContext } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  BackHandler,
-  Alert,
-} from "react-native";
+import React, { useState, useEffect, useContext } from "react";
+import { StyleSheet, View, Image, BackHandler, Alert } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
 import colors from "../constants/colors";
-import { PLAY_AGAIN, NEXT_STAGE, GO_HOME } from "../constants/strings";
+import {
+  PLAY_AGAIN,
+  NEXT_STAGE,
+  GO_HOME,
+  CHECK_GO_HOME,
+} from "../constants/strings";
 
 import Button from "../components/Button";
 import StageButton from "../components/StageButton";
 import Heart from "../components/Heart";
 import Arrow from "../components/Arrow";
 import GetHeartText from "../components/GetHeartText";
+import GetHeart from "../components/GetHeart";
 
 const GameOverScreen = ({
   onPlayAgain,
@@ -28,6 +27,7 @@ const GameOverScreen = ({
   getHeart,
 }) => {
   const [{ stage, heart }, setGameInfo] = useContext(GameContext);
+  const [checkReward, setCheckReward] = useState(false);
 
   /*
     GameFeed의 FlatList numColumns 수 올릴 필요가 있을 때마다,
@@ -79,7 +79,7 @@ const GameOverScreen = ({
   const failStage = () => {};
 
   const backAction = () => {
-    Alert.alert("Hold on!", "Are you sure you want to go home?", [
+    Alert.alert(CHECK_GO_HOME, "", [
       {
         text: "Cancel",
         onPress: () => null,
@@ -94,15 +94,24 @@ const GameOverScreen = ({
     return true;
   };
 
+  const getReward = () => {
+    setCheckReward(false); // checkReward 초기화
+
+    /* GameContext heart +1 업데이트 */
+    setGameInfo((curState) => ({
+      ...curState,
+      heart: curState.heart + 1,
+    }));
+
+    /* AsyncStorage heart 갯수 +1 업데이트 */
+  };
+
   useEffect(() => {
     /* stage 10단계씩 깰 때마다 heart +1 추가 */
     if (pass && stage % 10 === 0) {
-      setGameInfo((curState) => ({
-        ...curState,
-        heart: curState.heart + 1,
-      }));
+      setCheckReward(true);
 
-      /* AsyncStorage heart 갯수 +1 업데이트 */
+      setTimeout(getReward, 2500);
     }
 
     BackHandler.addEventListener("hardwareBackPress", backAction);
@@ -112,58 +121,66 @@ const GameOverScreen = ({
   }, []);
 
   return (
-    <View style={styles.screen}>
-      <View style={styles.heartContainer}>
-        <View style={styles.heartBox}>
-          {heart <= 1 ? (
-            <View
-              style={{
-                marginRight: vw(3),
-                justifyContent: "flex-end",
-              }}
-            >
-              <View style={{ flexDirection: "row" }}>
-                <View style={{ justifyContent: "center" }}>
-                  <GetHeartText enoughHeart={false} screen={"gameOverScreen"} />
-                </View>
-                <View style={{ justifyContent: "center" }}>
-                  <Arrow enoughHeart={false} direction={"right"} />
+    <>
+      <View style={styles.screen}>
+        <View style={styles.heartContainer}>
+          <View style={styles.heartBox}>
+            {heart <= 1 ? (
+              <View
+                style={{
+                  marginRight: vw(3),
+                  justifyContent: "flex-end",
+                }}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <View style={{ justifyContent: "center" }}>
+                    <GetHeartText
+                      enoughHeart={false}
+                      screen={"gameOverScreen"}
+                    />
+                  </View>
+                  <View style={{ justifyContent: "center" }}>
+                    <Arrow enoughHeart={false} direction={"right"} />
+                  </View>
                 </View>
               </View>
-            </View>
+            ) : null}
+            <Heart onPress={getHeart} numOfHeart={heart} />
+          </View>
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={
+              pass
+                ? require("../../assets/images/success.png")
+                : require("../../assets/images/fail.png")
+            }
+            style={styles.image}
+            resizeMode={"cover"}
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          {stage % 10 === 0 ? null : (
+            <StageButton onPress={replayStage} enoughHeart={heart > 0 ?? false}>
+              {PLAY_AGAIN}
+            </StageButton>
+          )}
+          {pass ? (
+            <StageButton onPress={nextStage} enoughHeart={heart > 0 ?? false}>
+              {NEXT_STAGE}
+            </StageButton>
           ) : null}
-          <Heart onPress={getHeart} numOfHeart={heart} />
+        </View>
+        <View style={styles.goHomeContainer}>
+          <Button
+            onPress={pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail}
+          >
+            {GO_HOME}
+          </Button>
         </View>
       </View>
-      <View style={styles.imageContainer}>
-        <Image
-          source={
-            pass
-              ? require("../../assets/images/success.png")
-              : require("../../assets/images/fail.png")
-          }
-          style={styles.image}
-          resizeMode={"cover"}
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <StageButton onPress={replayStage} enoughHeart={heart > 0 ?? false}>
-          {PLAY_AGAIN}
-        </StageButton>
-        {pass ? (
-          <StageButton onPress={nextStage} enoughHeart={heart > 0 ?? false}>
-            {NEXT_STAGE}
-          </StageButton>
-        ) : null}
-      </View>
-      <View style={styles.goHomeContainer}>
-        <Button
-          onPress={pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail}
-        >
-          {GO_HOME}
-        </Button>
-      </View>
-    </View>
+      {checkReward ? <GetHeart /> : null}
+    </>
   );
 };
 

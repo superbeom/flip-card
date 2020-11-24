@@ -6,7 +6,11 @@ import colors from "../constants/colors";
 
 const Button = (props) => {
   return (
-    <TouchableOpacity onPress={props.onPress} activeOpacity={0.5}>
+    <TouchableOpacity
+      onPress={props.onPress}
+      activeOpacity={0.5}
+      disabled={props.disabled}
+    >
       <View
         style={[
           styles.button,
@@ -16,7 +20,7 @@ const Button = (props) => {
         <Text
           style={[
             styles.buttonText,
-            { color: props.textColor || colors.blackColor },
+            { color: props.textColor || colors.accentColor },
           ]}
         >
           {props.children}
@@ -31,7 +35,7 @@ const styles = StyleSheet.create({
     paddingVertical: vh(1.4),
     paddingHorizontal: vw(8),
     borderRadius: 25,
-    shadowColor: colors.blackColor,
+    shadowColor: colors.accentColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.26,
     shadowRadius: 6,

@@ -1,0 +1,249 @@
+import React, { useState, useEffect } from "react";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { vw, vh } from "react-native-expo-viewport-units";
+import CurrencyFormat from "react-currency-format";
+import { AdMobRewarded } from "expo-ads-admob";
+
+import colors from "../constants/colors";
+import { HEART } from "../utils/FontAwesomeSource";
+import { COMING_SOON, GO_BACK } from "../constants/strings";
+
+import Card from "../components/Card";
+import Heart from "../components/Heart";
+import Button from "../components/Button";
+import GetHeart from "../components/GetHeart";
+import Loader from "../components/Loader";
+
+let count = 0;
+let reward = false;
+
+const Content = ({ onPress, num, price, update }) => (
+  <TouchableOpacity
+    style={styles.cardContainer}
+    onPress={onPress}
+    disabled={update}
+  >
+    <Card style={styles.card}>
+      <View style={styles.heartBox}>
+        {HEART}
+        <Text style={styles.mulText}>X </Text>
+        <Text style={styles.numText}>{num}</Text>
+      </View>
+      <View style={styles.priceBox}>
+        <CurrencyFormat
+          renderText={(value) => <Text style={styles.price}>{value}</Text>}
+          decimalScale={2}
+          value={price}
+          displayType={"text"}
+          thousandSeparator={true}
+          prefix={"$"} // English
+          // suffix={"원"} // Korean
+        />
+      </View>
+    </Card>
+    {/* Overlay */}
+    {update ? (
+      <>
+        <View style={styles.overlay} />
+        <View style={styles.overlayTextContainer}>
+          <Text style={styles.overlayText}>{COMING_SOON}</Text>
+        </View>
+      </>
+    ) : null}
+  </TouchableOpacity>
+);
+
+export default ({
+  setGameInfo,
+  closeModal,
+  numOfHeart,
+  checkReward,
+  setCheckReward,
+}) => {
+  //   const [checkReward, setCheckReward] = useState(false);
+  const [checkClick, setCheckClick] = useState(false);
+
+  /* 광고 시청 후 Reward */
+  const getReward = () => {
+    console.log("getReward");
+    setCheckReward(false); // checkReward 초기화
+    count = 0; // count 초기화
+    reward = false; // reward 초기화
+
+    /* GameContext heart +3 업데이트 */
+    setGameInfo((curState) => ({
+      ...curState,
+      heart: curState.heart + 3,
+    }));
+
+    /* AsyncStorage heart 갯수 +3 업데이트 */
+  };
+
+  const getHeartFree = async () => {
+    try {
+      setCheckClick(true);
+      count = 0; // count 초기화
+      reward = false; // reward 초기화
+
+      // Display a rewarded ad
+      await AdMobRewarded.setAdUnitID("ca-app-pub-3940256099942544/5224354917"); // Test ID, Replace with your-admob-unit-id
+      await AdMobRewarded.requestAdAsync({ servePersonalizedAds: true });
+      await AdMobRewarded.showAdAsync();
+
+      AdMobRewarded.addEventListener("rewardedVideoDidStart", () => {
+        console.log("Did Start");
+        setCheckClick(false);
+      });
+
+      AdMobRewarded.addEventListener("rewardedVideoDidLoad", () => null);
+      AdMobRewarded.addEventListener("rewardedVideoDidOpen", () => null);
+      AdMobRewarded.addEventListener("rewardedVideoDidClose", () => null);
+      AdMobRewarded.addEventListener("rewardedVideoDidFailToLoad", () => {
+        console.log("Fail To Load");
+        setCheckClick(false);
+      });
+      AdMobRewarded.addEventListener(
+        "rewardedVideoWillLeaveApplication",
+        () => {
+          console.log("Leave");
+          setCheckClick(false);
+        }
+      );
+
+      AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
+        console.log("Reward");
+        reward = true;
+        /* 
+            광고 중간에 끄고 다시 광고 보면, 그 전까지 누적되어 Reward 되는 문제 발생.
+            따라서, count 설정으로 한 번만 Reward 되도록 설정.
+        */
+        if (count === 0) {
+          AdMobRewarded.addEventListener("rewardedVideoDidClose", () => {
+            if (count === 0 && reward === true) {
+              console.log("if - count: ", count);
+              setCheckReward(true); // The point where the problem occurred
+
+              setTimeout(getReward, 2500);
+
+              count++;
+            }
+
+            console.log("Did Close");
+          });
+        }
+      });
+
+      return () => AdMobRewarded.removeAllListeners();
+    } catch (error) {
+      console.log("Error @getHeartFree_GetHeartScreen: ", error.message);
+    }
+  };
+
+  return (
+    <>
+      <View style={styles.screen}>
+        <View style={styles.heartContainer}>
+          <Heart onPress={() => null} numOfHeart={numOfHeart} disabled={true} />
+        </View>
+        <View style={styles.contentContainer}>
+          <Content onPress={getHeartFree} num={3} price={0} update={false} />
+          <Content onPress={() => null} num={10} price={0.1} update={true} />
+          <Content onPress={() => null} num={50} price={0.45} update={true} />
+          <Content onPress={() => null} num={100} price={0.8} update={true} />
+        </View>
+        <View style={styles.footer}>
+          {/* <Button onPress={closeModal} disabled={checkClick}>
+            {GO_BACK}
+          </Button> */}
+          <Button onPress={closeModal}>{GO_BACK}</Button>
+        </View>
+      </View>
+      {checkClick ? <Loader /> : null}
+      {checkReward ? <GetHeart /> : null}
+    </>
+  );
+};
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.primaryColor,
+  },
+  heartContainer: {
+    width: "100%",
+    height: vh(13),
+    justifyContent: "center",
+    alignItems: "flex-end",
+    marginRight: vw(3),
+    marginBottom: vh(2),
+  },
+  contentContainer: {
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  footer: {
+    height: vh(13),
+    justifyContent: "flex-end",
+    marginBottom: vh(2),
+  },
+  cardContainer: {
+    width: "80%",
+    marginBottom: vh(4),
+  },
+  card: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  heartBox: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  priceBox: {},
+  overlay: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    opacity: 0.8,
+    padding: 20,
+    borderRadius: 10,
+    backgroundColor: colors.slateGrayColor,
+    elevation: 6,
+  },
+  overlayTextContainer: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+    elevation: 6,
+  },
+  overlayText: {
+    fontSize: vw(10),
+    fontWeight: "700",
+    color: colors.whiteColor,
+  },
+  mulText: {
+    fontSize: vw(5),
+    fontWeight: "500",
+    color: colors.blackColor,
+  },
+  numText: {
+    fontSize: vw(7),
+    fontWeight: "500",
+    color: colors.blackColor,
+  },
+  price: {
+    fontSize: vw(7),
+    fontWeight: "700",
+    color: colors.blackColor,
+  },
+});

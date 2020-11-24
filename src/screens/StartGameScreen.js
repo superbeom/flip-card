@@ -3,8 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { GameContext } from "../context/GameContext";
-import { CURRENT_STAGE, GAME_START } from "../constants/strings";
+import colors from "../constants/colors";
 import { FLAG } from "../utils/FontAwesomeSource";
+import { CURRENT_STAGE } from "../constants/strings";
 
 import Card from "../components/Card";
 import StartButton from "../components/StartButton";
@@ -12,7 +13,7 @@ import Heart from "../components/Heart";
 import Arrow from "../components/Arrow";
 import GetHeartText from "../components/GetHeartText";
 
-export default ({ onStartGame, getHeart }) => {
+export default ({ onStartGame, getHeart, toggleSwitch }) => {
   const [{ stage, heart, gameEnd }, _] = useContext(GameContext);
 
   return (
@@ -49,9 +50,8 @@ export default ({ onStartGame, getHeart }) => {
           onPress={onStartGame}
           update={gameEnd}
           enoughHeart={heart > 0 ?? false}
-        >
-          {GAME_START}
-        </StartButton>
+          toggleSwitch={toggleSwitch}
+        />
       </View>
       <View style={styles.resetGameContainer} />
     </View>
@@ -74,6 +74,11 @@ const styles = StyleSheet.create({
     width: "50%",
     height: vh(13),
     justifyContent: "space-around",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.7,
+    shadowRadius: 6,
+    elevation: 10,
+    shadowColor: colors.slateGrayColor,
   },
   cardBox: {
     alignItems: "center",
@@ -81,6 +86,7 @@ const styles = StyleSheet.create({
   cardText: {
     fontSize: vw(5.5),
     fontWeight: "700",
+    color: colors.accentColor,
   },
   heartBox: {
     width: "50%",

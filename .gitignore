@@ -12,6 +12,9 @@ web-build/
 
 # macOS
 .DS_Store
+
+# AdMob
+src/config/*
 =======
 # Logs
 logs

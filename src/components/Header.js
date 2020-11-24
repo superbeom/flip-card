@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Platform } from "react-native";
 import { vh, vmax } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
@@ -10,7 +10,9 @@ const Header = (props) => {
       <Text
         style={[
           styles.title,
-          { color: props.gaming ? colors.whiteColor : colors.primaryColor },
+          {
+            color: props.gaming ? colors.accentColor : colors.primaryColor,
+          },
         ]}
       >
         {props.title}
@@ -29,7 +31,17 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: vmax(4),
-    fontWeight: "800",
+    ...Platform.select({
+      ios: {
+        fontWeight: "800",
+      },
+      android: {
+        fontWeight: "bold",
+      },
+      default: {
+        fontWeight: "800",
+      },
+    }),
   },
 });
 

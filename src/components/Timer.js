@@ -3,6 +3,7 @@ import { StyleSheet, View, Animated, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
+import { checkLimitTime } from "../utils/checkSomething";
 import { STOP_WATCH, BAN } from "../utils/FontAwesomeSource";
 
 import Hint from "../components/Hint";
@@ -18,6 +19,8 @@ const Progress = ({
   setGameInfo,
   showAnswerForHint,
   showAnswer,
+  clickedBomb,
+  disableHint,
 }) => {
   const [width, setWidth] = useState(0);
   const animatedValue = useRef(new Animated.Value(-1000)).current;
@@ -55,13 +58,13 @@ const Progress = ({
         <TouchableOpacity
           style={styles.stopWatch}
           onPress={AddTime}
-          disabled={numOfHeart < 2}
+          disabled={numOfHeart < 2 || clickedBomb}
         >
-          {numOfHeart < 2 ? BAN : STOP_WATCH}
+          {numOfHeart < 2 || clickedBomb ? BAN : STOP_WATCH}
         </TouchableOpacity>
         <Hint
           onPress={showAnswerForHint}
-          disabled={numOfHeart < 2 || showAnswer}
+          disabled={numOfHeart < 2 || showAnswer || clickedBomb || disableHint}
         />
       </View>
       <View
@@ -92,26 +95,40 @@ const Progress = ({
 const Timer = ({
   onGameOver,
   numOfHeart,
-  initialLimitTime,
   setGameInfo,
   showAnswerForHint,
   showAnswer,
+  stage,
+  clickedBomb,
 }) => {
   const [index, setIndex] = useState(0);
   const [limitTime, setLimitTime] = useState(10);
+  const [disableHint, setDisableHint] = useState(false);
+
+  /* 이미 설정된 변수 초기화 */
+  const initializationCount = () => {
+    count = 0;
+  };
 
   useEffect(() => {
-    if (count === 0) {
-      setLimitTime(initialLimitTime);
-      count++;
-    }
+    setLimitTime(checkLimitTime(stage));
+    initializationCount();
+  }, []);
 
+  useEffect(() => {
     const interval = setInterval(() => {
+      let disableHintLimitTime = limitTime - ((index + 1) % (limitTime + 1));
       setIndex((curIndex) => (curIndex + 1) % (limitTime + 1));
 
       /* 제한 시간 초과 시, Game Over */
       if ((index + 1) % (limitTime + 1) === 0) {
         onGameOver("fail");
+      }
+
+      /* 제한 시간이 3초 미만으로 남으면 힌트 사용 불가 */
+      if (count === 0 && disableHintLimitTime < 3) {
+        setDisableHint(true);
+        count++;
       }
     }, 1000);
 
@@ -130,6 +147,8 @@ const Timer = ({
         setGameInfo={setGameInfo}
         showAnswerForHint={showAnswerForHint}
         showAnswer={showAnswer}
+        clickedBomb={clickedBomb}
+        disableHint={disableHint}
       />
     </View>
   );
@@ -159,7 +178,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height,
     borderRadius: height,
-    backgroundColor: colors.whiteColor,
+    backgroundColor: colors.accentColor,
   },
 });
 
