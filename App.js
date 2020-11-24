@@ -39,7 +39,7 @@ export default () => {
 
       /* Check User Log In */
       const checkIsLoggedIn = await AsyncStorage.getItem("isLoggedIn");
-      if (checkIsLoggedIn === null || checkIsLoggedIn === "false") {
+      if (!checkIsLoggedIn || checkIsLoggedIn === "false") {
         setIsLoggedIn(false);
       } else {
         setIsLoggedIn(true);
@@ -57,7 +57,7 @@ export default () => {
     preLoad();
   }, []);
 
-  return loaded && client ? (
+  return loaded && client && isLoggedIn !== null ? (
     <ApolloProvider client={client}>
       <AuthProvider isLoggedIn={isLoggedIn}>
         <GameProvider>

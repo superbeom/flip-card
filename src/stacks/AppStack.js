@@ -1,10 +1,23 @@
 import React from "react";
-import { Text } from "react-native";
-import { useIsLoggedIn } from "../context/AuthContext";
+import { View, Text, TouchableOpacity } from "react-native";
+import { useIsLoggedIn, useLogIn, useLogOut } from "../context/AuthContext";
 
 export default () => {
   const isLoggedIn = useIsLoggedIn();
-  console.log(isLoggedIn);
+  const logIn = useLogIn();
+  const logOut = useLogOut();
 
-  return <Text>App Stack</Text>;
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      {isLoggedIn ? (
+        <TouchableOpacity onPress={logOut}>
+          <Text>Log Out</Text>
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity onPress={logIn}>
+          <Text>Log In</Text>
+        </TouchableOpacity>
+      )}
+    </View>
+  );
 };
