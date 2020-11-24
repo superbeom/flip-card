@@ -3,21 +3,21 @@ import { StyleSheet, View, Image, BackHandler, Alert } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { GameContext } from "../context/GameContext";
-import colors from "../constants/colors";
+import { GameContext } from "../../context/GameContext";
+import colors from "../../constants/colors";
 import {
   PLAY_AGAIN,
   NEXT_STAGE,
   GO_HOME,
   CHECK_GO_HOME,
-} from "../constants/strings";
+} from "../../constants/strings";
 
-import Button from "../components/Button";
-import StageButton from "../components/StageButton";
-import Heart from "../components/Heart";
-import Arrow from "../components/Arrow";
-import GetHeartText from "../components/GetHeartText";
-import GetHeart from "../components/GetHeart";
+import Button from "../../components/Button";
+import StageButton from "../../components/StageButton";
+import Heart from "../../components/Heart";
+import Arrow from "../../components/Arrow";
+import GetHeartText from "../../components/GetHeartText";
+import GetHeart from "../../components/GetHeart";
 
 const GameOverScreen = ({
   onPlayAgain,
@@ -152,8 +152,8 @@ const GameOverScreen = ({
           <Image
             source={
               pass
-                ? require("../../assets/images/success.png")
-                : require("../../assets/images/fail.png")
+                ? require("../../../assets/images/success.png")
+                : require("../../../assets/images/fail.png")
             }
             style={styles.image}
             resizeMode={"cover"}

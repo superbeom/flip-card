@@ -5,7 +5,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { persistCache } from "apollo-cache-persist";
 import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "@apollo/client";
+import { ApolloProvider } from "react-apollo-hooks";
 
 import apolloClientOptions from "./apollo";
 

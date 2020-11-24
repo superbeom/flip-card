@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { GameContext } from "../context/GameContext";
-import colors from "../constants/colors";
-import { FLAG } from "../utils/FontAwesomeSource";
-import { CURRENT_STAGE } from "../constants/strings";
+import { GameContext } from "../../context/GameContext";
+import colors from "../../constants/colors";
+import { FLAG } from "../../utils/FontAwesomeSource";
+import { CURRENT_STAGE } from "../../constants/strings";
 
-import Card from "../components/Card";
-import StartButton from "../components/StartButton";
-import Heart from "../components/Heart";
-import Arrow from "../components/Arrow";
-import GetHeartText from "../components/GetHeartText";
+import Card from "../../components/Card";
+import StartButton from "../../components/StartButton";
+import Heart from "../../components/Heart";
+import Arrow from "../../components/Arrow";
+import GetHeartText from "../../components/GetHeartText";
 
 export default ({ onStartGame, getHeart, toggleSwitch }) => {
   const [{ stage, heart, gameEnd }, _] = useContext(GameContext);

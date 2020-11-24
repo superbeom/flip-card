@@ -4,15 +4,15 @@ import { vw, vh } from "react-native-expo-viewport-units";
 import CurrencyFormat from "react-currency-format";
 import { AdMobRewarded } from "expo-ads-admob";
 
-import colors from "../constants/colors";
-import { HEART } from "../utils/FontAwesomeSource";
-import { COMING_SOON, GO_BACK } from "../constants/strings";
+import colors from "../../constants/colors";
+import { HEART } from "../../utils/FontAwesomeSource";
+import { COMING_SOON, GO_BACK } from "../../constants/strings";
 
-import Card from "../components/Card";
-import Heart from "../components/Heart";
-import Button from "../components/Button";
-import GetHeart from "../components/GetHeart";
-import Loader from "../components/Loader";
+import Card from "../../components/Card";
+import Heart from "../../components/Heart";
+import Button from "../../components/Button";
+import GetHeart from "../../components/GetHeart";
+import Loader from "../../components/Loader";
 
 let count = 0;
 let reward = false;

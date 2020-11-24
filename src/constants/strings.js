@@ -2,6 +2,13 @@
     English Strings...
 */
 
+/* Auth */
+export const EMPTY = "Empty";
+
+export const BLANK = "Blank";
+
+export const USERNAME = "username";
+
 /* AppStack Strings */
 export const CONGRATULATIONS = "CONGRATULATIONS!!";
 

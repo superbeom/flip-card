@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { StyleSheet, View, Alert, BackHandler } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { GameContext } from "../context/GameContext";
-import { GO_HOME, CHECK_GO_HOME } from "../constants/strings";
+import { GameContext } from "../../context/GameContext";
+import { GO_HOME, CHECK_GO_HOME } from "../../constants/strings";
 
-import GameFeed from "../components/GameFeed";
-import Button from "../components/Button";
-import Heart from "../components/Heart";
-import Timer from "../components/Timer";
+import GameFeed from "../../components/GameFeed";
+import Button from "../../components/Button";
+import Heart from "../../components/Heart";
+import Timer from "../../components/Timer";
 
 export default ({ onGoHome, onGameOver }) => {
   const [{ stage, heart }, setGameInfo] = useContext(GameContext);
