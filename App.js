@@ -16,6 +16,7 @@ import Loader from "./src/components/Loader";
 export default () => {
   const [loaded, setLoaded] = useState(false);
   const [client, setClient] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   const preLoad = async () => {
     try {
@@ -33,6 +34,15 @@ export default () => {
         ...apolloClientOptions,
       });
 
+      /* Check User Log In */
+      const checkIsLoggedIn = await AsyncStorage.getItem("isLoggedIn");
+      if (checkIsLoggedIn === null || checkIsLoggedIn === "false") {
+        setIsLoggedIn(false);
+      } else {
+        setIsLoggedIn(true);
+      }
+
+      /* Set State */
       setLoaded(true);
       setClient(apolloClient);
     } catch (error) {
@@ -44,10 +54,10 @@ export default () => {
     preLoad();
   }, []);
 
-  return loaded && client ? (
+  return loaded && client && isLoggedIn !== null ? (
     <ApolloProvider client={client}>
       <GameProvider>
-        <AppStack />
+        {isLoggedIn === true ? <AppStack /> : <Loader />}
       </GameProvider>
     </ApolloProvider>
   ) : (
