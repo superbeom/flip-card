@@ -1,13 +1,14 @@
 import React from "react";
-import { StyleSheet, View, TextInput, Dimensions } from "react-native";
+import { StyleSheet, View, TextInput } from "react-native";
 import PropTypes from "prop-types";
+import { vh } from "react-native-expo-viewport-units";
 
-const windowWidth = Dimensions.get("window").width;
+import colors from "../constants/colors";
 
 const AuthInput = ({
   value,
   onChange,
-  placeholder,
+  placeholder = null,
   keyboardType = "default",
   autoCapitalize = "none",
   returnKeyType = "done",
@@ -26,6 +27,7 @@ const AuthInput = ({
       onSubmitEditing={onSubmitEditing}
       secureTextEntry={secureTextEntry}
       autoCorrect={false}
+      textAlign={"center"}
     />
   </View>
 );
@@ -33,7 +35,7 @@ const AuthInput = ({
 AuthInput.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   keyboardType: PropTypes.oneOf([
     "default",
     "number-pad",
@@ -50,16 +52,18 @@ AuthInput.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
+    width: "100%",
+    marginBottom: vh(2),
+    alignItems: "center",
   },
   textInput: {
-    width: windowWidth / 1.5,
-    padding: 10,
-    backgroundColor: "#F9F9F9",
-    borderWidth: 1,
-    borderColor: "#999",
-    borderStyle: "solid",
-    borderRadius: 4,
+    width: "70%",
+    height: vh(5),
+    borderBottomWidth: 2,
+    borderBottomColor: colors.whiteColor,
+    fontSize: vh(3.7),
+    fontWeight: "600",
+    color: colors.whiteColor,
   },
 });
 

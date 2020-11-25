@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
 import { Asset } from "expo-asset";
 import AsyncStorage from "@react-native-community/async-storage";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -23,6 +22,9 @@ export default () => {
 
   const preLoad = async () => {
     try {
+      /* Testing.. */
+      // await AsyncStorage.clear();
+
       /* Load Asset */
       await Asset.loadAsync([require("./assets/icon.png")]);
 

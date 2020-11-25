@@ -4,18 +4,23 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Dimensions,
   ActivityIndicator,
 } from "react-native";
 import PropTypes from "prop-types";
+import { vw, vh } from "react-native-expo-viewport-units";
 
-const windowWidth = Dimensions.get("window").width;
+import colors from "../constants/colors";
 
 const AuthButton = ({ onPress, text, loading = false }) => (
-  <TouchableOpacity onPress={onPress} disabled={loading}>
+  <TouchableOpacity
+    style={styles.button}
+    onPress={onPress}
+    disabled={loading}
+    activeOpacity={0.5}
+  >
     <View style={styles.container}>
       {loading ? (
-        <ActivityIndicator color={"white"} />
+        <ActivityIndicator color={colors.accentColor} />
       ) : (
         <Text style={styles.text}>{text}</Text>
       )}
@@ -30,16 +35,26 @@ AuthButton.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  button: {
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   container: {
-    width: windowWidth / 1.5,
-    backgroundColor: "#3897f0",
+    width: "70%",
+    height: vh(7),
+    marginBottom: vh(3),
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.whiteColor,
+    borderRadius: 75,
     padding: 10,
-    borderRadius: 4,
   },
   text: {
+    fontSize: vw(4.7),
     fontWeight: "600",
     textAlign: "center",
-    color: "white",
+    color: colors.primaryColor,
   },
 });
 

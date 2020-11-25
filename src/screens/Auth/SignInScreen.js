@@ -3,27 +3,40 @@ import {
   StyleSheet,
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   Alert,
+  ImageBackground,
+  TouchableWithoutFeedback,
   Keyboard,
-  ActivityIndicator,
 } from "react-native";
 import { useMutation } from "react-apollo-hooks";
+import { vw, vh } from "react-native-expo-viewport-units";
 
 import { useLogIn } from "../../context/AuthContext";
 
 import { CONFIRM_SECRET } from "./AuthQueries";
 
+import colors from "../../constants/colors";
+import {
+  // SIGN_IN,
+  USERNAME,
+  CANT_BE_EMPTY,
+  INVALID_PASSWORD,
+  WRONG_PASSWORD,
+  CHECK_USERNAME_PASSWORD,
+  CANT_CONFIRM_PASSWORD,
+} from "../../constants/strings";
+
 import useInput from "../../hooks/useInput";
 import AuthInput from "../../components/AuthInput";
 import AuthButton from "../../components/AuthButton";
+// import Auth from "../../components/Auth";
 
 export default SignInScreen = ({ route, navigation }) => {
   const logIn = useLogIn();
+  const [loading, setLoading] = useState(false);
   const usernameInput = useInput(route.params ? route.params.username : "");
   const secretInput = useInput(route.params ? route.params.secret : "");
-  const [loading, setLoading] = useState(false);
 
   const [confirmSecretMutation] = useMutation(CONFIRM_SECRET, {
     variables: {
@@ -33,15 +46,15 @@ export default SignInScreen = ({ route, navigation }) => {
   });
 
   const handleSignIn = async () => {
-    const { usernameValue } = usernameInput;
-    const { secretValue } = secretInput;
+    const { value: username } = usernameInput;
+    const { value: secret } = secretInput;
 
-    if (usernameValue === "") {
-      return Alert.alert("Username can't be empty");
+    if (username === "") {
+      return Alert.alert(`${USERNAME} ${CANT_BE_EMPTY}`);
     }
 
-    if (secretValue === "" || !secretValue.includes(" ")) {
-      return Alert.alert("Invalid password");
+    if (secret === "") {
+      return Alert.alert(INVALID_PASSWORD);
     }
 
     try {
@@ -53,162 +66,112 @@ export default SignInScreen = ({ route, navigation }) => {
       if (confirmSecret !== "" || confirmSecret !== false) {
         logIn(confirmSecret);
       } else {
-        Alert.alert("Can't confirm password");
+        Alert.alert(CANT_CONFIRM_PASSWORD);
       }
     } catch (error) {
       console.log("Error @handleSignIn_SignInScreen: ", error.message);
-      if (error.message.includes("conbination")) {
-        // When secret is wrong - "Wrong username/secret conbination"
-        Alert.alert("Wrong password!");
+      if (error.message.includes("combination")) {
+        // When secret is wrong - "Wrong username/secret combination"
+        Alert.alert(WRONG_PASSWORD);
       } else {
-        Alert.alert("Can't confirm password");
+        Alert.alert(CHECK_USERNAME_PASSWORD);
       }
     } finally {
       setLoading(false);
     }
   };
 
+  // return (
+  //   <Auth
+  //     content={SIGN_IN}
+  //     handleAuth={handleSignIn}
+  //     usernameInput={usernameInput}
+  //     secretInput={secretInput}
+  //     loading={loading}
+  //     navigation={navigation}
+  //   />
+  // );
+
   return (
-    <View style={styles.signIn}>
-      <View style={styles.main}>
-        <Text style={styles.headerText}>Welcome back!</Text>
-      </View>
-
-      <View style={styles.auth}>
-        <View style={styles.authContainer}>
-          <Text style={styles.authTitle}>Username</Text>
-          <AuthInput
-            {...usernameInput}
-            placeholder={"Username"}
-            returnKeyType={"next"}
-          />
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <ImageBackground
+        style={styles.screen}
+        source={require("../../../assets/images/background.png")}
+      >
+        <View style={styles.header}>
+          <Text style={styles.headerText}>Welcome back!</Text>
         </View>
 
-        <View>
-          <Text style={styles.authTitle}>Password</Text>
-          <AuthInput
-            {...secretInput}
-            placeholder={"Password"}
-            returnKeyType={"done"}
-            onSubmitEditing={handleSignIn}
-            secureTextEntry={true}
-          />
+        <View style={styles.inputContainer}>
+          <View style={styles.inputBox}>
+            <Text style={styles.inputText}>Username</Text>
+            <AuthInput {...usernameInput} returnKeyType={"next"} />
+          </View>
+
+          <View style={styles.inputBox}>
+            <Text style={styles.inputText}>Password</Text>
+            <AuthInput
+              {...secretInput}
+              onSubmitEditing={handleSignIn}
+              secureTextEntry={true}
+            />
+          </View>
         </View>
-      </View>
 
-      <TouchableOpacity
-        style={styles.signInButton}
-        onPress={handleSignIn}
-        disabled={loading}
-      >
-        {loading ? (
-          <ActivityIndicator style={{ color: "#ffffff", size: "small" }} />
-        ) : (
-          <AuthButton
-            onPress={handleSignIn}
-            text={"Log In"}
-            loading={loading}
-          />
-        )}
-      </TouchableOpacity>
+        <AuthButton onPress={handleSignIn} text={"Log In"} loading={loading} />
 
-      <TouchableOpacity
-        style={styles.signUp}
-        onPress={() => navigation.navigate("SignUp")}
-      >
-        <Text style={styles.signUpTopText}>
-          First time here? <Text style={styles.signUpBottomText}>Sign Up</Text>{" "}
-        </Text>
-      </TouchableOpacity>
-
-      <View style={styles.headerGraphic}>
-        <View style={styles.rightCircle} />
-        <View style={styles.leftCircle} />
-      </View>
-    </View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("SignUp")}
+          activeOpacity={0.5}
+        >
+          <Text style={styles.signUpLeftText}>
+            First time here?{"  "}
+            <Text style={styles.signUpRightText}>Sign Up</Text>{" "}
+          </Text>
+        </TouchableOpacity>
+      </ImageBackground>
+    </TouchableWithoutFeedback>
   );
 };
 
 const styles = StyleSheet.create({
-  signIn: {
+  screen: {
     flex: 1,
   },
-  main: {
-    marginTop: 192,
-  },
-  auth: {
-    marginTop: 64,
-    marginRight: 32,
-    marginBottom: 32,
+  header: {
+    marginTop: vh(15),
+    marginBottom: vh(15),
   },
   headerText: {
-    fontSize: 32,
-    fontWeight: "300",
+    fontSize: vh(4),
+    fontWeight: "500",
     textAlign: "center",
+    color: colors.whiteColor,
   },
-  authContainer: {
-    marginBottom: 32,
-  },
-  authTitle: {
-    color: "#8e93a1",
-    fontSize: 12,
-    textTransform: "uppercase",
-    fontWeight: "300",
-  },
-  authField: {
-    borderBottomColor: "#8e93a1",
-    borderBottomWidth: 0.5,
-    height: 48,
-  },
-  signInButton: {
-    height: 48,
-    marginVertical: 0,
-    marginHorizontal: 32,
+  inputContainer: {
+    marginBottom: vh(15),
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#8022d9",
-    borderRadius: 6,
   },
-  signInText: {
-    fontSize: 14,
-    fontWeight: "600",
-    textAlign: "center",
-    color: "#ffffff",
-  },
-  signUp: {
-    marginTop: 16,
-  },
-  signUpTopText: {
-    fontSize: 13,
-    textAlign: "center",
-  },
-  signUpBottomText: {
-    fontSize: 14,
-    fontWeight: "600",
-    color: "#8022d9",
-  },
-  headerGraphic: {
-    position: "absolute",
+  inputBox: {
     width: "100%",
-    top: -50,
-    zIndex: -100,
+    alignItems: "center",
+    marginBottom: vh(4),
   },
-  rightCircle: {
-    position: "absolute",
-    backgroundColor: "#8022d9",
-    width: 400,
-    height: 400,
-    borderRadius: 200,
-    top: -200,
-    right: -100,
+  inputText: {
+    width: "70%",
+    color: colors.whiteColor,
+    fontSize: vh(1.5),
+    textTransform: "uppercase",
+    fontWeight: "500",
   },
-  leftCircle: {
-    position: "absolute",
-    backgroundColor: "#23a6d5",
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    top: -50,
-    left: -50,
+  signUpLeftText: {
+    fontSize: vw(4),
+    textAlign: "center",
+  },
+  signUpRightText: {
+    fontSize: vw(4.5),
+    fontWeight: "600",
+    color: colors.whiteColor,
   },
 });
