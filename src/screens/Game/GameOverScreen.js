@@ -1,9 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Image, BackHandler, Alert } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { useGameInfo, useSetGameInfo } from "../../context/GameContext";
+import {
+  useGameInfo,
+  useSetGameInfo,
+  useTestStage,
+} from "../../context/GameContext";
 import colors from "../../constants/colors";
 import {
   PLAY_AGAIN,
@@ -28,6 +32,7 @@ const GameOverScreen = ({
 }) => {
   const { stage, heart } = useGameInfo();
   const setGameInfo = useSetGameInfo();
+  const testStage = useTestStage();
   const [checkReward, setCheckReward] = useState(false);
 
   /*
@@ -73,6 +78,8 @@ const GameOverScreen = ({
       ...curState,
       stage: curState.stage + 1,
     }));
+
+    testStage();
 
     /* AsyncStorage stage +1 업데이트 */
   };

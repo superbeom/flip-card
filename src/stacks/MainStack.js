@@ -1,12 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { useQuery } from "react-apollo-hooks";
 import AsyncStorage from "@react-native-community/async-storage";
 
 import { GameProvider } from "../context/GameContext";
-import { useUsername } from "../context/AuthContext";
-
-import { GET_USER } from "../screens/CommonQueries";
 
 import HomeScreen from "../screens/Home/HomeScreen";
 
@@ -15,62 +11,46 @@ import Loader from "../components/Loader";
 const MainNavigation = createStackNavigator();
 
 export default () => {
-  const username = useUsername();
-  let gameInfo = {
-    stage: 1,
-    horizontalNum: 2,
-    heart: 5,
-    gameEnd: false,
-  };
+  const [loaded, setLoaded] = useState(false);
+  const [gameInfo, setGameInfo] = useState({});
 
-  /* Store Game Info to Local */
-  const storeGameInfoToLocal = async (stage, horizontalNum, heart, gameEnd) => {
+  const preLoad = async () => {
     try {
-      await AsyncStorage.setItem("stage", JSON.stringify(stage));
-      await AsyncStorage.setItem(
-        "horizontalNum",
-        JSON.stringify(horizontalNum)
+      const storageStage = JSON.parse(await AsyncStorage.getItem("stage"));
+      const storageHorizontalNum = JSON.parse(
+        await AsyncStorage.getItem("horizontalNum")
       );
-      await AsyncStorage.setItem("heart", JSON.stringify(heart));
-      await AsyncStorage.setItem("gameEnd", JSON.stringify(gameEnd));
-    } catch (error) {
-      console.log("Error @storeGameInfoToLocal_MainStack: ", error.message);
-    }
-  };
+      const storageHeart = JSON.parse(await AsyncStorage.getItem("heart"));
+      const storageGameEnd = JSON.parse(await AsyncStorage.getItem("gameEnd"));
 
-  const { data, error, loading } = useQuery(GET_USER, {
-    variables: {
-      username,
-    },
-  });
-
-  if (error) {
-    console.log("Error @useQuery_MainStack: ", error);
-  }
-
-  if (!loading && data) {
-    try {
-      const {
-        seeUser: { stage, horizontalNum, heart, gameEnd },
-      } = data;
-
-      console.log("data: ", data);
-
-      gameInfo = {
-        stage,
-        horizontalNum,
-        heart,
-        gameEnd,
-      };
-
-      /* Store Game Info to Local */
-      storeGameInfoToLocal(stage, horizontalNum, heart, gameEnd);
+      if (storageStage && storageHorizontalNum) {
+        /* Store Game Info to Game Screen */
+        setGameInfo((curState) => ({
+          stage: storageStage,
+          horizontalNum: storageHorizontalNum,
+          heart: storageHeart,
+          gameEnd: storageGameEnd,
+        }));
+      } else {
+        setGameInfo((curState) => ({
+          stage: 1,
+          horizontalNum: 2,
+          heart: 5,
+          gameEnd: false,
+        }));
+      }
     } catch (error) {
       console.log("Error @if_MainStack: ", error.message);
+    } finally {
+      setLoaded(true);
     }
-  }
+  };
 
-  return !loading && data ? (
+  useEffect(() => {
+    preLoad();
+  }, []);
+
+  return loaded ? (
     <GameProvider gameInfo={gameInfo}>
       <MainNavigation.Navigator headerMode="none">
         <MainNavigation.Screen name="Home" component={HomeScreen} />
