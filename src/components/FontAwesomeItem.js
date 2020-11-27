@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { vw } from "react-native-expo-viewport-units";
 
-import { GameContext } from "../context/GameContext";
+import { useGameInfo } from "../context/GameContext";
 
 /*
   2x2 - vw(20)
@@ -21,7 +21,7 @@ const getSize = (stage) => {
 };
 
 export default (props) => {
-  const [{ stage }, _] = useContext(GameContext);
+  const { stage } = useGameInfo();
 
   return <FontAwesome5 {...props} size={getSize(stage)} />;
 };

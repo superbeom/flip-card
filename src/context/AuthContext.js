@@ -3,14 +3,22 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({ isLoggedIn: isLoggedInProp, children }) => {
+export const AuthProvider = ({
+  isLoggedIn: isLoggedInProp,
+  username: usernameProp,
+  children,
+}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(isLoggedInProp);
+  const [username, setUsername] = useState(usernameProp);
 
-  const logUserIn = async (token) => {
+  const logUserIn = async (token, logInUsername) => {
     try {
       await AsyncStorage.setItem("isLoggedIn", "true");
+      await AsyncStorage.setItem("username", logInUsername);
       await AsyncStorage.setItem("jwt", token);
+
       setIsLoggedIn(true);
+      setUsername(logInUsername);
     } catch (error) {
       console.log("Error @logUserIn_AuthContext: ", error.message);
     }
@@ -26,7 +34,9 @@ export const AuthProvider = ({ isLoggedIn: isLoggedInProp, children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, logUserIn, logUserOut }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, logUserIn, logUserOut, username }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -45,4 +55,9 @@ export const useLogIn = () => {
 export const useLogOut = () => {
   const { logUserOut } = useContext(AuthContext);
   return logUserOut;
+};
+
+export const useUsername = () => {
+  const { username } = useContext(AuthContext);
+  return username;
 };

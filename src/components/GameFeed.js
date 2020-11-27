@@ -8,7 +8,7 @@ import {
   Dimensions,
 } from "react-native";
 
-import { GameContext } from "../context/GameContext";
+import { useGameInfo } from "../context/GameContext";
 import colors from "../constants/colors";
 import checkStage from "../utils/checkStage";
 import { shuffle } from "../utils/shuffleArray";
@@ -27,7 +27,7 @@ export default ({
   clickedBomb,
   setClickedBomb,
 }) => {
-  const [{ stage, horizontalNum }, _] = useContext(GameContext);
+  const { stage, horizontalNum } = useGameInfo();
   const [shuffleData, setShuffleData] = useState([]);
   const [firstClickIndex, setFirstClickIndex] = useState(-1);
   const [secondClickIndex, setSecondClickIndex] = useState(-1);

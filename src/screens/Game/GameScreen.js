@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Alert, BackHandler } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { GameContext } from "../../context/GameContext";
+import { useGameInfo, useSetGameInfo } from "../../context/GameContext";
 import { GO_HOME, CHECK_GO_HOME } from "../../constants/strings";
 
 import GameFeed from "../../components/GameFeed";
@@ -11,7 +11,8 @@ import Heart from "../../components/Heart";
 import Timer from "../../components/Timer";
 
 export default ({ onGoHome, onGameOver }) => {
-  const [{ stage, heart }, setGameInfo] = useContext(GameContext);
+  const { stage, heart } = useGameInfo();
+  const setGameInfo = useSetGameInfo();
   const [showAnswer, setShowAnswer] = useState(true);
   const [clickedBomb, setClickedBomb] = useState(false);
 

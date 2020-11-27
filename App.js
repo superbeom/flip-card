@@ -9,7 +9,6 @@ import { ApolloProvider } from "react-apollo-hooks";
 import apolloClientOptions from "./apollo";
 
 import { AuthProvider } from "./src/context/AuthContext";
-import { GameProvider } from "./src/context/GameContext";
 
 import AppStack from "./src/stacks/AppStack";
 
@@ -19,6 +18,7 @@ export default () => {
   const [loaded, setLoaded] = useState(false);
   const [client, setClient] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(null);
+  const [username, setUsername] = useState(null);
 
   const preLoad = async () => {
     try {
@@ -41,11 +41,37 @@ export default () => {
 
       /* Check User Log In */
       const checkIsLoggedIn = await AsyncStorage.getItem("isLoggedIn");
+      const checkUsername = await AsyncStorage.getItem("username");
+
       if (!checkIsLoggedIn || checkIsLoggedIn === "false") {
         setIsLoggedIn(false);
-      } else {
+      } else if (checkIsLoggedIn && checkUsername) {
         setIsLoggedIn(true);
+        setUsername(checkUsername);
       }
+
+      /* Testing.. */
+      // const storageStage = JSON.parse(await AsyncStorage.getItem("stage"));
+      // const storageHorizontalNum = JSON.parse(
+      //   await AsyncStorage.getItem("horizontalNum")
+      // );
+      // const storageHeart = JSON.parse(await AsyncStorage.getItem("heart"));
+      // const storageGameEnd = JSON.parse(await AsyncStorage.getItem("gameEnd"));
+
+      // if (
+      //   storageStage &&
+      //   storageHorizontalNum &&
+      //   storageHeart &&
+      //   storageGameEnd
+      // ) {
+      //   console.log("Yes");
+      //   console.log("storageStage: ", storageStage);
+      //   console.log("storageHorizontalNum: ", storageHorizontalNum);
+      //   console.log("storageHeart: ", storageHeart);
+      //   console.log("storageGameEnd: ", storageGameEnd);
+      // } else {
+      //   console.log("No");
+      // }
 
       /* Set State */
       setLoaded(true);
@@ -61,10 +87,8 @@ export default () => {
 
   return loaded && client && isLoggedIn !== null ? (
     <ApolloProvider client={client}>
-      <AuthProvider isLoggedIn={isLoggedIn}>
-        <GameProvider>
-          <AppStack />
-        </GameProvider>
+      <AuthProvider isLoggedIn={isLoggedIn} username={username}>
+        <AppStack />
       </AuthProvider>
     </ApolloProvider>
   ) : (

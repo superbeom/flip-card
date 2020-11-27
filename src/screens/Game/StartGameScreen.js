@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { GameContext } from "../../context/GameContext";
+import { useGameInfo } from "../../context/GameContext";
 import colors from "../../constants/colors";
 import { FLAG } from "../../utils/FontAwesomeSource";
 import { CURRENT_STAGE } from "../../constants/strings";
@@ -14,7 +14,7 @@ import Arrow from "../../components/Arrow";
 import GetHeartText from "../../components/GetHeartText";
 
 export default ({ onStartGame, getHeart, toggleSwitch }) => {
-  const [{ stage, heart, gameEnd }, _] = useContext(GameContext);
+  const { stage, heart, gameEnd } = useGameInfo();
 
   return (
     <View style={styles.screen}>

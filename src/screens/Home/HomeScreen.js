@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
-  Image,
   StatusBar,
   Alert,
   BackHandler,
@@ -10,23 +9,21 @@ import {
   Platform,
   ImageBackground,
 } from "react-native";
-import AsyncStorage from "@react-native-community/async-storage";
 import { AdMobBanner } from "expo-ads-admob";
 
-import { GameContext } from "../context/GameContext";
-import { CONGRATULATIONS, HOLD_ON, CHECK_EXIT } from "../constants/strings";
+import { useGameInfo, useSetGameInfo } from "../../context/GameContext";
+import { CONGRATULATIONS, HOLD_ON, CHECK_EXIT } from "../../constants/strings";
 
-import StartGameScreen from "./Game/StartGameScreen";
-import GameScreen from "./Game/GameScreen";
-import GameOverScreen from "./Game/GameOverScreen";
-import GetHeartScreen from "./Game/GetHeartScreen";
+import StartGameScreen from "../Game/StartGameScreen";
+import GameScreen from "../Game/GameScreen";
+import GameOverScreen from "../Game/GameOverScreen";
+import GetHeartScreen from "../Game/GetHeartScreen";
 
-import Header from "../components/Header";
-import Loader from "../components/Loader";
+import Header from "../../components/Header";
 
 export default () => {
-  const [{ stage, heart }, setGameInfo] = useContext(GameContext);
-  const [loading, setLoading] = useState(true);
+  const { stage, heart } = useGameInfo();
+  const setGameInfo = useSetGameInfo();
   // const [startGame, setStartGame] = useState(false);
   // const [gameOver, setGameOver] = useState(false);
   const [startGame, setStartGame] = useState(false);
@@ -50,11 +47,11 @@ export default () => {
       setPass(false);
 
       if (heart > 0) {
+        console.log("minus heart");
         setGameInfo((curState) => ({
           ...curState,
           heart: curState.heart - 1,
         }));
-
         /* AsyncStorage heart 갯수 -1 업데이트 */
       }
     } else {
@@ -86,38 +83,6 @@ export default () => {
     }
   };
 
-  const preLoad = async () => {
-    try {
-      // const storageStage = parseInt(await AsyncStorage.getItem("STAGE"));
-      // const storageHorizontalNum = parseInt(
-      //   await AsyncStorage.getItem("HORIZONTAL_NUM")
-      // );
-      // const storageHeart = parseInt(await AsyncStorage.getItem("HEART"));
-      // const storageGameEnd = await AsyncStorage.getItem("GAME_END");
-
-      // if (storageStage && storageHorizontalNum && storageHeart) {
-      //   if (storageGameEnd === "true") {
-      //     setGameInfo({
-      //       stage: storageStage,
-      //       horizontalNum: storageHorizontalNum,
-      // heart: heart,
-      //       gameEnd: true,
-      //     });
-      //   } else {
-      //     setGameInfo({
-      //       stage: storageStage,
-      //       horizontalNum: storageHorizontalNum,
-      // heart: heart,
-      //     });
-      //   }
-      // }
-
-      setLoading(false);
-    } catch (error) {
-      console.log("error @preLoad_AppStack: ", error.message);
-    }
-  };
-
   const backAction = () => {
     Alert.alert(HOLD_ON, CHECK_EXIT, [
       {
@@ -132,20 +97,16 @@ export default () => {
   };
 
   useEffect(() => {
-    preLoad();
-
     BackHandler.addEventListener("hardwareBackPress", backAction);
 
     return () =>
       BackHandler.removeEventListener("hardwareBackPress", backAction);
   }, []);
 
-  return loading ? (
-    <Loader />
-  ) : (
+  return (
     <ImageBackground
       style={styles.screen}
-      source={require("../../assets/images/background.png")}
+      source={require("../../../assets/images/background.png")}
     >
       <StatusBar hidden={true} />
       <Header

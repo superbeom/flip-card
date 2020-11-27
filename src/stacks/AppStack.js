@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useIsLoggedIn } from "../context/AuthContext";
 
 import AuthStack from "./AuthStack";
-import MainStack from "../screens/HomeScreen";
+import MainStack from "./MainStack";
 
 export default () => {
   const isLoggedIn = useIsLoggedIn();

@@ -3,7 +3,7 @@ import { StyleSheet, View, Image, BackHandler, Alert } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { GameContext } from "../../context/GameContext";
+import { useGameInfo, useSetGameInfo } from "../../context/GameContext";
 import colors from "../../constants/colors";
 import {
   PLAY_AGAIN,
@@ -26,7 +26,8 @@ const GameOverScreen = ({
   pass,
   getHeart,
 }) => {
-  const [{ stage, heart }, setGameInfo] = useContext(GameContext);
+  const { stage, heart } = useGameInfo();
+  const setGameInfo = useSetGameInfo();
   const [checkReward, setCheckReward] = useState(false);
 
   /*
