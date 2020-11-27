@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Alert } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Alert, BackHandler } from "react-native";
 import { useMutation } from "react-apollo-hooks";
 
 import { CREATE_ACCOUNT } from "./AuthQueries";
@@ -20,6 +20,8 @@ import {
   USERNAME_ONLY,
   USERNAME_UNDER_30,
   USERNAME_ALREADY_TAKEN,
+  HOLD_ON,
+  CHECK_EXIT,
 } from "../../constants/strings";
 
 import useInput from "../../hooks/useInput";
@@ -89,6 +91,26 @@ export default ({ navigation }) => {
       setLoading(false);
     }
   };
+
+  const backAction = () => {
+    Alert.alert(HOLD_ON, CHECK_EXIT, [
+      {
+        text: "Cancel",
+        onPress: () => null,
+        style: "cancel",
+      },
+      { text: "YES", onPress: () => BackHandler.exitApp() },
+    ]);
+
+    return true;
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () =>
+      BackHandler.removeEventListener("hardwareBackPress", backAction);
+  }, []);
 
   return (
     <Auth
