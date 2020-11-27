@@ -23,9 +23,24 @@ export default () => {
     gameEnd: false,
   };
 
+  /* Store Game Info to Local */
+  const storeGameInfoToLocal = async (stage, horizontalNum, heart, gameEnd) => {
+    try {
+      await AsyncStorage.setItem("stage", JSON.stringify(stage));
+      await AsyncStorage.setItem(
+        "horizontalNum",
+        JSON.stringify(horizontalNum)
+      );
+      await AsyncStorage.setItem("heart", JSON.stringify(heart));
+      await AsyncStorage.setItem("gameEnd", JSON.stringify(gameEnd));
+    } catch (error) {
+      console.log("Error @storeGameInfoToLocal_MainStack: ", error.message);
+    }
+  };
+
   const { data, error, loading } = useQuery(GET_USER, {
     variables: {
-      username: username,
+      username,
     },
   });
 
@@ -49,26 +64,11 @@ export default () => {
       };
 
       /* Store Game Info to Local */
-      // storeGameInfoToLocal()
+      storeGameInfoToLocal(stage, horizontalNum, heart, gameEnd);
     } catch (error) {
-      console.log("Error @If_MainStack: ", error.message);
+      console.log("Error @if_MainStack: ", error.message);
     }
   }
-
-  /* Store Game Info to Local */
-  const storeGameInfoToLocal = async () => {
-    try {
-      await AsyncStorage.setItem("stage", JSON.stringify(stage));
-      await AsyncStorage.setItem(
-        "horizontalNum",
-        JSON.stringify(horizontalNum)
-      );
-      await AsyncStorage.setItem("heart", JSON.stringify(heart));
-      await AsyncStorage.setItem("gameEnd", JSON.stringify(gameEnd));
-    } catch (error) {
-      console.log("Error @preLoad_MainStack: ", error.message);
-    }
-  };
 
   return !loading && data ? (
     <GameProvider gameInfo={gameInfo}>

@@ -50,29 +50,6 @@ export default () => {
         setUsername(checkUsername);
       }
 
-      /* Testing.. */
-      // const storageStage = JSON.parse(await AsyncStorage.getItem("stage"));
-      // const storageHorizontalNum = JSON.parse(
-      //   await AsyncStorage.getItem("horizontalNum")
-      // );
-      // const storageHeart = JSON.parse(await AsyncStorage.getItem("heart"));
-      // const storageGameEnd = JSON.parse(await AsyncStorage.getItem("gameEnd"));
-
-      // if (
-      //   storageStage &&
-      //   storageHorizontalNum &&
-      //   storageHeart &&
-      //   storageGameEnd
-      // ) {
-      //   console.log("Yes");
-      //   console.log("storageStage: ", storageStage);
-      //   console.log("storageHorizontalNum: ", storageHorizontalNum);
-      //   console.log("storageHeart: ", storageHeart);
-      //   console.log("storageGameEnd: ", storageGameEnd);
-      // } else {
-      //   console.log("No");
-      // }
-
       /* Set State */
       setLoaded(true);
       setClient(apolloClient);
