@@ -51,7 +51,7 @@ export default SignInScreen = ({ route, navigation }) => {
       } = await confirmSecretMutation();
 
       if (confirmSecret !== "" || confirmSecret !== false) {
-        logIn(confirmSecret, username);
+        logIn(username);
       } else {
         Alert.alert(CANT_CONFIRM_PASSWORD);
       }

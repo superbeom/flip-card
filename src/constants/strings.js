@@ -34,7 +34,7 @@ export const CANT_BE_BLANK = "can't be blank";
 /* Sign Up */
 export const ACCOUNT_CREATED = "Account created";
 
-export const LOG_IN_NOW = "Log in now!";
+export const LETS_PLAY_A_GAME = "Let's play a game!";
 
 export const CANT_CREATE_ACCOUNT = "Can't create account";
 

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Alert, BackHandler } from "react-native";
 import { useMutation } from "react-apollo-hooks";
 
+import { useLogIn } from "../../context/AuthContext";
+
 import { CREATE_ACCOUNT } from "./AuthQueries";
 
 import { checkValueName } from "../../utils/checkAuthInput";
@@ -13,9 +15,8 @@ import {
   PASSWORD,
   CANT_BE_EMPTY,
   CANT_BE_BLANK,
-  SIGN_IN,
   ACCOUNT_CREATED,
-  LOG_IN_NOW,
+  LETS_PLAY_A_GAME,
   CANT_CREATE_ACCOUNT,
   USERNAME_ONLY,
   USERNAME_UNDER_30,
@@ -28,6 +29,7 @@ import useInput from "../../hooks/useInput";
 import Auth from "../../components/Auth";
 
 export default ({ navigation }) => {
+  const logIn = useLogIn();
   const [loading, setLoading] = useState(false);
   const usernameInput = useInput("");
   const secretInput = useInput("");
@@ -69,8 +71,9 @@ export default ({ navigation }) => {
       } = await createAccountMutation();
 
       if (createAccount) {
-        Alert.alert(ACCOUNT_CREATED, LOG_IN_NOW);
-        navigation.navigate(SIGN_IN, { username, secret });
+        Alert.alert(ACCOUNT_CREATED, LETS_PLAY_A_GAME);
+
+        logIn(username);
       } else {
         Alert.alert(CANT_CREATE_ACCOUNT);
       }

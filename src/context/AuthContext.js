@@ -17,7 +17,7 @@ export const AuthProvider = ({
   /* Get Game Info from Backend */
   const [meMutation] = useMutation(ME);
 
-  const logUserIn = async (token, logInUsername) => {
+  const logUserIn = async (logInUsername) => {
     try {
       const {
         data: {
@@ -32,7 +32,6 @@ export const AuthProvider = ({
       /* Store Log In to Local */
       await AsyncStorage.setItem("isLoggedIn", "true");
       await AsyncStorage.setItem("username", logInUsername);
-      await AsyncStorage.setItem("jwt", token);
 
       /* Store Game Info to Local */
       await AsyncStorage.setItem("stage", JSON.stringify(stage));
