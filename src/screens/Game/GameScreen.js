@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Alert, BackHandler } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { useGameInfo, useSetGameInfo } from "../../context/GameContext";
+import { useGameInfo, useMinusHeart } from "../../context/GameContext";
 import { GO_HOME, CHECK_GO_HOME } from "../../constants/strings";
 
 import GameFeed from "../../components/GameFeed";
@@ -12,7 +12,7 @@ import Timer from "../../components/Timer";
 
 export default ({ onGoHome, onGameOver }) => {
   const { stage, heart } = useGameInfo();
-  const setGameInfo = useSetGameInfo();
+  const minusHeart = useMinusHeart();
   const [showAnswer, setShowAnswer] = useState(true);
   const [clickedBomb, setClickedBomb] = useState(false);
 
@@ -37,12 +37,7 @@ export default ({ onGoHome, onGameOver }) => {
     setTimeout(() => setShowAnswer(false), 2000);
 
     if (heart > 0) {
-      setGameInfo((curState) => ({
-        ...curState,
-        heart: curState.heart - 1,
-      }));
-
-      /* AsyncStorage heart 갯수 -1 업데이트 */
+      minusHeart();
     }
   };
 
@@ -62,7 +57,6 @@ export default ({ onGoHome, onGameOver }) => {
             <Timer
               onGameOver={onGameOver}
               numOfHeart={heart}
-              setGameInfo={setGameInfo}
               showAnswerForHint={showAnswerForHint}
               showAnswer={showAnswer}
               stage={stage}

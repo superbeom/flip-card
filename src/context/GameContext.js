@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useRef } from "react";
 import { useMutation } from "react-apollo-hooks";
 import AsyncStorage from "@react-native-community/async-storage";
 
@@ -10,61 +10,123 @@ export const GameContext = createContext([{}, () => {}]);
 export const GameProvider = ({ gameInfo: gameInfoProp, children }) => {
   const [gameInfo, setGameInfo] = useState(gameInfoProp);
   const username = useUsername();
+  const tempHeart = useRef(0);
 
-  const [updateStageMutation] = useMutation(UPDATE_GAME_INFO);
+  const [updateGameInfoMutation] = useMutation(UPDATE_GAME_INFO);
 
-  const [updateHorizontalNumMutation] = useMutation(UPDATE_GAME_INFO, {
-    variables: {
-      username,
-      horizontalNum: gameInfo.horizontalNum,
-    },
-  });
+  /* stage +1 업데이트 */
+  const nextStage = async () => {
+    try {
+      /* Update Stage Info on Screen */
+      setGameInfo((curState) => ({
+        ...curState,
+        stage: curState.stage + 1,
+      }));
 
-  const [updateHeartMutation] = useMutation(UPDATE_GAME_INFO);
+      /* Store Stage Info to Backend */
+      await updateGameInfoMutation({
+        variables: {
+          username,
+          stage: gameInfo.stage + 1,
+        },
+      });
 
-  const [updateGameEndMutation] = useMutation(UPDATE_GAME_INFO, {
-    variables: {
-      username,
-      gameEnd: gameInfo.gameEnd,
-    },
-  });
+      /* Store Stage Info to Local */
+      await AsyncStorage.setItem("stage", JSON.stringify(gameInfo.stage + 1));
+    } catch (error) {
+      console.log("Error @nextStage_GameContext: ", error.message);
+    }
+  };
 
-  const testStage = async () => {
-    console.log("username: ", username);
-    await updateStageMutation({
-      username: username,
-      stage: gameInfo.stage + 1,
-    });
+  /* horizontalNum +1 업데이트 */
+  const plusHorizontalNum = async () => {
+    try {
+      /* Update HorizontalNum Info on Screen */
+      setGameInfo((curState) => ({
+        ...curState,
+        horizontalNum: curState.horizontalNum + 1,
+      }));
+
+      /* Store HorizontalNum Info to Backend */
+      await updateGameInfoMutation({
+        variables: {
+          username,
+          horizontalNum: gameInfo.horizontalNum + 1,
+        },
+      });
+
+      /* Store HorizontalNum Info to Local */
+      await AsyncStorage.setItem(
+        "horizontalNum",
+        JSON.stringify(gameInfo.horizontalNum + 1)
+      );
+    } catch (error) {
+      console.log("Error @plusHorizontalNum_GameContext: ", error.message);
+    }
   };
 
   /* heart 갯수 -1 업데이트 */
   const minusHeart = async () => {
     try {
-      console.log("minusHeart Func from GameContext");
-
+      /* Update Heart Info on Screen */
       setGameInfo((curState) => ({
         ...curState,
         heart: curState.heart - 1,
       }));
 
-      /* Store Game Info to Backend */
-      await updateHeartMutation({
+      /* Store Heart Info to Backend */
+      await updateGameInfoMutation({
         variables: {
           username,
           heart: gameInfo.heart - 1,
         },
       });
 
-      /* Store Game Info to Local */
+      /* Store Heart Info to Local */
       await AsyncStorage.setItem("heart", JSON.stringify(gameInfo.heart - 1));
     } catch (error) {
       console.log("Error @minusHeart_GameContext: ", error.message);
     }
   };
 
+  /* heart 갯수 (+plusNum) 업데이트 */
+  const plusHeart = async (plusNum) => {
+    try {
+      tempHeart.current = tempHeart.current + plusNum;
+
+      /* Update Heart Info on Screen */
+      setGameInfo((curState) => ({
+        ...curState,
+        heart: curState.heart + plusNum,
+      }));
+
+      /* Store Heart Info to Backend */
+      await updateGameInfoMutation({
+        variables: {
+          username,
+          heart: gameInfo.heart + tempHeart.current,
+        },
+      });
+
+      /* Store Heart Info to Local */
+      await AsyncStorage.setItem(
+        "heart",
+        JSON.stringify(gameInfo.heart + tempHeart.current)
+      );
+    } catch (error) {
+      console.log("Error @plusHeart_GameContext: ", error.message);
+    }
+  };
+
   return (
     <GameContext.Provider
-      value={{ gameInfo, setGameInfo, minusHeart, testStage }}
+      value={{
+        gameInfo,
+        nextStage,
+        plusHorizontalNum,
+        minusHeart,
+        plusHeart,
+      }}
     >
       {children}
     </GameContext.Provider>
@@ -76,9 +138,14 @@ export const useGameInfo = () => {
   return gameInfo;
 };
 
-export const useSetGameInfo = () => {
-  const { setGameInfo } = useContext(GameContext);
-  return setGameInfo;
+export const useNextStage = () => {
+  const { nextStage } = useContext(GameContext);
+  return nextStage;
+};
+
+export const usePlusHorizontalNum = () => {
+  const { plusHorizontalNum } = useContext(GameContext);
+  return plusHorizontalNum;
 };
 
 export const useMinusHeart = () => {
@@ -86,7 +153,7 @@ export const useMinusHeart = () => {
   return minusHeart;
 };
 
-export const useTestStage = () => {
-  const { testStage } = useContext(GameContext);
-  return testStage;
+export const usePlusHeart = () => {
+  const { plusHeart } = useContext(GameContext);
+  return plusHeart;
 };

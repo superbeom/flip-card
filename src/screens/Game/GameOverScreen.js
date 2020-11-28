@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Image, BackHandler, Alert } from "react-native";
-import AsyncStorage from "@react-native-community/async-storage";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import {
   useGameInfo,
-  useSetGameInfo,
-  useTestStage,
+  useNextStage,
+  usePlusHorizontalNum,
+  usePlusHeart,
 } from "../../context/GameContext";
+
 import colors from "../../constants/colors";
 import {
   PLAY_AGAIN,
@@ -31,22 +32,10 @@ const GameOverScreen = ({
   getHeart,
 }) => {
   const { stage, heart } = useGameInfo();
-  const setGameInfo = useSetGameInfo();
-  const testStage = useTestStage();
+  const nextStage = useNextStage();
+  const plusHorizontalNum = usePlusHorizontalNum();
+  const plusHeart = usePlusHeart();
   const [checkReward, setCheckReward] = useState(false);
-
-  /*
-    GameFeed의 FlatList numColumns 수 올릴 필요가 있을 때마다,
-    plusHorizontalNum() 실행하기
-  */
-  const plusHorizontalNum = () => {
-    setGameInfo((curState) => ({
-      ...curState,
-      horizontalNum: curState.horizontalNum + 1,
-    }));
-
-    /* AsyncStorage horizontalNum +1 업데이트 */
-  };
 
   const clickedGoHomeAfterSuccess = () => {
     successStage();
@@ -58,30 +47,22 @@ const GameOverScreen = ({
     onGoHome();
   };
 
-  const nextStage = async () => {
+  const nextStageHandler = () => {
     successStage();
     onStartGame();
   };
 
-  const replayStage = () => {
+  const replayStageHandler = () => {
     onPlayAgain();
   };
 
-  const successStage = async () => {
-    if (stage === 5) {
-      plusHorizontalNum();
-    } else if (stage === 36) {
+  const successStage = () => {
+    /* 5x5 6x6 넘어 가는 스테이지도 추가하기! */
+    if (stage === 5 || stage === 36) {
       plusHorizontalNum();
     }
 
-    setGameInfo((curState) => ({
-      ...curState,
-      stage: curState.stage + 1,
-    }));
-
-    testStage();
-
-    /* AsyncStorage stage +1 업데이트 */
+    nextStage();
   };
 
   const failStage = () => {};
@@ -105,13 +86,7 @@ const GameOverScreen = ({
   const getReward = () => {
     setCheckReward(false); // checkReward 초기화
 
-    /* GameContext heart +1 업데이트 */
-    setGameInfo((curState) => ({
-      ...curState,
-      heart: curState.heart + 1,
-    }));
-
-    /* AsyncStorage heart 갯수 +1 업데이트 */
+    plusHeart(1);
   };
 
   useEffect(() => {
@@ -169,12 +144,18 @@ const GameOverScreen = ({
         </View>
         <View style={styles.buttonContainer}>
           {stage % 10 === 0 ? null : (
-            <StageButton onPress={replayStage} enoughHeart={heart > 0 ?? false}>
+            <StageButton
+              onPress={replayStageHandler}
+              enoughHeart={heart > 0 ?? false}
+            >
               {PLAY_AGAIN}
             </StageButton>
           )}
           {pass ? (
-            <StageButton onPress={nextStage} enoughHeart={heart > 0 ?? false}>
+            <StageButton
+              onPress={nextStageHandler}
+              enoughHeart={heart > 0 ?? false}
+            >
               {NEXT_STAGE}
             </StageButton>
           ) : null}

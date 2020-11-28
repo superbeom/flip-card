@@ -11,11 +11,7 @@ import {
 } from "react-native";
 import { AdMobBanner } from "expo-ads-admob";
 
-import {
-  useGameInfo,
-  useSetGameInfo,
-  useMinusHeart,
-} from "../../context/GameContext";
+import { useGameInfo, useMinusHeart } from "../../context/GameContext";
 import { CONGRATULATIONS, HOLD_ON, CHECK_EXIT } from "../../constants/strings";
 
 import StartGameScreen from "../Game/StartGameScreen";
@@ -27,7 +23,6 @@ import Header from "../../components/Header";
 
 export default () => {
   const { stage, heart } = useGameInfo();
-  const setGameInfo = useSetGameInfo();
   const minusHeart = useMinusHeart();
   const [startGame, setStartGame] = useState(false);
   const [gameOver, setGameOver] = useState(false);
@@ -50,8 +45,6 @@ export default () => {
       setPass(false);
 
       if (heart > 0) {
-        console.log("minus heart");
-
         minusHeart();
       }
     } else {
@@ -161,7 +154,6 @@ export default () => {
         onRequestClose={() => null}
       >
         <GetHeartScreen
-          setGameInfo={setGameInfo}
           closeModal={closeModal}
           numOfHeart={heart}
           checkReward={checkReward}

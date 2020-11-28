@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { StyleSheet, View, Animated, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
+import { useMinusHeart } from "../context/GameContext";
+
 import colors from "../constants/colors";
 import { checkLimitTime } from "../utils/checkSomething";
 import { STOP_WATCH, BAN } from "../utils/FontAwesomeSource";
@@ -16,12 +18,12 @@ const Progress = ({
   end,
   setLimitTime,
   numOfHeart,
-  setGameInfo,
   showAnswerForHint,
   showAnswer,
   clickedBomb,
   disableHint,
 }) => {
+  const minusHeart = useMinusHeart();
   const [width, setWidth] = useState(0);
   const animatedValue = useRef(new Animated.Value(-1000)).current;
   const reactive = useRef(new Animated.Value(-1000)).current;
@@ -31,12 +33,7 @@ const Progress = ({
     setLimitTime((curState) => curState + 3);
 
     if (numOfHeart > 0) {
-      setGameInfo((curState) => ({
-        ...curState,
-        heart: curState.heart - 1,
-      }));
-
-      /* AsyncStorage heart 갯수 -1 업데이트 */
+      minusHeart();
     }
   };
 
@@ -95,7 +92,6 @@ const Progress = ({
 const Timer = ({
   onGameOver,
   numOfHeart,
-  setGameInfo,
   showAnswerForHint,
   showAnswer,
   stage,
@@ -144,7 +140,6 @@ const Timer = ({
         end={limitTime}
         setLimitTime={setLimitTime}
         numOfHeart={numOfHeart}
-        setGameInfo={setGameInfo}
         showAnswerForHint={showAnswerForHint}
         showAnswer={showAnswer}
         clickedBomb={clickedBomb}
