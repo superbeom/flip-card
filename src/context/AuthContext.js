@@ -2,7 +2,7 @@ import React, { useState, createContext, useContext } from "react";
 import { useMutation } from "react-apollo-hooks";
 import AsyncStorage from "@react-native-community/async-storage";
 
-import { ME } from "../screens/CommonQueries";
+import { ME } from "./ContextQueries";
 
 export const AuthContext = createContext();
 
