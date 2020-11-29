@@ -50,6 +50,12 @@ export default SignInScreen = ({ route, navigation }) => {
         data: { confirmSecret },
       } = await confirmSecretMutation();
 
+      if (confirmSecret === "Wrong") {
+        Alert.alert(WRONG_PASSWORD);
+
+        return false;
+      }
+
       if (confirmSecret !== "" || confirmSecret !== false) {
         logIn(username);
       } else {
