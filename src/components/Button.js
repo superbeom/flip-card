@@ -1,49 +1,59 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { vw, vh } from "react-native-expo-viewport-units";
+import { StyleSheet, TouchableOpacity } from "react-native";
+import { vw } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
 
-const Button = (props) => {
+import { HOME, TROPHY } from "../utils/FontAwesomeSource";
+
+const Button = ({ onPress, disabled, content, size }) => {
+  const checkContent = (content) => {
+    let iconName = HOME;
+
+    switch (content) {
+      case "trophy":
+        iconName = TROPHY;
+        break;
+
+      default:
+        iconName = HOME;
+    }
+
+    return iconName;
+  };
+
   return (
     <TouchableOpacity
-      onPress={props.onPress}
-      activeOpacity={0.5}
-      disabled={props.disabled}
+      style={[
+        styles.button,
+        {
+          width: size || vw(16),
+          height: size || vw(16),
+          borderRadius: size / 2 || vw(16) / 2,
+        },
+      ]}
+      onPress={onPress}
+      activeOpacity={0.7}
+      disabled={disabled}
     >
-      <View
-        style={[
-          styles.button,
-          { backgroundColor: props.color || colors.whiteColor },
-        ]}
-      >
-        <Text
-          style={[
-            styles.buttonText,
-            { color: props.textColor || colors.accentColor },
-          ]}
-        >
-          {props.children}
-        </Text>
-      </View>
+      {checkContent(content)}
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    paddingVertical: vh(1.4),
-    paddingHorizontal: vw(8),
-    borderRadius: 25,
+    // width: size,
+    // height: size,
+    // borderRadius: size / 2,
     shadowColor: colors.accentColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.26,
     shadowRadius: 6,
     elevation: 6,
-  },
-  buttonText: {
-    fontSize: vw(4),
-    fontWeight: "500",
+    backgroundColor: colors.accentColor,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

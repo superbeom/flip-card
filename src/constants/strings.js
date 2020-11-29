@@ -56,6 +56,10 @@ export const CHECK_USERNAME_PASSWORD = "Check your username and password";
 export const CANT_CONFIRM_PASSWORD = "Can't confirm password";
 
 /* AppStack Strings */
+export const HOME = "Home";
+
+export const RANK = "Rank";
+
 export const CONGRATULATIONS = "CONGRATULATIONS!!";
 
 export const CLICK_TO_GET_HEARTS = "Click to get hearts";

@@ -8,7 +8,7 @@ import { usePlusHeart } from "../../context/GameContext";
 
 import colors from "../../constants/colors";
 import { HEART } from "../../utils/FontAwesomeSource";
-import { COMING_SOON, GO_BACK } from "../../constants/strings";
+import { COMING_SOON } from "../../constants/strings";
 
 import Card from "../../components/Card";
 import Heart from "../../components/Heart";
@@ -119,9 +119,7 @@ export default ({ closeModal, numOfHeart, checkReward, setCheckReward }) => {
           <Content onPress={() => null} num={100} price={0.8} update={true} />
         </View>
         <View style={styles.footer}>
-          <Button onPress={closeModal} disabled={checkClick}>
-            {GO_BACK}
-          </Button>
+          <Button onPress={closeModal} disabled={checkClick} content={"home"} />
         </View>
       </View>
       {checkClick ? <Loader /> : null}

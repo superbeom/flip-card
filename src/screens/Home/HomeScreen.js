@@ -21,7 +21,7 @@ import GetHeartScreen from "../Game/GetHeartScreen";
 
 import Header from "../../components/Header";
 
-export default () => {
+export default ({ navigation }) => {
   const { stage, heart } = useGameInfo();
   const minusHeart = useMinusHeart();
   const [startGame, setStartGame] = useState(false);
@@ -114,6 +114,7 @@ export default () => {
         }
         gaming={startGame}
       />
+
       <View style={styles.body}>
         {startGame ? (
           gameOver ? (
@@ -132,9 +133,11 @@ export default () => {
             onStartGame={startGameHandler}
             getHeart={getHeart}
             toggleSwitch={toggleSwitch}
+            navigation={navigation}
           />
         )}
       </View>
+
       <View style={styles.ads}>
         <AdMobBanner
           bannerSize="banner"

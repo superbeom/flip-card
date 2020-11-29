@@ -14,6 +14,34 @@ import colors from "../constants/colors";
   Basics
 */
 
+export const HOME = (
+  <Entypo name={"home"} size={vw(6.5)} color={colors.whiteColor} />
+);
+
+export const TROPHY = (
+  <Entypo name={"trophy"} size={vw(6.5)} color={colors.whiteColor} />
+);
+
+export const CROWN = (
+  <FontAwesome5 name={"crown"} size={vw(10)} color={colors.whiteColor} />
+);
+
+export const MEDAL = (
+  <FontAwesome5 name={"medal"} size={vw(10)} color={colors.whiteColor} />
+);
+
+export const AWARD = (
+  <FontAwesome5 name={"award"} size={vw(10)} color={colors.whiteColor} />
+);
+
+export const PRICE_RIBBON = (
+  <Entypo name={"price-ribbon"} size={vw(10)} color={colors.whiteColor} />
+);
+
+export const SHIELD = (
+  <Entypo name={"shield"} size={vw(10)} color={colors.whiteColor} />
+);
+
 export const HEART = (
   <MaterialCommunityIcons
     name="cards-heart"

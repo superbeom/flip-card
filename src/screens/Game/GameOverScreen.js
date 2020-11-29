@@ -10,12 +10,7 @@ import {
 } from "../../context/GameContext";
 
 import colors from "../../constants/colors";
-import {
-  PLAY_AGAIN,
-  NEXT_STAGE,
-  GO_HOME,
-  CHECK_GO_HOME,
-} from "../../constants/strings";
+import { PLAY_AGAIN, NEXT_STAGE, CHECK_GO_HOME } from "../../constants/strings";
 
 import Button from "../../components/Button";
 import StageButton from "../../components/StageButton";
@@ -143,7 +138,16 @@ const GameOverScreen = ({
           />
         </View>
         <View style={styles.buttonContainer}>
-          {stage % 10 === 0 ? null : (
+          {stage % 10 === 0 ? (
+            pass ? null : (
+              <StageButton
+                onPress={replayStageHandler}
+                enoughHeart={heart > 0 ?? false}
+              >
+                {PLAY_AGAIN}
+              </StageButton>
+            )
+          ) : (
             <StageButton
               onPress={replayStageHandler}
               enoughHeart={heart > 0 ?? false}
@@ -163,9 +167,8 @@ const GameOverScreen = ({
         <View style={styles.goHomeContainer}>
           <Button
             onPress={pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail}
-          >
-            {GO_HOME}
-          </Button>
+            content={"home"}
+          />
         </View>
       </View>
       {checkReward ? <GetHeart /> : null}

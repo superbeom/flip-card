@@ -3,7 +3,8 @@ import { StyleSheet, View, Alert, BackHandler } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import { useGameInfo, useMinusHeart } from "../../context/GameContext";
-import { GO_HOME, CHECK_GO_HOME } from "../../constants/strings";
+
+import { CHECK_GO_HOME } from "../../constants/strings";
 
 import GameFeed from "../../components/GameFeed";
 import Button from "../../components/Button";
@@ -78,7 +79,7 @@ export default ({ onGoHome, onGameOver }) => {
 
       {/* FOOTER */}
       <View style={styles.footer}>
-        <Button onPress={checkGoHome}>{GO_HOME}</Button>
+        <Button onPress={checkGoHome} content={"home"} />
       </View>
     </View>
   );

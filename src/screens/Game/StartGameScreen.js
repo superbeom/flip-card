@@ -1,20 +1,24 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+// import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
+import { useLogOut } from "../../context/AuthContext";
 import { useGameInfo } from "../../context/GameContext";
 import colors from "../../constants/colors";
 import { FLAG } from "../../utils/FontAwesomeSource";
-import { CURRENT_STAGE } from "../../constants/strings";
+import { CURRENT_STAGE, RANK } from "../../constants/strings";
 
 import Card from "../../components/Card";
 import StartButton from "../../components/StartButton";
 import Heart from "../../components/Heart";
 import Arrow from "../../components/Arrow";
 import GetHeartText from "../../components/GetHeartText";
+import Button from "../../components/Button";
 
-export default ({ onStartGame, getHeart, toggleSwitch }) => {
+export default ({ onStartGame, getHeart, toggleSwitch, navigation }) => {
   const { stage, heart, gameEnd } = useGameInfo();
+  const logUserOut = useLogOut();
 
   return (
     <View style={styles.screen}>
@@ -45,6 +49,7 @@ export default ({ onStartGame, getHeart, toggleSwitch }) => {
           ) : null}
         </View>
       </View>
+
       <View style={styles.gameStartContainer}>
         <StartButton
           onPress={onStartGame}
@@ -53,7 +58,22 @@ export default ({ onStartGame, getHeart, toggleSwitch }) => {
           toggleSwitch={toggleSwitch}
         />
       </View>
-      <View style={styles.resetGameContainer} />
+
+      <View style={styles.buttonContainer}>
+        <Button
+          onPress={() => navigation.navigate(RANK)}
+          content={"trophy"}
+          size={vw(20)}
+        />
+        {/* <TouchableOpacity
+          style={{
+            width: vw(10),
+            height: vw(10),
+            backgroundColor: "lightpink",
+          }}
+          onPress={logUserOut}
+        /> */}
+      </View>
     </View>
   );
 };
@@ -101,8 +121,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
-  resetGameContainer: {
+  buttonContainer: {
     flex: 1,
+    width: "100%",
     justifyContent: "flex-end",
+    alignItems: "flex-end",
+    marginRight: vw(10),
   },
 });
