@@ -2,6 +2,59 @@
     English Strings...
 */
 
+/* Auth */
+export const SIGN_UP = "SignUp";
+
+export const SIGN_IN = "SignIn";
+
+export const SIGN_UP_TITLE = "Welcome!";
+
+export const SIGN_IN_TITLE = "Welcome back!";
+
+export const SIGN_UP_TEXT = "Sign Up";
+
+export const SIGN_IN_TEXT = "Log In";
+
+export const HAVE_BEEN = "Already have an account?";
+
+export const FIRST_TIME = "First time here?";
+
+export const EMPTY = "Empty";
+
+export const BLANK = "Blank";
+
+export const USERNAME = "Username";
+
+export const PASSWORD = "Password";
+
+export const CANT_BE_EMPTY = "can't be empty";
+
+export const CANT_BE_BLANK = "can't be blank";
+
+/* Sign Up */
+export const ACCOUNT_CREATED = "Account created";
+
+export const LETS_PLAY_A_GAME = "Let's play a game!";
+
+export const CANT_CREATE_ACCOUNT = "Can't create account";
+
+export const USERNAME_ONLY =
+  "Username can only use letters, numbers, underscores and periods!";
+
+export const USERNAME_UNDER_30 = "Enter a username under 30 characters!";
+
+export const USERNAME_ALREADY_TAKEN = "This username is already taken!";
+
+/* Sign In */
+
+export const INVALID_PASSWORD = "Invalid password";
+
+export const WRONG_PASSWORD = "Wrong password!";
+
+export const CHECK_USERNAME_PASSWORD = "Check your username and password";
+
+export const CANT_CONFIRM_PASSWORD = "Can't confirm password";
+
 /* AppStack Strings */
 export const CONGRATULATIONS = "CONGRATULATIONS!!";
 

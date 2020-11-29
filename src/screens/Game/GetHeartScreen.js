@@ -4,15 +4,17 @@ import { vw, vh } from "react-native-expo-viewport-units";
 import CurrencyFormat from "react-currency-format";
 import { AdMobRewarded } from "expo-ads-admob";
 
-import colors from "../constants/colors";
-import { HEART } from "../utils/FontAwesomeSource";
-import { COMING_SOON, GO_BACK } from "../constants/strings";
+import { usePlusHeart } from "../../context/GameContext";
 
-import Card from "../components/Card";
-import Heart from "../components/Heart";
-import Button from "../components/Button";
-import GetHeart from "../components/GetHeart";
-import Loader from "../components/Loader";
+import colors from "../../constants/colors";
+import { HEART } from "../../utils/FontAwesomeSource";
+import { COMING_SOON, GO_BACK } from "../../constants/strings";
+
+import Card from "../../components/Card";
+import Heart from "../../components/Heart";
+import Button from "../../components/Button";
+import GetHeart from "../../components/GetHeart";
+import Loader from "../../components/Loader";
 
 let count = 0;
 let reward = false;
@@ -53,13 +55,8 @@ const Content = ({ onPress, num, price, update }) => (
   </TouchableOpacity>
 );
 
-export default ({
-  setGameInfo,
-  closeModal,
-  numOfHeart,
-  checkReward,
-  setCheckReward,
-}) => {
+export default ({ closeModal, numOfHeart, checkReward, setCheckReward }) => {
+  const plusHeart = usePlusHeart();
   const [checkClick, setCheckClick] = useState(false);
 
   /* 광고 시청 후 Reward */
@@ -68,13 +65,7 @@ export default ({
     count = 0; // count 초기화
     reward = false; // reward 초기화
 
-    /* GameContext heart +3 업데이트 */
-    setGameInfo((curState) => ({
-      ...curState,
-      heart: curState.heart + 3,
-    }));
-
-    /* AsyncStorage heart 갯수 +3 업데이트 */
+    plusHeart(3);
   };
 
   const getHeartFree = async () => {
