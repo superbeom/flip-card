@@ -32,13 +32,13 @@ export const checkAnswer = (stage) => {
     return 7;
   } else if ((stage > 118 && stage <= 157) || (stage > 210 && stage <= 238)) {
     return 8;
-  } else if (stage > 238 && stage <= 400000) {
+  } else if (stage > 238 && stage <= 263) {
     return 9;
-  } else if (stage > 300000 && stage <= 400000) {
+  } else if (stage > 263 && stage <= 290) {
     return 10;
-  } else if (stage > 300000 && stage <= 400000) {
+  } else if (stage > 290 && stage <= 311) {
     return 11;
-  } else if (stage > 300000 && stage <= 400000) {
+  } else if (stage > 311 && stage <= 400000) {
     return 12;
   } else if (stage > 300000 && stage <= 400000) {
     return 13;

@@ -325,6 +325,22 @@ export const HIPPO_DEEP = (
   />
 );
 
+export const ICE_CREAM = (
+  <FontAwesomeItem
+    key={"ice-cream"}
+    name="ice-cream"
+    color={colors.lightPinkColor}
+  />
+);
+
+export const ICE_CREAM_DEEP = (
+  <FontAwesomeItem
+    key={"ice-cream-deep"}
+    name="ice-cream"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
 /*
   STEP 2
 */
