@@ -341,6 +341,18 @@ export const ICE_CREAM_DEEP = (
   />
 );
 
+export const GIFT = (
+  <FontAwesomeItem key={"gift"} name="gift" color={colors.darkSalmonColor} />
+);
+
+export const GIFT_DEEP = (
+  <FontAwesomeItem
+    key={"gift-deep"}
+    name="gift"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
 /*
   STEP 2
 */
@@ -589,14 +601,6 @@ export const FROWN_OPEN_DARK = (
   />
 );
 
-export const GRIMACE_DARK = (
-  <FontAwesomeItem
-    key={"grimace-dark"}
-    name="grimace"
-    color={colors.darkNavyColor}
-  />
-);
-
 export const GRIN_DARK = (
   <FontAwesomeItem key={"grin-dark"} name="grin" color={colors.darkNavyColor} />
 );
@@ -689,14 +693,6 @@ export const SURPRISE_DARK = (
   <FontAwesomeItem
     key={"surprise-dark"}
     name="surprise"
-    color={colors.darkNavyColor}
-  />
-);
-
-export const MEH_ROLLING_EYES_DARK = (
-  <FontAwesomeItem
-    key={"meh-rolling-eyes-dark"}
-    name="meh-rolling-eyes"
     color={colors.darkNavyColor}
   />
 );
