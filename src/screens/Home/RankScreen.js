@@ -102,9 +102,15 @@ export default ({ navigation }) => {
       <View style={styles.body}>
         <View style={styles.rankContainer}>
           <View style={[styles.rankBox, { marginBottom: vh(3) }]}>
-            <Text style={styles.rankText}>Rank</Text>
-            <Text style={styles.rankText}>Username</Text>
-            <Text style={styles.rankText}>Stage</Text>
+            <View style={styles.rankTextBox}>
+              <Text style={styles.rankText}>Rank</Text>
+            </View>
+            <View style={styles.usernameTextBox}>
+              <Text style={styles.rankText}>Username</Text>
+            </View>
+            <View style={styles.stageTextBox}>
+              <Text style={styles.rankText}>Stage</Text>
+            </View>
           </View>
 
           <FlatList
@@ -123,9 +129,15 @@ export default ({ navigation }) => {
                     : {},
                 ]}
               >
-                {award[index]}
-                <Text style={styles.rankText}>{item.username}</Text>
-                <Text style={styles.rankText}>{item.stage}</Text>
+                <View style={styles.rankTextBox}>{award[index]}</View>
+                <View style={styles.usernameTextBox}>
+                  <Text style={styles.rankText} numberOfLines={1}>
+                    {item.username}
+                  </Text>
+                </View>
+                <View style={styles.stageTextBox}>
+                  <Text style={styles.rankText}>{item.stage}</Text>
+                </View>
               </View>
             )}
             keyExtractor={() => (Math.random() + Math.random()).toString()}
@@ -138,9 +150,17 @@ export default ({ navigation }) => {
               { backgroundColor: "rgba(247, 229, 34, 0.5)", marginTop: vh(3) },
             ]}
           >
-            <Text style={styles.rankText}>{myRank}</Text>
-            <Text style={styles.rankText}>{username}</Text>
-            <Text style={styles.rankText}>{stage}</Text>
+            <View style={styles.rankTextBox}>
+              <Text style={styles.rankText}>{myRank}</Text>
+            </View>
+            <View style={styles.usernameTextBox}>
+              <Text style={styles.rankText} numberOfLines={1}>
+                {username}
+              </Text>
+            </View>
+            <View style={styles.stageTextBox}>
+              <Text style={styles.rankText}>{stage}</Text>
+            </View>
           </View>
         </View>
 
@@ -186,12 +206,23 @@ const styles = StyleSheet.create({
   },
   rankBox: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "rgba(47, 79, 79, 0.5)",
     paddingVertical: vh(1.5),
     paddingHorizontal: vw(5),
     borderRadius: 25,
+  },
+  rankTextBox: {
+    width: "20%",
+    alignItems: "flex-start",
+  },
+  usernameTextBox: {
+    width: "60%",
+    alignItems: "center",
+  },
+  stageTextBox: {
+    width: "20%",
+    alignItems: "flex-end",
   },
   rankText: {
     color: colors.whiteColor,
