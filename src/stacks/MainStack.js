@@ -36,7 +36,7 @@ export default () => {
         setGameInfo((curState) => ({
           stage: 1,
           horizontalNum: 2,
-          heart: 5,
+          heart: 10,
           gameEnd: false,
         }));
       }
