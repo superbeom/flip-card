@@ -41,7 +41,7 @@ export const CANT_CREATE_ACCOUNT = "Can't create account";
 export const USERNAME_ONLY =
   "Username can only use letters, numbers, underscores and periods!";
 
-export const USERNAME_UNDER_30 = "Enter a username under 30 characters!";
+export const USERNAME_UNDER_20 = "Enter a username under 20 characters!";
 
 export const USERNAME_ALREADY_TAKEN = "This username is already taken!";
 
