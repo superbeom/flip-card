@@ -173,22 +173,6 @@ export const PLANE_DARK = (
   <FontAwesomeItem key={"plane-dark"} name="plane" color={colors.accentColor} />
 );
 
-export const BINOCULARS = (
-  <FontAwesomeItem
-    key={"binoculars"}
-    name="binoculars"
-    color={colors.accentColor}
-  />
-);
-
-export const BINOCULARS_DEEP = (
-  <FontAwesomeItem
-    key={"binoculars-deep"}
-    name="binoculars"
-    color={colors.deepSkyBlueColor}
-  />
-);
-
 export const PLANE_ARRIVAL = (
   <FontAwesomeItem
     key={"plane-arrival"}
@@ -201,6 +185,22 @@ export const PLANE_DEPARTURE = (
   <FontAwesomeItem
     key={"plane-departure"}
     name="plane-departure"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const BINOCULARS = (
+  <FontAwesomeItem
+    key={"binoculars"}
+    name="binoculars"
+    color={colors.accentColor}
+  />
+);
+
+export const BINOCULARS_DEEP = (
+  <FontAwesomeItem
+    key={"binoculars-deep"}
+    name="binoculars"
     color={colors.deepSkyBlueColor}
   />
 );
@@ -257,6 +257,70 @@ export const DOG_DEEP = (
   <FontAwesomeItem
     key={"dog-deep"}
     name="dog"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const DOVE = (
+  <FontAwesomeItem key={"dove"} name="dove" color={colors.slateGrayColor} />
+);
+
+export const DOVE_DEEP = (
+  <FontAwesomeItem
+    key={"dove-deep"}
+    name="dove"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const HORSE = (
+  <FontAwesomeItem key={"horse"} name="horse" color={colors.brownColor} />
+);
+
+export const HORSE_DEEP = (
+  <FontAwesomeItem
+    key={"horse-deep"}
+    name="horse"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const MOUNTAIN = (
+  <FontAwesomeItem
+    key={"mountain"}
+    name="mountain"
+    color={colors.indigoColor}
+  />
+);
+
+export const MOUNTAIN_DEEP = (
+  <FontAwesomeItem
+    key={"mountain-deep"}
+    name="mountain"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const CAT = (
+  <FontAwesomeItem key={"cat"} name="cat" color={colors.orangeColor} />
+);
+
+export const CAT_DEEP = (
+  <FontAwesomeItem
+    key={"cat-deep"}
+    name="cat"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const HIPPO = (
+  <FontAwesomeItem key={"hippo"} name="hippo" color={colors.turquoiseColor} />
+);
+
+export const HIPPO_DEEP = (
+  <FontAwesomeItem
+    key={"hippo-deep"}
+    name="hippo"
     color={colors.deepSkyBlueColor}
   />
 );

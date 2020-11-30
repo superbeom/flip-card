@@ -15,9 +15,9 @@ import { useGameInfo } from "../context/GameContext";
 const getSize = (stage) => {
   /* 2x2 */ if (stage <= 5) return vw(20);
   /* 3x3 */ else if (stage > 5 && stage <= 36) return vw(15);
-  /* 4x4 */ else if (stage > 36 && stage <= 1000) return vw(11);
-  /* 5x5 */ else if (stage === 2000) return vw(9);
-  /* 6x6 */ else if (stage === 3000) return vw(8);
+  /* 4x4 */ else if (stage > 36 && stage <= 157) return vw(11);
+  /* 5x5 */ else if (stage > 157 && stage <= 2000) return vw(8);
+  /* 6x6 */ else if (stage === 3000) return vw(6);
 };
 
 export default (props) => {
