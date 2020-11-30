@@ -22,7 +22,7 @@ export default {
   darkSalmonColor: "#e9967a",
   orangeColor: "#ffa500",
   orangeredColor: "#ff4500",
-  goldColor: "#ffd700",
+  goldColor: "#F7E522",
   yellowGreenColor: "#9acd32",
   forestGreenColor: "#228b22",
   oliveColor: "#808000",
@@ -36,4 +36,5 @@ export default {
   purpleColor: "#800080",
   indigoColor: "#4b0082",
   slateGrayColor: "#708090",
+  silverColor: "#e3e1e1",
 };

@@ -43,9 +43,6 @@ const Button = ({ onPress, disabled, content, size }) => {
 
 const styles = StyleSheet.create({
   button: {
-    // width: size,
-    // height: size,
-    // borderRadius: size / 2,
     shadowColor: colors.accentColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.26,
