@@ -79,7 +79,7 @@ export default ({ onGoHome, onGameOver }) => {
 
       {/* FOOTER */}
       <View style={styles.footer}>
-        <Button onPress={checkGoHome} content={"home"} />
+        <Button onPress={checkGoHome} disabled={showAnswer} content={"home"} />
       </View>
     </View>
   );
