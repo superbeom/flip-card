@@ -30,6 +30,7 @@ const Button = ({ onPress, disabled, content, size }) => {
           width: size || vw(16),
           height: size || vw(16),
           borderRadius: size / 2 || vw(16) / 2,
+          backgroundColor: disabled ? colors.grayColor : colors.accentColor,
         },
       ]}
       onPress={onPress}
@@ -48,7 +49,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.26,
     shadowRadius: 6,
     elevation: 6,
-    backgroundColor: colors.accentColor,
     justifyContent: "center",
     alignItems: "center",
   },
