@@ -29,7 +29,7 @@ const Progress = ({
   const reactive = useRef(new Animated.Value(-1000)).current;
 
   /* 3초 추가 & heart 갯수 -1 */
-  const AddTime = () => {
+  const addTime = () => {
     setLimitTime((curState) => curState + 3);
 
     if (numOfHeart > 0) {
@@ -54,7 +54,7 @@ const Progress = ({
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.stopWatch}
-          onPress={AddTime}
+          onPress={addTime}
           disabled={numOfHeart < 2 || clickedBomb}
         >
           {numOfHeart < 2 || clickedBomb ? BAN : STOP_WATCH}
