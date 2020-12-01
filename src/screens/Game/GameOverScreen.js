@@ -52,8 +52,7 @@ const GameOverScreen = ({
   };
 
   const successStage = () => {
-    /* 6x6 넘어 가는 스테이지도 추가하기! */
-    if (stage === 5 || stage === 36 || stage === 157) {
+    if (stage === 5 || stage === 36 || stage === 157 || stage === 334) {
       plusHorizontalNum();
     }
 

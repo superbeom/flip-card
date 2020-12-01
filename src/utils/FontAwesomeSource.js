@@ -156,7 +156,7 @@ export const BOMB_6X6 = (
   <MaterialCommunityIcons
     key={"bomb"}
     name="bomb"
-    size={vw(9)}
+    size={vw(8)}
     color={colors.redColor}
   />
 );
