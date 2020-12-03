@@ -10,9 +10,19 @@ import { vw, vh, vmax } from "react-native-expo-viewport-units";
 import FontAwesomeItem from "../components/FontAwesomeItem";
 import colors from "../constants/colors";
 
+const awardSize = vw(7);
+
 /*
   Basics
 */
+
+export const HOME = (
+  <Entypo name={"home"} size={vw(6.5)} color={colors.whiteColor} />
+);
+
+export const TROPHY = (
+  <Entypo name={"trophy"} size={vw(6.5)} color={colors.whiteColor} />
+);
 
 export const HEART = (
   <MaterialCommunityIcons
@@ -48,6 +58,58 @@ export const BAN = (
 
 export const EYE = (
   <MaterialCommunityIcons name="eye" size={vh(4)} color={colors.accentColor} />
+);
+
+/*
+  Rank
+*/
+
+export const CROWN_1 = (
+  <FontAwesome5 name={"crown"} size={awardSize} color={colors.goldColor} />
+);
+
+export const CROWN_2 = (
+  <FontAwesome5 name={"crown"} size={awardSize} color={colors.silverColor} />
+);
+
+export const CROWN_3 = (
+  <FontAwesome5 name={"crown"} size={awardSize} color={colors.brownColor} />
+);
+
+export const MEDAL_4 = (
+  <FontAwesome5 name={"medal"} size={awardSize} color={colors.goldColor} />
+);
+
+export const MEDAL_5 = (
+  <FontAwesome5 name={"medal"} size={awardSize} color={colors.silverColor} />
+);
+
+export const MEDAL_6 = (
+  <FontAwesome5 name={"medal"} size={awardSize} color={colors.brownColor} />
+);
+
+export const AWARD_7 = (
+  <FontAwesome5 name={"award"} size={awardSize} color={colors.goldColor} />
+);
+
+export const AWARD_8 = (
+  <FontAwesome5 name={"award"} size={awardSize} color={colors.silverColor} />
+);
+
+export const AWARD_9 = (
+  <FontAwesome5 name={"award"} size={awardSize} color={colors.brownColor} />
+);
+
+export const PRICE_RIBBON_10 = (
+  <Entypo name={"price-ribbon"} size={awardSize} color={colors.goldColor} />
+);
+
+export const PRICE_RIBBON_11 = (
+  <Entypo name={"price-ribbon"} size={awardSize} color={colors.silverColor} />
+);
+
+export const PRICE_RIBBON_12 = (
+  <Entypo name={"price-ribbon"} size={awardSize} color={colors.brownColor} />
 );
 
 /*
@@ -94,7 +156,7 @@ export const BOMB_6X6 = (
   <MaterialCommunityIcons
     key={"bomb"}
     name="bomb"
-    size={vw(9)}
+    size={vw(8)}
     color={colors.redColor}
   />
 );
@@ -111,22 +173,6 @@ export const PLANE_DARK = (
   <FontAwesomeItem key={"plane-dark"} name="plane" color={colors.accentColor} />
 );
 
-export const BINOCULARS = (
-  <FontAwesomeItem
-    key={"binoculars"}
-    name="binoculars"
-    color={colors.accentColor}
-  />
-);
-
-export const BINOCULARS_DEEP = (
-  <FontAwesomeItem
-    key={"binoculars-deep"}
-    name="binoculars"
-    color={colors.deepSkyBlueColor}
-  />
-);
-
 export const PLANE_ARRIVAL = (
   <FontAwesomeItem
     key={"plane-arrival"}
@@ -139,6 +185,22 @@ export const PLANE_DEPARTURE = (
   <FontAwesomeItem
     key={"plane-departure"}
     name="plane-departure"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const BINOCULARS = (
+  <FontAwesomeItem
+    key={"binoculars"}
+    name="binoculars"
+    color={colors.accentColor}
+  />
+);
+
+export const BINOCULARS_DEEP = (
+  <FontAwesomeItem
+    key={"binoculars-deep"}
+    name="binoculars"
     color={colors.deepSkyBlueColor}
   />
 );
@@ -195,6 +257,98 @@ export const DOG_DEEP = (
   <FontAwesomeItem
     key={"dog-deep"}
     name="dog"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const DOVE = (
+  <FontAwesomeItem key={"dove"} name="dove" color={colors.slateGrayColor} />
+);
+
+export const DOVE_DEEP = (
+  <FontAwesomeItem
+    key={"dove-deep"}
+    name="dove"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const HORSE = (
+  <FontAwesomeItem key={"horse"} name="horse" color={colors.brownColor} />
+);
+
+export const HORSE_DEEP = (
+  <FontAwesomeItem
+    key={"horse-deep"}
+    name="horse"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const MOUNTAIN = (
+  <FontAwesomeItem
+    key={"mountain"}
+    name="mountain"
+    color={colors.indigoColor}
+  />
+);
+
+export const MOUNTAIN_DEEP = (
+  <FontAwesomeItem
+    key={"mountain-deep"}
+    name="mountain"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const CAT = (
+  <FontAwesomeItem key={"cat"} name="cat" color={colors.orangeColor} />
+);
+
+export const CAT_DEEP = (
+  <FontAwesomeItem
+    key={"cat-deep"}
+    name="cat"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const HIPPO = (
+  <FontAwesomeItem key={"hippo"} name="hippo" color={colors.turquoiseColor} />
+);
+
+export const HIPPO_DEEP = (
+  <FontAwesomeItem
+    key={"hippo-deep"}
+    name="hippo"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const ICE_CREAM = (
+  <FontAwesomeItem
+    key={"ice-cream"}
+    name="ice-cream"
+    color={colors.lightPinkColor}
+  />
+);
+
+export const ICE_CREAM_DEEP = (
+  <FontAwesomeItem
+    key={"ice-cream-deep"}
+    name="ice-cream"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const GIFT = (
+  <FontAwesomeItem key={"gift"} name="gift" color={colors.darkSalmonColor} />
+);
+
+export const GIFT_DEEP = (
+  <FontAwesomeItem
+    key={"gift-deep"}
+    name="gift"
     color={colors.deepSkyBlueColor}
   />
 );
@@ -447,14 +601,6 @@ export const FROWN_OPEN_DARK = (
   />
 );
 
-export const GRIMACE_DARK = (
-  <FontAwesomeItem
-    key={"grimace-dark"}
-    name="grimace"
-    color={colors.darkNavyColor}
-  />
-);
-
 export const GRIN_DARK = (
   <FontAwesomeItem key={"grin-dark"} name="grin" color={colors.darkNavyColor} />
 );
@@ -547,14 +693,6 @@ export const SURPRISE_DARK = (
   <FontAwesomeItem
     key={"surprise-dark"}
     name="surprise"
-    color={colors.darkNavyColor}
-  />
-);
-
-export const MEH_ROLLING_EYES_DARK = (
-  <FontAwesomeItem
-    key={"meh-rolling-eyes-dark"}
-    name="meh-rolling-eyes"
     color={colors.darkNavyColor}
   />
 );

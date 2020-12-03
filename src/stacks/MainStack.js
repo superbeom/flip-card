@@ -5,6 +5,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { GameProvider } from "../context/GameContext";
 
 import HomeScreen from "../screens/Home/HomeScreen";
+import RankScreen from "../screens/Home/RankScreen";
 
 import Loader from "../components/Loader";
 
@@ -35,7 +36,7 @@ export default () => {
         setGameInfo((curState) => ({
           stage: 1,
           horizontalNum: 2,
-          heart: 5,
+          heart: 10,
           gameEnd: false,
         }));
       }
@@ -54,6 +55,7 @@ export default () => {
     <GameProvider gameInfo={gameInfo}>
       <MainNavigation.Navigator headerMode="none">
         <MainNavigation.Screen name="Home" component={HomeScreen} />
+        <MainNavigation.Screen name="Rank" component={RankScreen} />
       </MainNavigation.Navigator>
     </GameProvider>
   ) : (

@@ -3,7 +3,7 @@ import { useMutation } from "react-apollo-hooks";
 import AsyncStorage from "@react-native-community/async-storage";
 
 import { useUsername } from "./AuthContext";
-import { UPDATE_GAME_INFO } from "../screens/CommonQueries";
+import { UPDATE_GAME_INFO } from "./ContextQueries";
 
 export const GameContext = createContext([{}, () => {}]);
 

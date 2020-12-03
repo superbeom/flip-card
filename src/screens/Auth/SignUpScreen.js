@@ -19,7 +19,7 @@ import {
   LETS_PLAY_A_GAME,
   CANT_CREATE_ACCOUNT,
   USERNAME_ONLY,
-  USERNAME_UNDER_30,
+  USERNAME_UNDER_20,
   USERNAME_ALREADY_TAKEN,
   HOLD_ON,
   CHECK_EXIT,
@@ -83,7 +83,7 @@ export default ({ navigation }) => {
         Alert.alert(USERNAME_ONLY);
       } else if (error.message.includes("under")) {
         /* When username over 30 characters already taken - "This username is already taken" */
-        Alert.alert(USERNAME_UNDER_30);
+        Alert.alert(USERNAME_UNDER_20);
       } else if (error.message.includes("username")) {
         /* When username is already taken - "This username is already taken" */
         Alert.alert(USERNAME_ALREADY_TAKEN);

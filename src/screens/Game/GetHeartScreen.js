@@ -8,7 +8,7 @@ import { usePlusHeart } from "../../context/GameContext";
 
 import colors from "../../constants/colors";
 import { HEART } from "../../utils/FontAwesomeSource";
-import { COMING_SOON, GO_BACK } from "../../constants/strings";
+import { COMING_SOON } from "../../constants/strings";
 
 import Card from "../../components/Card";
 import Heart from "../../components/Heart";
@@ -65,7 +65,7 @@ export default ({ closeModal, numOfHeart, checkReward, setCheckReward }) => {
     count = 0; // count 초기화
     reward = false; // reward 초기화
 
-    plusHeart(3);
+    plusHeart(5);
   };
 
   const getHeartFree = async () => {
@@ -113,15 +113,13 @@ export default ({ closeModal, numOfHeart, checkReward, setCheckReward }) => {
           <Heart onPress={() => null} numOfHeart={numOfHeart} disabled={true} />
         </View>
         <View style={styles.contentContainer}>
-          <Content onPress={getHeartFree} num={3} price={0} update={false} />
+          <Content onPress={getHeartFree} num={5} price={0} update={false} />
           <Content onPress={() => null} num={10} price={0.1} update={true} />
           <Content onPress={() => null} num={50} price={0.45} update={true} />
           <Content onPress={() => null} num={100} price={0.8} update={true} />
         </View>
         <View style={styles.footer}>
-          <Button onPress={closeModal} disabled={checkClick}>
-            {GO_BACK}
-          </Button>
+          <Button onPress={closeModal} disabled={checkClick} content={"home"} />
         </View>
       </View>
       {checkClick ? <Loader /> : null}
