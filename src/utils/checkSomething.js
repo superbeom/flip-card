@@ -42,14 +42,22 @@ export const checkAnswer = (stage) => {
   } else if (
     (stage > 81 && stage <= 99) ||
     (stage > 172 && stage <= 186) ||
-    (stage > 386 && stage <= 4000)
+    (stage > 386 && stage <= 411)
   ) {
     return 6;
-  } else if ((stage > 99 && stage <= 118) || (stage > 186 && stage <= 210)) {
+  } else if (
+    (stage > 99 && stage <= 118) ||
+    (stage > 186 && stage <= 210) ||
+    (stage > 411 && stage <= 443)
+  ) {
     return 7;
-  } else if ((stage > 118 && stage <= 157) || (stage > 210 && stage <= 238)) {
+  } else if (
+    (stage > 118 && stage <= 157) ||
+    (stage > 210 && stage <= 238) ||
+    (stage > 443 && stage <= 473)
+  ) {
     return 8;
-  } else if (stage > 238 && stage <= 263) {
+  } else if ((stage > 238 && stage <= 263) || (stage > 473 && stage <= 5000)) {
     return 9;
   } else if (stage > 263 && stage <= 290) {
     return 10;
