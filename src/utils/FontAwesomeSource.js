@@ -353,6 +353,18 @@ export const GIFT_DEEP = (
   />
 );
 
+export const BICYCLE = (
+  <FontAwesomeItem key={"bicycle"} name="bicycle" color={colors.brownColor} />
+);
+
+export const BICYCLE_DEEP = (
+  <FontAwesomeItem
+    key={"bicycle-deep"}
+    name="bicycle"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
 /*
   STEP 2
 */
@@ -513,7 +525,7 @@ export const SURPRISE = (
   <FontAwesomeItem
     key={"surprise"}
     name="surprise"
-    color={colors.accentColor}
+    color={colors.orangeColor}
   />
 );
 
@@ -521,7 +533,7 @@ export const MEH_ROLLING_EYES = (
   <FontAwesomeItem
     key={"meh-rolling-eyes"}
     name="meh-rolling-eyes"
-    color={colors.darkNavyColor}
+    color={colors.brownColor}
   />
 );
 
@@ -693,6 +705,14 @@ export const SURPRISE_DARK = (
   <FontAwesomeItem
     key={"surprise-dark"}
     name="surprise"
+    color={colors.darkNavyColor}
+  />
+);
+
+export const MEH_ROLLING_EYES_DARK = (
+  <FontAwesomeItem
+    key={"meh-rolling-eyes-dark"}
+    name="meh-rolling-eyes"
     color={colors.darkNavyColor}
   />
 );

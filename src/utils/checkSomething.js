@@ -57,11 +57,11 @@ export const checkAnswer = (stage) => {
     (stage > 443 && stage <= 473)
   ) {
     return 8;
-  } else if ((stage > 238 && stage <= 263) || (stage > 473 && stage <= 5000)) {
+  } else if ((stage > 238 && stage <= 263) || (stage > 473 && stage <= 507)) {
     return 9;
-  } else if (stage > 263 && stage <= 290) {
+  } else if ((stage > 263 && stage <= 290) || (stage > 507 && stage <= 535)) {
     return 10;
-  } else if (stage > 290 && stage <= 311) {
+  } else if ((stage > 290 && stage <= 311) || (stage > 535 && stage <= 5000)) {
     return 11;
   } else if (stage > 311 && stage <= 334) {
     return 12;
