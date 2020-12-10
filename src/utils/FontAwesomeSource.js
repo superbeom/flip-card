@@ -365,6 +365,66 @@ export const BICYCLE_DEEP = (
   />
 );
 
+export const AMBULANCE = (
+  <FontAwesomeItem
+    key={"ambulance"}
+    name="ambulance"
+    color={colors.maroonColor}
+  />
+);
+
+export const AMBULANCE_DEEP = (
+  <FontAwesomeItem
+    key={"ambulance-deep"}
+    name="ambulance"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const DRAGON = (
+  <FontAwesomeItem
+    key={"dragon"}
+    name="dragon"
+    color={colors.forestGreenColor}
+  />
+);
+
+export const DRAGON_DEEP = (
+  <FontAwesomeItem
+    key={"dragon-deep"}
+    name="dragon"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const DRUM = (
+  <FontAwesomeItem key={"drum"} name="drum" color={colors.indigoColor} />
+);
+
+export const DRUM_DEEP = (
+  <FontAwesomeItem
+    key={"drum-deep"}
+    name="drum"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const FIGHTER_JET = (
+  <FontAwesomeItem
+    key={"fighter-jet"}
+    name="fighter-jet"
+    color={colors.slateGrayColor}
+  />
+);
+
+export const FIGHTER_JET_DEEP = (
+  <FontAwesomeItem
+    key={"fighter-jet-deep"}
+    name="fighter-jet"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
 /*
   STEP 2
 */

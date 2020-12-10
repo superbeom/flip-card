@@ -61,11 +61,11 @@ export const checkAnswer = (stage) => {
     return 9;
   } else if ((stage > 263 && stage <= 290) || (stage > 507 && stage <= 535)) {
     return 10;
-  } else if ((stage > 290 && stage <= 311) || (stage > 535 && stage <= 5000)) {
+  } else if ((stage > 290 && stage <= 311) || (stage > 535 && stage <= 566)) {
     return 11;
-  } else if (stage > 311 && stage <= 334) {
+  } else if ((stage > 311 && stage <= 334) || (stage > 566 && stage <= 600)) {
     return 12;
-  } else if (stage > 300000 && stage <= 400000) {
+  } else if (stage > 600 && stage <= 400000) {
     return 13;
   } else if (stage > 300000 && stage <= 400000) {
     return 14;
@@ -130,5 +130,5 @@ export const checkTime = (stage) => {
 export const checkLimitTime = (stage) => {
   if (stage <= 10) return 10;
   else if (stage > 10 && stage <= 20) return 20;
-  else if (stage > 20) return 50;
+  else if (stage > 20) return 500;
 };
