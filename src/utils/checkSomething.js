@@ -65,11 +65,11 @@ export const checkAnswer = (stage) => {
     return 11;
   } else if ((stage > 311 && stage <= 334) || (stage > 566 && stage <= 600)) {
     return 12;
-  } else if (stage > 600 && stage <= 400000) {
+  } else if (stage > 600 && stage <= 637) {
     return 13;
-  } else if (stage > 300000 && stage <= 400000) {
+  } else if (stage > 637 && stage <= 677) {
     return 14;
-  } else if (stage > 300000 && stage <= 400000) {
+  } else if (stage > 677 && stage <= 400000) {
     return 15;
   } else if (stage > 300000 && stage <= 400000) {
     return 16;
