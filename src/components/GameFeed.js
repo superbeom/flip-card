@@ -90,7 +90,7 @@ export default ({
     }
 
     if (clickNum === 2 && item !== "bomb") {
-      setTimeout(compareCards, 300);
+      setTimeout(compareCards, 150);
     }
   };
 
