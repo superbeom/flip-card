@@ -69,9 +69,9 @@ export const checkAnswer = (stage) => {
     return 13;
   } else if (stage > 637 && stage <= 677) {
     return 14;
-  } else if (stage > 677 && stage <= 400000) {
+  } else if (stage > 677 && stage <= 720) {
     return 15;
-  } else if (stage > 300000 && stage <= 400000) {
+  } else if (stage > 720 && stage <= 400000) {
     return 16;
   } else if (stage > 300000 && stage <= 400000) {
     return 17;
