@@ -91,7 +91,7 @@ import {
   KISS_DARK,
   KISS_WINK_HEART_DARK,
   SURPRISE_DARK,
-  MEH_ROLLING_EYES_DARK
+  MEH_ROLLING_EYES_DARK,
 } from "./FontAwesomeSource";
 
 /*
@@ -24020,103 +24020,1880 @@ const stage750 = [
   BOMB_6X6,
 ];
 
+const stage751 = [
+  SMILE,
+  SMILE,
+  SMILE_WINK,
+  SMILE_WINK,
+  SAD_CRY,
+  SAD_CRY,
+  SAD_TEAR,
+  SAD_TEAR,
+  ANGRY,
+  ANGRY,
+  DIZZY,
+  DIZZY,
+  FROWN,
+  FROWN,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  GRIN_SQUINT,
+  GRIN_SQUINT,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage752 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY,
+  SAD_CRY,
+  SAD_TEAR,
+  SAD_TEAR,
+  ANGRY,
+  ANGRY,
+  DIZZY,
+  DIZZY,
+  FROWN,
+  FROWN,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  GRIN_SQUINT,
+  GRIN_SQUINT,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage753 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR,
+  SAD_TEAR,
+  ANGRY,
+  ANGRY,
+  DIZZY,
+  DIZZY,
+  FROWN,
+  FROWN,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  GRIN_SQUINT,
+  GRIN_SQUINT,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage754 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY,
+  ANGRY,
+  DIZZY,
+  DIZZY,
+  FROWN,
+  FROWN,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  GRIN_SQUINT,
+  GRIN_SQUINT,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage755 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY,
+  DIZZY,
+  FROWN,
+  FROWN,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  GRIN_SQUINT,
+  GRIN_SQUINT,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage756 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN,
+  FROWN,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  GRIN_SQUINT,
+  GRIN_SQUINT,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage757 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS,
+  GRIN_HEARTS,
+  GRIN_SQUINT,
+  GRIN_SQUINT,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage758 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT,
+  GRIN_SQUINT,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage759 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_STARS,
+  GRIN_STARS,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage760 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_STARS_DARK,
+  GRIN_STARS_DARK,
+  GRIN_TONGUE,
+  GRIN_TONGUE,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage761 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_STARS_DARK,
+  GRIN_STARS_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_SQUINT,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage762 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_STARS_DARK,
+  GRIN_STARS_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_WINK,
+  GRIN_TONGUE_WINK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage763 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_STARS_DARK,
+  GRIN_STARS_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_WINK_DARK,
+  GRIN_TONGUE_WINK_DARK,
+  KISS,
+  KISS,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage764 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_STARS_DARK,
+  GRIN_STARS_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_WINK_DARK,
+  GRIN_TONGUE_WINK_DARK,
+  KISS_DARK,
+  KISS_DARK,
+  KISS_WINK_HEART,
+  KISS_WINK_HEART,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage765 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_STARS_DARK,
+  GRIN_STARS_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_WINK_DARK,
+  GRIN_TONGUE_WINK_DARK,
+  KISS_DARK,
+  KISS_DARK,
+  KISS_WINK_HEART_DARK,
+  KISS_WINK_HEART_DARK,
+  MEH_ROLLING_EYES,
+  MEH_ROLLING_EYES,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage766 = [
+  SMILE_DARK,
+  SMILE_DARK,
+  SMILE_WINK_DARK,
+  SMILE_WINK_DARK,
+  SAD_CRY_DARK,
+  SAD_CRY_DARK,
+  SAD_TEAR_DARK,
+  SAD_TEAR_DARK,
+  ANGRY_DARK,
+  ANGRY_DARK,
+  DIZZY_DARK,
+  DIZZY_DARK,
+  FROWN_DARK,
+  FROWN_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_HEARTS_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_SQUINT_DARK,
+  GRIN_STARS_DARK,
+  GRIN_STARS_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_SQUINT_DARK,
+  GRIN_TONGUE_WINK_DARK,
+  GRIN_TONGUE_WINK_DARK,
+  KISS_DARK,
+  KISS_DARK,
+  KISS_WINK_HEART_DARK,
+  KISS_WINK_HEART_DARK,
+  MEH_ROLLING_EYES_DARK,
+  MEH_ROLLING_EYES_DARK,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+/* The number of Answer: 17 */
+const stage767 = [
+  PLANE,
+  PLANE,
+  BINOCULARS,
+  BINOCULARS,
+  CAMPGROUND,
+  CAMPGROUND,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  MOUNTAIN,
+  MOUNTAIN,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage768 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND,
+  CAMPGROUND,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  MOUNTAIN,
+  MOUNTAIN,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage769 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID,
+  FIRST_AID,
+  TREE,
+  TREE,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  MOUNTAIN,
+  MOUNTAIN,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage770 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE,
+  TREE,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  MOUNTAIN,
+  MOUNTAIN,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage771 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  MOUNTAIN,
+  MOUNTAIN,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage772 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  MOUNTAIN,
+  MOUNTAIN,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage773 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE,
+  HORSE,
+  MOUNTAIN,
+  MOUNTAIN,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage774 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN,
+  MOUNTAIN,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage775 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO,
+  HIPPO,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage776 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage777 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT,
+  GIFT,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage778 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  BICYCLE,
+  BICYCLE,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage779 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  BICYCLE_DEEP,
+  BICYCLE_DEEP,
+  AMBULANCE,
+  AMBULANCE,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage780 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  BICYCLE_DEEP,
+  BICYCLE_DEEP,
+  AMBULANCE_DEEP,
+  AMBULANCE_DEEP,
+  DRAGON,
+  DRAGON,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage781 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  BICYCLE_DEEP,
+  BICYCLE_DEEP,
+  AMBULANCE_DEEP,
+  AMBULANCE_DEEP,
+  DRAGON_DEEP,
+  DRAGON_DEEP,
+  DRUM,
+  DRUM,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage782 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  BICYCLE_DEEP,
+  BICYCLE_DEEP,
+  AMBULANCE_DEEP,
+  AMBULANCE_DEEP,
+  DRAGON_DEEP,
+  DRAGON_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage783 = [
+  PLANE,
+  PLANE,
+  BINOCULARS_DEEP,
+  BINOCULARS_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  BICYCLE_DEEP,
+  BICYCLE_DEEP,
+  AMBULANCE_DEEP,
+  AMBULANCE_DEEP,
+  DRAGON_DEEP,
+  DRAGON_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage784 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET,
+  FIGHTER_JET,
+  CAMPGROUND,
+  CAMPGROUND,
+  MOUNTAIN,
+  MOUNTAIN,
+  DRUM,
+  DRUM,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  CAT,
+  CAT,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage785 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND,
+  CAMPGROUND,
+  MOUNTAIN,
+  MOUNTAIN,
+  DRUM,
+  DRUM,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  CAT,
+  CAT,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage786 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN,
+  MOUNTAIN,
+  DRUM,
+  DRUM,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  CAT,
+  CAT,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage787 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM,
+  DRUM,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  CAT,
+  CAT,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage788 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG,
+  DOG,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  CAT,
+  CAT,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage789 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE,
+  DOVE,
+  HORSE,
+  HORSE,
+  CAT,
+  CAT,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage790 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE,
+  HORSE,
+  CAT,
+  CAT,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage791 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  CAT,
+  CAT,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage792 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  CAT_DEEP,
+  CAT_DEEP,
+  HIPPO,
+  HIPPO,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage793 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  CAT_DEEP,
+  CAT_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  TREE,
+  TREE,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage794 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  CAT_DEEP,
+  CAT_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  ICE_CREAM,
+  ICE_CREAM,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage795 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  CAT_DEEP,
+  CAT_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT,
+  GIFT,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage796 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  CAT_DEEP,
+  CAT_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  FIRST_AID,
+  FIRST_AID,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage797 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  CAT_DEEP,
+  CAT_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  AMBULANCE,
+  AMBULANCE,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
+const stage798 = [
+  PLANE,
+  PLANE,
+  PLANE_ARRIVAL,
+  PLANE_ARRIVAL,
+  PLANE_DEPARTURE,
+  PLANE_DEPARTURE,
+  FIGHTER_JET_DEEP,
+  FIGHTER_JET_DEEP,
+  CAMPGROUND_DEEP,
+  CAMPGROUND_DEEP,
+  MOUNTAIN_DEEP,
+  MOUNTAIN_DEEP,
+  DRUM_DEEP,
+  DRUM_DEEP,
+  DOG_DEEP,
+  DOG_DEEP,
+  DOVE_DEEP,
+  DOVE_DEEP,
+  HORSE_DEEP,
+  HORSE_DEEP,
+  CAT_DEEP,
+  CAT_DEEP,
+  HIPPO_DEEP,
+  HIPPO_DEEP,
+  TREE_DEEP,
+  TREE_DEEP,
+  ICE_CREAM_DEEP,
+  ICE_CREAM_DEEP,
+  GIFT_DEEP,
+  GIFT_DEEP,
+  FIRST_AID_DEEP,
+  FIRST_AID_DEEP,
+  AMBULANCE_DEEP,
+  AMBULANCE_DEEP,
+  BOMB_6X6,
+  BOMB_6X6,
+];
+
 // next - smile sets
-const stage751 = [];
-
-const stage752 = [];
-
-const stage753 = [];
-
-const stage754 = [];
-
-const stage755 = [];
-
-const stage756 = [];
-
-const stage757 = [];
-
-const stage758 = [];
-
-const stage759 = [];
-
-const stage760 = [];
-
-const stage761 = [];
-
-const stage762 = [];
-
-const stage763 = [];
-
-const stage764 = [];
-
-const stage765 = [];
-
-const stage766 = [];
-
-const stage767 = [];
-
-const stage768 = [];
-
-const stage769 = [];
-
-const stage770 = [];
-
-const stage771 = [];
-
-const stage772 = [];
-
-const stage773 = [];
-
-const stage774 = [];
-
-const stage775 = [];
-
-const stage776 = [];
-
-const stage777 = [];
-
-const stage778 = [];
-
-const stage779 = [];
-
-const stage780 = [];
-
-const stage781 = [];
-
-const stage782 = [];
-
-const stage783 = [];
-
-const stage784 = [];
-
-const stage785 = [];
-
-const stage786 = [];
-
-const stage787 = [];
-
-const stage788 = [];
-
-const stage789 = [];
-
-const stage790 = [];
-
-const stage791 = [];
-
-const stage792 = [];
-
-const stage793 = [];
-
-const stage794 = [];
-
-const stage795 = [];
-
-const stage796 = [];
-
-const stage797 = [];
-
-const stage798 = [];
-
 const stage799 = [];
 
 const stage800 = [];
@@ -25119,104 +26896,104 @@ export default (stage) => {
   else if (stage === 797) return stage797;
   else if (stage === 798) return stage798;
   else if (stage === 799) return stage799;
-else if (stage === 800) return stage800;
-else if (stage === 801) return stage801;
-else if (stage === 802) return stage802;
-else if (stage === 803) return stage803;
-else if (stage === 804) return stage804;
-else if (stage === 805) return stage805;
-else if (stage === 806) return stage806;
-else if (stage === 807) return stage807;
-else if (stage === 808) return stage808;
-else if (stage === 809) return stage809;
-else if (stage === 810) return stage810;
-else if (stage === 811) return stage811;
-else if (stage === 812) return stage812;
-else if (stage === 813) return stage813;
-else if (stage === 814) return stage814;
-else if (stage === 815) return stage815;
-else if (stage === 816) return stage816;
-else if (stage === 817) return stage817;
-else if (stage === 818) return stage818;
-else if (stage === 819) return stage819;
-else if (stage === 820) return stage820;
-else if (stage === 821) return stage821;
-else if (stage === 822) return stage822;
-else if (stage === 823) return stage823;
-else if (stage === 824) return stage824;
-else if (stage === 825) return stage825;
-else if (stage === 826) return stage826;
-else if (stage === 827) return stage827;
-else if (stage === 828) return stage828;
-else if (stage === 829) return stage829;
-else if (stage === 830) return stage830;
-else if (stage === 831) return stage831;
-else if (stage === 832) return stage832;
-else if (stage === 833) return stage833;
-else if (stage === 834) return stage834;
-else if (stage === 835) return stage835;
-else if (stage === 836) return stage836;
-else if (stage === 837) return stage837;
-else if (stage === 838) return stage838;
-else if (stage === 839) return stage839;
-else if (stage === 840) return stage840;
-else if (stage === 841) return stage841;
-else if (stage === 842) return stage842;
-else if (stage === 843) return stage843;
-else if (stage === 844) return stage844;
-else if (stage === 845) return stage845;
-else if (stage === 846) return stage846;
-else if (stage === 847) return stage847;
-else if (stage === 848) return stage848;
-else if (stage === 849) return stage849;
-else if (stage === 850) return stage850;
-else if (stage === 851) return stage851;
-else if (stage === 852) return stage852;
-else if (stage === 853) return stage853;
-else if (stage === 854) return stage854;
-else if (stage === 855) return stage855;
-else if (stage === 856) return stage856;
-else if (stage === 857) return stage857;
-else if (stage === 858) return stage858;
-else if (stage === 859) return stage859;
-else if (stage === 860) return stage860;
-else if (stage === 861) return stage861;
-else if (stage === 862) return stage862;
-else if (stage === 863) return stage863;
-else if (stage === 864) return stage864;
-else if (stage === 865) return stage865;
-else if (stage === 866) return stage866;
-else if (stage === 867) return stage867;
-else if (stage === 868) return stage868;
-else if (stage === 869) return stage869;
-else if (stage === 870) return stage870;
-else if (stage === 871) return stage871;
-else if (stage === 872) return stage872;
-else if (stage === 873) return stage873;
-else if (stage === 874) return stage874;
-else if (stage === 875) return stage875;
-else if (stage === 876) return stage876;
-else if (stage === 877) return stage877;
-else if (stage === 878) return stage878;
-else if (stage === 879) return stage879;
-else if (stage === 880) return stage880;
-else if (stage === 881) return stage881;
-else if (stage === 882) return stage882;
-else if (stage === 883) return stage883;
-else if (stage === 884) return stage884;
-else if (stage === 885) return stage885;
-else if (stage === 886) return stage886;
-else if (stage === 887) return stage887;
-else if (stage === 888) return stage888;
-else if (stage === 889) return stage889;
-else if (stage === 890) return stage890;
-else if (stage === 891) return stage891;
-else if (stage === 892) return stage892;
-else if (stage === 893) return stage893;
-else if (stage === 894) return stage894;
-else if (stage === 895) return stage895;
-else if (stage === 896) return stage896;
-else if (stage === 897) return stage897;
-else if (stage === 898) return stage898;
-else if (stage === 899) return stage899;
+  else if (stage === 800) return stage800;
+  else if (stage === 801) return stage801;
+  else if (stage === 802) return stage802;
+  else if (stage === 803) return stage803;
+  else if (stage === 804) return stage804;
+  else if (stage === 805) return stage805;
+  else if (stage === 806) return stage806;
+  else if (stage === 807) return stage807;
+  else if (stage === 808) return stage808;
+  else if (stage === 809) return stage809;
+  else if (stage === 810) return stage810;
+  else if (stage === 811) return stage811;
+  else if (stage === 812) return stage812;
+  else if (stage === 813) return stage813;
+  else if (stage === 814) return stage814;
+  else if (stage === 815) return stage815;
+  else if (stage === 816) return stage816;
+  else if (stage === 817) return stage817;
+  else if (stage === 818) return stage818;
+  else if (stage === 819) return stage819;
+  else if (stage === 820) return stage820;
+  else if (stage === 821) return stage821;
+  else if (stage === 822) return stage822;
+  else if (stage === 823) return stage823;
+  else if (stage === 824) return stage824;
+  else if (stage === 825) return stage825;
+  else if (stage === 826) return stage826;
+  else if (stage === 827) return stage827;
+  else if (stage === 828) return stage828;
+  else if (stage === 829) return stage829;
+  else if (stage === 830) return stage830;
+  else if (stage === 831) return stage831;
+  else if (stage === 832) return stage832;
+  else if (stage === 833) return stage833;
+  else if (stage === 834) return stage834;
+  else if (stage === 835) return stage835;
+  else if (stage === 836) return stage836;
+  else if (stage === 837) return stage837;
+  else if (stage === 838) return stage838;
+  else if (stage === 839) return stage839;
+  else if (stage === 840) return stage840;
+  else if (stage === 841) return stage841;
+  else if (stage === 842) return stage842;
+  else if (stage === 843) return stage843;
+  else if (stage === 844) return stage844;
+  else if (stage === 845) return stage845;
+  else if (stage === 846) return stage846;
+  else if (stage === 847) return stage847;
+  else if (stage === 848) return stage848;
+  else if (stage === 849) return stage849;
+  else if (stage === 850) return stage850;
+  else if (stage === 851) return stage851;
+  else if (stage === 852) return stage852;
+  else if (stage === 853) return stage853;
+  else if (stage === 854) return stage854;
+  else if (stage === 855) return stage855;
+  else if (stage === 856) return stage856;
+  else if (stage === 857) return stage857;
+  else if (stage === 858) return stage858;
+  else if (stage === 859) return stage859;
+  else if (stage === 860) return stage860;
+  else if (stage === 861) return stage861;
+  else if (stage === 862) return stage862;
+  else if (stage === 863) return stage863;
+  else if (stage === 864) return stage864;
+  else if (stage === 865) return stage865;
+  else if (stage === 866) return stage866;
+  else if (stage === 867) return stage867;
+  else if (stage === 868) return stage868;
+  else if (stage === 869) return stage869;
+  else if (stage === 870) return stage870;
+  else if (stage === 871) return stage871;
+  else if (stage === 872) return stage872;
+  else if (stage === 873) return stage873;
+  else if (stage === 874) return stage874;
+  else if (stage === 875) return stage875;
+  else if (stage === 876) return stage876;
+  else if (stage === 877) return stage877;
+  else if (stage === 878) return stage878;
+  else if (stage === 879) return stage879;
+  else if (stage === 880) return stage880;
+  else if (stage === 881) return stage881;
+  else if (stage === 882) return stage882;
+  else if (stage === 883) return stage883;
+  else if (stage === 884) return stage884;
+  else if (stage === 885) return stage885;
+  else if (stage === 886) return stage886;
+  else if (stage === 887) return stage887;
+  else if (stage === 888) return stage888;
+  else if (stage === 889) return stage889;
+  else if (stage === 890) return stage890;
+  else if (stage === 891) return stage891;
+  else if (stage === 892) return stage892;
+  else if (stage === 893) return stage893;
+  else if (stage === 894) return stage894;
+  else if (stage === 895) return stage895;
+  else if (stage === 896) return stage896;
+  else if (stage === 897) return stage897;
+  else if (stage === 898) return stage898;
+  else if (stage === 899) return stage899;
 };
