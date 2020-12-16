@@ -118,6 +118,30 @@ export const GameProvider = ({ gameInfo: gameInfoProp, children }) => {
     }
   };
 
+  /* Game End */
+  const setGameEnd = async () => {
+    try {
+      /* Update GameEnd Info on Screen */
+      setGameInfo((curState) => ({
+        ...curState,
+        gameEnd: true,
+      }));
+
+      /* Store GameEnd Info to Backend */
+      await updateGameInfoMutation({
+        variables: {
+          username,
+          gameEnd: true,
+        },
+      });
+
+      /* Store GameEnd Info to Local */
+      await AsyncStorage.setItem("gameEnd", JSON.stringify(true));
+    } catch (error) {
+      console.log("Error @setGameEnd_GameContext: ", error.message);
+    }
+  };
+
   return (
     <GameContext.Provider
       value={{
@@ -126,6 +150,7 @@ export const GameProvider = ({ gameInfo: gameInfoProp, children }) => {
         plusHorizontalNum,
         minusHeart,
         plusHeart,
+        setGameEnd,
       }}
     >
       {children}
@@ -156,4 +181,9 @@ export const useMinusHeart = () => {
 export const usePlusHeart = () => {
   const { plusHeart } = useContext(GameContext);
   return plusHeart;
+};
+
+export const useSetGameEnd = () => {
+  const { setGameEnd } = useContext(GameContext);
+  return setGameEnd;
 };

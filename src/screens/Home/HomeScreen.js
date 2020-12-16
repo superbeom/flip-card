@@ -105,7 +105,7 @@ export default ({ navigation }) => {
       <Header
         title={
           startGame
-            ? stage === 11000
+            ? stage === 885
               ? gameOver
                 ? CONGRATULATIONS
                 : `STAGE ${stage}`
