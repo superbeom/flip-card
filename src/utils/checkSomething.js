@@ -128,7 +128,8 @@ export const checkTime = (stage) => {
 
 /* stage에 따른, 제한 시간 */
 export const checkLimitTime = (stage) => {
-  if (stage <= 10) return 10;
-  else if (stage > 10 && stage <= 20) return 20;
-  else if (stage > 20) return 500;
+  if (stage <= 14 || (stage > 36 && stage <= 43)) return 10;
+  else if ((stage > 14 && stage <= 36) || (stage > 43 && stage <= 2000))
+    return 15;
+  else if (stage > 2000) return 500;
 };

@@ -52,10 +52,9 @@ export const AuthProvider = ({
 
   const logUserOut = async () => {
     try {
-      console.log("Log Out");
+      // await AsyncStorage.setItem("isLoggedIn", "false");
       await AsyncStorage.clear();
 
-      // await AsyncStorage.setItem("isLoggedIn", "false");
       setIsLoggedIn(false);
     } catch (error) {
       console.log("Error @logUserOut_AuthContext: ", error.message);
