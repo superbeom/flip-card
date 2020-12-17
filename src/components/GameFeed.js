@@ -147,17 +147,13 @@ export default ({
         {item}
       </View>
       <View
-        style={{
-          width: fitWidth,
-          height: fitWidth,
-          position: "absolute",
-          top: 0,
-          left: 0,
-          backgroundColor: colors.blackColor,
-          opacity: 0.3,
-          borderRadius: 10,
-          elevation: 6,
-        }}
+        style={[
+          styles.itemThumbnailOverlay,
+          {
+            width: fitWidth,
+            height: fitWidth,
+          },
+        ]}
       />
     </>
   );
@@ -234,6 +230,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
+  },
+  itemThumbnailOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    backgroundColor: colors.blackColor,
+    opacity: 0.3,
+    borderRadius: 10,
+    elevation: 6,
   },
   questionText: {
     fontWeight: "bold",
