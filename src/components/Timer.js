@@ -28,6 +28,12 @@ const Progress = ({
   const animatedValue = useRef(new Animated.Value(-1000)).current;
   const reactive = useRef(new Animated.Value(-1000)).current;
 
+  const timerAnimation = Animated.timing(animatedValue, {
+    toValue: reactive,
+    duration: 1000,
+    useNativeDriver: true,
+  });
+
   /* 3초 추가 & heart 갯수 -1 */
   const addTime = () => {
     setLimitTime((curState) => curState + 3);
@@ -38,11 +44,7 @@ const Progress = ({
   };
 
   useEffect(() => {
-    Animated.timing(animatedValue, {
-      toValue: reactive,
-      duration: 1000,
-      useNativeDriver: true,
-    }).start();
+    timerAnimation.start();
   }, []);
 
   useEffect(() => {
@@ -128,10 +130,12 @@ const Timer = ({
       }
     }, 1000);
 
-    return () => {
+    if (showAnswer) {
       clearInterval(interval);
-    };
-  }, [index]);
+    }
+
+    return () => clearInterval(interval);
+  }, [index, showAnswer]);
 
   return (
     <View style={styles.timer}>
