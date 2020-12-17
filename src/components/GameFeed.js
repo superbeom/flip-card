@@ -19,6 +19,7 @@ let clickNum = 0;
 let firstPick = null;
 let secondPick = null;
 let correctItemArray = [];
+let initialCount = 0;
 
 export default ({
   onGameOver,
@@ -42,6 +43,7 @@ export default ({
     firstPick = null;
     secondPick = null;
     correctItemArray = [];
+    initialCount = 0;
   };
 
   /* 설정 초기화 */
@@ -100,7 +102,10 @@ export default ({
       setShuffleData(shuffle(stageName));
 
       /* Stage별 정해진 시간 동안, 처음에 정답 보여 주기 */
-      setTimeout(() => setShowAnswer(false), checkTime(stage));
+      setTimeout(() => {
+        setShowAnswer(false);
+        initialCount++;
+      }, checkTime(stage));
 
       initializationFeed();
     } catch (error) {
@@ -125,6 +130,36 @@ export default ({
     >
       {item}
     </View>
+  );
+
+  const selectedAnswer = (item) => (
+    <>
+      <View
+        style={[
+          styles.itemThumbnail,
+          {
+            width: fitWidth,
+            height: fitWidth,
+            backgroundColor: colors.lightWhiteColor,
+          },
+        ]}
+      >
+        {item}
+      </View>
+      <View
+        style={{
+          width: fitWidth,
+          height: fitWidth,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          backgroundColor: colors.blackColor,
+          opacity: 0.3,
+          borderRadius: 10,
+          elevation: 6,
+        }}
+      />
+    </>
   );
 
   const question = (
@@ -170,7 +205,13 @@ export default ({
                 }
               >
                 {showAnswer
-                  ? answer(item)
+                  ? firstClickIndex === index ||
+                    secondClickIndex === index ||
+                    correctItemArray.includes(itemName)
+                    ? selectedAnswer(item)
+                    : initialCount !== 0 && itemName === "bomb"
+                    ? selectedAnswer(item)
+                    : answer(item)
                   : firstClickIndex === index ||
                     secondClickIndex === index ||
                     correctItemArray.includes(itemName)
