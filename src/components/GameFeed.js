@@ -158,6 +158,21 @@ export default ({
     </>
   );
 
+  const sameAnswer = (item) => (
+    <View
+      style={[
+        styles.itemThumbnail,
+        {
+          width: fitWidth,
+          height: fitWidth,
+          backgroundColor: "rgba(247, 229, 34, 0.7)",
+        },
+      ]}
+    >
+      {item}
+    </View>
+  );
+
   const question = (
     <View
       style={[
@@ -207,6 +222,8 @@ export default ({
                     ? selectedAnswer(item)
                     : initialCount !== 0 && itemName === "bomb"
                     ? selectedAnswer(item)
+                    : firstPick !== null && itemName === firstPick
+                    ? sameAnswer(item)
                     : answer(item)
                   : firstClickIndex === index ||
                     secondClickIndex === index ||
