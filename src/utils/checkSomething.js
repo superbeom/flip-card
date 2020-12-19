@@ -129,7 +129,8 @@ export const checkTime = (stage) => {
   else if (stage > 600 && stage <= 663) return 8000;
   else if (stage > 663 && stage <= 705) return 8300;
   else if (stage > 705 && stage <= 750) return 8500;
-  else if (stage > 750 && stage <= 2000) return 8700;
+  else if (stage > 750 && stage <= 798) return 8700;
+  else if (stage > 798 && stage <= 885) return 9000;
 };
 
 /* stage에 따른, 제한 시간 */
@@ -168,6 +169,5 @@ export const checkLimitTime = (stage) => {
   else if (stage > 588 && stage <= 600) return 60;
   else if (stage > 600 && stage <= 663) return 65;
   else if (stage > 663 && stage <= 705) return 70;
-  else if (stage > 705 && stage <= 750) return 75;
-  else if (stage > 750 && stage <= 2000) return 75;
+  else if (stage > 705 && stage <= 885) return 75;
 };
