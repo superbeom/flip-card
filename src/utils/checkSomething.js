@@ -105,13 +105,11 @@ export const checkTime = (stage) => {
     return 4500;
   else if (stage > 87 && stage <= 111) return 5000;
   else if (stage > 111 && stage <= 141) return 5300;
-  else if ((stage > 141 && stage <= 157) || (stage > 172 && stage <= 2000))
-    return 5500;
+  else if (stage > 141 && stage <= 157) return 5500;
+  else if (stage > 172 && stage <= 186) return 6000;
   /*
     설정해야 함!!
-  */ else if (stage > 100000 && stage <= 200000)
-    return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
+  */ else if (stage > 186 && stage <= 200000) return 6500;
   else if (stage > 100000 && stage <= 200000) return 5000;
   else if (stage > 100000 && stage <= 200000) return 5000;
   else if (stage > 100000 && stage <= 200000) return 5000;
@@ -143,10 +141,14 @@ export const checkLimitTime = (stage) => {
     (stage > 14 && stage <= 36) ||
     (stage > 43 && stage <= 111) ||
     (stage > 118 && stage <= 141) ||
-    (stage > 163 && stage <= 2000)
+    (stage > 163 && stage <= 172)
   )
     return 15;
-  else if ((stage > 111 && stage <= 118) || (stage > 141 && stage <= 157))
+  else if (
+    (stage > 111 && stage <= 118) ||
+    (stage > 141 && stage <= 157) ||
+    (stage > 172 && stage <= 2000)
+  )
     return 20;
   // else if (stage > 157 && stage <= 2000) return 25;
 };
