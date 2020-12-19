@@ -4,6 +4,7 @@ import { vw, vh } from "react-native-expo-viewport-units";
 
 import { useGameInfo, useMinusHeart } from "../../context/GameContext";
 
+import { checkTime } from "../../utils/checkSomething";
 import { CHECK_GO_HOME } from "../../constants/strings";
 
 import GameFeed from "../../components/GameFeed";
@@ -31,11 +32,13 @@ export default ({ onGoHome, onGameOver }) => {
     return true;
   };
 
-  /* 2초 간 정답 보여 주기 & heart 갯수 -1 */
+  /* 처음에 정답 보여 주는 시간 2/3초 간 정답 보여 주기 & heart 갯수 -1 */
   const showAnswerForHint = () => {
     setShowAnswer(true);
 
-    setTimeout(() => setShowAnswer(false), 2000);
+    const timeForShowAnswer = checkTime(stage) * 0.6;
+
+    setTimeout(() => setShowAnswer(false), timeForShowAnswer);
 
     if (heart > 0) {
       minusHeart();
