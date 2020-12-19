@@ -96,36 +96,40 @@ export const checkTime = (stage) => {
     (stage > 157 && stage <= 159)
   )
     return 2000;
-  else if ((stage > 29 && stage <= 36) || (stage > 159 && stage <= 163))
+  else if (
+    (stage > 29 && stage <= 36) ||
+    (stage > 159 && stage <= 163) ||
+    (stage > 334 && stage <= 340)
+  )
     return 2500;
   else if (stage > 43 && stage <= 60) return 3000;
-  else if ((stage > 60 && stage <= 81) || (stage > 163 && stage <= 167))
+  else if (
+    (stage > 60 && stage <= 81) ||
+    (stage > 163 && stage <= 167) ||
+    (stage > 340 && stage <= 366)
+  )
     return 4000;
   else if ((stage > 81 && stage <= 87) || (stage > 167 && stage <= 172))
     return 4500;
-  else if (stage > 87 && stage <= 111) return 5000;
+  else if ((stage > 87 && stage <= 111) || (stage > 366 && stage <= 386))
+    return 5000;
   else if (stage > 111 && stage <= 141) return 5300;
-  else if (stage > 141 && stage <= 157) return 5500;
-  else if (stage > 172 && stage <= 186) return 6000;
-  /*
-    설정해야 함!!
-  */ else if (stage > 186 && stage <= 200000) return 6500;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
-  else if (stage > 100000 && stage <= 200000) return 5000;
+  else if ((stage > 141 && stage <= 157) || (stage > 386 && stage <= 411))
+    return 5500;
+  else if (stage > 172 && stage <= 263) return 6000;
+  else if ((stage > 263 && stage <= 290) || (stage > 411 && stage <= 443))
+    return 6500;
+  else if ((stage > 290 && stage <= 311) || (stage > 443 && stage <= 498))
+    return 6700;
+  else if ((stage > 311 && stage <= 334) || (stage > 498 && stage <= 525))
+    return 7000;
+  else if (stage > 525 && stage <= 555) return 7300;
+  else if (stage > 555 && stage <= 588) return 7500;
+  else if (stage > 588 && stage <= 600) return 7700;
+  else if (stage > 600 && stage <= 663) return 8000;
+  else if (stage > 663 && stage <= 705) return 8300;
+  else if (stage > 705 && stage <= 750) return 8500;
+  else if (stage > 750 && stage <= 2000) return 8700;
 };
 
 /* stage에 따른, 제한 시간 */
@@ -141,14 +145,29 @@ export const checkLimitTime = (stage) => {
     (stage > 14 && stage <= 36) ||
     (stage > 43 && stage <= 111) ||
     (stage > 118 && stage <= 141) ||
-    (stage > 163 && stage <= 172)
+    (stage > 163 && stage <= 172) ||
+    (stage > 334 && stage <= 350)
   )
     return 15;
   else if (
     (stage > 111 && stage <= 118) ||
     (stage > 141 && stage <= 157) ||
-    (stage > 172 && stage <= 2000)
+    (stage > 172 && stage <= 210) ||
+    (stage > 350 && stage <= 411)
   )
     return 20;
-  // else if (stage > 157 && stage <= 2000) return 25;
+  else if (stage > 210 && stage <= 254) return 25;
+  else if ((stage > 254 && stage <= 290) || (stage > 411 && stage <= 443))
+    return 30;
+  else if ((stage > 290 && stage <= 323) || (stage > 443 && stage <= 498))
+    return 35;
+  else if ((stage > 323 && stage <= 334) || (stage > 498 && stage <= 525))
+    return 40;
+  else if (stage > 525 && stage <= 555) return 50;
+  else if (stage > 555 && stage <= 588) return 55;
+  else if (stage > 588 && stage <= 600) return 60;
+  else if (stage > 600 && stage <= 663) return 65;
+  else if (stage > 663 && stage <= 705) return 70;
+  else if (stage > 705 && stage <= 750) return 75;
+  else if (stage > 750 && stage <= 2000) return 75;
 };
