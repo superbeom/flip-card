@@ -34,9 +34,9 @@ const Progress = ({
     useNativeDriver: true,
   });
 
-  /* 3초 추가 & heart 갯수 -1 */
+  /* 5초 추가 & heart 갯수 -1 */
   const addTime = () => {
-    setLimitTime((curState) => curState + 3);
+    setLimitTime((curState) => curState + 5);
 
     if (numOfHeart > 0) {
       minusHeart();
