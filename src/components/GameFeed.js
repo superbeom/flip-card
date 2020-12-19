@@ -56,8 +56,9 @@ export default ({
   };
 
   /* 카드 두 장 비교 */
-  const compareCards = () => {
-    if (
+  const compareCards = (item) => {
+    if (item === "bomb") {
+    } else if (
       firstPick !== null &&
       (secondPick !== null) & (firstPick === secondPick)
     ) {
@@ -76,10 +77,10 @@ export default ({
 
   const checkClick = (item, index) => {
     /* 폭탄 클릭 시, Game Over */
-    if (item === "bomb") {
-      setClickedBomb(true);
-      setTimeout(onGameOver.bind(this, "fail"), 500);
-    }
+    // if (item === "bomb") {
+    //   setClickedBomb(true);
+    //   setTimeout(onGameOver.bind(this, "fail"), 500);
+    // }
 
     if (clickNum === 0) {
       clickNum++;
@@ -91,8 +92,13 @@ export default ({
       secondPick = item;
     }
 
+    /* Check Bomb */
+    if (item === "bomb") {
+      setTimeout(() => compareCards("bomb"), 150);
+    }
+
     if (clickNum === 2 && item !== "bomb") {
-      setTimeout(compareCards, 150);
+      setTimeout(() => compareCards(), 150);
     }
   };
 

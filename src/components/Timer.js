@@ -119,7 +119,7 @@ const Timer = ({
       setIndex((curIndex) => (curIndex + 1) % (limitTime + 1));
 
       /* 제한 시간 초과 시, Game Over */
-      if ((index + 1) % (limitTime + 1) === 0) {
+      if (disableHintLimitTime === 0) {
         onGameOver("fail");
       }
 
