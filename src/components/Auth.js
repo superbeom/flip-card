@@ -74,6 +74,7 @@ export default ({
             navigation.navigate(content === SIGN_UP ? SIGN_IN : SIGN_UP)
           }
           activeOpacity={0.5}
+          disabled={loading}
         >
           <Text style={styles.signUpLeftText}>
             {content === SIGN_UP ? HAVE_BEEN : FIRST_TIME}

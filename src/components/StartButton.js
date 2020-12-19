@@ -10,7 +10,7 @@ import {
 import { vw } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
-import { GAME_START, UPDATING } from "../constants/strings";
+import { GAME_START, COMING_SOON } from "../constants/strings";
 
 const size = vw(40);
 const startRange = vw(30);
@@ -61,7 +61,7 @@ const StartButton = ({ onPress, update, enoughHeart, toggleSwitch }) => {
         style={[
           styles.button,
           { opacity, width: measure, height: measure },
-          !enoughHeart
+          !enoughHeart || update
             ? {
                 backgroundColor: colors.grayColor,
                 shadowColor: colors.grayColor,
@@ -84,7 +84,7 @@ const StartButton = ({ onPress, update, enoughHeart, toggleSwitch }) => {
                 },
           ]}
         >
-          {update ? UPDATING : GAME_START}
+          {update ? COMING_SOON : GAME_START}
         </Text>
       </Animated.View>
     </TouchableOpacity>

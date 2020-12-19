@@ -7,6 +7,7 @@ import {
   useNextStage,
   usePlusHorizontalNum,
   usePlusHeart,
+  useSetGameEnd,
 } from "../../context/GameContext";
 
 import colors from "../../constants/colors";
@@ -30,10 +31,16 @@ const GameOverScreen = ({
   const nextStage = useNextStage();
   const plusHorizontalNum = usePlusHorizontalNum();
   const plusHeart = usePlusHeart();
+  const setGameEnd = useSetGameEnd();
   const [checkReward, setCheckReward] = useState(false);
 
   const clickedGoHomeAfterSuccess = () => {
-    successStage();
+    if (stage === 885) {
+      setGameEnd();
+    } else {
+      successStage();
+    }
+
     onGoHome();
   };
 
@@ -154,7 +161,7 @@ const GameOverScreen = ({
               {PLAY_AGAIN}
             </StageButton>
           )}
-          {pass ? (
+          {pass && stage !== 885 ? (
             <StageButton
               onPress={nextStageHandler}
               enoughHeart={heart > 0 ?? false}

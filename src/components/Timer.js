@@ -28,9 +28,15 @@ const Progress = ({
   const animatedValue = useRef(new Animated.Value(-1000)).current;
   const reactive = useRef(new Animated.Value(-1000)).current;
 
-  /* 3초 추가 & heart 갯수 -1 */
+  const timerAnimation = Animated.timing(animatedValue, {
+    toValue: reactive,
+    duration: 1000,
+    useNativeDriver: true,
+  });
+
+  /* 5초 추가 & heart 갯수 -1 */
   const addTime = () => {
-    setLimitTime((curState) => curState + 3);
+    setLimitTime((curState) => curState + 5);
 
     if (numOfHeart > 0) {
       minusHeart();
@@ -38,11 +44,7 @@ const Progress = ({
   };
 
   useEffect(() => {
-    Animated.timing(animatedValue, {
-      toValue: reactive,
-      duration: 1000,
-      useNativeDriver: true,
-    }).start();
+    timerAnimation.start();
   }, []);
 
   useEffect(() => {
@@ -117,7 +119,7 @@ const Timer = ({
       setIndex((curIndex) => (curIndex + 1) % (limitTime + 1));
 
       /* 제한 시간 초과 시, Game Over */
-      if ((index + 1) % (limitTime + 1) === 0) {
+      if (disableHintLimitTime === 0) {
         onGameOver("fail");
       }
 
@@ -128,10 +130,12 @@ const Timer = ({
       }
     }, 1000);
 
-    return () => {
+    if (showAnswer) {
       clearInterval(interval);
-    };
-  }, [index]);
+    }
+
+    return () => clearInterval(interval);
+  }, [index, showAnswer]);
 
   return (
     <View style={styles.timer}>

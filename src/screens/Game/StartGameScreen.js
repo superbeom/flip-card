@@ -36,7 +36,7 @@ export default ({ onStartGame, getHeart, toggleSwitch, navigation }) => {
           )}
         </Card>
         <View style={styles.heartBox}>
-          <Heart onPress={getHeart} numOfHeart={heart} />
+          <Heart onPress={getHeart} numOfHeart={heart} disabled={gameEnd} />
           {heart <= 1 ? (
             <>
               <View style={styles.arrowBox}>

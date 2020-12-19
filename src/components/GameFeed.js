@@ -19,6 +19,7 @@ let clickNum = 0;
 let firstPick = null;
 let secondPick = null;
 let correctItemArray = [];
+let initialCount = 0;
 
 export default ({
   onGameOver,
@@ -42,6 +43,7 @@ export default ({
     firstPick = null;
     secondPick = null;
     correctItemArray = [];
+    initialCount = 0;
   };
 
   /* 설정 초기화 */
@@ -54,8 +56,9 @@ export default ({
   };
 
   /* 카드 두 장 비교 */
-  const compareCards = () => {
-    if (
+  const compareCards = (item) => {
+    if (item === "bomb") {
+    } else if (
       firstPick !== null &&
       (secondPick !== null) & (firstPick === secondPick)
     ) {
@@ -73,12 +76,6 @@ export default ({
   };
 
   const checkClick = (item, index) => {
-    /* 폭탄 클릭 시, Game Over */
-    if (item === "bomb") {
-      setClickedBomb(true);
-      setTimeout(onGameOver.bind(this, "fail"), 500);
-    }
-
     if (clickNum === 0) {
       clickNum++;
       setFirstClickIndex(index);
@@ -89,8 +86,13 @@ export default ({
       secondPick = item;
     }
 
+    /* Check Bomb */
+    if (item === "bomb") {
+      setTimeout(() => compareCards("bomb"), 150);
+    }
+
     if (clickNum === 2 && item !== "bomb") {
-      setTimeout(compareCards, 300);
+      setTimeout(() => compareCards(), 150);
     }
   };
 
@@ -100,7 +102,10 @@ export default ({
       setShuffleData(shuffle(stageName));
 
       /* Stage별 정해진 시간 동안, 처음에 정답 보여 주기 */
-      setTimeout(() => setShowAnswer(false), checkTime(stage));
+      setTimeout(() => {
+        setShowAnswer(false);
+        initialCount++;
+      }, checkTime(stage));
 
       initializationFeed();
     } catch (error) {
@@ -120,6 +125,47 @@ export default ({
           width: fitWidth,
           height: fitWidth,
           backgroundColor: colors.lightWhiteColor,
+        },
+      ]}
+    >
+      {item}
+    </View>
+  );
+
+  const selectedAnswer = (item) => (
+    <>
+      <View
+        style={[
+          styles.itemThumbnail,
+          {
+            width: fitWidth,
+            height: fitWidth,
+            backgroundColor: colors.lightWhiteColor,
+          },
+        ]}
+      >
+        {item}
+      </View>
+      <View
+        style={[
+          styles.itemThumbnailOverlay,
+          {
+            width: fitWidth,
+            height: fitWidth,
+          },
+        ]}
+      />
+    </>
+  );
+
+  const sameAnswer = (item) => (
+    <View
+      style={[
+        styles.itemThumbnail,
+        {
+          width: fitWidth,
+          height: fitWidth,
+          backgroundColor: "rgba(247, 229, 34, 0.7)",
         },
       ]}
     >
@@ -170,7 +216,15 @@ export default ({
                 }
               >
                 {showAnswer
-                  ? answer(item)
+                  ? firstClickIndex === index ||
+                    secondClickIndex === index ||
+                    correctItemArray.includes(itemName)
+                    ? selectedAnswer(item)
+                    : initialCount !== 0 && itemName === "bomb"
+                    ? selectedAnswer(item)
+                    : firstPick !== null && itemName === firstPick
+                    ? sameAnswer(item)
+                    : answer(item)
                   : firstClickIndex === index ||
                     secondClickIndex === index ||
                     correctItemArray.includes(itemName)
@@ -193,6 +247,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
+  },
+  itemThumbnailOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    backgroundColor: colors.blackColor,
+    opacity: 0.3,
+    borderRadius: 10,
+    elevation: 6,
   },
   questionText: {
     fontWeight: "bold",

@@ -353,6 +353,78 @@ export const GIFT_DEEP = (
   />
 );
 
+export const BICYCLE = (
+  <FontAwesomeItem key={"bicycle"} name="bicycle" color={colors.brownColor} />
+);
+
+export const BICYCLE_DEEP = (
+  <FontAwesomeItem
+    key={"bicycle-deep"}
+    name="bicycle"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const AMBULANCE = (
+  <FontAwesomeItem
+    key={"ambulance"}
+    name="ambulance"
+    color={colors.maroonColor}
+  />
+);
+
+export const AMBULANCE_DEEP = (
+  <FontAwesomeItem
+    key={"ambulance-deep"}
+    name="ambulance"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const DRAGON = (
+  <FontAwesomeItem
+    key={"dragon"}
+    name="dragon"
+    color={colors.forestGreenColor}
+  />
+);
+
+export const DRAGON_DEEP = (
+  <FontAwesomeItem
+    key={"dragon-deep"}
+    name="dragon"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const DRUM = (
+  <FontAwesomeItem key={"drum"} name="drum" color={colors.indigoColor} />
+);
+
+export const DRUM_DEEP = (
+  <FontAwesomeItem
+    key={"drum-deep"}
+    name="drum"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
+export const FIGHTER_JET = (
+  <FontAwesomeItem
+    key={"fighter-jet"}
+    name="fighter-jet"
+    color={colors.slateGrayColor}
+  />
+);
+
+export const FIGHTER_JET_DEEP = (
+  <FontAwesomeItem
+    key={"fighter-jet-deep"}
+    name="fighter-jet"
+    color={colors.deepSkyBlueColor}
+  />
+);
+
 /*
   STEP 2
 */
@@ -513,7 +585,7 @@ export const SURPRISE = (
   <FontAwesomeItem
     key={"surprise"}
     name="surprise"
-    color={colors.accentColor}
+    color={colors.orangeColor}
   />
 );
 
@@ -521,7 +593,7 @@ export const MEH_ROLLING_EYES = (
   <FontAwesomeItem
     key={"meh-rolling-eyes"}
     name="meh-rolling-eyes"
-    color={colors.darkNavyColor}
+    color={colors.brownColor}
   />
 );
 
@@ -693,6 +765,14 @@ export const SURPRISE_DARK = (
   <FontAwesomeItem
     key={"surprise-dark"}
     name="surprise"
+    color={colors.darkNavyColor}
+  />
+);
+
+export const MEH_ROLLING_EYES_DARK = (
+  <FontAwesomeItem
+    key={"meh-rolling-eyes-dark"}
+    name="meh-rolling-eyes"
     color={colors.darkNavyColor}
   />
 );
