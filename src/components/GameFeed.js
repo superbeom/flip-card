@@ -76,12 +76,6 @@ export default ({
   };
 
   const checkClick = (item, index) => {
-    /* 폭탄 클릭 시, Game Over */
-    // if (item === "bomb") {
-    //   setClickedBomb(true);
-    //   setTimeout(onGameOver.bind(this, "fail"), 500);
-    // }
-
     if (clickNum === 0) {
       clickNum++;
       setFirstClickIndex(index);
