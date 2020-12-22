@@ -161,21 +161,12 @@ export const BOMB_6X6 = (
   />
 );
 
-export const SKULL_3X3 = (
-  <MaterialCommunityIcons
-    key={"skull"}
-    name="skull-crossbones"
-    size={vw(17)}
-    color={colors.blackColor}
-  />
-);
-
 export const SKULL_4X4 = (
   <MaterialCommunityIcons
     key={"skull"}
     name="skull-crossbones"
     size={vw(13)}
-    color={colors.blackColor}
+    color={colors.lightWhiteColor}
   />
 );
 
@@ -184,7 +175,7 @@ export const SKULL_5X5 = (
     key={"skull"}
     name="skull-crossbones"
     size={vw(10)}
-    color={colors.blackColor}
+    color={colors.lightWhiteColor}
   />
 );
 
@@ -193,7 +184,34 @@ export const SKULL_6X6 = (
     key={"skull"}
     name="skull-crossbones"
     size={vw(8)}
-    color={colors.blackColor}
+    color={colors.lightWhiteColor}
+  />
+);
+
+export const RED_SKULL_4X4 = (
+  <MaterialCommunityIcons
+    key={"skull"}
+    name="skull-crossbones"
+    size={vw(13)}
+    color={colors.redColor}
+  />
+);
+
+export const RED_SKULL_5X5 = (
+  <MaterialCommunityIcons
+    key={"skull"}
+    name="skull-crossbones"
+    size={vw(10)}
+    color={colors.redColor}
+  />
+);
+
+export const RED_SKULL_6X6 = (
+  <MaterialCommunityIcons
+    key={"skull"}
+    name="skull-crossbones"
+    size={vw(8)}
+    color={colors.redColor}
   />
 );
 
@@ -812,3 +830,20 @@ export const MEH_ROLLING_EYES_DARK = (
     color={colors.darkNavyColor}
   />
 );
+
+/*
+  Func
+*/
+
+export const getSkullForHint = (horizontalNum) => {
+  switch (true) {
+    case horizontalNum === 4:
+      return RED_SKULL_4X4;
+
+    case horizontalNum === 5:
+      return RED_SKULL_5X5;
+
+    case horizontalNum === 6:
+      return RED_SKULL_6X6;
+  }
+};

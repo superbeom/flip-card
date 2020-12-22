@@ -13,6 +13,7 @@ import colors from "../constants/colors";
 import checkStage from "../utils/checkStage";
 import { shuffle } from "../utils/shuffleArray";
 import { checkAnswer, checkTime } from "../utils/checkSomething";
+import { getSkullForHint } from "../utils/FontAwesomeSource";
 import { QUESTION_MARK } from "../constants/strings";
 
 let clickNum = 0;
@@ -130,7 +131,8 @@ export default ({
         {
           width: fitWidth,
           height: fitWidth,
-          backgroundColor: colors.lightWhiteColor,
+          backgroundColor:
+            item.key === "skull" ? colors.redColor : colors.lightWhiteColor,
         },
       ]}
     >
@@ -150,7 +152,7 @@ export default ({
           },
         ]}
       >
-        {item}
+        {item.key === "skull" ? getSkullForHint(horizontalNum) : item}
       </View>
       <View
         style={[
