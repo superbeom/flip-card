@@ -13,6 +13,7 @@ import colors from "../constants/colors";
 import checkStage from "../utils/checkStage";
 import { shuffle } from "../utils/shuffleArray";
 import { checkAnswer, checkTime } from "../utils/checkSomething";
+import { getSkullForHint } from "../utils/FontAwesomeSource";
 import { QUESTION_MARK } from "../constants/strings";
 
 let clickNum = 0;
@@ -76,6 +77,12 @@ export default ({
   };
 
   const checkClick = (item, index) => {
+    /* 해골 클릭 시, Game Over */
+    if (item === "skull") {
+      setClickedBomb(true);
+      setTimeout(onGameOver.bind(this, "fail"), 500);
+    }
+
     if (clickNum === 0) {
       clickNum++;
       setFirstClickIndex(index);
@@ -91,7 +98,7 @@ export default ({
       setTimeout(() => compareCards("bomb"), 150);
     }
 
-    if (clickNum === 2 && item !== "bomb") {
+    if (clickNum === 2 && item !== "bomb" && item !== "skull") {
       setTimeout(() => compareCards(), 150);
     }
   };
@@ -124,7 +131,8 @@ export default ({
         {
           width: fitWidth,
           height: fitWidth,
-          backgroundColor: colors.lightWhiteColor,
+          backgroundColor:
+            item.key === "skull" ? colors.redColor : colors.lightWhiteColor,
         },
       ]}
     >
@@ -144,7 +152,7 @@ export default ({
           },
         ]}
       >
-        {item}
+        {item.key === "skull" ? getSkullForHint(horizontalNum) : item}
       </View>
       <View
         style={[
@@ -220,7 +228,8 @@ export default ({
                     secondClickIndex === index ||
                     correctItemArray.includes(itemName)
                     ? selectedAnswer(item)
-                    : initialCount !== 0 && itemName === "bomb"
+                    : initialCount !== 0 &&
+                      (itemName === "bomb" || itemName === "skull")
                     ? selectedAnswer(item)
                     : firstPick !== null && itemName === firstPick
                     ? sameAnswer(item)

@@ -4,6 +4,9 @@ import {
   BOMB_4X4,
   BOMB_5X5,
   BOMB_6X6,
+  SKULL_4X4,
+  SKULL_5X5,
+  SKULL_6X6,
   /* STEP 1 */
   PLANE,
   PLANE_DARK,
@@ -514,7 +517,7 @@ const stage37 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 /* The number of Answer: 2 */
@@ -534,7 +537,7 @@ const stage38 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage39 = [
@@ -553,7 +556,7 @@ const stage39 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 /* The number of Answer: 3 */
@@ -573,7 +576,7 @@ const stage40 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage41 = [
@@ -592,7 +595,7 @@ const stage41 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage42 = [
@@ -611,7 +614,7 @@ const stage42 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage43 = [
@@ -630,7 +633,7 @@ const stage43 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 /* The number of Answer: 4 */
@@ -650,7 +653,7 @@ const stage44 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage45 = [
@@ -669,7 +672,7 @@ const stage45 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage46 = [
@@ -688,7 +691,7 @@ const stage46 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage47 = [
@@ -707,7 +710,7 @@ const stage47 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage48 = [
@@ -726,7 +729,7 @@ const stage48 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage49 = [
@@ -745,7 +748,7 @@ const stage49 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage50 = [
@@ -764,7 +767,7 @@ const stage50 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage51 = [
@@ -783,7 +786,7 @@ const stage51 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage52 = [
@@ -802,7 +805,7 @@ const stage52 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage53 = [
@@ -821,7 +824,7 @@ const stage53 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage54 = [
@@ -840,7 +843,7 @@ const stage54 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage55 = [
@@ -859,7 +862,7 @@ const stage55 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage56 = [
@@ -878,7 +881,7 @@ const stage56 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage57 = [
@@ -897,7 +900,7 @@ const stage57 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage58 = [
@@ -916,7 +919,7 @@ const stage58 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage59 = [
@@ -935,7 +938,7 @@ const stage59 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage60 = [
@@ -954,7 +957,7 @@ const stage60 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 /* The number of Answer: 5 */
@@ -974,7 +977,7 @@ const stage61 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage62 = [
@@ -993,7 +996,7 @@ const stage62 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage63 = [
@@ -1012,7 +1015,7 @@ const stage63 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage64 = [
@@ -1031,7 +1034,7 @@ const stage64 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage65 = [
@@ -1050,7 +1053,7 @@ const stage65 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage66 = [
@@ -1069,7 +1072,7 @@ const stage66 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage67 = [
@@ -1088,7 +1091,7 @@ const stage67 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage68 = [
@@ -1107,7 +1110,7 @@ const stage68 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage69 = [
@@ -1126,7 +1129,7 @@ const stage69 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage70 = [
@@ -1145,7 +1148,7 @@ const stage70 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage71 = [
@@ -1164,7 +1167,7 @@ const stage71 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage72 = [
@@ -1183,7 +1186,7 @@ const stage72 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage73 = [
@@ -1202,7 +1205,7 @@ const stage73 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage74 = [
@@ -1221,7 +1224,7 @@ const stage74 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage75 = [
@@ -1240,7 +1243,7 @@ const stage75 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage76 = [
@@ -1259,7 +1262,7 @@ const stage76 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage77 = [
@@ -1278,7 +1281,7 @@ const stage77 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage78 = [
@@ -1297,7 +1300,7 @@ const stage78 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage79 = [
@@ -1316,7 +1319,7 @@ const stage79 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage80 = [
@@ -1335,7 +1338,7 @@ const stage80 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage81 = [
@@ -1354,7 +1357,7 @@ const stage81 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 /* The number of Answer: 6 */
@@ -1374,7 +1377,7 @@ const stage82 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage83 = [
@@ -1393,7 +1396,7 @@ const stage83 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage84 = [
@@ -1412,7 +1415,7 @@ const stage84 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage85 = [
@@ -1431,7 +1434,7 @@ const stage85 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage86 = [
@@ -1450,7 +1453,7 @@ const stage86 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage87 = [
@@ -1469,7 +1472,7 @@ const stage87 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage88 = [
@@ -1488,7 +1491,7 @@ const stage88 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage89 = [
@@ -1507,7 +1510,7 @@ const stage89 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage90 = [
@@ -1526,7 +1529,7 @@ const stage90 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage91 = [
@@ -1545,7 +1548,7 @@ const stage91 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage92 = [
@@ -1564,7 +1567,7 @@ const stage92 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage93 = [
@@ -1583,7 +1586,7 @@ const stage93 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage94 = [
@@ -1602,7 +1605,7 @@ const stage94 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage95 = [
@@ -1621,7 +1624,7 @@ const stage95 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage96 = [
@@ -1640,7 +1643,7 @@ const stage96 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage97 = [
@@ -1659,7 +1662,7 @@ const stage97 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage98 = [
@@ -1678,7 +1681,7 @@ const stage98 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 const stage99 = [
@@ -1697,7 +1700,7 @@ const stage99 = [
   BOMB_4X4,
   BOMB_4X4,
   BOMB_4X4,
-  BOMB_4X4,
+  SKULL_4X4,
 ];
 
 /* The number of Answer: 7 */
@@ -2834,7 +2837,7 @@ const stage158 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 /* The number of Answer: 2 */
@@ -2863,7 +2866,7 @@ const stage159 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 /* The number of Answer: 3 */
@@ -2892,7 +2895,7 @@ const stage160 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage161 = [
@@ -2920,7 +2923,7 @@ const stage161 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage162 = [
@@ -2948,7 +2951,7 @@ const stage162 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage163 = [
@@ -2976,7 +2979,7 @@ const stage163 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 /* The number of Answer: 4 */
@@ -3005,7 +3008,7 @@ const stage164 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage165 = [
@@ -3033,7 +3036,7 @@ const stage165 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage166 = [
@@ -3061,7 +3064,7 @@ const stage166 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage167 = [
@@ -3089,7 +3092,7 @@ const stage167 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 /* The number of Answer: 5 */
@@ -3118,7 +3121,7 @@ const stage168 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage169 = [
@@ -3146,7 +3149,7 @@ const stage169 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage170 = [
@@ -3174,7 +3177,7 @@ const stage170 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage171 = [
@@ -3202,7 +3205,7 @@ const stage171 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage172 = [
@@ -3230,7 +3233,7 @@ const stage172 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 /* The number of Answer: 6 */
@@ -3259,7 +3262,7 @@ const stage173 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage174 = [
@@ -3287,7 +3290,7 @@ const stage174 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage175 = [
@@ -3315,7 +3318,7 @@ const stage175 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage176 = [
@@ -3343,7 +3346,7 @@ const stage176 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage177 = [
@@ -3371,7 +3374,7 @@ const stage177 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage178 = [
@@ -3399,7 +3402,7 @@ const stage178 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage179 = [
@@ -3427,7 +3430,7 @@ const stage179 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage180 = [
@@ -3455,7 +3458,7 @@ const stage180 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage181 = [
@@ -3483,7 +3486,7 @@ const stage181 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage182 = [
@@ -3511,7 +3514,7 @@ const stage182 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage183 = [
@@ -3539,7 +3542,7 @@ const stage183 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage184 = [
@@ -3567,7 +3570,7 @@ const stage184 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage185 = [
@@ -3595,7 +3598,7 @@ const stage185 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage186 = [
@@ -3623,7 +3626,7 @@ const stage186 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 /* The number of Answer: 7 */
@@ -3652,7 +3655,7 @@ const stage187 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage188 = [
@@ -3680,7 +3683,7 @@ const stage188 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage189 = [
@@ -3708,7 +3711,7 @@ const stage189 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage190 = [
@@ -3736,7 +3739,7 @@ const stage190 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage191 = [
@@ -3764,7 +3767,7 @@ const stage191 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage192 = [
@@ -3792,7 +3795,7 @@ const stage192 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage193 = [
@@ -3820,7 +3823,7 @@ const stage193 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage194 = [
@@ -3848,7 +3851,7 @@ const stage194 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage195 = [
@@ -3876,7 +3879,7 @@ const stage195 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage196 = [
@@ -3904,7 +3907,7 @@ const stage196 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage197 = [
@@ -3932,7 +3935,7 @@ const stage197 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage198 = [
@@ -3960,7 +3963,7 @@ const stage198 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage199 = [
@@ -3988,7 +3991,7 @@ const stage199 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage200 = [
@@ -4016,7 +4019,7 @@ const stage200 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage201 = [
@@ -4044,7 +4047,7 @@ const stage201 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage202 = [
@@ -4072,7 +4075,7 @@ const stage202 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage203 = [
@@ -4100,7 +4103,7 @@ const stage203 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage204 = [
@@ -4128,7 +4131,7 @@ const stage204 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage205 = [
@@ -4156,7 +4159,7 @@ const stage205 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage206 = [
@@ -4184,7 +4187,7 @@ const stage206 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage207 = [
@@ -4212,7 +4215,7 @@ const stage207 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage208 = [
@@ -4240,7 +4243,7 @@ const stage208 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage209 = [
@@ -4268,7 +4271,7 @@ const stage209 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage210 = [
@@ -4296,7 +4299,7 @@ const stage210 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 /* The number of Answer: 8 */
@@ -4325,7 +4328,7 @@ const stage211 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage212 = [
@@ -4353,7 +4356,7 @@ const stage212 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage213 = [
@@ -4381,7 +4384,7 @@ const stage213 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage214 = [
@@ -4409,7 +4412,7 @@ const stage214 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage215 = [
@@ -4437,7 +4440,7 @@ const stage215 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage216 = [
@@ -4465,7 +4468,7 @@ const stage216 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage217 = [
@@ -4493,7 +4496,7 @@ const stage217 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage218 = [
@@ -4521,7 +4524,7 @@ const stage218 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage219 = [
@@ -4549,7 +4552,7 @@ const stage219 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage220 = [
@@ -4577,7 +4580,7 @@ const stage220 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage221 = [
@@ -4605,7 +4608,7 @@ const stage221 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage222 = [
@@ -4633,7 +4636,7 @@ const stage222 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage223 = [
@@ -4661,7 +4664,7 @@ const stage223 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage224 = [
@@ -4689,7 +4692,7 @@ const stage224 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage225 = [
@@ -4717,7 +4720,7 @@ const stage225 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage226 = [
@@ -4745,7 +4748,7 @@ const stage226 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage227 = [
@@ -4773,7 +4776,7 @@ const stage227 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage228 = [
@@ -4801,7 +4804,7 @@ const stage228 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage229 = [
@@ -4829,7 +4832,7 @@ const stage229 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage230 = [
@@ -4857,7 +4860,7 @@ const stage230 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage231 = [
@@ -4885,7 +4888,7 @@ const stage231 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage232 = [
@@ -4913,7 +4916,7 @@ const stage232 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage233 = [
@@ -4941,7 +4944,7 @@ const stage233 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage234 = [
@@ -4969,7 +4972,7 @@ const stage234 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage235 = [
@@ -4997,7 +5000,7 @@ const stage235 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage236 = [
@@ -5025,7 +5028,7 @@ const stage236 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage237 = [
@@ -5053,7 +5056,7 @@ const stage237 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 const stage238 = [
@@ -5081,7 +5084,7 @@ const stage238 = [
   BOMB_5X5,
   BOMB_5X5,
   BOMB_5X5,
-  BOMB_5X5,
+  SKULL_5X5,
 ];
 
 /* The number of Answer: 9 */
@@ -7817,7 +7820,7 @@ const stage335 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 2 */
@@ -7857,7 +7860,7 @@ const stage336 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage337 = [
@@ -7896,7 +7899,7 @@ const stage337 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage338 = [
@@ -7935,7 +7938,7 @@ const stage338 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage339 = [
@@ -7974,7 +7977,7 @@ const stage339 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage340 = [
@@ -8013,7 +8016,7 @@ const stage340 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 3 */
@@ -8053,7 +8056,7 @@ const stage341 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage342 = [
@@ -8092,7 +8095,7 @@ const stage342 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage343 = [
@@ -8131,7 +8134,7 @@ const stage343 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage344 = [
@@ -8170,7 +8173,7 @@ const stage344 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage345 = [
@@ -8209,7 +8212,7 @@ const stage345 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage346 = [
@@ -8248,7 +8251,7 @@ const stage346 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage347 = [
@@ -8287,7 +8290,7 @@ const stage347 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage348 = [
@@ -8326,7 +8329,7 @@ const stage348 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage349 = [
@@ -8365,7 +8368,7 @@ const stage349 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage350 = [
@@ -8404,7 +8407,7 @@ const stage350 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 4 */
@@ -8444,7 +8447,7 @@ const stage351 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage352 = [
@@ -8483,7 +8486,7 @@ const stage352 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage353 = [
@@ -8522,7 +8525,7 @@ const stage353 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage354 = [
@@ -8561,7 +8564,7 @@ const stage354 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage355 = [
@@ -8600,7 +8603,7 @@ const stage355 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage356 = [
@@ -8639,7 +8642,7 @@ const stage356 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage357 = [
@@ -8678,7 +8681,7 @@ const stage357 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage358 = [
@@ -8717,7 +8720,7 @@ const stage358 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage359 = [
@@ -8756,7 +8759,7 @@ const stage359 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage360 = [
@@ -8795,7 +8798,7 @@ const stage360 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage361 = [
@@ -8834,7 +8837,7 @@ const stage361 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage362 = [
@@ -8873,7 +8876,7 @@ const stage362 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage363 = [
@@ -8912,7 +8915,7 @@ const stage363 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage364 = [
@@ -8951,7 +8954,7 @@ const stage364 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage365 = [
@@ -8990,7 +8993,7 @@ const stage365 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage366 = [
@@ -9029,7 +9032,7 @@ const stage366 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 5 */
@@ -9069,7 +9072,7 @@ const stage367 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage368 = [
@@ -9108,7 +9111,7 @@ const stage368 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage369 = [
@@ -9147,7 +9150,7 @@ const stage369 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage370 = [
@@ -9186,7 +9189,7 @@ const stage370 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage371 = [
@@ -9225,7 +9228,7 @@ const stage371 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage372 = [
@@ -9264,7 +9267,7 @@ const stage372 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage373 = [
@@ -9303,7 +9306,7 @@ const stage373 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage374 = [
@@ -9342,7 +9345,7 @@ const stage374 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage375 = [
@@ -9381,7 +9384,7 @@ const stage375 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage376 = [
@@ -9420,7 +9423,7 @@ const stage376 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage377 = [
@@ -9459,7 +9462,7 @@ const stage377 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage378 = [
@@ -9498,7 +9501,7 @@ const stage378 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage379 = [
@@ -9537,7 +9540,7 @@ const stage379 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage380 = [
@@ -9576,7 +9579,7 @@ const stage380 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage381 = [
@@ -9615,7 +9618,7 @@ const stage381 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage382 = [
@@ -9654,7 +9657,7 @@ const stage382 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage383 = [
@@ -9693,7 +9696,7 @@ const stage383 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage384 = [
@@ -9732,7 +9735,7 @@ const stage384 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage385 = [
@@ -9771,7 +9774,7 @@ const stage385 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage386 = [
@@ -9810,7 +9813,7 @@ const stage386 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 6 */
@@ -9850,7 +9853,7 @@ const stage387 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage388 = [
@@ -9889,7 +9892,7 @@ const stage388 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage389 = [
@@ -9928,7 +9931,7 @@ const stage389 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage390 = [
@@ -9967,7 +9970,7 @@ const stage390 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage391 = [
@@ -10006,7 +10009,7 @@ const stage391 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage392 = [
@@ -10045,7 +10048,7 @@ const stage392 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage393 = [
@@ -10084,7 +10087,7 @@ const stage393 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage394 = [
@@ -10123,7 +10126,7 @@ const stage394 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage395 = [
@@ -10162,7 +10165,7 @@ const stage395 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage396 = [
@@ -10201,7 +10204,7 @@ const stage396 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage397 = [
@@ -10240,7 +10243,7 @@ const stage397 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage398 = [
@@ -10279,7 +10282,7 @@ const stage398 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage399 = [
@@ -10318,7 +10321,7 @@ const stage399 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage400 = [
@@ -10357,7 +10360,7 @@ const stage400 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage401 = [
@@ -10396,7 +10399,7 @@ const stage401 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage402 = [
@@ -10435,7 +10438,7 @@ const stage402 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage403 = [
@@ -10474,7 +10477,7 @@ const stage403 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage404 = [
@@ -10513,7 +10516,7 @@ const stage404 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage405 = [
@@ -10552,7 +10555,7 @@ const stage405 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage406 = [
@@ -10591,7 +10594,7 @@ const stage406 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage407 = [
@@ -10630,7 +10633,7 @@ const stage407 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage408 = [
@@ -10669,7 +10672,7 @@ const stage408 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage409 = [
@@ -10708,7 +10711,7 @@ const stage409 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage410 = [
@@ -10747,7 +10750,7 @@ const stage410 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage411 = [
@@ -10786,7 +10789,7 @@ const stage411 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 7 */
@@ -10826,7 +10829,7 @@ const stage412 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage413 = [
@@ -10865,7 +10868,7 @@ const stage413 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage414 = [
@@ -10904,7 +10907,7 @@ const stage414 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage415 = [
@@ -10943,7 +10946,7 @@ const stage415 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage416 = [
@@ -10982,7 +10985,7 @@ const stage416 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage417 = [
@@ -11021,7 +11024,7 @@ const stage417 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage418 = [
@@ -11060,7 +11063,7 @@ const stage418 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage419 = [
@@ -11099,7 +11102,7 @@ const stage419 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage420 = [
@@ -11138,7 +11141,7 @@ const stage420 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage421 = [
@@ -11177,7 +11180,7 @@ const stage421 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage422 = [
@@ -11216,7 +11219,7 @@ const stage422 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage423 = [
@@ -11255,7 +11258,7 @@ const stage423 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage424 = [
@@ -11294,7 +11297,7 @@ const stage424 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage425 = [
@@ -11333,7 +11336,7 @@ const stage425 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage426 = [
@@ -11372,7 +11375,7 @@ const stage426 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage427 = [
@@ -11411,7 +11414,7 @@ const stage427 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage428 = [
@@ -11450,7 +11453,7 @@ const stage428 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage429 = [
@@ -11489,7 +11492,7 @@ const stage429 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage430 = [
@@ -11528,7 +11531,7 @@ const stage430 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage431 = [
@@ -11567,7 +11570,7 @@ const stage431 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage432 = [
@@ -11606,7 +11609,7 @@ const stage432 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage433 = [
@@ -11645,7 +11648,7 @@ const stage433 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage434 = [
@@ -11684,7 +11687,7 @@ const stage434 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage435 = [
@@ -11723,7 +11726,7 @@ const stage435 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage436 = [
@@ -11762,7 +11765,7 @@ const stage436 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage437 = [
@@ -11801,7 +11804,7 @@ const stage437 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage438 = [
@@ -11840,7 +11843,7 @@ const stage438 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage439 = [
@@ -11879,7 +11882,7 @@ const stage439 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage440 = [
@@ -11918,7 +11921,7 @@ const stage440 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage441 = [
@@ -11957,7 +11960,7 @@ const stage441 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage442 = [
@@ -11996,7 +11999,7 @@ const stage442 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage443 = [
@@ -12035,7 +12038,7 @@ const stage443 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 8 */
@@ -12075,7 +12078,7 @@ const stage444 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage445 = [
@@ -12114,7 +12117,7 @@ const stage445 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage446 = [
@@ -12153,7 +12156,7 @@ const stage446 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage447 = [
@@ -12192,7 +12195,7 @@ const stage447 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage448 = [
@@ -12231,7 +12234,7 @@ const stage448 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage449 = [
@@ -12270,7 +12273,7 @@ const stage449 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage450 = [
@@ -12309,7 +12312,7 @@ const stage450 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage451 = [
@@ -12348,7 +12351,7 @@ const stage451 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage452 = [
@@ -12387,7 +12390,7 @@ const stage452 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage453 = [
@@ -12426,7 +12429,7 @@ const stage453 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage454 = [
@@ -12465,7 +12468,7 @@ const stage454 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage455 = [
@@ -12504,7 +12507,7 @@ const stage455 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage456 = [
@@ -12543,7 +12546,7 @@ const stage456 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage457 = [
@@ -12582,7 +12585,7 @@ const stage457 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage458 = [
@@ -12621,7 +12624,7 @@ const stage458 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage459 = [
@@ -12660,7 +12663,7 @@ const stage459 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage460 = [
@@ -12699,7 +12702,7 @@ const stage460 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage461 = [
@@ -12738,7 +12741,7 @@ const stage461 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage462 = [
@@ -12777,7 +12780,7 @@ const stage462 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage463 = [
@@ -12816,7 +12819,7 @@ const stage463 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage464 = [
@@ -12855,7 +12858,7 @@ const stage464 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage465 = [
@@ -12894,7 +12897,7 @@ const stage465 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage466 = [
@@ -12933,7 +12936,7 @@ const stage466 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage467 = [
@@ -12972,7 +12975,7 @@ const stage467 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage468 = [
@@ -13011,7 +13014,7 @@ const stage468 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage469 = [
@@ -13050,7 +13053,7 @@ const stage469 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage470 = [
@@ -13089,7 +13092,7 @@ const stage470 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage471 = [
@@ -13128,7 +13131,7 @@ const stage471 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage472 = [
@@ -13167,7 +13170,7 @@ const stage472 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage473 = [
@@ -13206,7 +13209,7 @@ const stage473 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 9 */
@@ -13246,7 +13249,7 @@ const stage474 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage475 = [
@@ -13285,7 +13288,7 @@ const stage475 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage476 = [
@@ -13324,7 +13327,7 @@ const stage476 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage477 = [
@@ -13363,7 +13366,7 @@ const stage477 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage478 = [
@@ -13402,7 +13405,7 @@ const stage478 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage479 = [
@@ -13441,7 +13444,7 @@ const stage479 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage480 = [
@@ -13480,7 +13483,7 @@ const stage480 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage481 = [
@@ -13519,7 +13522,7 @@ const stage481 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage482 = [
@@ -13558,7 +13561,7 @@ const stage482 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage483 = [
@@ -13597,7 +13600,7 @@ const stage483 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage484 = [
@@ -13636,7 +13639,7 @@ const stage484 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage485 = [
@@ -13675,7 +13678,7 @@ const stage485 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage486 = [
@@ -13714,7 +13717,7 @@ const stage486 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage487 = [
@@ -13753,7 +13756,7 @@ const stage487 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage488 = [
@@ -13792,7 +13795,7 @@ const stage488 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage489 = [
@@ -13831,7 +13834,7 @@ const stage489 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage490 = [
@@ -13870,7 +13873,7 @@ const stage490 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage491 = [
@@ -13909,7 +13912,7 @@ const stage491 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage492 = [
@@ -13948,7 +13951,7 @@ const stage492 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage493 = [
@@ -13987,7 +13990,7 @@ const stage493 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage494 = [
@@ -14026,7 +14029,7 @@ const stage494 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage495 = [
@@ -14065,7 +14068,7 @@ const stage495 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage496 = [
@@ -14104,7 +14107,7 @@ const stage496 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage497 = [
@@ -14143,7 +14146,7 @@ const stage497 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage498 = [
@@ -14182,7 +14185,7 @@ const stage498 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage499 = [
@@ -14221,7 +14224,7 @@ const stage499 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage500 = [
@@ -14260,7 +14263,7 @@ const stage500 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage501 = [
@@ -14299,7 +14302,7 @@ const stage501 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage502 = [
@@ -14338,7 +14341,7 @@ const stage502 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage503 = [
@@ -14377,7 +14380,7 @@ const stage503 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage504 = [
@@ -14416,7 +14419,7 @@ const stage504 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage505 = [
@@ -14455,7 +14458,7 @@ const stage505 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage506 = [
@@ -14494,7 +14497,7 @@ const stage506 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 const stage507 = [
@@ -14533,7 +14536,7 @@ const stage507 = [
   BOMB_6X6,
   BOMB_6X6,
   BOMB_6X6,
-  BOMB_6X6,
+  SKULL_6X6,
 ];
 
 /* The number of Answer: 10 */
