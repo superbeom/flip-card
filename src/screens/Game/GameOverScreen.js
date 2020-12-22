@@ -89,6 +89,7 @@ const GameOverScreen = ({
   const getReward = () => {
     setCheckReward(false); // checkReward 초기화
 
+    /* stage에 따른 추가 heart 갯수 */
     if (stage <= 80) {
       plusHeart(1);
     } else if (stage > 80 && stage <= 386) {
