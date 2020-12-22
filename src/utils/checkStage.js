@@ -4,6 +4,10 @@ import {
   BOMB_4X4,
   BOMB_5X5,
   BOMB_6X6,
+  SKULL_3X3,
+  SKULL_4X4,
+  SKULL_5X5,
+  SKULL_6X6,
   /* STEP 1 */
   PLANE,
   PLANE_DARK,

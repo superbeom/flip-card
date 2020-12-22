@@ -76,6 +76,12 @@ export default ({
   };
 
   const checkClick = (item, index) => {
+    /* 해골 클릭 시, Game Over */
+    if (item === "skull") {
+      setClickedBomb(true);
+      setTimeout(onGameOver.bind(this, "fail"), 500);
+    }
+
     if (clickNum === 0) {
       clickNum++;
       setFirstClickIndex(index);
@@ -91,7 +97,7 @@ export default ({
       setTimeout(() => compareCards("bomb"), 150);
     }
 
-    if (clickNum === 2 && item !== "bomb") {
+    if (clickNum === 2 && item !== "bomb" && item !== "skull") {
       setTimeout(() => compareCards(), 150);
     }
   };
@@ -220,7 +226,8 @@ export default ({
                     secondClickIndex === index ||
                     correctItemArray.includes(itemName)
                     ? selectedAnswer(item)
-                    : initialCount !== 0 && itemName === "bomb"
+                    : initialCount !== 0 &&
+                      (itemName === "bomb" || itemName === "skull")
                     ? selectedAnswer(item)
                     : firstPick !== null && itemName === firstPick
                     ? sameAnswer(item)

@@ -113,7 +113,7 @@ export const PRICE_RIBBON_12 = (
 );
 
 /*
-  BOMB
+  BOMB & SKULL
 */
 
 export const BOMB_2X2 = (
@@ -158,6 +158,42 @@ export const BOMB_6X6 = (
     name="bomb"
     size={vw(8)}
     color={colors.redColor}
+  />
+);
+
+export const SKULL_3X3 = (
+  <MaterialCommunityIcons
+    key={"skull"}
+    name="skull-crossbones"
+    size={vw(17)}
+    color={colors.blackColor}
+  />
+);
+
+export const SKULL_4X4 = (
+  <MaterialCommunityIcons
+    key={"skull"}
+    name="skull-crossbones"
+    size={vw(13)}
+    color={colors.blackColor}
+  />
+);
+
+export const SKULL_5X5 = (
+  <MaterialCommunityIcons
+    key={"skull"}
+    name="skull-crossbones"
+    size={vw(10)}
+    color={colors.blackColor}
+  />
+);
+
+export const SKULL_6X6 = (
+  <MaterialCommunityIcons
+    key={"skull"}
+    name="skull-crossbones"
+    size={vw(8)}
+    color={colors.blackColor}
   />
 );
 
