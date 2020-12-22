@@ -22,10 +22,7 @@ export default () => {
 
   const preLoad = async () => {
     try {
-      /* Testing.. */
-      // await AsyncStorage.clear();
-
-      /* Load Asset */
+      /* Load Asset - 모든 image 미리 Load? */
       await Asset.loadAsync([require("./assets/icon.png")]);
 
       /* Load Cache */
