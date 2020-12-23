@@ -10,12 +10,12 @@ import {
 import { vw } from "react-native-expo-viewport-units";
 
 import colors from "../constants/colors";
-import { GAME_START, COMING_SOON } from "../constants/strings";
+import { GAME_START, COMING_SOON_CAPITAL } from "../constants/strings";
 
 const size = vw(40);
 const startRange = vw(30);
 
-const StartButton = ({ onPress, update, enoughHeart, toggleSwitch }) => {
+const StartButton = ({ onPress, update, enoughHeart }) => {
   let opacity = new Animated.Value(0.7);
 
   const zeroToOne = () => {
@@ -47,9 +47,7 @@ const StartButton = ({ onPress, update, enoughHeart, toggleSwitch }) => {
     outputRange: [startRange, size],
   });
 
-  useEffect(() => {
-    executeAnimation();
-  }, [toggleSwitch]);
+  executeAnimation();
 
   return (
     <TouchableOpacity
@@ -84,7 +82,7 @@ const StartButton = ({ onPress, update, enoughHeart, toggleSwitch }) => {
                 },
           ]}
         >
-          {update ? COMING_SOON : GAME_START}
+          {update ? COMING_SOON_CAPITAL : GAME_START}
         </Text>
       </Animated.View>
     </TouchableOpacity>

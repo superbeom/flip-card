@@ -11,6 +11,7 @@ import {
 } from "../../context/GameContext";
 
 import colors from "../../constants/colors";
+import { stageForReward } from "../../utils/checkSomething";
 import { PLAY_AGAIN, NEXT_STAGE, CHECK_GO_HOME } from "../../constants/strings";
 
 import Button from "../../components/Button";
@@ -33,6 +34,7 @@ const GameOverScreen = ({
   const plusHeart = usePlusHeart();
   const setGameEnd = useSetGameEnd();
   const [checkReward, setCheckReward] = useState(false);
+  const [reward, setReward] = useState(false);
 
   const clickedGoHomeAfterSuccess = () => {
     if (stage === 885) {
@@ -87,13 +89,23 @@ const GameOverScreen = ({
   const getReward = () => {
     setCheckReward(false); // checkReward 초기화
 
-    plusHeart(1);
+    /* stage에 따른 추가 heart 갯수 */
+    if (stage <= 80) {
+      plusHeart(1);
+    } else if (stage > 80 && stage <= 386) {
+      plusHeart(3);
+    } else if (stage > 386 && stage <= 885) {
+      plusHeart(5);
+    } else {
+      plusHeart(3);
+    }
   };
 
   useEffect(() => {
-    /* stage 10단계씩 깰 때마다 heart +1 추가 */
-    if (pass && stage % 10 === 0) {
+    /* 특정 stage마다 보상 - heart 추가 */
+    if (pass && stageForReward.includes(stage)) {
       setCheckReward(true);
+      setReward(true);
 
       setTimeout(getReward, 2500);
     }
@@ -144,7 +156,7 @@ const GameOverScreen = ({
           />
         </View>
         <View style={styles.buttonContainer}>
-          {stage % 10 === 0 ? (
+          {reward ? (
             pass ? null : (
               <StageButton
                 onPress={replayStageHandler}

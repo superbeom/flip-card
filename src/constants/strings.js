@@ -66,6 +66,8 @@ export const CLICK_TO_GET_HEARTS = "Click to get hearts";
 
 export const COMING_SOON = "Coming soon!";
 
+export const COMING_SOON_CAPITAL = "COMING SOON!";
+
 export const GO_BACK = "Go Back";
 
 export const HOLD_ON = "Hold on!";

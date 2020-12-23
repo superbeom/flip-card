@@ -1,5 +1,4 @@
 import React from "react";
-// import { StyleSheet, Text, View } from "react-native";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
@@ -9,6 +8,7 @@ import colors from "../../constants/colors";
 import { FLAG } from "../../utils/FontAwesomeSource";
 import { CURRENT_STAGE, RANK } from "../../constants/strings";
 
+import AnimalScreen from "./AnimalScreen";
 import Card from "../../components/Card";
 import StartButton from "../../components/StartButton";
 import Heart from "../../components/Heart";
@@ -16,7 +16,7 @@ import Arrow from "../../components/Arrow";
 import GetHeartText from "../../components/GetHeartText";
 import Button from "../../components/Button";
 
-export default ({ onStartGame, getHeart, toggleSwitch, navigation }) => {
+export default ({ onStartGame, getHeart, navigation }) => {
   const { stage, heart, gameEnd } = useGameInfo();
   const logUserOut = useLogOut();
 
@@ -55,7 +55,6 @@ export default ({ onStartGame, getHeart, toggleSwitch, navigation }) => {
           onPress={onStartGame}
           update={gameEnd}
           enoughHeart={heart > 0 ?? false}
-          toggleSwitch={toggleSwitch}
         />
       </View>
 
@@ -74,6 +73,9 @@ export default ({ onStartGame, getHeart, toggleSwitch, navigation }) => {
           onPress={logUserOut}
         /> */}
       </View>
+
+      {/* Animals */}
+      <AnimalScreen />
     </View>
   );
 };

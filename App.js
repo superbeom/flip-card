@@ -22,11 +22,25 @@ export default () => {
 
   const preLoad = async () => {
     try {
-      /* Testing.. */
-      // await AsyncStorage.clear();
-
       /* Load Asset */
-      await Asset.loadAsync([require("./assets/icon.png")]);
+      await Asset.loadAsync([
+        require("./assets/icon.png"),
+        require("./assets/images/animal_1_bush.png"),
+        require("./assets/images/animal_2_flower.png"),
+        require("./assets/images/animal_3_squirrel.png"),
+        require("./assets/images/animal_4_donkey.png"),
+        require("./assets/images/animal_5_flamingo.png"),
+        require("./assets/images/animal_6_elephant.png"),
+        require("./assets/images/animal_7_sloth.png"),
+        require("./assets/images/animal_8_lion.png.png"),
+        require("./assets/images/animal_9_racoon.png"),
+        require("./assets/images/animal_10_panda.png"),
+        require("./assets/images/animal_11_hippo.png"),
+        require("./assets/images/animal_12_monkey.png"),
+        require("./assets/images/background.png"),
+        require("./assets/images/success.png"),
+        require("./assets/images/fail.png"),
+      ]);
 
       /* Load Cache */
       const cache = new InMemoryCache();
