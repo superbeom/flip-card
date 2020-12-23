@@ -64,14 +64,14 @@ export default ({ onStartGame, getHeart, navigation }) => {
           content={"trophy"}
           size={vw(20)}
         />
-        {/* <TouchableOpacity
+        <TouchableOpacity
           style={{
             width: vw(10),
             height: vw(10),
             backgroundColor: "lightpink",
           }}
           onPress={logUserOut}
-        /> */}
+        />
       </View>
 
       {/* Animals */}

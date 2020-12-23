@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
   monkeyContainer: {
     position: "absolute",
     left: vw(40),
-    top: vh(23),
+    top: vh(25),
     width: vw(20),
     height: vw(20),
     zIndex: 5,
