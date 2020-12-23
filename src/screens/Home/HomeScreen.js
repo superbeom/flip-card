@@ -28,7 +28,6 @@ export default ({ navigation }) => {
   const [gameOver, setGameOver] = useState(false);
   const [pass, setPass] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
-  const [toggleSwitch, setToggleSwitch] = useState(false);
   const [checkReward, setCheckReward] = useState(false);
 
   const playAgainHandler = () => {
@@ -57,8 +56,6 @@ export default ({ navigation }) => {
   const goHomeHandler = () => {
     setStartGame(false);
     setGameOver(false);
-
-    setToggleSwitch((curState) => !curState);
   };
 
   /* 하트 버튼 누름 → 동영상 광고 시청 → 하트 얻음 */
@@ -70,10 +67,6 @@ export default ({ navigation }) => {
 
   const closeModal = () => {
     setModalVisible((curState) => !curState);
-
-    if (!startGame) {
-      setToggleSwitch((curState) => !curState);
-    }
   };
 
   const backAction = () => {
@@ -132,7 +125,6 @@ export default ({ navigation }) => {
           <StartGameScreen
             onStartGame={startGameHandler}
             getHeart={getHeart}
-            toggleSwitch={toggleSwitch}
             navigation={navigation}
           />
         )}

@@ -15,7 +15,7 @@ import { GAME_START, COMING_SOON_CAPITAL } from "../constants/strings";
 const size = vw(40);
 const startRange = vw(30);
 
-const StartButton = ({ onPress, update, enoughHeart, toggleSwitch }) => {
+const StartButton = ({ onPress, update, enoughHeart }) => {
   let opacity = new Animated.Value(0.7);
 
   const zeroToOne = () => {
@@ -47,9 +47,7 @@ const StartButton = ({ onPress, update, enoughHeart, toggleSwitch }) => {
     outputRange: [startRange, size],
   });
 
-  useEffect(() => {
-    executeAnimation();
-  }, [toggleSwitch]);
+  executeAnimation();
 
   return (
     <TouchableOpacity

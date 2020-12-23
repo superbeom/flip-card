@@ -16,7 +16,7 @@ import Arrow from "../../components/Arrow";
 import GetHeartText from "../../components/GetHeartText";
 import Button from "../../components/Button";
 
-export default ({ onStartGame, getHeart, toggleSwitch, navigation }) => {
+export default ({ onStartGame, getHeart, navigation }) => {
   const { stage, heart, gameEnd } = useGameInfo();
   const logUserOut = useLogOut();
 
@@ -55,7 +55,6 @@ export default ({ onStartGame, getHeart, toggleSwitch, navigation }) => {
           onPress={onStartGame}
           update={gameEnd}
           enoughHeart={heart > 0 ?? false}
-          toggleSwitch={toggleSwitch}
         />
       </View>
 
