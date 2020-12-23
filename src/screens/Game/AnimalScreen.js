@@ -9,7 +9,7 @@ export default () => {
 
   return (
     <>
-      {stage > 59 && (
+      {stage > 66 && (
         <View style={styles.bushContainer}>
           <Image
             source={require("../../../assets/images/animal_1_bush.png")}
@@ -19,7 +19,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 119 && (
+      {stage > 133 && (
         <View style={styles.flowerContainer}>
           <Image
             source={require("../../../assets/images/animal_2_flower.png")}
@@ -29,7 +29,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 179 && (
+      {stage > 200 && (
         <View style={styles.squirrelContainer}>
           <Image
             source={require("../../../assets/images/animal_3_squirrel.png")}
@@ -39,7 +39,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 239 && (
+      {stage > 267 && (
         <View style={styles.donkeyContainer}>
           <Image
             source={require("../../../assets/images/animal_4_donkey.png")}
@@ -49,7 +49,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 299 && (
+      {stage > 334 && (
         <View style={styles.flamingoContainer}>
           <Image
             source={require("../../../assets/images/animal_5_flamingo.png")}
@@ -59,7 +59,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 359 && (
+      {stage > 401 && (
         <View style={styles.elephantContainer}>
           <Image
             source={require("../../../assets/images/animal_6_elephant.png")}
@@ -69,7 +69,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 419 && (
+      {stage > 468 && (
         <View style={styles.slothContainer}>
           <Image
             source={require("../../../assets/images/animal_7_sloth.png")}
@@ -79,7 +79,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 479 && (
+      {stage > 535 && (
         <View style={styles.lionContainer}>
           <Image
             source={require("../../../assets/images/animal_8_lion.png.png")}
@@ -89,7 +89,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 539 && (
+      {stage > 602 && (
         <View style={styles.racoonContainer}>
           <Image
             source={require("../../../assets/images/animal_9_racoon.png")}
@@ -99,7 +99,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 599 && (
+      {stage > 669 && (
         <View style={styles.pandaContainer}>
           <Image
             source={require("../../../assets/images/animal_10_panda.png")}
@@ -109,7 +109,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 659 && (
+      {stage > 736 && (
         <View style={styles.hippoContainer}>
           <Image
             source={require("../../../assets/images/animal_11_hippo.png")}
@@ -119,7 +119,7 @@ export default () => {
         </View>
       )}
 
-      {stage > 719 && (
+      {stage > 803 && (
         <View style={styles.monkeyContainer}>
           <Image
             source={require("../../../assets/images/animal_12_monkey.png")}
