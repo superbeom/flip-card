@@ -49,10 +49,80 @@ export default () => {
         </View>
       )}
 
+      {stage > 299 && (
+        <View style={styles.flamingoContainer}>
+          <Image
+            source={require("../../../assets/images/animal_5_flamingo.png")}
+            style={styles.content}
+            resizeMode={"cover"}
+          />
+        </View>
+      )}
+
+      {stage > 359 && (
+        <View style={styles.elephantContainer}>
+          <Image
+            source={require("../../../assets/images/animal_6_elephant.png")}
+            style={styles.content}
+            resizeMode={"cover"}
+          />
+        </View>
+      )}
+
+      {stage > 419 && (
+        <View style={styles.slothContainer}>
+          <Image
+            source={require("../../../assets/images/animal_7_sloth.png")}
+            style={styles.content}
+            resizeMode={"cover"}
+          />
+        </View>
+      )}
+
       {stage > 479 && (
+        <View style={styles.lionContainer}>
+          <Image
+            source={require("../../../assets/images/animal_8_lion.png.png")}
+            style={styles.content}
+            resizeMode={"cover"}
+          />
+        </View>
+      )}
+
+      {stage > 539 && (
         <View style={styles.racoonContainer}>
           <Image
-            source={require("../../../assets/images/animal_8_racoon.png")}
+            source={require("../../../assets/images/animal_9_racoon.png")}
+            style={styles.content}
+            resizeMode={"cover"}
+          />
+        </View>
+      )}
+
+      {stage > 599 && (
+        <View style={styles.pandaContainer}>
+          <Image
+            source={require("../../../assets/images/animal_10_panda.png")}
+            style={styles.content}
+            resizeMode={"cover"}
+          />
+        </View>
+      )}
+
+      {stage > 659 && (
+        <View style={styles.hippoContainer}>
+          <Image
+            source={require("../../../assets/images/animal_11_hippo.png")}
+            style={styles.content}
+            resizeMode={"cover"}
+          />
+        </View>
+      )}
+
+      {stage > 719 && (
+        <View style={styles.monkeyContainer}>
+          <Image
+            source={require("../../../assets/images/animal_12_monkey.png")}
             style={styles.content}
             resizeMode={"cover"}
           />
@@ -98,6 +168,38 @@ const styles = StyleSheet.create({
     height: vw(20),
     zIndex: -5,
   },
+  flamingoContainer: {
+    position: "absolute",
+    top: -vh(6),
+    left: vw(5),
+    width: vw(25),
+    height: vw(12),
+    zIndex: 15,
+  },
+  elephantContainer: {
+    position: "absolute",
+    left: vw(7),
+    bottom: vh(15),
+    width: vw(30),
+    height: vw(30),
+    zIndex: -5,
+  },
+  slothContainer: {
+    position: "absolute",
+    top: vh(13),
+    right: vw(0),
+    width: vw(20),
+    height: vw(20),
+    zIndex: -5,
+  },
+  lionContainer: {
+    position: "absolute",
+    right: -vw(3),
+    bottom: vh(2),
+    width: vw(30),
+    height: vw(30),
+    zIndex: -5,
+  },
   racoonContainer: {
     position: "absolute",
     left: vw(30),
@@ -105,5 +207,29 @@ const styles = StyleSheet.create({
     width: vw(18),
     height: vw(18),
     zIndex: -5,
+  },
+  pandaContainer: {
+    position: "absolute",
+    top: vh(3),
+    left: vw(42),
+    width: vw(22),
+    height: vw(22),
+    zIndex: -5,
+  },
+  hippoContainer: {
+    position: "absolute",
+    left: vw(41),
+    bottom: vh(14),
+    width: vw(20),
+    height: vw(20),
+    zIndex: -5,
+  },
+  monkeyContainer: {
+    position: "absolute",
+    left: vw(40),
+    top: vh(23),
+    width: vw(20),
+    height: vw(20),
+    zIndex: 5,
   },
 });
