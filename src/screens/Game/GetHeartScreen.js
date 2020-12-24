@@ -39,8 +39,7 @@ const Content = ({ onPress, num, price, update }) => (
           value={price}
           displayType={"text"}
           thousandSeparator={true}
-          prefix={"$"} // English
-          // suffix={"원"} // Korean
+          prefix={"$"}
         />
       </View>
     </Card>
