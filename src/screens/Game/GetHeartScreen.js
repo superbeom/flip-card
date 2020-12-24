@@ -23,6 +23,7 @@ const Content = ({ onPress, num, price, update }) => (
   <TouchableOpacity
     style={styles.cardContainer}
     onPress={onPress}
+    activeOpacity={0.5}
     disabled={update}
   >
     <Card style={styles.card}>
