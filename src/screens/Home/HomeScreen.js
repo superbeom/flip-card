@@ -12,7 +12,13 @@ import {
 import { AdMobBanner } from "expo-ads-admob";
 
 import { useGameInfo, useMinusHeart } from "../../context/GameContext";
-import { CONGRATULATIONS, HOLD_ON, CHECK_EXIT } from "../../constants/strings";
+import {
+  CONGRATULATIONS,
+  HOLD_ON,
+  CHECK_EXIT,
+  CANCEL,
+  EXIT,
+} from "../../constants/strings";
 
 import StartGameScreen from "../Game/StartGameScreen";
 import GameScreen from "../Game/GameScreen";
@@ -72,11 +78,11 @@ export default ({ navigation }) => {
   const backAction = () => {
     Alert.alert(HOLD_ON, CHECK_EXIT, [
       {
-        text: "Cancel",
+        text: CANCEL,
         onPress: () => null,
         style: "cancel",
       },
-      { text: "YES", onPress: () => BackHandler.exitApp() },
+      { text: EXIT, onPress: () => BackHandler.exitApp() },
     ]);
 
     return true;

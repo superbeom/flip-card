@@ -12,7 +12,13 @@ import {
 
 import colors from "../../constants/colors";
 import { stageForReward } from "../../utils/checkSomething";
-import { PLAY_AGAIN, NEXT_STAGE, CHECK_GO_HOME } from "../../constants/strings";
+import {
+  PLAY_AGAIN,
+  NEXT_STAGE,
+  CHECK_GO_HOME,
+  CANCEL,
+  GO_HOME,
+} from "../../constants/strings";
 
 import Button from "../../components/Button";
 import StageButton from "../../components/StageButton";
@@ -73,12 +79,12 @@ const GameOverScreen = ({
   const backAction = () => {
     Alert.alert(CHECK_GO_HOME, "", [
       {
-        text: "Cancel",
+        text: CANCEL,
         onPress: () => null,
         style: "cancel",
       },
       {
-        text: "YES",
+        text: GO_HOME,
         onPress: pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail,
       },
     ]);

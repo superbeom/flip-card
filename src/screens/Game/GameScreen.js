@@ -5,7 +5,7 @@ import { vw, vh } from "react-native-expo-viewport-units";
 import { useGameInfo, useMinusHeart } from "../../context/GameContext";
 
 import { checkTime } from "../../utils/checkSomething";
-import { CHECK_GO_HOME } from "../../constants/strings";
+import { CHECK_GO_HOME, CANCEL, GO_HOME } from "../../constants/strings";
 
 import GameFeed from "../../components/GameFeed";
 import Button from "../../components/Button";
@@ -23,8 +23,8 @@ export default ({ onGoHome, onGameOver }) => {
       CHECK_GO_HOME,
       "",
       [
-        { text: "Cancel", onPress: () => null, style: "cancel" },
-        { text: "Go home", onPress: onGoHome },
+        { text: CANCEL, onPress: () => null, style: "cancel" },
+        { text: GO_HOME, onPress: onGoHome },
       ],
       { cancelable: true }
     );
