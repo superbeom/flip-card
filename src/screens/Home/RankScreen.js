@@ -151,7 +151,9 @@ export default ({ navigation }) => {
             ]}
           >
             <View style={styles.rankTextBox}>
-              <Text style={styles.rankText}>{myRank}</Text>
+              <Text style={styles.rankText}>
+                {myRank <= 9999 ? myRank : "10k+"}
+              </Text>
             </View>
             <View style={styles.usernameTextBox}>
               <Text style={styles.rankText} numberOfLines={1}>
