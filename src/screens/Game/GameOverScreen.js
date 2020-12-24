@@ -1,5 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Image, BackHandler, Alert } from "react-native";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  StyleSheet,
+  View,
+  Image,
+  BackHandler,
+  Alert,
+  AppState,
+} from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import {
@@ -41,6 +48,7 @@ const GameOverScreen = ({
   const setGameEnd = useSetGameEnd();
   const [checkReward, setCheckReward] = useState(false);
   const [reward, setReward] = useState(false);
+  const appState = useRef(AppState.currentState);
 
   const clickedGoHomeAfterSuccess = () => {
     if (stage === 885) {
@@ -106,6 +114,30 @@ const GameOverScreen = ({
       plusHeart(3);
     }
   };
+
+  const handleAppStateChange = (nextAppState) => {
+    appState.current = nextAppState;
+
+    if (
+      pass &&
+      (appState.current === "inactive" || appState.current === "background")
+    ) {
+      clickedGoHomeAfterSuccess();
+    } else if (
+      !pass &&
+      (appState.current === "inactive" || appState.current === "background")
+    ) {
+      clickedGoHomeAfterFail();
+    }
+  };
+
+  useEffect(() => {
+    AppState.addEventListener("change", handleAppStateChange);
+
+    return () => {
+      AppState.removeEventListener("change", handleAppStateChange);
+    };
+  }, []);
 
   useEffect(() => {
     /* 특정 stage마다 보상 - heart 추가 */
