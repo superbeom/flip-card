@@ -176,66 +176,138 @@ export const GAME_START = "GAME\nSTART";
 
 */
 
+// /* Auth */
+// export const SIGN_UP_TEXT = "アカウントの作成";
+
+// export const SIGN_IN_TEXT = "ログイン";
+
+// export const HAVE_BEEN = "既にアカウントをお持ちですか?";
+
+// export const FIRST_TIME = "こちらは初めてですか？";
+
+// export const USERNAME = "ユーザー名";
+
+// export const PASSWORD = "パスワード";
+
+// export const CANT_BE_EMPTY = "を作成してください!";
+
+// export const CANT_BE_BLANK = "を作成してください!";
+
+// /* Sign Up */
+// export const ACCOUNT_CREATED = "アカウントが作成されました!";
+
+// export const LETS_PLAY_A_GAME = "楽しくゲームをお楽しみください:)";
+
+// export const CANT_CREATE_ACCOUNT = "アカウントを作成できません";
+
+// export const USERNAME_ONLY =
+//   "ユーザー名に使用できるのは、文字、数字、下線、ピリオドだけです。";
+
+// export const USERNAME_UNDER_20 = "ユーザー名を20文字以下で入力してください!";
+
+// export const USERNAME_ALREADY_TAKEN = "このユーザー名は既に使用中です!";
+
+// /* Sign In */
+// export const DOESNT_EXIST = "このユーザー名は存在しません。";
+
+// export const INVALID_PASSWORD = "無効なパスワードです";
+
+// export const WRONG_PASSWORD = "パスワードが一致しません!";
+
+// export const CHECK_USERNAME_PASSWORD =
+//   "ユーザー名とパスワードを確認してください";
+
+// export const CANT_CONFIRM_PASSWORD = "パスワードを確認できません";
+
+// /* AppStack Strings */
+// export const CLICK_TO_GET_HEARTS = "ハート獲得する";
+
+// export const HOLD_ON = "ちょっと待って!";
+
+// export const CHECK_EXIT = "本当にゲームを終了しますか？";
+
+// export const CANCEL = "いいえ";
+
+// export const EXIT = "終了する";
+
+// /* GameScreen Strings */
+// export const GO_HOME = "ホーム画面に";
+
+// export const CHECK_GO_HOME = "ホーム画面に戻りますか?";
+
+// /* GameOverScreen Strings */
+// export const PLAY_AGAIN = "再び\nプレー";
+
+// export const NEXT_STAGE = "次の\n段階";
+
+/*
+
+    Spanish Strings...
+
+*/
+
 /* Auth */
-export const SIGN_UP_TEXT = "アカウントの作成";
+export const SIGN_UP_TEXT = "Creación de cuentas";
 
-export const SIGN_IN_TEXT = "ログイン";
+export const SIGN_IN_TEXT = "Iniciar sesión";
 
-export const HAVE_BEEN = "既にアカウントをお持ちですか?";
+export const HAVE_BEEN = "¿Ya tiene usted una cuenta?";
 
-export const FIRST_TIME = "こちらは初めてですか？";
+export const FIRST_TIME = "¿Es su primera vez aquí?";
 
-export const USERNAME = "ユーザー名";
+export const USERNAME = "Nombre del usuario";
 
-export const PASSWORD = "パスワード";
+export const PASSWORD = "Contraseña";
 
-export const CANT_BE_EMPTY = "を作成してください!";
+export const CANT_BE_EMPTY = "no pueden estar vacías";
 
-export const CANT_BE_BLANK = "を作成してください!";
+export const CANT_BE_BLANK = "no pueden estar vacías";
 
 /* Sign Up */
-export const ACCOUNT_CREATED = "アカウントが作成されました!";
+export const ACCOUNT_CREATED = "¡Una cuenta ha sido creadas!";
 
-export const LETS_PLAY_A_GAME = "楽しくゲームをお楽しみください:)";
+export const LETS_PLAY_A_GAME = "Disfruta el juego:)";
 
-export const CANT_CREATE_ACCOUNT = "アカウントを作成できません";
+export const CANT_CREATE_ACCOUNT = "Imposible generar cuentas";
 
 export const USERNAME_ONLY =
-  "ユーザー名に使用できるのは、文字、数字、下線、ピリオドだけです。";
+  "¡El nombre del usuario sólo puede utilizar caracteres, números, líneas bajas y punto!";
 
-export const USERNAME_UNDER_20 = "ユーザー名を20文字以下で入力してください!";
+export const USERNAME_UNDER_20 =
+  "¡Introducción del nombre del usuario por debajo de 20 caracteres!";
 
-export const USERNAME_ALREADY_TAKEN = "このユーザー名は既に使用中です!";
+export const USERNAME_ALREADY_TAKEN =
+  "¡El nombre de este usuario ya está en uso!";
 
 /* Sign In */
-export const DOESNT_EXIST = "このユーザー名は存在しません。";
+export const DOESNT_EXIST = "Este nombre de usuario no existe";
 
-export const INVALID_PASSWORD = "無効なパスワードです";
+export const INVALID_PASSWORD = "No pudimos comprobar su contraseña";
 
-export const WRONG_PASSWORD = "パスワードが一致しません!";
+export const WRONG_PASSWORD = "¡Las contraseñas no coinciden!";
 
 export const CHECK_USERNAME_PASSWORD =
-  "ユーザー名とパスワードを確認してください";
+  "Por favor revise el nombre del usuario y la contraseña";
 
-export const CANT_CONFIRM_PASSWORD = "パスワードを確認できません";
+export const CANT_CONFIRM_PASSWORD = "No pudimos comprobar su contraseña";
 
 /* AppStack Strings */
-export const CLICK_TO_GET_HEARTS = "ハート獲得する";
+export const CLICK_TO_GET_HEARTS = "Obtener corazones";
 
-export const HOLD_ON = "ちょっと待って!";
+export const HOLD_ON = "¡Espera un momento!";
 
-export const CHECK_EXIT = "本当にゲームを終了しますか？";
+export const CHECK_EXIT = "¿De verdad quieres terminar el juego?";
 
-export const CANCEL = "いいえ";
+export const CANCEL = "Cancelar";
 
-export const EXIT = "終了する";
+export const EXIT = "Finalizar";
 
 /* GameScreen Strings */
-export const GO_HOME = "ホーム画面に";
+export const GO_HOME = "Ve a la pantalla de inicio";
 
-export const CHECK_GO_HOME = "ホーム画面に戻りますか?";
+export const CHECK_GO_HOME = "¿Ve a la pantalla de inicio?";
 
 /* GameOverScreen Strings */
-export const PLAY_AGAIN = "再び\nプレー";
+export const PLAY_AGAIN = "Jugar de nuevo";
 
-export const NEXT_STAGE = "次の\n段階";
+export const NEXT_STAGE = "Fase siguiente";
