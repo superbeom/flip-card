@@ -246,68 +246,136 @@ export const GAME_START = "GAME\nSTART";
 
 */
 
+// /* Auth */
+// export const SIGN_UP_TEXT = "Creación de cuentas";
+
+// export const SIGN_IN_TEXT = "Iniciar sesión";
+
+// export const HAVE_BEEN = "¿Ya tiene usted una cuenta?";
+
+// export const FIRST_TIME = "¿Es su primera vez aquí?";
+
+// export const USERNAME = "Nombre del usuario";
+
+// export const PASSWORD = "Contraseña";
+
+// export const CANT_BE_EMPTY = "no pueden estar vacías";
+
+// export const CANT_BE_BLANK = "no pueden estar vacías";
+
+// /* Sign Up */
+// export const ACCOUNT_CREATED = "¡Una cuenta ha sido creadas!";
+
+// export const LETS_PLAY_A_GAME = "Disfruta el juego:)";
+
+// export const CANT_CREATE_ACCOUNT = "Imposible generar cuentas";
+
+// export const USERNAME_ONLY =
+//   "¡El nombre del usuario sólo puede utilizar caracteres, números, líneas bajas y punto!";
+
+// export const USERNAME_UNDER_20 =
+//   "¡Introducción del nombre del usuario por debajo de 20 caracteres!";
+
+// export const USERNAME_ALREADY_TAKEN =
+//   "¡El nombre de este usuario ya está en uso!";
+
+// /* Sign In */
+// export const DOESNT_EXIST = "Este nombre de usuario no existe";
+
+// export const INVALID_PASSWORD = "No pudimos comprobar su contraseña";
+
+// export const WRONG_PASSWORD = "¡Las contraseñas no coinciden!";
+
+// export const CHECK_USERNAME_PASSWORD =
+//   "Por favor revise el nombre del usuario y la contraseña";
+
+// export const CANT_CONFIRM_PASSWORD = "No pudimos comprobar su contraseña";
+
+// /* AppStack Strings */
+// export const CLICK_TO_GET_HEARTS = "Obtener corazones";
+
+// export const HOLD_ON = "¡Espera un momento!";
+
+// export const CHECK_EXIT = "¿De verdad quieres terminar el juego?";
+
+// export const CANCEL = "Cancelar";
+
+// export const EXIT = "Finalizar";
+
+// /* GameScreen Strings */
+// export const GO_HOME = "Ve a la pantalla de inicio";
+
+// export const CHECK_GO_HOME = "¿Ve a la pantalla de inicio?";
+
+// /* GameOverScreen Strings */
+// export const PLAY_AGAIN = "Jugar de nuevo";
+
+// export const NEXT_STAGE = "Fase siguiente";
+
+/*
+
+    Chinese Strings...
+
+*/
+
 /* Auth */
-export const SIGN_UP_TEXT = "Creación de cuentas";
+export const SIGN_UP_TEXT = "創建帳號";
 
-export const SIGN_IN_TEXT = "Iniciar sesión";
+export const SIGN_IN_TEXT = "登錄";
 
-export const HAVE_BEEN = "¿Ya tiene usted una cuenta?";
+export const HAVE_BEEN = "你有賬號嗎?";
 
-export const FIRST_TIME = "¿Es su primera vez aquí?";
+export const FIRST_TIME = "第一次來?";
 
-export const USERNAME = "Nombre del usuario";
+export const USERNAME = "用戶名";
 
-export const PASSWORD = "Contraseña";
+export const PASSWORD = "密碼";
 
-export const CANT_BE_EMPTY = "no pueden estar vacías";
+export const CANT_BE_EMPTY = "不可能是空的!";
 
-export const CANT_BE_BLANK = "no pueden estar vacías";
+export const CANT_BE_BLANK = "不可能是空的!";
 
 /* Sign Up */
-export const ACCOUNT_CREATED = "¡Una cuenta ha sido creadas!";
+export const ACCOUNT_CREATED = "創建帳號!";
 
-export const LETS_PLAY_A_GAME = "Disfruta el juego:)";
+export const LETS_PLAY_A_GAME = "愉快地玩遊戲吧:)";
 
-export const CANT_CREATE_ACCOUNT = "Imposible generar cuentas";
+export const CANT_CREATE_ACCOUNT = "無法創建帳戶";
 
-export const USERNAME_ONLY =
-  "¡El nombre del usuario sólo puede utilizar caracteres, números, líneas bajas y punto!";
+export const USERNAME_ONLY = "用戶名只能使用'文字/數字/下劃線（_）/句號（.）'!";
 
-export const USERNAME_UNDER_20 =
-  "¡Introducción del nombre del usuario por debajo de 20 caracteres!";
+export const USERNAME_UNDER_20 = "請把用戶名寫在20字以下!";
 
-export const USERNAME_ALREADY_TAKEN =
-  "¡El nombre de este usuario ya está en uso!";
+export const USERNAME_ALREADY_TAKEN = "這個用戶名已經使用中!";
 
 /* Sign In */
-export const DOESNT_EXIST = "Este nombre de usuario no existe";
+export const DOESNT_EXIST = "相應用戶名不存在";
 
-export const INVALID_PASSWORD = "No pudimos comprobar su contraseña";
+export const INVALID_PASSWORD = "不有效的密碼";
 
-export const WRONG_PASSWORD = "¡Las contraseñas no coinciden!";
+export const WRONG_PASSWORD = "密碼不一致!";
 
-export const CHECK_USERNAME_PASSWORD =
-  "Por favor revise el nombre del usuario y la contraseña";
+export const CHECK_USERNAME_PASSWORD = "檢查你的用戶名稱和密碼";
 
-export const CANT_CONFIRM_PASSWORD = "No pudimos comprobar su contraseña";
+export const CANT_CONFIRM_PASSWORD = "不有效的密碼";
 
 /* AppStack Strings */
-export const CLICK_TO_GET_HEARTS = "Obtener corazones";
+export const CLICK_TO_GET_HEARTS = "獲得心";
 
-export const HOLD_ON = "¡Espera un momento!";
+export const HOLD_ON = "請稍等!";
 
-export const CHECK_EXIT = "¿De verdad quieres terminar el juego?";
+export const CHECK_EXIT = "真的要結束遊戲嗎?";
 
-export const CANCEL = "Cancelar";
+export const CANCEL = "取消";
 
-export const EXIT = "Finalizar";
+export const EXIT = "結束";
 
 /* GameScreen Strings */
-export const GO_HOME = "Ve a la pantalla de inicio";
+export const GO_HOME = "主屏";
 
-export const CHECK_GO_HOME = "¿Ve a la pantalla de inicio?";
+export const CHECK_GO_HOME = "要去主屏面嗎?";
 
 /* GameOverScreen Strings */
-export const PLAY_AGAIN = "Jugar de nuevo";
+export const PLAY_AGAIN = "重新\n玩遊戲";
 
-export const NEXT_STAGE = "Fase siguiente";
+export const NEXT_STAGE = "下一個\n階段";
