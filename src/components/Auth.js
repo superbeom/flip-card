@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TouchableWithoutFeedback,
   Keyboard,
+  StatusBar,
 } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
@@ -41,6 +42,8 @@ export default ({
         style={styles.screen}
         source={require("../../assets/images/background.png")}
       >
+        <StatusBar hidden={true} />
+
         <View style={styles.header}>
           <Text style={styles.headerText}>
             {content === SIGN_UP ? SIGN_UP_TITLE : SIGN_IN_TITLE}

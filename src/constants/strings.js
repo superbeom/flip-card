@@ -38,68 +38,68 @@ export const GAME_START = "GAME\nSTART";
 
 */
 
-// /* Auth */
-// export const SIGN_UP_TEXT = "Sign Up";
+/* Auth */
+export const SIGN_UP_TEXT = "Sign Up";
 
-// export const SIGN_IN_TEXT = "Log In";
+export const SIGN_IN_TEXT = "Log In";
 
-// export const HAVE_BEEN = "Already have an account?";
+export const HAVE_BEEN = "Already have an account?";
 
-// export const FIRST_TIME = "First time here?";
+export const FIRST_TIME = "First time here?";
 
-// export const USERNAME = "Username";
+export const USERNAME = "Username";
 
-// export const PASSWORD = "Password";
+export const PASSWORD = "Password";
 
-// export const CANT_BE_EMPTY = "can't be empty";
+export const CANT_BE_EMPTY = "can't be empty";
 
-// export const CANT_BE_BLANK = "can't be blank";
+export const CANT_BE_BLANK = "can't be blank";
 
-// /* Sign Up */
-// export const ACCOUNT_CREATED = "Account created!";
+/* Sign Up */
+export const ACCOUNT_CREATED = "Account created!";
 
-// export const LETS_PLAY_A_GAME = "Let's play a game:)";
+export const LETS_PLAY_A_GAME = "Let's play a game:)";
 
-// export const CANT_CREATE_ACCOUNT = "Can't create account";
+export const CANT_CREATE_ACCOUNT = "Can't create account";
 
-// export const USERNAME_ONLY =
-//   "Username can only use letters, numbers, underscores and periods!";
+export const USERNAME_ONLY =
+  "Username can only use letters, numbers, underscores and periods!";
 
-// export const USERNAME_UNDER_20 = "Enter a username under 20 characters!";
+export const USERNAME_UNDER_20 = "Enter a username under 20 characters!";
 
-// export const USERNAME_ALREADY_TAKEN = "This username is already taken!";
+export const USERNAME_ALREADY_TAKEN = "This username is already taken!";
 
-// /* Sign In */
-// export const DOESNT_EXIST = 'This username does not exist'
+/* Sign In */
+export const DOESNT_EXIST = "This username does not exist";
 
-// export const INVALID_PASSWORD = "Invalid password";
+export const INVALID_PASSWORD = "Invalid password";
 
-// export const WRONG_PASSWORD = "Wrong password!";
+export const WRONG_PASSWORD = "Wrong password!";
 
-// export const CHECK_USERNAME_PASSWORD = "Check your username and password";
+export const CHECK_USERNAME_PASSWORD = "Check your username and password";
 
-// export const CANT_CONFIRM_PASSWORD = "Can't confirm password";
+export const CANT_CONFIRM_PASSWORD = "Can't confirm password";
 
-// /* AppStack Strings */
-// export const CLICK_TO_GET_HEARTS = "Click to get hearts";
+/* AppStack Strings */
+export const CLICK_TO_GET_HEARTS = "Click to get hearts";
 
-// export const HOLD_ON = "Hold on!";
+export const HOLD_ON = "Hold on!";
 
-// export const CHECK_EXIT = "Are you sure you want to exit?";
+export const CHECK_EXIT = "Are you sure you want to exit?";
 
-// export const CANCEL = 'CANCEL'
+export const CANCEL = "CANCEL";
 
-// export const EXIT = 'EXIT'
+export const EXIT = "EXIT";
 
-// /* GameScreen Strings */
-// export const GO_HOME = "GO HOME";
+/* GameScreen Strings */
+export const GO_HOME = "GO HOME";
 
-// export const CHECK_GO_HOME = "Seriously go home?";
+export const CHECK_GO_HOME = "Seriously go home?";
 
-// /* GameOverScreen Strings */
-// export const PLAY_AGAIN = "PLAY\nAGAIN";
+/* GameOverScreen Strings */
+export const PLAY_AGAIN = "PLAY\nAGAIN";
 
-// export const NEXT_STAGE = "NEXT\nSTAGE";
+export const NEXT_STAGE = "NEXT\nSTAGE";
 
 /*
 
@@ -318,64 +318,64 @@ export const GAME_START = "GAME\nSTART";
 
 */
 
-/* Auth */
-export const SIGN_UP_TEXT = "創建帳號";
+// /* Auth */
+// export const SIGN_UP_TEXT = "創建帳號";
 
-export const SIGN_IN_TEXT = "登錄";
+// export const SIGN_IN_TEXT = "登錄";
 
-export const HAVE_BEEN = "你有賬號嗎?";
+// export const HAVE_BEEN = "你有賬號嗎?";
 
-export const FIRST_TIME = "第一次來?";
+// export const FIRST_TIME = "第一次來?";
 
-export const USERNAME = "用戶名";
+// export const USERNAME = "用戶名";
 
-export const PASSWORD = "密碼";
+// export const PASSWORD = "密碼";
 
-export const CANT_BE_EMPTY = "不可能是空的!";
+// export const CANT_BE_EMPTY = "不可能是空的!";
 
-export const CANT_BE_BLANK = "不可能是空的!";
+// export const CANT_BE_BLANK = "不可能是空的!";
 
-/* Sign Up */
-export const ACCOUNT_CREATED = "創建帳號!";
+// /* Sign Up */
+// export const ACCOUNT_CREATED = "創建帳號!";
 
-export const LETS_PLAY_A_GAME = "愉快地玩遊戲吧:)";
+// export const LETS_PLAY_A_GAME = "愉快地玩遊戲吧:)";
 
-export const CANT_CREATE_ACCOUNT = "無法創建帳戶";
+// export const CANT_CREATE_ACCOUNT = "無法創建帳戶";
 
-export const USERNAME_ONLY = "用戶名只能使用'文字/數字/下劃線（_）/句號（.）'!";
+// export const USERNAME_ONLY = "用戶名只能使用'文字/數字/下劃線（_）/句號（.）'!";
 
-export const USERNAME_UNDER_20 = "請把用戶名寫在20字以下!";
+// export const USERNAME_UNDER_20 = "請把用戶名寫在20字以下!";
 
-export const USERNAME_ALREADY_TAKEN = "這個用戶名已經使用中!";
+// export const USERNAME_ALREADY_TAKEN = "這個用戶名已經使用中!";
 
-/* Sign In */
-export const DOESNT_EXIST = "相應用戶名不存在";
+// /* Sign In */
+// export const DOESNT_EXIST = "相應用戶名不存在";
 
-export const INVALID_PASSWORD = "不有效的密碼";
+// export const INVALID_PASSWORD = "不有效的密碼";
 
-export const WRONG_PASSWORD = "密碼不一致!";
+// export const WRONG_PASSWORD = "密碼不一致!";
 
-export const CHECK_USERNAME_PASSWORD = "檢查你的用戶名稱和密碼";
+// export const CHECK_USERNAME_PASSWORD = "檢查你的用戶名稱和密碼";
 
-export const CANT_CONFIRM_PASSWORD = "不有效的密碼";
+// export const CANT_CONFIRM_PASSWORD = "不有效的密碼";
 
-/* AppStack Strings */
-export const CLICK_TO_GET_HEARTS = "獲得心";
+// /* AppStack Strings */
+// export const CLICK_TO_GET_HEARTS = "獲得心";
 
-export const HOLD_ON = "請稍等!";
+// export const HOLD_ON = "請稍等!";
 
-export const CHECK_EXIT = "真的要結束遊戲嗎?";
+// export const CHECK_EXIT = "真的要結束遊戲嗎?";
 
-export const CANCEL = "取消";
+// export const CANCEL = "取消";
 
-export const EXIT = "結束";
+// export const EXIT = "結束";
 
-/* GameScreen Strings */
-export const GO_HOME = "主屏";
+// /* GameScreen Strings */
+// export const GO_HOME = "主屏";
 
-export const CHECK_GO_HOME = "要去主屏面嗎?";
+// export const CHECK_GO_HOME = "要去主屏面嗎?";
 
-/* GameOverScreen Strings */
-export const PLAY_AGAIN = "重新\n玩遊戲";
+// /* GameOverScreen Strings */
+// export const PLAY_AGAIN = "重新\n玩遊戲";
 
-export const NEXT_STAGE = "下一個\n階段";
+// export const NEXT_STAGE = "下一個\n階段";
