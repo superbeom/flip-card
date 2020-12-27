@@ -12,6 +12,7 @@ import {
 import { AdMobBanner } from "expo-ads-admob";
 
 import { useGameInfo, useMinusHeart } from "../../context/GameContext";
+import { usePlaySound, useStopSound } from "../../context/SoundContext";
 import {
   CONGRATULATIONS,
   HOLD_ON,
@@ -30,6 +31,8 @@ import Header from "../../components/Header";
 export default ({ navigation }) => {
   const { stage, heart } = useGameInfo();
   const minusHeart = useMinusHeart();
+  const playSound = usePlaySound();
+  const stopSound = useStopSound();
   const [startGame, setStartGame] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [pass, setPass] = useState(false);
@@ -67,12 +70,14 @@ export default ({ navigation }) => {
   /* 하트 버튼 누름 → 동영상 광고 시청 → 하트 얻음 */
   const getHeart = () => {
     setModalVisible((curState) => !curState);
+    stopSound();
 
     return null;
   };
 
   const closeModal = () => {
     setModalVisible((curState) => !curState);
+    playSound();
   };
 
   const backAction = () => {
