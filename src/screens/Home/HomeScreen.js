@@ -40,6 +40,7 @@ export default ({ navigation }) => {
   const [checkReward, setCheckReward] = useState(false);
 
   const playAgainHandler = () => {
+    playSound();
     setGameOver(false);
   };
 
@@ -49,6 +50,8 @@ export default ({ navigation }) => {
   };
 
   const gameOverHandler = (checkPass) => {
+    stopSound();
+
     if (checkPass === "fail") {
       setPass(false);
 
@@ -63,6 +66,7 @@ export default ({ navigation }) => {
   };
 
   const goHomeHandler = () => {
+    playSound();
     setStartGame(false);
     setGameOver(false);
   };

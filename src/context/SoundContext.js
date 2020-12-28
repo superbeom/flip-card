@@ -13,7 +13,7 @@ export const SoundProvider = ({ sound, children }) => {
 
   const stopSound = async () => {
     try {
-      await sound.stopAsync();
+      await sound.pauseAsync();
     } catch (error) {
       console.log("Error @stopSound_SoundContext: ", error.message);
     }

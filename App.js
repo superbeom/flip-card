@@ -43,6 +43,12 @@ export default () => {
         require("./assets/images/background.png"),
         require("./assets/images/success.png"),
         require("./assets/images/fail.png"),
+        require("./assets/sounds/background_sound.mp3"),
+        require("./assets/sounds/success_sound.mp3"),
+        require("./assets/sounds/fail_sound.mp3"),
+        require("./assets/sounds/bomb_sound.mp3"),
+        require("./assets/sounds/correct_sound.mp3"),
+        require("./assets/sounds/incorrect_sound.mp3"),
       ]);
 
       /* Play Background Sound */
