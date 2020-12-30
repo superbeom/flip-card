@@ -7,6 +7,7 @@ import {
   Platform,
   ImageBackground,
   FlatList,
+  BackHandler,
 } from "react-native";
 import { useMutation } from "react-apollo-hooks";
 import { AdMobBanner } from "expo-ads-admob";
@@ -83,6 +84,19 @@ export default ({ navigation }) => {
       setLoading(false);
     }
   };
+
+  const backAction = () => {
+    navigation.navigate(HOME);
+
+    return true;
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () =>
+      BackHandler.removeEventListener("hardwareBackPress", backAction);
+  }, []);
 
   useEffect(() => {
     preLoad();

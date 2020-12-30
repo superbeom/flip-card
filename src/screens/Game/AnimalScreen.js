@@ -143,6 +143,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: vh(10),
     zIndex: -2,
+    elevation: 6,
   },
   flowerContainer: {
     position: "absolute",
@@ -151,6 +152,7 @@ const styles = StyleSheet.create({
     width: vw(20),
     height: vw(20),
     zIndex: -5,
+    elevation: 6,
   },
   squirrelContainer: {
     position: "absolute",
@@ -159,6 +161,7 @@ const styles = StyleSheet.create({
     width: vw(12),
     height: vw(12),
     zIndex: -5,
+    elevation: 6,
   },
   donkeyContainer: {
     position: "absolute",
@@ -167,6 +170,7 @@ const styles = StyleSheet.create({
     width: vw(20),
     height: vw(20),
     zIndex: -5,
+    elevation: 6,
   },
   flamingoContainer: {
     position: "absolute",
@@ -175,6 +179,7 @@ const styles = StyleSheet.create({
     width: vw(25),
     height: vw(12),
     zIndex: 15,
+    elevation: 15,
   },
   elephantContainer: {
     position: "absolute",
@@ -183,6 +188,7 @@ const styles = StyleSheet.create({
     width: vw(30),
     height: vw(30),
     zIndex: -5,
+    elevation: 6,
   },
   slothContainer: {
     position: "absolute",
@@ -191,6 +197,7 @@ const styles = StyleSheet.create({
     width: vw(20),
     height: vw(20),
     zIndex: -5,
+    elevation: 6,
   },
   lionContainer: {
     position: "absolute",
@@ -199,6 +206,7 @@ const styles = StyleSheet.create({
     width: vw(30),
     height: vw(30),
     zIndex: -5,
+    elevation: 6,
   },
   racoonContainer: {
     position: "absolute",
@@ -207,6 +215,7 @@ const styles = StyleSheet.create({
     width: vw(18),
     height: vw(18),
     zIndex: -5,
+    elevation: 6,
   },
   pandaContainer: {
     position: "absolute",
@@ -215,6 +224,7 @@ const styles = StyleSheet.create({
     width: vw(22),
     height: vw(22),
     zIndex: -5,
+    elevation: 6,
   },
   hippoContainer: {
     position: "absolute",
@@ -223,6 +233,7 @@ const styles = StyleSheet.create({
     width: vw(20),
     height: vw(20),
     zIndex: -5,
+    elevation: 6,
   },
   monkeyContainer: {
     position: "absolute",
@@ -231,5 +242,6 @@ const styles = StyleSheet.create({
     width: vw(20),
     height: vw(20),
     zIndex: 5,
+    elevation: 5,
   },
 });
