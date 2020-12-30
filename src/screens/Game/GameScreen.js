@@ -45,11 +45,15 @@ export default ({ onGoHome, onGameOver }) => {
     }
   };
 
+  const preventBackPress = () => {
+    return true;
+  };
+
   useEffect(() => {
-    BackHandler.addEventListener("hardwareBackPress", checkGoHome);
+    BackHandler.addEventListener("hardwareBackPress", preventBackPress);
 
     return () =>
-      BackHandler.removeEventListener("hardwareBackPress", checkGoHome);
+      BackHandler.removeEventListener("hardwareBackPress", preventBackPress);
   }, []);
 
   return (
