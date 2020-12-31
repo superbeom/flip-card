@@ -44,7 +44,7 @@ export default ({ enoughHeart, screen }) => {
             styles.text,
             screen === "gameOverScreen"
               ? {
-                  fontSize: vw(6),
+                  fontSize: vw(5),
                 }
               : {
                   fontSize: vw(5),
