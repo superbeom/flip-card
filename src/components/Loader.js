@@ -35,7 +35,7 @@ export default () => {
     <View style={styles.loader}>
       <Animated.Image
         style={{ width: size, height: size, transform: [{ rotate: spin }] }}
-        source={require("../../assets/icon.png")}
+        source={require("../../assets/trans_icon.png")}
       />
     </View>
   );
