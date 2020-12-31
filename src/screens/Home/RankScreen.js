@@ -13,6 +13,8 @@ import { useMutation } from "react-apollo-hooks";
 import { AdMobBanner } from "expo-ads-admob";
 import { vw, vh } from "react-native-expo-viewport-units";
 
+import admob from "../../config/admob";
+
 import { useUsername } from "../../context/AuthContext";
 import { useGameInfo } from "../../context/GameContext";
 import { CHECK_RANK, TOP_RANKER } from "./HomeQueries";
@@ -194,9 +196,9 @@ export default ({ navigation }) => {
           bannerSize="banner"
           adUnitID={
             Platform.OS === "ios"
-              ? "ca-app-pub-3940256099942544/6300978111"
-              : "ca-app-pub-3940256099942544/6300978111"
-          } // This is my ID
+              ? admob.bannerIosAdUnitId
+              : admob.bannerAndroidAdUnitId
+          }
           servePersonalizedAds={true}
           onDidFailToReceiveAdWithError={this.bannerError}
         />

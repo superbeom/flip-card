@@ -4,6 +4,8 @@ import { vw, vh } from "react-native-expo-viewport-units";
 import CurrencyFormat from "react-currency-format";
 import { AdMobRewarded } from "expo-ads-admob";
 
+import admob from "../../config/admob";
+
 import { usePlusHeart } from "../../context/GameContext";
 
 import colors from "../../constants/colors";
@@ -75,14 +77,12 @@ export default ({ closeModal, numOfHeart, checkReward, setCheckReward }) => {
       reward = false; // reward 초기화
 
       const adUnitID = Platform.select({
-        // https://developers.google.com/admob/ios/test-ads
-        ios: "ca-app-pub-3940256099942544/1712485313",
-        // https://developers.google.com/admob/android/test-ads
-        android: "ca-app-pub-3940256099942544/5224354917",
+        ios: admob.rewardIosAdUnitId,
+        android: admob.rewardAndroidAdUnitId,
       });
 
       // Display a rewarded ad
-      await AdMobRewarded.setAdUnitID(adUnitID); // Test ID, Replace with your-admob-unit-id
+      await AdMobRewarded.setAdUnitID(adUnitID);
       await AdMobRewarded.requestAdAsync({ servePersonalizedAds: true });
       await AdMobRewarded.showAdAsync();
     } catch (error) {

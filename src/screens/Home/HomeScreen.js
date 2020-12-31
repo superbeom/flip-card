@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import { AdMobBanner } from "expo-ads-admob";
 
+import admob from "../../config/admob";
+
 import { useGameInfo, useMinusHeart } from "../../context/GameContext";
 import { usePlaySound, useStopSound } from "../../context/SoundContext";
 import {
@@ -150,9 +152,9 @@ export default ({ navigation }) => {
           bannerSize="banner"
           adUnitID={
             Platform.OS === "ios"
-              ? "ca-app-pub-3940256099942544/6300978111"
-              : "ca-app-pub-3940256099942544/6300978111"
-          } // This is my ID
+              ? admob.bannerIosAdUnitId
+              : admob.bannerAndroidAdUnitId
+          }
           servePersonalizedAds={true}
           onDidFailToReceiveAdWithError={this.bannerError}
         />
