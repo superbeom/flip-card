@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "flip-card",
+    "name": "FunFlipCard",
     "slug": "flip-card",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -29,7 +29,7 @@
     },
     "android": {
       "package": "com.heungdo.flipcard",
-      "versionCode": 2,
+      "versionCode": 3,
       "permissions": [],
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-8452350078553076~5172824109"

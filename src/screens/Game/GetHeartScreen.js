@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   overlayText: {
-    fontSize: vw(10),
+    fontSize: vw(8.5),
     fontWeight: "700",
     color: colors.whiteColor,
   },

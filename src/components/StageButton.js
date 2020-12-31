@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   buttonText: {
-    fontSize: vw(4),
+    fontSize: vw(3.7),
     fontWeight: "500",
     textAlign: "center",
     fontStyle: "italic",

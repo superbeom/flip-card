@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
   },
   rankText: {
     color: colors.whiteColor,
-    fontSize: vw(6),
+    fontSize: vw(5),
     fontWeight: "500",
   },
   buttonContainer: {
