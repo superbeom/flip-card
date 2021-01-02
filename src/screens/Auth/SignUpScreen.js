@@ -23,6 +23,8 @@ import {
   USERNAME_ALREADY_TAKEN,
   HOLD_ON,
   CHECK_EXIT,
+  CANCEL,
+  EXIT,
 } from "../../constants/strings";
 
 import useInput from "../../hooks/useInput";
@@ -98,11 +100,11 @@ export default ({ navigation }) => {
   const backAction = () => {
     Alert.alert(HOLD_ON, CHECK_EXIT, [
       {
-        text: "Cancel",
+        text: CANCEL,
         onPress: () => null,
         style: "cancel",
       },
-      { text: "YES", onPress: () => BackHandler.exitApp() },
+      { text: EXIT, onPress: () => BackHandler.exitApp() },
     ]);
 
     return true;

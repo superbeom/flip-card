@@ -1,8 +1,7 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 
-import { useLogOut } from "../../context/AuthContext";
 import { useGameInfo } from "../../context/GameContext";
 import colors from "../../constants/colors";
 import { FLAG } from "../../utils/FontAwesomeSource";
@@ -18,7 +17,6 @@ import Button from "../../components/Button";
 
 export default ({ onStartGame, getHeart, navigation }) => {
   const { stage, heart, gameEnd } = useGameInfo();
-  const logUserOut = useLogOut();
 
   return (
     <View style={styles.screen}>
@@ -64,14 +62,6 @@ export default ({ onStartGame, getHeart, navigation }) => {
           content={"trophy"}
           size={vw(20)}
         />
-        {/* <TouchableOpacity
-          style={{
-            width: vw(10),
-            height: vw(10),
-            backgroundColor: "lightpink",
-          }}
-          onPress={logUserOut}
-        /> */}
       </View>
 
       {/* Animals */}

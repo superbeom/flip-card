@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { vw, vh } from "react-native-expo-viewport-units";
 import CurrencyFormat from "react-currency-format";
 import { AdMobRewarded } from "expo-ads-admob";
+
+import admob from "../../config/admob";
 
 import { usePlusHeart } from "../../context/GameContext";
 
@@ -23,6 +25,7 @@ const Content = ({ onPress, num, price, update }) => (
   <TouchableOpacity
     style={styles.cardContainer}
     onPress={onPress}
+    activeOpacity={0.5}
     disabled={update}
   >
     <Card style={styles.card}>
@@ -38,8 +41,7 @@ const Content = ({ onPress, num, price, update }) => (
           value={price}
           displayType={"text"}
           thousandSeparator={true}
-          prefix={"$"} // English
-          // suffix={"원"} // Korean
+          prefix={"$"}
         />
       </View>
     </Card>
@@ -74,37 +76,56 @@ export default ({ closeModal, numOfHeart, checkReward, setCheckReward }) => {
       count = 0; // count 초기화
       reward = false; // reward 초기화
 
+      const adUnitID = Platform.select({
+        ios: admob.rewardIosAdUnitId,
+        android: admob.rewardAndroidAdUnitId,
+      });
+
       // Display a rewarded ad
-      await AdMobRewarded.setAdUnitID("ca-app-pub-3940256099942544/5224354917"); // Test ID, Replace with your-admob-unit-id
+      await AdMobRewarded.setAdUnitID(adUnitID);
       await AdMobRewarded.requestAdAsync({ servePersonalizedAds: true });
       await AdMobRewarded.showAdAsync();
-
-      AdMobRewarded.addEventListener("rewardedVideoDidStart", () => {
-        setCheckClick(false);
-      });
-
-      AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
-        reward = true;
-        /* 
-            광고 중간에 끄고 다시 광고 보면, 그 전까지 누적되어 Reward 되는 문제 발생.
-            따라서, count 설정 및 reward 설정으로 한 번만 Reward 되도록 설정.
-        */
-        if (count === 0) {
-          AdMobRewarded.addEventListener("rewardedVideoDidClose", () => {
-            if (count === 0 && reward === true) {
-              setCheckReward(true);
-
-              setTimeout(getReward, 2500);
-
-              count++;
-            }
-          });
-        }
-      });
     } catch (error) {
       console.log("Error @getHeartFree_GetHeartScreen: ", error.message);
     }
   };
+
+  useEffect(() => {
+    AdMobRewarded.addEventListener("rewardedVideoDidStart", () => {
+      setCheckClick(false);
+    });
+
+    AdMobRewarded.addEventListener("rewardedVideoDidRewardUser", () => {
+      reward = true;
+      /*
+          광고 중간에 끄고 다시 광고 보면, 그 전까지 누적되어 Reward 되는 문제 발생.
+          따라서, count 설정 및 reward 설정으로 한 번만 Reward 되도록 설정.
+      */
+      if (count === 0) {
+        AdMobRewarded.addEventListener("rewardedVideoDidClose", () => {
+          if (count === 0 && reward === true) {
+            setCheckReward(true);
+
+            setTimeout(getReward, 2500);
+
+            count++;
+          }
+        });
+      }
+    });
+  }, [checkReward]);
+
+  useEffect(() => {
+    AdMobRewarded.addEventListener("rewardedVideoDidLoad", () => null);
+    AdMobRewarded.addEventListener("rewardedVideoDidFailToLoad", () => null);
+    AdMobRewarded.addEventListener("rewardedVideoDidOpen", () => null);
+    AdMobRewarded.addEventListener(
+      "rewardedVideoWillLeaveApplication",
+      () => null
+    );
+
+    return () => AdMobRewarded.removeAllListeners();
+  }, []);
 
   return (
     <>
@@ -191,7 +212,7 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   overlayText: {
-    fontSize: vw(10),
+    fontSize: vw(8.5),
     fontWeight: "700",
     color: colors.whiteColor,
   },

@@ -7,10 +7,13 @@ import {
   Platform,
   ImageBackground,
   FlatList,
+  BackHandler,
 } from "react-native";
 import { useMutation } from "react-apollo-hooks";
 import { AdMobBanner } from "expo-ads-admob";
 import { vw, vh } from "react-native-expo-viewport-units";
+
+import admob from "../../config/admob";
 
 import { useUsername } from "../../context/AuthContext";
 import { useGameInfo } from "../../context/GameContext";
@@ -84,6 +87,19 @@ export default ({ navigation }) => {
     }
   };
 
+  const backAction = () => {
+    navigation.navigate(HOME);
+
+    return true;
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", backAction);
+
+    return () =>
+      BackHandler.removeEventListener("hardwareBackPress", backAction);
+  }, []);
+
   useEffect(() => {
     preLoad();
   }, []);
@@ -151,7 +167,9 @@ export default ({ navigation }) => {
             ]}
           >
             <View style={styles.rankTextBox}>
-              <Text style={styles.rankText}>{myRank}</Text>
+              <Text style={styles.rankText}>
+                {myRank <= 9999 ? myRank : "10k+"}
+              </Text>
             </View>
             <View style={styles.usernameTextBox}>
               <Text style={styles.rankText} numberOfLines={1}>
@@ -178,9 +196,9 @@ export default ({ navigation }) => {
           bannerSize="banner"
           adUnitID={
             Platform.OS === "ios"
-              ? "ca-app-pub-3940256099942544/6300978111"
-              : "ca-app-pub-3940256099942544/6300978111"
-          } // This is my ID
+              ? admob.bannerIosAdUnitId
+              : admob.bannerAndroidAdUnitId
+          }
           servePersonalizedAds={true}
           onDidFailToReceiveAdWithError={this.bannerError}
         />
@@ -195,7 +213,6 @@ const styles = StyleSheet.create({
   },
   header: {
     flex: 1,
-    backgroundColor: colors.slateBlueColor,
   },
   body: {
     flex: 10,
@@ -226,7 +243,7 @@ const styles = StyleSheet.create({
   },
   rankText: {
     color: colors.whiteColor,
-    fontSize: vw(6),
+    fontSize: vw(5),
     fontWeight: "500",
   },
   buttonContainer: {

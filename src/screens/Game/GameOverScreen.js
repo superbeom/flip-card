@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Image, BackHandler, Alert } from "react-native";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  StyleSheet,
+  View,
+  Image,
+  BackHandler,
+  Alert,
+  AppState,
+} from "react-native";
+import { Audio } from "expo-av";
 import { vw, vh } from "react-native-expo-viewport-units";
 
 import {
@@ -12,7 +20,13 @@ import {
 
 import colors from "../../constants/colors";
 import { stageForReward } from "../../utils/checkSomething";
-import { PLAY_AGAIN, NEXT_STAGE, CHECK_GO_HOME } from "../../constants/strings";
+import {
+  PLAY_AGAIN,
+  NEXT_STAGE,
+  CHECK_GO_HOME,
+  CANCEL,
+  GO_HOME,
+} from "../../constants/strings";
 
 import Button from "../../components/Button";
 import StageButton from "../../components/StageButton";
@@ -35,6 +49,9 @@ const GameOverScreen = ({
   const setGameEnd = useSetGameEnd();
   const [checkReward, setCheckReward] = useState(false);
   const [reward, setReward] = useState(false);
+  const appState = useRef(AppState.currentState);
+  const [successSound, setSuccessSound] = useState();
+  const [failSound, setFailSound] = useState();
 
   const clickedGoHomeAfterSuccess = () => {
     if (stage === 885) {
@@ -73,12 +90,12 @@ const GameOverScreen = ({
   const backAction = () => {
     Alert.alert(CHECK_GO_HOME, "", [
       {
-        text: "Cancel",
+        text: CANCEL,
         onPress: () => null,
         style: "cancel",
       },
       {
-        text: "YES",
+        text: GO_HOME,
         onPress: pass ? clickedGoHomeAfterSuccess : clickedGoHomeAfterFail,
       },
     ]);
@@ -101,6 +118,55 @@ const GameOverScreen = ({
     }
   };
 
+  const handleAppStateChange = (nextAppState) => {
+    appState.current = nextAppState;
+
+    if (
+      pass &&
+      (appState.current === "inactive" || appState.current === "background")
+    ) {
+      clickedGoHomeAfterSuccess();
+    } else if (
+      !pass &&
+      (appState.current === "inactive" || appState.current === "background")
+    ) {
+      clickedGoHomeAfterFail();
+    }
+  };
+
+  const preLoad = async () => {
+    /* Set Sound */
+    const { sound: successSound } = await Audio.Sound.createAsync(
+      require("../../../assets/sounds/success_sound.mp3")
+    );
+    const { sound: failSound } = await Audio.Sound.createAsync(
+      require("../../../assets/sounds/fail_sound.mp3")
+    );
+    setSuccessSound(successSound);
+    setFailSound(failSound);
+    if (pass) {
+      await successSound.playAsync();
+    } else {
+      await failSound.playAsync();
+    }
+  };
+
+  useEffect(() => {
+    return successSound ? () => successSound.unloadAsync() : undefined;
+  }, [successSound]);
+
+  useEffect(() => {
+    return failSound ? () => failSound.unloadAsync() : undefined;
+  }, [failSound]);
+
+  useEffect(() => {
+    AppState.addEventListener("change", handleAppStateChange);
+
+    return () => {
+      AppState.removeEventListener("change", handleAppStateChange);
+    };
+  }, []);
+
   useEffect(() => {
     /* 특정 stage마다 보상 - heart 추가 */
     if (pass && stageForReward.includes(stage)) {
@@ -108,6 +174,8 @@ const GameOverScreen = ({
       setReward(true);
 
       setTimeout(getReward, 2500);
+    } else {
+      preLoad();
     }
 
     BackHandler.addEventListener("hardwareBackPress", backAction);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Asset } from "expo-asset";
+import { Audio } from "expo-av";
 import AsyncStorage from "@react-native-community/async-storage";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { persistCache } from "apollo-cache-persist";
@@ -9,6 +10,7 @@ import { ApolloProvider } from "react-apollo-hooks";
 import apolloClientOptions from "./apollo";
 
 import { AuthProvider } from "./src/context/AuthContext";
+import { SoundProvider } from "./src/context/SoundContext";
 
 import AppStack from "./src/stacks/AppStack";
 
@@ -19,6 +21,7 @@ export default () => {
   const [client, setClient] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [username, setUsername] = useState(null);
+  const [sound, setSound] = useState();
 
   const preLoad = async () => {
     try {
@@ -40,7 +43,21 @@ export default () => {
         require("./assets/images/background.png"),
         require("./assets/images/success.png"),
         require("./assets/images/fail.png"),
+        require("./assets/sounds/background_sound.mp3"),
+        require("./assets/sounds/success_sound.mp3"),
+        require("./assets/sounds/fail_sound.mp3"),
+        require("./assets/sounds/bomb_sound.mp3"),
+        require("./assets/sounds/correct_sound.mp3"),
+        require("./assets/sounds/incorrect_sound.mp3"),
       ]);
+
+      /* Play Background Sound */
+      const { sound } = await Audio.Sound.createAsync(
+        require("./assets/sounds/background_sound.mp3")
+      );
+      setSound(sound);
+      await sound.playAsync();
+      await sound.setIsLoopingAsync(true);
 
       /* Load Cache */
       const cache = new InMemoryCache();
@@ -73,14 +90,20 @@ export default () => {
   };
 
   useEffect(() => {
+    return sound ? () => sound.unloadAsync() : undefined;
+  }, [sound]);
+
+  useEffect(() => {
     preLoad();
   }, []);
 
   return loaded && client && isLoggedIn !== null ? (
     <ApolloProvider client={client}>
-      <AuthProvider isLoggedIn={isLoggedIn} username={username}>
-        <AppStack />
-      </AuthProvider>
+      <SoundProvider sound={sound}>
+        <AuthProvider isLoggedIn={isLoggedIn} username={username}>
+          <AppStack />
+        </AuthProvider>
+      </SoundProvider>
     </ApolloProvider>
   ) : (
     <Loader />

@@ -11,8 +11,17 @@ import {
 } from "react-native";
 import { AdMobBanner } from "expo-ads-admob";
 
+import admob from "../../config/admob";
+
 import { useGameInfo, useMinusHeart } from "../../context/GameContext";
-import { CONGRATULATIONS, HOLD_ON, CHECK_EXIT } from "../../constants/strings";
+import { usePlaySound, useStopSound } from "../../context/SoundContext";
+import {
+  CONGRATULATIONS,
+  HOLD_ON,
+  CHECK_EXIT,
+  CANCEL,
+  EXIT,
+} from "../../constants/strings";
 
 import StartGameScreen from "../Game/StartGameScreen";
 import GameScreen from "../Game/GameScreen";
@@ -24,6 +33,8 @@ import Header from "../../components/Header";
 export default ({ navigation }) => {
   const { stage, heart } = useGameInfo();
   const minusHeart = useMinusHeart();
+  const playSound = usePlaySound();
+  const stopSound = useStopSound();
   const [startGame, setStartGame] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [pass, setPass] = useState(false);
@@ -31,6 +42,7 @@ export default ({ navigation }) => {
   const [checkReward, setCheckReward] = useState(false);
 
   const playAgainHandler = () => {
+    playSound();
     setGameOver(false);
   };
 
@@ -40,6 +52,8 @@ export default ({ navigation }) => {
   };
 
   const gameOverHandler = (checkPass) => {
+    stopSound();
+
     if (checkPass === "fail") {
       setPass(false);
 
@@ -54,6 +68,7 @@ export default ({ navigation }) => {
   };
 
   const goHomeHandler = () => {
+    playSound();
     setStartGame(false);
     setGameOver(false);
   };
@@ -61,22 +76,24 @@ export default ({ navigation }) => {
   /* 하트 버튼 누름 → 동영상 광고 시청 → 하트 얻음 */
   const getHeart = () => {
     setModalVisible((curState) => !curState);
+    stopSound();
 
     return null;
   };
 
   const closeModal = () => {
     setModalVisible((curState) => !curState);
+    playSound();
   };
 
   const backAction = () => {
     Alert.alert(HOLD_ON, CHECK_EXIT, [
       {
-        text: "Cancel",
+        text: CANCEL,
         onPress: () => null,
         style: "cancel",
       },
-      { text: "YES", onPress: () => BackHandler.exitApp() },
+      { text: EXIT, onPress: () => BackHandler.exitApp() },
     ]);
 
     return true;
@@ -135,9 +152,9 @@ export default ({ navigation }) => {
           bannerSize="banner"
           adUnitID={
             Platform.OS === "ios"
-              ? "ca-app-pub-3940256099942544/6300978111"
-              : "ca-app-pub-3940256099942544/6300978111"
-          } // This is my ID
+              ? admob.bannerIosAdUnitId
+              : admob.bannerAndroidAdUnitId
+          }
           servePersonalizedAds={true}
           onDidFailToReceiveAdWithError={this.bannerError}
         />

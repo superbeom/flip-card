@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
+import { Audio } from "expo-av";
 
 import { useGameInfo } from "../context/GameContext";
 import colors from "../constants/colors";
@@ -33,6 +34,9 @@ export default ({
   const [shuffleData, setShuffleData] = useState([]);
   const [firstClickIndex, setFirstClickIndex] = useState(-1);
   const [secondClickIndex, setSecondClickIndex] = useState(-1);
+  const [bombSound, setBombSound] = useState();
+  const [correctSound, setCorrectSound] = useState();
+  const [inCorrectSound, setInCorrectSound] = useState();
 
   const windowWidth = Dimensions.get("window").width;
   const fitWidth = windowWidth / (horizontalNum * 1.1);
@@ -57,13 +61,16 @@ export default ({
   };
 
   /* 카드 두 장 비교 */
-  const compareCards = (item) => {
+  const compareCards = async (item) => {
     if (item === "bomb") {
+      await inCorrectSound.replayAsync();
     } else if (
       firstPick !== null &&
-      (secondPick !== null) & (firstPick === secondPick)
+      secondPick !== null &&
+      firstPick === secondPick
     ) {
       correctItemArray.push(firstPick);
+      await correctSound.replayAsync();
 
       /* 정답을 모두 찾았는지 체크 */
       const nowNumOfCorrect = correctItemArray.length;
@@ -71,15 +78,22 @@ export default ({
         /* 정답을 모두 찾았다면, Game Over */
         return onGameOver();
       }
+    } else if (
+      firstPick !== null &&
+      secondPick !== null &&
+      firstPick !== secondPick
+    ) {
+      await inCorrectSound.replayAsync();
     }
 
     initialization();
   };
 
-  const checkClick = (item, index) => {
+  const checkClick = async (item, index) => {
     /* 해골 클릭 시, Game Over */
     if (item === "skull") {
       setClickedBomb(true);
+      await bombSound.playAsync();
       setTimeout(onGameOver.bind(this, "fail"), 500);
     }
 
@@ -103,7 +117,7 @@ export default ({
     }
   };
 
-  const preLoad = () => {
+  const preLoad = async () => {
     try {
       const stageName = checkStage(stage);
       setShuffleData(shuffle(stageName));
@@ -115,10 +129,36 @@ export default ({
       }, checkTime(stage));
 
       initializationFeed();
+
+      /* Set Sound */
+      const { sound: bombSound } = await Audio.Sound.createAsync(
+        require("../../assets/sounds/bomb_sound.mp3")
+      );
+      const { sound: correctSound } = await Audio.Sound.createAsync(
+        require("../../assets/sounds/correct_sound.mp3")
+      );
+      const { sound: inCorrectSound } = await Audio.Sound.createAsync(
+        require("../../assets/sounds/incorrect_sound.mp3")
+      );
+      setBombSound(bombSound);
+      setCorrectSound(correctSound);
+      setInCorrectSound(inCorrectSound);
     } catch (error) {
       console.log("error @preLoad_GameFeed: ", error.message);
     }
   };
+
+  useEffect(() => {
+    return bombSound ? () => bombSound.unloadAsync() : undefined;
+  }, [bombSound]);
+
+  useEffect(() => {
+    return correctSound ? () => correctSound.unloadAsync() : undefined;
+  }, [correctSound]);
+
+  useEffect(() => {
+    return inCorrectSound ? () => inCorrectSound.unloadAsync() : undefined;
+  }, [inCorrectSound]);
 
   useEffect(() => {
     preLoad();

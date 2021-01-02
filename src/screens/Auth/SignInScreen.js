@@ -10,6 +10,7 @@ import {
   SIGN_IN,
   USERNAME,
   CANT_BE_EMPTY,
+  DOESNT_EXIST,
   INVALID_PASSWORD,
   WRONG_PASSWORD,
   CHECK_USERNAME_PASSWORD,
@@ -50,7 +51,11 @@ export default SignInScreen = ({ route, navigation }) => {
         data: { confirmSecret },
       } = await confirmSecretMutation();
 
-      if (confirmSecret === "Wrong") {
+      if (confirmSecret === "Does't Exist") {
+        Alert.alert(DOESNT_EXIST);
+
+        return false;
+      } else if (confirmSecret === "Wrong") {
         Alert.alert(WRONG_PASSWORD);
 
         return false;
