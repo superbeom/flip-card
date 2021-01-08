@@ -113,9 +113,8 @@ export default ({ closeModal, numOfHeart, checkReward, setCheckReward }) => {
         });
       }
     });
-  }, [checkReward]);
 
-  useEffect(() => {
+    AdMobRewarded.addEventListener("rewardedVideoDidClose", () => null);
     AdMobRewarded.addEventListener("rewardedVideoDidLoad", () => null);
     AdMobRewarded.addEventListener("rewardedVideoDidFailToLoad", () => null);
     AdMobRewarded.addEventListener("rewardedVideoDidOpen", () => null);
